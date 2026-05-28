@@ -1,0 +1,21 @@
+live_can_id,id_format,count,dlcs,median_period_ms,first_payload,projected_bcm_frame_id,low_18_flags_variant,exact_old_log_count,projected_old_log_count,bcm_groups,bcm_offsets,projection_confidence
+0x100,standard,1,0:1,,,,,0,,,,unresolved
+0x62C,standard,10,8:10,2998.588,0140000000000000,,,0,,,,unresolved
+0x10244060,extended,9,1:9,4147.175,02,0x409,0x04060,0,0,Group A,0x01DFA4;0x01DFA8;0x01DFAC;0x01DFB0;0x01DFB4;0x01DFB8;0x01DFBC,bcm-group-a-projection
+0x103BC060,extended,1,1:1,,00,0x40E,0x3C060,0,0,Group A,0x01DF64;0x01DF68;0x01DF6C;0x01DF70;0x01DF74,bcm-group-a-projection
+0x103D6060,extended,2,1:2,106.577,00,0x40F,0x16060,0,0,Group A,0x01DF54;0x01DF58;0x01DF5C;0x01DF60,bcm-group-a-projection
+0x103DA060,extended,1,1:1,,00,0x40F,0x1A060,0,0,Group A,0x01DF54;0x01DF58;0x01DF5C;0x01DF60,bcm-group-a-projection
+0x10424060,extended,7,3:7,999.815,059964,0x410,0x24060,0,0,Group A,0x01DF40;0x01DF44;0x01DF48;0x01DF4C;0x01DF50,bcm-group-a-projection
+0x10444060,extended,1,1:1,,00,0x411,0x04060,0,0,,,unresolved
+0x10448060,extended,1,1:1,,00,0x411,0x08060,0,0,,,unresolved
+0x1045C060,extended,1,1:1,,40,0x411,0x1C060,0,0,,,unresolved
+0x10600060,extended,1,7:1,,01609370015B00,0x418,0x00060,0,0,Group A,0x01DF30;0x01DF34;0x01DF38,bcm-group-a-projection
+0x10774060,extended,2,1:2,741.235,00,0x41D,0x34060,0,0,Group A,0x01DECC;0x01DED0;0x01DED4;0x01DED8;0x01DEDC;0x01DEE0,bcm-group-a-projection
+0x10812060,extended,1,1:1,,00,0x420,0x12060,0,0,Group A,0x01DEA0;0x01DEA4;0x01DEA8;0x01DEAC;0x01DEB0,bcm-group-a-projection
+0x1084A060,extended,2,1:2,60.260,00,0x421,0x0A060,0,0,Group A,0x01DE9C,bcm-group-a-projection
+0x10A04060,extended,1,1:1,,00,0x428,0x04060,0,0,,,unresolved
+0x10ACE060,extended,3,8:3,107.126,1E00000000000000,0x42B,0x0E060,0,0,Group A,0x01DE94;0x01DE98,bcm-group-a-projection
+0x10AE8060,extended,3,8:3,30.047,030E010104050000,0x42B,0x28060,0,0,Group A,0x01DE94;0x01DE98,bcm-group-a-projection
+0x10AFC060,extended,1,8:1,,38FFFFFFFFFFFF2B,0x42B,0x3C060,0,0,Group A,0x01DE94;0x01DE98,bcm-group-a-projection
+0x10B0A060,extended,2,3:2,110.912,001E04,0x42C,0x0A060,0,0,,,unresolved
+0x13FFE060,extended,25,0:25,1199.365,,0x4FF,0x3E060,0,0,Group A,0x01DE88,bcm-group-a-projection
