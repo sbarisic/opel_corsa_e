@@ -146,6 +146,8 @@ Important: these logs appear to be high-speed-side logs. They should not be assu
 
 The following CSVs were generated during analysis and are useful lookup tables:
 
+- `analysis/BCM_DISASSEMBLY.md` — current BCM CAN-gateway disassembly notes and repeatable analysis workflow.
+- `analysis/generated/` — regenerated BCM table, CAN-ID occurrence, gateway xref, and code-window outputs from `tools/bcm_gateway_analysis.py`.
 - `e78a_candidate_can_tables.csv` — candidate E78A CAN descriptor tables.
 - `e78a_shifted_id_dispatch_candidates.csv` — candidate shifted-ID dispatch references.
 - `bcm_can_tables_decoded.csv` — decoded BCM candidate CAN TX/RX/filter tables.

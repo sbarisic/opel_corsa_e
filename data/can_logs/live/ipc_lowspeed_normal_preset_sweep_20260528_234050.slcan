@@ -1,0 +1,9 @@
+# port=COM16 uart=115200 mode=M0_normal dwell_s=6.0
+# bitrate 10k command=S0
+# bitrate 20k command=S1
+# bitrate 50k command=S2
+# bitrate 83.3k command=S9
+# bitrate 100k command=S3
+# bitrate 125k command=S4
+# bitrate 250k command=S5
+# bitrate 500k command=S6

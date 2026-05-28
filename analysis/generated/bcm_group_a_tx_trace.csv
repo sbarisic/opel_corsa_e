@@ -1,0 +1,132 @@
+frame_id,table_index,table_offset,raw,object_key,message_role,focus_low_speed_ipc,direct_dispatch_handlers,dispatch_entry_classes,observed_presence,observed_count,observed_dlcs,median_period_ms,approx_hz,state_source_status,confidence
+0x7F1,0,0x01DE74,0x1FC40000,0x1FC4,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x641,1,0x01DE78,0x19040000,0x1904,diagnostic_response,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x641,2,0x01DE7C,0x19040000,0x1904,diagnostic_response,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x621,3,0x01DE80,0x18840000,0x1884,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x541,4,0x01DE84,0x15040000,0x1504,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x4FF,5,0x01DE88,0x93FFE000,0x93FF,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x43B,6,0x01DE8C,0x90EC8000,0x90EC,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x43B,7,0x01DE90,0x90EC4000,0x90EC,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x42B,8,0x01DE94,0x90AEC000,0x90AE,other_can_object,no,0x1304E4@0x0224E4,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x42B,9,0x01DE98,0x90ACA000,0x90AC,other_can_object,no,0x130518@0x0224CC,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x421,10,0x01DE9C,0x90858000,0x9085,other_can_object,no,0x13120C@0x02234C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x420,11,0x01DEA0,0x90814000,0x9081,other_can_object,no,0x131274@0x02231C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x420,12,0x01DEA4,0x9080E000,0x9080,other_can_object,no,0x13128E@0x022310,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x420,13,0x01DEA8,0x9080A000,0x9080,other_can_object,no,0x13128E@0x022310,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x420,14,0x01DEAC,0x90806000,0x9080,other_can_object,no,0x13128E@0x022310,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x420,15,0x01DEB0,0x90800000,0x9080,other_can_object,no,0x13128E@0x022310,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41E,16,0x01DEB4,0x907AA000,0x907A,other_can_object,no,0x130CE4@0x0222C8,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41E,17,0x01DEB8,0x907A4000,0x907A,other_can_object,no,0x130CE4@0x0222C8,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41E,18,0x01DEBC,0x90790000,0x9079,other_can_object,no,0x130CFE@0x0222BC,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41E,19,0x01DEC0,0x90788000,0x9078,other_can_object,no,0x130D18@0x0222B0,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41E,20,0x01DEC4,0x90784000,0x9078,other_can_object,no,0x130D18@0x0222B0,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41E,21,0x01DEC8,0x90780000,0x9078,other_can_object,no,0x130D18@0x0222B0,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41D,22,0x01DECC,0x9077C000,0x9077,other_can_object,no,0x130D32@0x0222A4,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41D,23,0x01DED0,0x9076C000,0x9076,other_can_object,no,0x130D4C@0x022298,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41D,24,0x01DED4,0x90768000,0x9076,other_can_object,no,0x130D4C@0x022298,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41D,25,0x01DED8,0x90758000,0x9075,other_can_object,no,0x130D66@0x02228C,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41D,26,0x01DEDC,0x90756000,0x9075,other_can_object,no,0x130D66@0x02228C,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41D,27,0x01DEE0,0x90754000,0x9075,other_can_object,no,0x130D66@0x02228C,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41C,28,0x01DEE4,0x90728000,0x9072,other_can_object,no,0x1312F6@0x022268,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41C,29,0x01DEE8,0x90722000,0x9072,other_can_object,no,0x1312F6@0x022268,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41C,30,0x01DEEC,0x9071C000,0x9071,other_can_object,no,0x131310@0x02225C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41C,31,0x01DEF0,0x90718000,0x9071,other_can_object,no,0x131310@0x02225C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41C,32,0x01DEF4,0x90714000,0x9071,other_can_object,no,0x131310@0x02225C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41C,33,0x01DEF8,0x90708000,0x9070,other_can_object,no,0x13132A@0x022250,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41C,34,0x01DEFC,0x90704000,0x9070,other_can_object,no,0x13132A@0x022250,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41B,35,0x01DF00,0x906FC000,0x906F,other_can_object,no,0x131344@0x022244,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41B,36,0x01DF04,0x906F8000,0x906F,other_can_object,no,0x131344@0x022244,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41B,37,0x01DF08,0x906F4000,0x906F,other_can_object,no,0x131344@0x022244,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41B,38,0x01DF0C,0x906F0000,0x906F,other_can_object,no,0x131344@0x022244,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41B,39,0x01DF10,0x906C0000,0x906C,other_can_object,no,0x131392@0x022220,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41A,40,0x01DF14,0x906B8000,0x906B,other_can_object,no,0x1313AC@0x022214,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41A,41,0x01DF18,0x906B0000,0x906B,other_can_object,no,0x1313AC@0x022214,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x41A,42,0x01DF1C,0x906AA000,0x906A,other_can_object,no,0x1313C6@0x022208,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x419,43,0x01DF20,0x9064E000,0x9064,other_can_object,no,0x131A50@0x0221C0,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x419,44,0x01DF24,0x9064A000,0x9064,other_can_object,no,0x131A50@0x0221C0,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x419,45,0x01DF28,0x90646000,0x9064,other_can_object,no,0x131A50@0x0221C0,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x419,46,0x01DF2C,0x90644000,0x9064,other_can_object,no,0x131A50@0x0221C0,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x418,47,0x01DF30,0x90632000,0x9063,other_can_object,no,0x131A6A@0x0221B4,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x418,48,0x01DF34,0x9062C000,0x9062,other_can_object,no,0x131A84@0x0221A8,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x418,49,0x01DF38,0x90600000,0x9060,other_can_object,no,0x131AB8@0x022190,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x416,50,0x01DF3C,0x905A2000,0x905A,other_can_object,no,0x131B20@0x022154,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x410,51,0x01DF40,0x90438000,0x9043,other_can_object,no,0x1345D0@0x022088,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x410,52,0x01DF44,0x90428000,0x9042,other_can_object,no,0x131C24@0x02207C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x410,53,0x01DF48,0x90424000,0x9042,other_can_object,no,0x131C24@0x02207C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x410,54,0x01DF4C,0x90414000,0x9041,other_can_object,no,0x1330B4@0x022070,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x410,55,0x01DF50,0x90400000,0x9040,other_can_object,no,0x134624@0x022064,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40F,56,0x01DF54,0x903DC000,0x903D,other_can_object,no,0x133164@0x022040,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40F,57,0x01DF58,0x903D4000,0x903D,other_can_object,no,0x133164@0x022040,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40F,58,0x01DF5C,0x903D0000,0x903D,other_can_object,no,0x133164@0x022040,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40F,59,0x01DF60,0x903C4000,0x903C,other_can_object,no,0x12FCCC@0x022034,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40E,60,0x01DF64,0x903B4000,0x903B,other_can_object,no,0x12FCEE@0x022028,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40E,61,0x01DF68,0x903A6000,0x903A,other_can_object,no,0x134678@0x02201C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40E,62,0x01DF6C,0x9039C000,0x9039,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x40E,63,0x01DF70,0x90390000,0x9039,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x40E,64,0x01DF74,0x9038C000,0x9038,other_can_object,no,0x1323CC@0x022010,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40B,65,0x01DF78,0x902FE000,0x902F,other_can_object,no,0x1346E0@0x021FB0,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40B,66,0x01DF7C,0x902E0000,0x902E,other_can_object,no,0x134724@0x021FA4,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40B,67,0x01DF80,0x902D4000,0x902D,other_can_object,no,0x134758@0x021F98,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40B,68,0x01DF84,0x902D0000,0x902D,other_can_object,no,0x134758@0x021F98,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40B,69,0x01DF88,0x902CE000,0x902C,other_can_object,no,0x13478C@0x021F8C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40B,70,0x01DF8C,0x902CC000,0x902C,other_can_object,no,0x13478C@0x021F8C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40B,71,0x01DF90,0x902CA000,0x902C,other_can_object,no,0x13478C@0x021F8C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40B,72,0x01DF94,0x902C0000,0x902C,other_can_object,no,0x13478C@0x021F8C,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40A,73,0x01DF98,0x902B0000,0x902B,other_can_object,no,0x1347C0@0x021F80,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x40A,74,0x01DF9C,0x9028C000,0x9028,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x40A,75,0x01DFA0,0x90288000,0x9028,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x409,76,0x01DFA4,0x90264000,0x9026,other_can_object,no,0x1313FA@0x021F50,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x409,77,0x01DFA8,0x90260000,0x9026,other_can_object,no,0x1313FA@0x021F50,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x409,78,0x01DFAC,0x90254000,0x9025,other_can_object,no,0x131414@0x021F44,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x409,79,0x01DFB0,0x90250000,0x9025,other_can_object,no,0x131414@0x021F44,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x409,80,0x01DFB4,0x90248000,0x9024,other_can_object,no,0x1305CE@0x021F38,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x409,81,0x01DFB8,0x90242000,0x9024,other_can_object,no,0x1305CE@0x021F38,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x409,82,0x01DFBC,0x90240000,0x9024,other_can_object,no,0x1305CE@0x021F38,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,83,0x01DFC0,0x90238000,0x9023,other_can_object,no,0x1305E8@0x021F2C,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,84,0x01DFC4,0x90234000,0x9023,other_can_object,no,0x1305E8@0x021F2C,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,85,0x01DFC8,0x90230000,0x9023,other_can_object,no,0x1305E8@0x021F2C,4,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,86,0x01DFCC,0x9022E000,0x9022,other_can_object,no,0x1347F4@0x021F20,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,87,0x01DFD0,0x9022C000,0x9022,other_can_object,no,0x1347F4@0x021F20,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,88,0x01DFD4,0x9022A000,0x9022,other_can_object,no,0x1347F4@0x021F20,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,89,0x01DFD8,0x90220000,0x9022,other_can_object,no,0x1347F4@0x021F20,1,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,90,0x01DFDC,0x90210000,0x9021,other_can_object,no,0x130DCE@0x021F14,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x408,91,0x01DFE0,0x9020C000,0x9020,other_can_object,no,0x130DE8@0x021F08,2,not_observed,0,,,,direct dispatch wrapper(s) found; inspect handler getter chain,confirmed-by-code-path
+0x31A,92,0x01DFE4,0x8C6B4000,0x8C6B,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x318,93,0x01DFE8,0x8C630000,0x8C63,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x30E,94,0x01DFEC,0x8C394000,0x8C39,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x30B,95,0x01DFF0,0x8C2FA000,0x8C2F,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x30B,96,0x01DFF4,0x8C2F8000,0x8C2F,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x30B,97,0x01DFF8,0x8C2F6000,0x8C2F,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x100,98,0x01DFFC,0x04000000,0x0400,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x7F9,99,0x01E000,0x1FE40000,0x1FE4,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x641,100,0x01E004,0x19040000,0x1904,diagnostic_response,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x641,101,0x01E008,0x19040000,0x1904,diagnostic_response,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x541,102,0x01E00C,0x15040000,0x1504,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x530,103,0x01E010,0x14C00000,0x14C0,vin_or_config_periodic,no,,,combined+misc+native_body,870,4:870,1002.04,1.00,not prioritized for low-speed IPC trace,confirmed-by-table
+0x52A,104,0x01E014,0x14A80000,0x14A8,vin_or_config_periodic,no,,,combined+misc+native_body,871,6:871,1002.51,1.00,not prioritized for low-speed IPC trace,confirmed-by-table
+0x514,105,0x01E018,0x14500000,0x1450,vin_or_config_periodic,yes,,,combined+misc+native_body,874,8:874,1001.72,1.00,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x4E9,106,0x01E01C,0x13A40000,0x13A4,other_can_object,no,,,combined+misc+native_body,863,6:863,1000.86,1.00,not prioritized for low-speed IPC trace,confirmed-by-table
+0x4E1,107,0x01E020,0x13840000,0x1384,vin_or_config_periodic,yes,,,combined+misc+native_body,858,8:858,1000.62,1.00,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x4D7,108,0x01E024,0x135C0000,0x135C,other_can_object,no,,,combined+misc+native_body,1717,5:1717,501.36,1.99,not prioritized for low-speed IPC trace,confirmed-by-table
+0x4C5,109,0x01E028,0x13140000,0x1314,other_can_object,no,,,combined+misc+native_body,1729,3:1729,501.00,2.00,not prioritized for low-speed IPC trace,confirmed-by-table
+0x451,110,0x01E02C,0x11440000,0x1144,wake_keepalive_or_sync,yes,,,combined+misc+native_body,28321,6:28321,19.13,52.27,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x3F1,111,0x01E030,0x0FC40000,0x0FC4,other_can_object,no,,,combined+misc+native_body,3474,8:3474,227.64,4.39,not prioritized for low-speed IPC trace,confirmed-by-table
+0x3E7,112,0x01E034,0x0F9C0000,0x0F9C,other_can_object,no,,,combined+misc+native_body,8718,2:8718,96.88,10.32,not prioritized for low-speed IPC trace,confirmed-by-table
+0x3CB,113,0x01E038,0x0F2C0000,0x0F2C,other_can_object,no,,,combined+misc+native_body,8715,6:8715,97.17,10.29,not prioritized for low-speed IPC trace,confirmed-by-table
+0x3C9,114,0x01E03C,0x0F240000,0x0F24,other_can_object,no,,,combined+ecu_stream+misc+native_body,27342,8:27342,96.88,10.32,not prioritized for low-speed IPC trace,confirmed-by-table
+0x32A,115,0x01E040,0x0CA80000,0x0CA8,other_can_object,no,,,combined+misc+native_body,8624,8:8624,96.33,10.38,not prioritized for low-speed IPC trace,confirmed-by-table
+0x1F9,116,0x01E044,0x07E40000,0x07E4,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x1F3,117,0x01E048,0x07CC0000,0x07CC,other_can_object,no,,,combined+misc+native_body,28859,3:28859,30.76,32.51,not prioritized for low-speed IPC trace,confirmed-by-table
+0x1F1,118,0x01E04C,0x07C40000,0x07C4,wake_keepalive_or_sync,yes,,,combined+misc+native_body,8639,8:8639,96.52,10.36,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x1E1,119,0x01E050,0x07840000,0x0784,other_can_object,no,,,combined+misc+native_body,28748,7:28748,30.73,32.54,not prioritized for low-speed IPC trace,confirmed-by-table
+0x160,120,0x01E054,0x05800000,0x0580,wake_keepalive_or_sync,yes,,,combined+misc+native_body,8545,5:8545,96.19,10.40,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x142,121,0x01E058,0x05080000,0x0508,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x140,122,0x01E05C,0x05000000,0x0500,body_display_state,no,,,combined+misc+native_body,864,3:864,1001.97,1.00,not prioritized for low-speed IPC trace,confirmed-by-table
+0x139,123,0x01E060,0x04E40000,0x04E4,body_display_state,yes,,,combined+misc+native_body,8438,8:8438,96.58,10.35,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x137,124,0x01E064,0x04DC0000,0x04DC,body_display_state,yes,,,combined+misc+native_body,8615,8:8615,96.21,10.39,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x135,125,0x01E068,0x04D40000,0x04D4,body_display_state,yes,,,combined+misc+native_body,8711,8:8711,97.01,10.31,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x130,126,0x01E06C,0x04C00000,0x04C0,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x12A,127,0x01E070,0x04A80000,0x04A8,body_display_state,yes,,,combined+misc+native_body,8691,8:8691,97.39,10.27,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table
+0x120,128,0x01E074,0x04800000,0x0480,other_can_object,no,,,combined+misc+native_body,176,5:176,4998.83,0.20,not prioritized for low-speed IPC trace,confirmed-by-table
+0x100,129,0x01E078,0x04000000,0x0400,other_can_object,no,,,not_observed,0,,,,not prioritized for low-speed IPC trace,confirmed-by-table
+0x0F1,130,0x01E07C,0x03C40000,0x03C4,wake_keepalive_or_sync,yes,,,combined+misc+native_body,86790,6:86790,14.99,66.69,standard-ID table entry confirmed; dispatch/scheduler link unresolved,confirmed-by-table

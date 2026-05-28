@@ -1,0 +1,12 @@
+# port=COM16 uart=115200 mode=M0_normal dwell_s=8.0
+# timing sCE76 sample_point=50.0%
+# timing sCE58 sample_point=62.5%
+# timing sC97E sample_point=66.7%
+# timing sCE49 sample_point=68.8%
+# timing sCB5C sample_point=70.0%
+# timing sCB4D sample_point=75.0%
+# timing sCB3E sample_point=80.0%
+# timing s8E2B sample_point=81.25%
+# timing s8B2F sample_point=85.0%
+# timing s4E1C sample_point=87.5%
+# timing s1707 sample_point=90.0%

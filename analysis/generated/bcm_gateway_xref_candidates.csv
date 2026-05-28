@@ -1,0 +1,19 @@
+frame_id,role_hint,table_entries,non_table_offsets,mapped_address_guesses,log_presence,known_classification,manual_reversing_note
+0x0C9,ECU-side RX handler target,Group B[145]@0x01EA74 flags=0x00000,,,combined+ecu_stream+misc,known_ecu_stream;rx_handler_target;priority_xref_target,Only table entries found so far; follow table consumers.
+0x0F1,IPC/body TX candidate,Group A[130]@0x01E07C flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target,Only table entries found so far; follow table consumers.
+0x12A,IPC/body TX candidate,Group A[127]@0x01E070 flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target,Only table entries found so far; follow table consumers.
+0x135,IPC/body TX candidate,Group A[125]@0x01E068 flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target,Only table entries found so far; follow table consumers.
+0x137,IPC/body TX candidate,Group A[124]@0x01E064 flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target,Only table entries found so far; follow table consumers.
+0x139,IPC/body TX candidate,Group A[123]@0x01E060 flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target,Only table entries found so far; follow table consumers.
+0x160,IPC/body TX candidate,Group A[120]@0x01E054 flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target;priority_xref_target,Only table entries found so far; follow table consumers.
+0x1F1,IPC/body TX candidate,Group A[118]@0x01E04C flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target;priority_xref_target,Only table entries found so far; follow table consumers.
+0x241,diagnostic anchor,Group B[32]@0x01E8B0 flags=0x00000; Group B[112]@0x01E9F0 flags=0x00000,,,not_observed,priority_xref_target,Only table entries found so far; follow table consumers.
+0x3D1,ECU-side RX handler target,Group B[97]@0x01E9B4 flags=0x00000,,,combined+ecu_stream+misc,known_ecu_stream;rx_handler_target;priority_xref_target,Only table entries found so far; follow table consumers.
+0x3E9,ECU-side RX handler target,Group B[95]@0x01E9AC flags=0x00000,,,combined+ecu_stream+misc,known_ecu_stream;rx_handler_target;priority_xref_target,Only table entries found so far; follow table consumers.
+0x451,IPC/body TX candidate,Group A[110]@0x01E02C flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target,Only table entries found so far; follow table consumers.
+0x4C1,ECU-side RX handler target,Group B[92]@0x01E9A0 flags=0x00000,,,combined+ecu_stream+misc,known_ecu_stream;rx_handler_target;priority_xref_target,Only table entries found so far; follow table consumers.
+0x4D1,ECU-side RX handler target,Group B[90]@0x01E998 flags=0x00000,,,combined+ecu_stream+misc,known_ecu_stream;rx_handler_target;priority_xref_target,Only table entries found so far; follow table consumers.
+0x4E1,IPC/body TX candidate,Group A[107]@0x01E020 flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target,Only table entries found so far; follow table consumers.
+0x4F1,,Group B[89]@0x01E994 flags=0x00000,,,misc,priority_xref_target,Only table entries found so far; follow table consumers.
+0x514,IPC/body TX candidate,Group A[105]@0x01E018 flags=0x00000,,,combined+misc+native_body,known_native_body;ipc_body_target,Only table entries found so far; follow table consumers.
+0x641,diagnostic anchor,Group A[1]@0x01DE78 flags=0x00000; Group A[2]@0x01DE7C flags=0x00000; Group A[100]@0x01E004 flags=0x00000; Group A[101]@0x01E008 flags=0x00000,,,not_observed,priority_xref_target,Only table entries found so far; follow table consumers.
