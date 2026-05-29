@@ -1,0 +1,261 @@
+=== getter 0x110952 ===
+0x00110952      b307841e       jr 0x427d6
+0x00110956      b3071607       jr 0x4106c
+0x0011095a      4056ff03       movhi 1023, r0, r10
+0x0011095e      aa573531       ld.bu 12597[r10], r10                   ; 0x3135 ; "0\xf5\r\x80\a!"
+0x00110962      7f00           jmp [lp]
+0x00110964      4056ff03       movhi 1023, r0, r10
+0x00110968      aa573331       ld.bu 12595[r10], r10                   ; 0x3133
+0x0011096c      7f00           jmp [lp]
+=== getter 0x110982 ===
+0x00110982      8587e16c       ld.bu 27872[tp], r16                    ; 0x6ce0
+0x00110986      007a           mov 0, r15
+0x00110988      e081           cmp r0, r16
+0x0011098a      da05           bne 0x110994
+0x0011098c      407eff03       movhi 1023, r0, r15
+0x00110990      8f7f7122       ld.bu 8816[r15], r15                    ; 0x2270
+0x00110994      6182           cmp 1, r16
+0x00110996      da05           bne 0x1109a0
+=== getter 0x110AFE ===
+0x00110afe      4056ff03       movhi 1023, r0, r10
+0x00110b02      2a577d37       ld.w 14204[r10], r10                    ; 0x377c
+0x00110b06      7f00           jmp [lp]
+0x00110b08      4056ff03       movhi 1023, r0, r10
+0x00110b0c      2a577937       ld.w 14200[r10], r10                    ; 0x3778 ; "*\x02\x10"
+0x00110b10      7f00           jmp [lp]
+0x00110b12      4056ff03       movhi 1023, r0, r10
+0x00110b16      2a577537       ld.w 14196[r10], r10                    ; 0x3774 ; "b\xea\xc1\xc5*\x02\x10"
+=== getter 0x110B12 ===
+0x00110b12      4056ff03       movhi 1023, r0, r10
+0x00110b16      2a577537       ld.w 14196[r10], r10                    ; 0x3774 ; "b\xea\xc1\xc5*\x02\x10"
+0x00110b1a      7f00           jmp [lp]
+0x00110b1c      4056ff03       movhi 1023, r0, r10
+0x00110b20      2a577137       ld.w 14192[r10], r10                    ; 0x3770 ; "A\xea\x9d"
+0x00110b24      7f00           jmp [lp]
+0x00110b26      4056ff03       movhi 1023, r0, r10
+0x00110b2a      2a576d37       ld.w 14188[r10], r10                    ; 0x376c
+=== getter 0x111014 ===
+0x00111014      0002           callt 0
+0x00111016      b3ff9a00       jarl 0x410b0, lp
+0x0011101a      8a00           zxb r10
+0x0011101c      1602           callt 22
+0x0011101e      4056ff03       movhi 1023, r0, r10
+0x00111022      8a57c934       ld.bu 13512[r10], r10                   ; 0x34c8
+0x00111026      7f00           jmp [lp]
+0x00111028      0002           callt 0
+=== getter 0x111028 ===
+0x00111028      0002           callt 0
+0x0011102a      b3ffbc00       jarl 0x410e6, lp
+0x0011102e      8a00           zxb r10
+0x00111030      1602           callt 22
+0x00111032      4056ff03       movhi 1023, r0, r10
+0x00111036      8a57b534       ld.bu 13492[r10], r10                   ; 0x34b4
+0x0011103a      7f00           jmp [lp]
+0x0011103c      0002           callt 0
+=== getter 0x11103C ===
+0x0011103c      0002           callt 0
+0x0011103e      b3ffde00       jarl 0x4111c, lp
+0x00111042      8a00           zxb r10
+0x00111044      1602           callt 22
+0x00111046      4056ff03       movhi 1023, r0, r10
+0x0011104a      8a57a134       ld.bu 13472[r10], r10                   ; 0x34a0
+0x0011104e      7f00           jmp [lp]
+0x00111050      0002           callt 0
+=== getter 0x11127C ===
+0x0011127c      0002           callt 0
+0x0011127e      b3ff1018       jarl 0x42a8e, lp
+0x00111282      8a00           zxb r10
+0x00111284      1602           callt 22
+0x00111286      4056ff03       movhi 1023, r0, r10
+0x0011128a      8a57d935       ld.bu 13784[r10], r10                   ; 0x35d8
+0x0011128e      7f00           jmp [lp]
+0x00111290      0002           callt 0
+=== getter 0x111290 ===
+0x00111290      0002           callt 0
+0x00111292      b3ff2418       jarl 0x42ab6, lp
+0x00111296      8a00           zxb r10
+0x00111298      1602           callt 22
+0x0011129a      0002           callt 0
+0x0011129c      b3ff4218       jarl 0x42ade, lp
+0x001112a0      8a00           zxb r10
+0x001112a2      1602           callt 22
+=== getter 0x11129A ===
+0x0011129a      0002           callt 0
+0x0011129c      b3ff4218       jarl 0x42ade, lp
+0x001112a0      8a00           zxb r10
+0x001112a2      1602           callt 22
+0x001112a4      4056ff03       movhi 1023, r0, r10
+0x001112a8      8a578935       ld.bu 13704[r10], r10                   ; 0x3588
+0x001112ac      7f00           jmp [lp]
+0x001112ae      0638           mov r6, r7
+=== getter 0x111CF0 ===
+0x00111cf0      e457ff84       ld.hu -31490[gp], r10
+0x00111cf4      7f00           jmp [lp]
+0x00111cf6      e457fb84       ld.hu -31494[gp], r10
+0x00111cfa      7f00           jmp [lp]
+0x00111cfc      e457f784       ld.hu -31498[gp], r10
+0x00111d00      7f00           jmp [lp]
+0x00111d02      e457f384       ld.hu -31502[gp], r10
+0x00111d06      7f00           jmp [lp]
+=== getter 0x111CF6 ===
+0x00111cf6      e457fb84       ld.hu -31494[gp], r10
+0x00111cfa      7f00           jmp [lp]
+0x00111cfc      e457f784       ld.hu -31498[gp], r10
+0x00111d00      7f00           jmp [lp]
+0x00111d02      e457f384       ld.hu -31502[gp], r10
+0x00111d06      7f00           jmp [lp]
+0x00111d08      e457f184       ld.hu -31504[gp], r10
+0x00111d0c      7f00           jmp [lp]
+=== getter 0x111CFC ===
+0x00111cfc      e457f784       ld.hu -31498[gp], r10
+0x00111d00      7f00           jmp [lp]
+0x00111d02      e457f384       ld.hu -31502[gp], r10
+0x00111d06      7f00           jmp [lp]
+0x00111d08      e457f184       ld.hu -31504[gp], r10
+0x00111d0c      7f00           jmp [lp]
+0x00111d0e      e457f984       ld.hu -31496[gp], r10
+0x00111d12      7f00           jmp [lp]
+=== getter 0x111D2C ===
+0x00111d2c      8457e184       ld.bu -31520[gp], r10
+0x00111d30      7f00           jmp [lp]
+0x00111d32      a457dd84       ld.bu -31523[gp], r10
+0x00111d36      7f00           jmp [lp]
+0x00111d38      8457e384       ld.bu -31518[gp], r10
+0x00111d3c      7f00           jmp [lp]
+0x00111d3e      8457dd84       ld.bu -31524[gp], r10
+0x00111d42      7f00           jmp [lp]
+=== getter 0x111D32 ===
+0x00111d32      a457dd84       ld.bu -31523[gp], r10
+0x00111d36      7f00           jmp [lp]
+0x00111d38      8457e384       ld.bu -31518[gp], r10
+0x00111d3c      7f00           jmp [lp]
+0x00111d3e      8457dd84       ld.bu -31524[gp], r10
+0x00111d42      7f00           jmp [lp]
+0x00111d44      a457db84       ld.bu -31525[gp], r10
+0x00111d48      7f00           jmp [lp]
+=== getter 0x111D3E ===
+0x00111d3e      8457dd84       ld.bu -31524[gp], r10
+0x00111d42      7f00           jmp [lp]
+0x00111d44      a457db84       ld.bu -31525[gp], r10
+0x00111d48      7f00           jmp [lp]
+0x00111d4a      a457df84       ld.bu -31521[gp], r10
+0x00111d4e      7f00           jmp [lp]
+0x00111d50      84571585       ld.bu -31468[gp], r10
+0x00111d54      7f00           jmp [lp]
+=== getter 0x111D8C ===
+0x00111d8c      a4570b85       ld.bu -31477[gp], r10
+0x00111d90      7f00           jmp [lp]
+0x00111d92      84570d85       ld.bu -31476[gp], r10
+0x00111d96      7f00           jmp [lp]
+0x00111d98      84570985       ld.bu -31480[gp], r10
+0x00111d9c      7f00           jmp [lp]
+0x00111d9e      a4570785       ld.bu -31481[gp], r10
+0x00111da2      7f00           jmp [lp]
+=== getter 0x111DA4 ===
+0x00111da4      a4570985       ld.bu -31479[gp], r10
+0x00111da8      7f00           jmp [lp]
+0x00111daa      84570b85       ld.bu -31478[gp], r10
+0x00111dae      7f00           jmp [lp]
+0x00111db0      a4570d85       ld.bu -31475[gp], r10
+0x00111db4      7f00           jmp [lp]
+0x00111db6      84570785       ld.bu -31482[gp], r10
+0x00111dba      7f00           jmp [lp]
+=== getter 0x111DAA ===
+0x00111daa      84570b85       ld.bu -31478[gp], r10
+0x00111dae      7f00           jmp [lp]
+0x00111db0      a4570d85       ld.bu -31475[gp], r10
+0x00111db4      7f00           jmp [lp]
+0x00111db6      84570785       ld.bu -31482[gp], r10
+0x00111dba      7f00           jmp [lp]
+0x00111dbc      84570585       ld.bu -31484[gp], r10
+0x00111dc0      7f00           jmp [lp]
+=== getter 0x116698 ===
+0x00116698      4056ff03       movhi 1023, r0, r10
+0x0011669c      ea575d53       ld.hu 21340[r10], r10                   ; 0x535c
+0x001166a0      7f00           jmp [lp]
+0x001166a2      4056ff03       movhi 1023, r0, r10
+0x001166a6      8a57a152       ld.bu 21152[r10], r10                   ; 0x52a0
+0x001166aa      7f00           jmp [lp]
+0x001166ac      4056ff03       movhi 1023, r0, r10
+0x001166b0      8a576152       ld.bu 21088[r10], r10                   ; 0x5260
+=== getter 0x1166CA ===
+0x001166ca      4016ff03       movhi 1023, r0, r2
+0x001166ce      22572053       ld.h 21280[r2], r10                     ; 0x5320
+0x001166d2      22162053       movea 21280, r2, r2                     ; ' S'
+0x001166d6      66570000       st.h r10, 0[r6]
+0x001166da      22170200       ld.h 2[r2], r2
+0x001166de      0650           mov r6, r10
+0x001166e0      66170200       st.h r2, 2[r6]
+0x001166e4      7f00           jmp [lp]
+=== getter 0x1166FA ===
+0x001166fa      4016ff03       movhi 1023, r0, r2
+0x001166fe      2257e052       ld.h 21216[r2], r10                     ; 0x52e0
+0x00116702      2216e052       movea 21216, r2, r2
+0x00116706      66570000       st.h r10, 0[r6]
+0x0011670a      22170200       ld.h 2[r2], r2
+0x0011670e      0650           mov r6, r10
+0x00116710      66170200       st.h r2, 2[r6]
+0x00116714      7f00           jmp [lp]
+=== getter 0x116720 ===
+0x00116720      4056ff03       movhi 1023, r0, r10
+0x00116724      ea574152       ld.hu 21056[r10], r10                   ; 0x5240
+0x00116728      7f00           jmp [lp]
+0x0011672a      4056ff03       movhi 1023, r0, r10
+0x0011672e      8a575152       ld.bu 21072[r10], r10                   ; 0x5250
+0x00116732      7f00           jmp [lp]
+0x00116734      4056ff03       movhi 1023, r0, r10
+0x00116738      8a574f52       ld.bu 21070[r10], r10                   ; 0x524e
+=== getter 0x11673E ===
+0x0011673e      4056ff03       movhi 1023, r0, r10
+0x00116742      ea573952       ld.hu 21048[r10], r10                   ; 0x5238
+0x00116746      7f00           jmp [lp]
+0x00116748      4056ff03       movhi 1023, r0, r10
+0x0011674c      8a572b52       ld.bu 21034[r10], r10                   ; 0x522a
+0x00116750      7f00           jmp [lp]
+0x00116752      4056ff03       movhi 1023, r0, r10
+0x00116756      8a572b52       ld.bu 21034[r10], r10                   ; 0x522a
+=== getter 0x1196CA ===
+0x001196ca      40560004       movhi 1024, r0, r10
+0x001196ce      aa57a990       ld.bu -28503[r10], r10
+0x001196d2      7f00           jmp [lp]
+0x001196d4      40560004       movhi 1024, r0, r10
+0x001196d8      8a57a990       ld.bu -28504[r10], r10
+0x001196dc      7f00           jmp [lp]
+0x001196de      40560004       movhi 1024, r0, r10
+0x001196e2      2a579d90       ld.w -28516[r10], r10
+=== getter 0x1196D4 ===
+0x001196d4      40560004       movhi 1024, r0, r10
+0x001196d8      8a57a990       ld.bu -28504[r10], r10
+0x001196dc      7f00           jmp [lp]
+0x001196de      40560004       movhi 1024, r0, r10
+0x001196e2      2a579d90       ld.w -28516[r10], r10
+0x001196e6      7f00           jmp [lp]
+0x001196e8      40560004       movhi 1024, r0, r10
+0x001196ec      aa576d95       ld.bu -27283[r10], r10
+=== getter 0x1196DE ===
+0x001196de      40560004       movhi 1024, r0, r10
+0x001196e2      2a579d90       ld.w -28516[r10], r10
+0x001196e6      7f00           jmp [lp]
+0x001196e8      40560004       movhi 1024, r0, r10
+0x001196ec      aa576d95       ld.bu -27283[r10], r10
+0x001196f0      7f00           jmp [lp]
+0x001196f2      40560004       movhi 1024, r0, r10
+0x001196f6      aa575f95       ld.bu -27297[r10], r10
+=== getter 0x12F06C ===
+0x0012f06c      8700           zxb r7
+0x0012f06e      c800           zxh r8
+0x0012f070      653a           cmp 5, r7
+0x0012f072      c305           bnh 0x12f07a
+0x0012f074      203e1200       movea 18, r0, r7
+0x0012f078      8515           br 0x12f098
+0x0012f07a      0780           mov r7, r16
+0x0012f07c      c681           add r6, r16
+=== getter 0x12F10C ===
+0x0012f10c      8700           zxb r7
+0x0012f10e      8800           zxb r8
+0x0012f110      8900           zxb r9
+0x0012f112      6142           cmp 1, r8
+0x0012f114      fa05           bne 0x12f122
+0x0012f116      c639           add r6, r7
+0x0012f118      87170100       ld.bu 0[r7], r2
+0x0012f11c      0911           or r9, r2

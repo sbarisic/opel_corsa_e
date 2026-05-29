@@ -28,10 +28,12 @@ Generated outputs:
 - `analysis/generated/bcm_group_b_rx_trace.csv`
 - `analysis/generated/bcm_can_helper_callsites.csv`
 - `analysis/generated/bcm_low_speed_static_message_map.md`
+- `analysis/generated/bcm_ipc_live_tx_trace.csv`
 - `analysis/generated/bcm_candidate_code_windows.md`
 
 The first WSL/radare2 disassembly pass is captured in
-`analysis/BCM_R2_DISASSEMBLY.md`.
+`analysis/BCM_R2_DISASSEMBLY.md`. The direct IPC low-speed capture projection
+and payload-builder trace is captured in `analysis/BCM_IPC_LIVE_REVERSE.md`.
 
 The script asserts the current table anchors before writing outputs:
 
@@ -103,6 +105,74 @@ static-only low-speed map. It shows:
 - Group B table-confirmed ECU RX candidates and log-derived rates.
 - Focused r2 callsites for helpers `0x34BD2` and `0x34AAE`.
 - Representative wrapper, payload writer, and CAN helper disassembly snippets.
+
+`analysis/BCM_IPC_LIVE_REVERSE.md` adds the direct IPC-only capture correlation.
+Those extended IDs project into the early Group A object family. Several exact
+wire objects match `(table_raw & 0x1fffffff) | 0x60`, with `0x60` matching the
+source byte seen on the IPC-only bus. Payload builders in this family use:
+
+- `0x12F06C`: write a 16-bit value MSB-first into the payload.
+- `0x12F10C`: OR a bit mask into the current payload byte when the getter
+  returns `1`.
+- `0x12F124`: write one byte into the payload.
+- `0x12F208`: write a 32-bit value MSB-first into the payload.
+
+Confirmed exact live/table examples:
+
+| Live wire ID | Group A raw | Handler | Payload source |
+|---:|---:|---:|---|
+| `0x13FFE060` | `0x93FFE000` | unresolved direct dispatch | DLC0 periodic/keepalive object |
+| `0x10600060` | `0x90600000` | `0x131AB8` | `gp-31524`, RAM `0x03FE8A54` |
+| `0x10424060` | `0x90424000` | `0x131C24` | `0x03FF3135` |
+
+## Wake / Power Candidate Update
+
+`analysis/BCM_WAKE_POWER_CANDIDATES.md` and
+`analysis/generated/bcm_group_a_object_metadata.csv` add the newly decoded
+Group A metadata:
+
+- `0x01E080`: 131-byte Group A DLC table.
+- `0x01E104`: 131-entry payload RAM pointer table.
+- `0x01E310` and `0x01E51C`: two 131-entry per-object function/metadata tables.
+- `0x01E730`: per-object scheduler bucket table.
+- `0x01E7B0`: per-object scheduler bit-mask table through the end of Group A
+  metadata.
+
+The strongest wake/keepalive candidate is now Group A index 5:
+
+| Field | Value |
+|---|---|
+| Group A raw | `0x93FFE000` |
+| Projected frame | `0x4FF` |
+| Direct IPC/source form | `0x13FFE060` |
+| Likely BCM/source form | `0x13FFE040` |
+| DLC | `0` |
+| Payload RAM pointer | none |
+| Aux function entries | none |
+| Scheduler bucket/mask | `1` / `0x40` |
+
+This is the only currently identified exact live IPC object that is a scheduled
+DLC0 frame with no payload-builder path. That makes `0x13FFE040#` the best
+firmware-backed power/wake/keepalive transmit candidate. Standard `0x621` is
+also Group A-confirmed with DLC8 and scheduler metadata, so it remains the
+second network-management candidate, but its exact payload is not statically
+decoded yet.
+
+Standard `0x100#` is also firmware-confirmed as a Group A DLC0 object at indices
+98 and 129, with aux functions `0x101EEE` and `0x101F7A`. It was seen once in
+the direct IPC-only capture, so it remains the best generic network-wake
+prelude. It is less IPC-specific than `0x13FFE040#`, but no longer just a bench
+guess. The `0x100` aux functions do not build payload bytes; they set
+per-object RAM flags/counters in the `0x03FFA61C + 4*object` state block.
+`0x101EEE` sets init/pending bits and counter bytes, while `0x101F7A` sets the
+high pending/transmit flag at object-state byte 2.
+
+An r2 `-A` xref pass found the generic Group A sender at `0x102836`. It reads
+the Group A DLC table at `0x01E080` and the payload RAM pointer table at
+`0x01E104`, then copies payload bytes into the CAN object buffer when a payload
+pointer exists. That path explains how index 5 can still be transmitted as a
+real DLC0 frame with no payload handler. The same metadata is referenced by a
+setup/refresh path at `0x104D7C`.
 
 Current confidence level:
 

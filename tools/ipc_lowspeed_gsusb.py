@@ -75,6 +75,20 @@ BCM_HEARTBEAT_PROBE = [
     (0x10776040, "00", 750.0, "response to IPC 0x10774060 with DA/SA swapped"),
 ]
 
+BCM_EXACT_TABLE_PROBE = [
+    (0x13FFE040, "", 250.0, "BCM-source broadcast heartbeat candidate"),
+    (0x10424040, "079964", 100.0, "BCM-source version of exact table raw 0x90424000"),
+    (0x10600040, "01609370015B00", 1000.0, "BCM-source version of exact table raw 0x90600000"),
+    (0x10244040, "06", 500.0, "BCM-source variant of projected 0x409 family"),
+]
+
+FIRMWARE_WAKE_PROFILE = [
+    (0x100, "", 500.0, "firmware-confirmed standard DLC0 network wake object"),
+    (0x13FFE040, "", 500.0, "firmware-confirmed extended DLC0 IPC heartbeat candidate"),
+    (0x621, "0140000000000000", 1000.0, "firmware-shaped DLC8 network-management initiate candidate"),
+    (0x621, "0040000000000000", 500.0, "firmware-shaped DLC8 network-management continue candidate"),
+]
+
 BCM_TO_IPC_TEMPLATES = [
     # base_id_without_source, payload, period_ms, note. Destination stays 0x60.
     (0x13FFE000, "", 250.0, "PF=0xFF broadcast/group heartbeat"),
@@ -98,6 +112,17 @@ DIAGNOSTIC_WAKE_PROFILE = [
     (0x101, "023E000000000000", 1000.0, "functional tester-present candidate"),
     (0x101, "0210010000000000", 2000.0, "functional default-session candidate"),
     (0x241, "023E000000000000", 1000.0, "BCM-style tester-present candidate from static notes"),
+]
+
+PROFILE_CHOICES = [
+    "gauge-sweep",
+    "standard-body-probe",
+    "bcm-heartbeat-probe",
+    "bcm-primary",
+    "bcm-exact-table",
+    "firmware-wake",
+    "vnmf-wake",
+    "diagnostic-wake",
 ]
 
 
@@ -631,6 +656,9 @@ def make_profile_schedule(args: argparse.Namespace) -> list[ScheduledFrame]:
         "gauge-sweep": DEFAULT_GAUGE_BASELINE,
         "standard-body-probe": STANDARD_BODY_PROBE,
         "bcm-heartbeat-probe": BCM_HEARTBEAT_PROBE,
+        "bcm-primary": BCM_HEARTBEAT_PROBE,
+        "bcm-exact-table": BCM_EXACT_TABLE_PROBE,
+        "firmware-wake": FIRMWARE_WAKE_PROFILE,
         "vnmf-wake": GMLAN_VNMF_WAKE_PROFILE,
         "diagnostic-wake": DIAGNOSTIC_WAKE_PROFILE,
     }
@@ -663,6 +691,35 @@ def make_profile_schedule(args: argparse.Namespace) -> list[ScheduledFrame]:
                 target.data = parse_hex_data(args.payload)
             target.period = args.period_ms / 1000.0
     return schedule
+
+
+def send_fixed_schedule(
+    dev,
+    schedule: list[ScheduledFrame],
+    hold_seconds: float,
+    out_path: Path,
+) -> tuple[int, int]:
+    sent = 0
+    received = 0
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", encoding="ascii", newline="") as out:
+        write_capture_header(out)
+        now = time.monotonic()
+        for item in schedule:
+            item.next_due = now
+        hold_until = time.monotonic() + hold_seconds
+        while time.monotonic() < hold_until:
+            now = time.monotonic()
+            for item in schedule:
+                if now >= item.next_due:
+                    dev.send(frame_from_scheduled(item))
+                    sent += 1
+                    item.next_due = now + item.period
+                    if sent <= 60 or sent % 100 == 0:
+                        ident = f"{item.can_id:08X}" if item.is_extended else f"{item.can_id:03X}"
+                        print(f"[tx {sent:05d}] {ident}#{item.data.hex().upper()}")
+            received += drain_rx(dev, min(hold_until, time.monotonic() + 0.02), out=out, printed=received)
+    return sent, received
 
 
 def make_source_sweep_schedule(source_address: int) -> list[ScheduledFrame]:
@@ -756,26 +813,28 @@ def cmd_vnmf_sweep(args: argparse.Namespace) -> int:
 
 def cmd_send_profile(args: argparse.Namespace) -> int:
     ensure_tx_confirm(args)
-    if args.profile not in {
-        "gauge-sweep",
-        "standard-body-probe",
-        "bcm-heartbeat-probe",
-        "vnmf-wake",
-        "diagnostic-wake",
-    }:
+    if args.profile not in PROFILE_CHOICES:
         raise SystemExit(f"unknown profile: {args.profile}")
 
     schedule = make_profile_schedule(args)
+    out_path = Path(args.rx_log) if args.rx_log else default_live_output(f"ipc_lowspeed_{args.profile}_rx")
+    dev = open_gs_usb(listen_only=False)
+    if args.fixed:
+        try:
+            sent, received = send_fixed_schedule(dev, schedule, args.hold_ms / 1000.0, out_path)
+        finally:
+            dev.stop()
+        print(f"done: sent={sent} rx_frames={received} rx_log={out_path}")
+        return 0
+
     sweep_values = parse_values(args.values) if args.values else [0x00, 0x20, 0x40, 0x60, 0x80, 0xA0, 0xC0, 0xE0, 0xFF]
-    target_id = parse_int(args.target_id) if args.target_id else schedule[0].can_id
+    target_id = parse_int(args.target_id or "0x10424060")
     target = next((item for item in schedule if item.can_id == target_id), None)
     if target is None:
         raise SystemExit(f"target ID 0x{target_id:X} is not in the profile schedule")
     if args.byte < 0 or args.byte >= len(target.data):
         raise SystemExit(f"--byte {args.byte} is outside target payload length {len(target.data)}")
 
-    out_path = Path(args.rx_log) if args.rx_log else default_live_output(f"ipc_lowspeed_{args.profile}_rx")
-    dev = open_gs_usb(listen_only=False)
     sent = 0
     received = 0
     try:
@@ -845,10 +904,10 @@ def build_parser() -> argparse.ArgumentParser:
     send = sub.add_parser("send-profile", help="send guarded experimental IPC profiles")
     send.add_argument(
         "--profile",
-        choices=["gauge-sweep", "standard-body-probe", "bcm-heartbeat-probe", "vnmf-wake", "diagnostic-wake"],
+        choices=PROFILE_CHOICES,
         default="gauge-sweep",
     )
-    send.add_argument("--target-id", default="0x10424060")
+    send.add_argument("--target-id")
     send.add_argument("--payload", help="override/add target payload hex")
     send.add_argument("--byte", type=int, default=0)
     send.add_argument("--values", default="0,32,64,96,128,160,192,224,255")
@@ -856,6 +915,7 @@ def build_parser() -> argparse.ArgumentParser:
     send.add_argument("--hold-ms", type=float, default=1500.0)
     send.add_argument("--rx-log")
     send.add_argument("--tx-confirm", action="store_true")
+    send.add_argument("--fixed", action="store_true", help="send the selected profile as-is instead of sweeping a byte")
     send.set_defaults(func=cmd_send_profile)
 
     source_sweep = sub.add_parser("source-sweep", help="sweep likely BCM source addresses to IPC destination 0x60")

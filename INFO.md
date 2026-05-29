@@ -147,6 +147,8 @@ Important: these logs appear to be high-speed-side logs. They should not be assu
 The following CSVs were generated during analysis and are useful lookup tables:
 
 - `analysis/BCM_DISASSEMBLY.md` — current BCM CAN-gateway disassembly notes and repeatable analysis workflow.
+- `analysis/BCM_IPC_LIVE_REVERSE.md` — BCM Group A payload-builder trace for the direct IPC low-speed capture projection.
+- `analysis/BCM_WAKE_POWER_CANDIDATES.md` — focused BCM-derived IPC wake/power candidates, currently led by `0x13FFE040#`.
 - `analysis/generated/` — regenerated BCM table, CAN-ID occurrence, gateway xref, and code-window outputs from `tools/bcm_gateway_analysis.py`.
 - `e78a_candidate_can_tables.csv` — candidate E78A CAN descriptor tables.
 - `e78a_shifted_id_dispatch_candidates.csv` — candidate shifted-ID dispatch references.

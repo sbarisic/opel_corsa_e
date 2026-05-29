@@ -1,0 +1,943 @@
+=== handler 0x1304E4 ===
+0x001304e4      0902           callt 9
+0x001304e6      06e0           mov r6, r28
+0x001304e8      07e8           mov r7, r29
+0x001304ea      9d00           zxb r29
+0x001304ec      beff1206       jarl 0x110afe, lp
+0x001304f0      1c30           mov r28, r6
+0x001304f2      1d38           mov r29, r7
+0x001304f4      0a40           mov r10, r8
+0x001304f6      bfff12ed       jarl 0x12f208, lp
+0x001304fa      8a00           zxb r10
+0x001304fc      1f02           callt 31
+0x001304fe      0902           callt 9
+0x00130500      06e0           mov r6, r28
+0x00130502      07e8           mov r7, r29
+0x00130504      9d00           zxb r29
+0x00130506      beff0206       jarl 0x110b08, lp
+0x0013050a      1c30           mov r28, r6
+0x0013050c      1d38           mov r29, r7
+0x0013050e      0a40           mov r10, r8
+0x00130510      bffff8ec       jarl 0x12f208, lp
+0x00130514      8a00           zxb r10
+0x00130516      1f02           callt 31
+0x00130518      0902           callt 9
+0x0013051a      06e0           mov r6, r28
+0x0013051c      07e8           mov r7, r29
+0x0013051e      9d00           zxb r29
+0x00130520      befff205       jarl 0x110b12, lp
+0x00130524      1c30           mov r28, r6
+0x00130526      1d38           mov r29, r7
+0x00130528      0a40           mov r10, r8
+0x0013052a      bfffdeec       jarl 0x12f208, lp
+0x0013052e      8a00           zxb r10
+0x00130530      1f02           callt 31
+0x00130532      0902           callt 9
+0x00130534      06e0           mov r6, r28
+0x00130536      07e8           mov r7, r29
+0x00130538      9d00           zxb r29
+0x0013053a      beffe205       jarl 0x110b1c, lp
+0x0013053e      1c30           mov r28, r6
+0x00130540      1d38           mov r29, r7
+=== handler 0x130518 ===
+0x00130518      0902           callt 9
+0x0013051a      06e0           mov r6, r28
+0x0013051c      07e8           mov r7, r29
+0x0013051e      9d00           zxb r29
+0x00130520      befff205       jarl 0x110b12, lp
+0x00130524      1c30           mov r28, r6
+0x00130526      1d38           mov r29, r7
+0x00130528      0a40           mov r10, r8
+0x0013052a      bfffdeec       jarl 0x12f208, lp
+0x0013052e      8a00           zxb r10
+0x00130530      1f02           callt 31
+0x00130532      0902           callt 9
+0x00130534      06e0           mov r6, r28
+0x00130536      07e8           mov r7, r29
+0x00130538      9d00           zxb r29
+0x0013053a      beffe205       jarl 0x110b1c, lp
+0x0013053e      1c30           mov r28, r6
+0x00130540      1d38           mov r29, r7
+0x00130542      0a40           mov r10, r8
+0x00130544      bfffc4ec       jarl 0x12f208, lp
+0x00130548      8a00           zxb r10
+0x0013054a      1f02           callt 31
+0x0013054c      0902           callt 9
+0x0013054e      06e0           mov r6, r28
+0x00130550      07e8           mov r7, r29
+0x00130552      9d00           zxb r29
+0x00130554      beffd205       jarl 0x110b26, lp
+0x00130558      1c30           mov r28, r6
+0x0013055a      1d38           mov r29, r7
+0x0013055c      0a40           mov r10, r8
+0x0013055e      bfffaaec       jarl 0x12f208, lp
+0x00130562      8a00           zxb r10
+0x00130564      1f02           callt 31
+0x00130566      0902           callt 9
+0x00130568      06e0           mov r6, r28
+0x0013056a      07e8           mov r7, r29
+0x0013056c      9d00           zxb r29
+0x0013056e      beffc205       jarl 0x110b30, lp
+0x00130572      1c30           mov r28, r6
+0x00130574      1d38           mov r29, r7
+=== handler 0x13120C ===
+0x0013120c      0902           callt 9
+0x0013120e      06e0           mov r6, r28
+0x00131210      07e8           mov r7, r29
+0x00131212      9d00           zxb r29
+0x00131214      beff780b       jarl 0x111d8c, lp
+0x00131218      1c30           mov r28, r6
+0x0013121a      1d38           mov r29, r7
+0x0013121c      0a40           mov r10, r8
+0x0013121e      bfff06df       jarl 0x12f124, lp
+0x00131222      8a00           zxb r10
+0x00131224      1f02           callt 31
+0x00131226      0902           callt 9
+0x00131228      06e0           mov r6, r28
+0x0013122a      07e8           mov r7, r29
+0x0013122c      9d00           zxb r29
+0x0013122e      beff640b       jarl 0x111d92, lp
+0x00131232      1c30           mov r28, r6
+0x00131234      1d38           mov r29, r7
+0x00131236      0a40           mov r10, r8
+0x00131238      bfffecde       jarl 0x12f124, lp
+0x0013123c      8a00           zxb r10
+0x0013123e      1f02           callt 31
+0x00131240      0902           callt 9
+0x00131242      06e0           mov r6, r28
+0x00131244      07e8           mov r7, r29
+0x00131246      9d00           zxb r29
+0x00131248      beff500b       jarl 0x111d98, lp
+0x0013124c      1c30           mov r28, r6
+0x0013124e      1d38           mov r29, r7
+0x00131250      0a40           mov r10, r8
+0x00131252      bfffd2de       jarl 0x12f124, lp
+0x00131256      8a00           zxb r10
+0x00131258      1f02           callt 31
+0x0013125a      0902           callt 9
+0x0013125c      06e0           mov r6, r28
+0x0013125e      07e8           mov r7, r29
+0x00131260      9d00           zxb r29
+0x00131262      beff3c0b       jarl 0x111d9e, lp
+0x00131266      1c30           mov r28, r6
+0x00131268      1d38           mov r29, r7
+=== handler 0x131274 ===
+0x00131274      0902           callt 9
+0x00131276      06e0           mov r6, r28
+0x00131278      07e8           mov r7, r29
+0x0013127a      9d00           zxb r29
+0x0013127c      beff280b       jarl 0x111da4, lp
+0x00131280      1c30           mov r28, r6
+0x00131282      1d38           mov r29, r7
+0x00131284      0a40           mov r10, r8
+0x00131286      bfff9ede       jarl 0x12f124, lp
+0x0013128a      8a00           zxb r10
+0x0013128c      1f02           callt 31
+0x0013128e      0902           callt 9
+0x00131290      06e0           mov r6, r28
+0x00131292      07e8           mov r7, r29
+0x00131294      9d00           zxb r29
+0x00131296      beff140b       jarl 0x111daa, lp
+0x0013129a      1c30           mov r28, r6
+0x0013129c      1d38           mov r29, r7
+0x0013129e      0a40           mov r10, r8
+0x001312a0      bfff84de       jarl 0x12f124, lp
+0x001312a4      8a00           zxb r10
+0x001312a6      1f02           callt 31
+0x001312a8      0902           callt 9
+0x001312aa      06e0           mov r6, r28
+0x001312ac      07e8           mov r7, r29
+0x001312ae      9d00           zxb r29
+0x001312b0      beff000b       jarl 0x111db0, lp
+0x001312b4      1c30           mov r28, r6
+0x001312b6      1d38           mov r29, r7
+0x001312b8      0a40           mov r10, r8
+0x001312ba      bfff6ade       jarl 0x12f124, lp
+0x001312be      8a00           zxb r10
+0x001312c0      1f02           callt 31
+0x001312c2      0902           callt 9
+0x001312c4      06e0           mov r6, r28
+0x001312c6      07e8           mov r7, r29
+0x001312c8      9d00           zxb r29
+0x001312ca      beffec0a       jarl 0x111db6, lp
+0x001312ce      1c30           mov r28, r6
+0x001312d0      1d38           mov r29, r7
+=== handler 0x13128E ===
+0x0013128e      0902           callt 9
+0x00131290      06e0           mov r6, r28
+0x00131292      07e8           mov r7, r29
+0x00131294      9d00           zxb r29
+0x00131296      beff140b       jarl 0x111daa, lp
+0x0013129a      1c30           mov r28, r6
+0x0013129c      1d38           mov r29, r7
+0x0013129e      0a40           mov r10, r8
+0x001312a0      bfff84de       jarl 0x12f124, lp
+0x001312a4      8a00           zxb r10
+0x001312a6      1f02           callt 31
+0x001312a8      0902           callt 9
+0x001312aa      06e0           mov r6, r28
+0x001312ac      07e8           mov r7, r29
+0x001312ae      9d00           zxb r29
+0x001312b0      beff000b       jarl 0x111db0, lp
+0x001312b4      1c30           mov r28, r6
+0x001312b6      1d38           mov r29, r7
+0x001312b8      0a40           mov r10, r8
+0x001312ba      bfff6ade       jarl 0x12f124, lp
+0x001312be      8a00           zxb r10
+0x001312c0      1f02           callt 31
+0x001312c2      0902           callt 9
+0x001312c4      06e0           mov r6, r28
+0x001312c6      07e8           mov r7, r29
+0x001312c8      9d00           zxb r29
+0x001312ca      beffec0a       jarl 0x111db6, lp
+0x001312ce      1c30           mov r28, r6
+0x001312d0      1d38           mov r29, r7
+0x001312d2      0a40           mov r10, r8
+0x001312d4      bfff50de       jarl 0x12f124, lp
+0x001312d8      8a00           zxb r10
+0x001312da      1f02           callt 31
+0x001312dc      0902           callt 9
+0x001312de      06e0           mov r6, r28
+0x001312e0      07e8           mov r7, r29
+0x001312e2      9d00           zxb r29
+0x001312e4      beffd80a       jarl 0x111dbc, lp
+0x001312e8      1c30           mov r28, r6
+0x001312ea      1d38           mov r29, r7
+=== handler 0x130D32 ===
+0x00130d32      0902           callt 9
+0x00130d34      06e0           mov r6, r28
+0x00130d36      07e8           mov r7, r29
+0x00130d38      9d00           zxb r29
+0x00130d3a      beffb60f       jarl 0x111cf0, lp
+0x00130d3e      1c30           mov r28, r6
+0x00130d40      1d38           mov r29, r7
+0x00130d42      0a40           mov r10, r8
+0x00130d44      bfff28e3       jarl 0x12f06c, lp
+0x00130d48      8a00           zxb r10
+0x00130d4a      1f02           callt 31
+0x00130d4c      0902           callt 9
+0x00130d4e      06e0           mov r6, r28
+0x00130d50      07e8           mov r7, r29
+0x00130d52      9d00           zxb r29
+0x00130d54      beffa20f       jarl 0x111cf6, lp
+0x00130d58      1c30           mov r28, r6
+0x00130d5a      1d38           mov r29, r7
+0x00130d5c      0a40           mov r10, r8
+0x00130d5e      bfff0ee3       jarl 0x12f06c, lp
+0x00130d62      8a00           zxb r10
+0x00130d64      1f02           callt 31
+0x00130d66      0902           callt 9
+0x00130d68      06e0           mov r6, r28
+0x00130d6a      07e8           mov r7, r29
+0x00130d6c      9d00           zxb r29
+0x00130d6e      beff8e0f       jarl 0x111cfc, lp
+0x00130d72      1c30           mov r28, r6
+0x00130d74      1d38           mov r29, r7
+0x00130d76      0a40           mov r10, r8
+0x00130d78      bffff4e2       jarl 0x12f06c, lp
+0x00130d7c      8a00           zxb r10
+0x00130d7e      1f02           callt 31
+0x00130d80      0902           callt 9
+0x00130d82      06e0           mov r6, r28
+0x00130d84      07e8           mov r7, r29
+0x00130d86      9d00           zxb r29
+0x00130d88      beff7a0f       jarl 0x111d02, lp
+0x00130d8c      1c30           mov r28, r6
+0x00130d8e      1d38           mov r29, r7
+=== handler 0x130D4C ===
+0x00130d4c      0902           callt 9
+0x00130d4e      06e0           mov r6, r28
+0x00130d50      07e8           mov r7, r29
+0x00130d52      9d00           zxb r29
+0x00130d54      beffa20f       jarl 0x111cf6, lp
+0x00130d58      1c30           mov r28, r6
+0x00130d5a      1d38           mov r29, r7
+0x00130d5c      0a40           mov r10, r8
+0x00130d5e      bfff0ee3       jarl 0x12f06c, lp
+0x00130d62      8a00           zxb r10
+0x00130d64      1f02           callt 31
+0x00130d66      0902           callt 9
+0x00130d68      06e0           mov r6, r28
+0x00130d6a      07e8           mov r7, r29
+0x00130d6c      9d00           zxb r29
+0x00130d6e      beff8e0f       jarl 0x111cfc, lp
+0x00130d72      1c30           mov r28, r6
+0x00130d74      1d38           mov r29, r7
+0x00130d76      0a40           mov r10, r8
+0x00130d78      bffff4e2       jarl 0x12f06c, lp
+0x00130d7c      8a00           zxb r10
+0x00130d7e      1f02           callt 31
+0x00130d80      0902           callt 9
+0x00130d82      06e0           mov r6, r28
+0x00130d84      07e8           mov r7, r29
+0x00130d86      9d00           zxb r29
+0x00130d88      beff7a0f       jarl 0x111d02, lp
+0x00130d8c      1c30           mov r28, r6
+0x00130d8e      1d38           mov r29, r7
+0x00130d90      0a40           mov r10, r8
+0x00130d92      bfffdae2       jarl 0x12f06c, lp
+0x00130d96      8a00           zxb r10
+0x00130d98      1f02           callt 31
+0x00130d9a      0902           callt 9
+0x00130d9c      06e0           mov r6, r28
+0x00130d9e      07e8           mov r7, r29
+0x00130da0      9d00           zxb r29
+0x00130da2      beff660f       jarl 0x111d08, lp
+0x00130da6      1c30           mov r28, r6
+0x00130da8      1d38           mov r29, r7
+=== handler 0x130D66 ===
+0x00130d66      0902           callt 9
+0x00130d68      06e0           mov r6, r28
+0x00130d6a      07e8           mov r7, r29
+0x00130d6c      9d00           zxb r29
+0x00130d6e      beff8e0f       jarl 0x111cfc, lp
+0x00130d72      1c30           mov r28, r6
+0x00130d74      1d38           mov r29, r7
+0x00130d76      0a40           mov r10, r8
+0x00130d78      bffff4e2       jarl 0x12f06c, lp
+0x00130d7c      8a00           zxb r10
+0x00130d7e      1f02           callt 31
+0x00130d80      0902           callt 9
+0x00130d82      06e0           mov r6, r28
+0x00130d84      07e8           mov r7, r29
+0x00130d86      9d00           zxb r29
+0x00130d88      beff7a0f       jarl 0x111d02, lp
+0x00130d8c      1c30           mov r28, r6
+0x00130d8e      1d38           mov r29, r7
+0x00130d90      0a40           mov r10, r8
+0x00130d92      bfffdae2       jarl 0x12f06c, lp
+0x00130d96      8a00           zxb r10
+0x00130d98      1f02           callt 31
+0x00130d9a      0902           callt 9
+0x00130d9c      06e0           mov r6, r28
+0x00130d9e      07e8           mov r7, r29
+0x00130da0      9d00           zxb r29
+0x00130da2      beff660f       jarl 0x111d08, lp
+0x00130da6      1c30           mov r28, r6
+0x00130da8      1d38           mov r29, r7
+0x00130daa      0a40           mov r10, r8
+0x00130dac      bfffc0e2       jarl 0x12f06c, lp
+0x00130db0      8a00           zxb r10
+0x00130db2      1f02           callt 31
+0x00130db4      0902           callt 9
+0x00130db6      06e0           mov r6, r28
+0x00130db8      07e8           mov r7, r29
+0x00130dba      9d00           zxb r29
+0x00130dbc      beffb814       jarl 0x112274, lp
+0x00130dc0      1c30           mov r28, r6
+0x00130dc2      1d38           mov r29, r7
+=== handler 0x131A6A ===
+0x00131a6a      0902           callt 9
+0x00131a6c      06e0           mov r6, r28
+0x00131a6e      07e8           mov r7, r29
+0x00131a70      9d00           zxb r29
+0x00131a72      beffba02       jarl 0x111d2c, lp
+0x00131a76      1c30           mov r28, r6
+0x00131a78      1d38           mov r29, r7
+0x00131a7a      0a40           mov r10, r8
+0x00131a7c      bfffa8d6       jarl 0x12f124, lp
+0x00131a80      8a00           zxb r10
+0x00131a82      1f02           callt 31
+0x00131a84      0902           callt 9
+0x00131a86      06e0           mov r6, r28
+0x00131a88      07e8           mov r7, r29
+0x00131a8a      9d00           zxb r29
+0x00131a8c      beffa602       jarl 0x111d32, lp
+0x00131a90      1c30           mov r28, r6
+0x00131a92      1d38           mov r29, r7
+0x00131a94      0a40           mov r10, r8
+0x00131a96      bfff8ed6       jarl 0x12f124, lp
+0x00131a9a      8a00           zxb r10
+0x00131a9c      1f02           callt 31
+0x00131a9e      0902           callt 9
+0x00131aa0      06e0           mov r6, r28
+0x00131aa2      07e8           mov r7, r29
+0x00131aa4      9d00           zxb r29
+0x00131aa6      beff9202       jarl 0x111d38, lp
+0x00131aaa      1c30           mov r28, r6
+0x00131aac      1d38           mov r29, r7
+0x00131aae      0a40           mov r10, r8
+0x00131ab0      bfff74d6       jarl 0x12f124, lp
+0x00131ab4      8a00           zxb r10
+0x00131ab6      1f02           callt 31
+0x00131ab8      0902           callt 9
+0x00131aba      06e0           mov r6, r28
+0x00131abc      07e8           mov r7, r29
+0x00131abe      9d00           zxb r29
+0x00131ac0      beff7e02       jarl 0x111d3e, lp
+0x00131ac4      1c30           mov r28, r6
+0x00131ac6      1d38           mov r29, r7
+=== handler 0x131A84 ===
+0x00131a84      0902           callt 9
+0x00131a86      06e0           mov r6, r28
+0x00131a88      07e8           mov r7, r29
+0x00131a8a      9d00           zxb r29
+0x00131a8c      beffa602       jarl 0x111d32, lp
+0x00131a90      1c30           mov r28, r6
+0x00131a92      1d38           mov r29, r7
+0x00131a94      0a40           mov r10, r8
+0x00131a96      bfff8ed6       jarl 0x12f124, lp
+0x00131a9a      8a00           zxb r10
+0x00131a9c      1f02           callt 31
+0x00131a9e      0902           callt 9
+0x00131aa0      06e0           mov r6, r28
+0x00131aa2      07e8           mov r7, r29
+0x00131aa4      9d00           zxb r29
+0x00131aa6      beff9202       jarl 0x111d38, lp
+0x00131aaa      1c30           mov r28, r6
+0x00131aac      1d38           mov r29, r7
+0x00131aae      0a40           mov r10, r8
+0x00131ab0      bfff74d6       jarl 0x12f124, lp
+0x00131ab4      8a00           zxb r10
+0x00131ab6      1f02           callt 31
+0x00131ab8      0902           callt 9
+0x00131aba      06e0           mov r6, r28
+0x00131abc      07e8           mov r7, r29
+0x00131abe      9d00           zxb r29
+0x00131ac0      beff7e02       jarl 0x111d3e, lp
+0x00131ac4      1c30           mov r28, r6
+0x00131ac6      1d38           mov r29, r7
+0x00131ac8      0a40           mov r10, r8
+0x00131aca      bfff5ad6       jarl 0x12f124, lp
+0x00131ace      8a00           zxb r10
+0x00131ad0      1f02           callt 31
+0x00131ad2      0902           callt 9
+0x00131ad4      06e0           mov r6, r28
+0x00131ad6      07e8           mov r7, r29
+0x00131ad8      9d00           zxb r29
+0x00131ada      beff6a02       jarl 0x111d44, lp
+0x00131ade      1c30           mov r28, r6
+0x00131ae0      1d38           mov r29, r7
+=== handler 0x131AB8 ===
+0x00131ab8      0902           callt 9
+0x00131aba      06e0           mov r6, r28
+0x00131abc      07e8           mov r7, r29
+0x00131abe      9d00           zxb r29
+0x00131ac0      beff7e02       jarl 0x111d3e, lp
+0x00131ac4      1c30           mov r28, r6
+0x00131ac6      1d38           mov r29, r7
+0x00131ac8      0a40           mov r10, r8
+0x00131aca      bfff5ad6       jarl 0x12f124, lp
+0x00131ace      8a00           zxb r10
+0x00131ad0      1f02           callt 31
+0x00131ad2      0902           callt 9
+0x00131ad4      06e0           mov r6, r28
+0x00131ad6      07e8           mov r7, r29
+0x00131ad8      9d00           zxb r29
+0x00131ada      beff6a02       jarl 0x111d44, lp
+0x00131ade      1c30           mov r28, r6
+0x00131ae0      1d38           mov r29, r7
+0x00131ae2      0a40           mov r10, r8
+0x00131ae4      bfff40d6       jarl 0x12f124, lp
+0x00131ae8      8a00           zxb r10
+0x00131aea      1f02           callt 31
+0x00131aec      0902           callt 9
+0x00131aee      06e0           mov r6, r28
+0x00131af0      07e8           mov r7, r29
+0x00131af2      9d00           zxb r29
+0x00131af4      bdff66f8       jarl 0x11135a, lp
+0x00131af8      1c30           mov r28, r6
+0x00131afa      1d38           mov r29, r7
+0x00131afc      0a40           mov r10, r8
+0x00131afe      bfff26d6       jarl 0x12f124, lp
+0x00131b02      8a00           zxb r10
+0x00131b04      1f02           callt 31
+0x00131b06      0902           callt 9
+0x00131b08      06e0           mov r6, r28
+0x00131b0a      07e8           mov r7, r29
+0x00131b0c      9d00           zxb r29
+0x00131b0e      beff2c03       jarl 0x111e3a, lp
+0x00131b12      1c30           mov r28, r6
+0x00131b14      1d38           mov r29, r7
+=== handler 0x1345D0 ===
+0x001345d0      0902           callt 9
+0x001345d2      06e0           mov r6, r28
+0x001345d4      07e8           mov r7, r29
+0x001345d6      9d00           zxb r29
+0x001345d8      66ea           cmp 6, r29
+0x001345da      c305           bnh 0x1345e2
+0x001345dc      20ee1200       movea 18, r0, r29
+0x001345e0      f51d           br 0x13461e
+0x001345e2      1d80           mov r29, r16
+0x001345e4      dc81           add r28, r16
+0x001345e6      50070000       st.b r0, 0[r16]
+0x001345ea      bdffb0cc       jarl 0x11129a, lp
+0x001345ee      1c30           mov r28, r6
+0x001345f0      1d38           mov r29, r7
+0x001345f2      0a40           mov r10, r8
+0x001345f4      014a           mov 1, r9
+0x001345f6      bfff16ab       jarl 0x12f10c, lp
+0x001345fa      bdff96cc       jarl 0x111290, lp
+0x001345fe      1c30           mov r28, r6
+0x00134600      1d38           mov r29, r7
+0x00134602      0a40           mov r10, r8
+0x00134604      024a           mov 2, r9
+0x00134606      bfff06ab       jarl 0x12f10c, lp
+0x0013460a      bdff72cc       jarl 0x11127c, lp
+0x0013460e      1c30           mov r28, r6
+0x00134610      1d38           mov r29, r7
+0x00134612      0a40           mov r10, r8
+0x00134614      044a           mov 4, r9
+0x00134616      bffff6aa       jarl 0x12f10c, lp
+0x0013461a      41ea           add 1, r29
+0x0013461c      9d00           zxb r29
+0x0013461e      1d50           mov r29, r10
+0x00134620      8a00           zxb r10
+0x00134622      1f02           callt 31
+0x00134624      0902           callt 9
+0x00134626      06e0           mov r6, r28
+0x00134628      07e8           mov r7, r29
+0x0013462a      9d00           zxb r29
+0x0013462c      66ea           cmp 6, r29
+0x0013462e      c305           bnh 0x134636
+=== handler 0x131C24 ===
+0x00131c24      0902           callt 9
+0x00131c26      06e0           mov r6, r28
+0x00131c28      07e8           mov r7, r29
+0x00131c2a      9d00           zxb r29
+0x00131c2c      bdff26ed       jarl 0x110952, lp
+0x00131c30      1c30           mov r28, r6
+0x00131c32      1d38           mov r29, r7
+0x00131c34      0a40           mov r10, r8
+0x00131c36      bfffeed4       jarl 0x12f124, lp
+0x00131c3a      8a00           zxb r10
+0x00131c3c      1f02           callt 31
+0x00131c3e      0902           callt 9
+0x00131c40      06e0           mov r6, r28
+0x00131c42      07e8           mov r7, r29
+0x00131c44      9d00           zxb r29
+0x00131c46      bdff08ed       jarl 0x11094e, lp
+0x00131c4a      1c30           mov r28, r6
+0x00131c4c      1d38           mov r29, r7
+0x00131c4e      0a40           mov r10, r8
+0x00131c50      bfffd4d4       jarl 0x12f124, lp
+0x00131c54      8a00           zxb r10
+0x00131c56      1f02           callt 31
+0x00131c58      0902           callt 9
+0x00131c5a      06e0           mov r6, r28
+0x00131c5c      07e8           mov r7, r29
+0x00131c5e      9d00           zxb r29
+0x00131c60      bdfff6ec       jarl 0x110956, lp
+0x00131c64      1c30           mov r28, r6
+0x00131c66      1d38           mov r29, r7
+0x00131c68      0a40           mov r10, r8
+0x00131c6a      bfffbad4       jarl 0x12f124, lp
+0x00131c6e      8a00           zxb r10
+0x00131c70      1f02           callt 31
+0x00131c72      0902           callt 9
+0x00131c74      06e0           mov r6, r28
+0x00131c76      07e8           mov r7, r29
+0x00131c78      9d00           zxb r29
+0x00131c7a      beff6604       jarl 0x1120e0, lp
+0x00131c7e      1c30           mov r28, r6
+0x00131c80      1d38           mov r29, r7
+=== handler 0x1330B4 ===
+0x001330b4      0702           callt 7
+0x001330b6      06d0           mov r6, r26
+0x001330b8      07e8           mov r7, r29
+0x001330ba      9d00           zxb r29
+0x001330bc      66ea           cmp 6, r29
+0x001330be      c305           bnh 0x1330c6
+0x001330c0      20ee1200       movea 18, r0, r29
+0x001330c4      9525           br 0x133106
+0x001330c6      1d80           mov r29, r16
+0x001330c8      da81           add r26, r16
+0x001330ca      50070000       st.b r0, 0[r16]
+0x001330ce      00e2           mov 0, r28
+0x001330d0      1c78           mov r28, r15
+0x001330d2      c27a           shl 2, r15
+0x001330d4      4f7e0200       movhi 2, r15, r15
+0x001330d8      2fdf8111       ld.w 4480[r15], r27                     ; 0x1180
+0x001330dc      e0d9           cmp r0, r27
+0x001330de      e20d           be 0x1330fa
+0x001330e0      3f06e8301300   mov 0x1330e8, lp
+0x001330e6      7b00           jmp [r27]
+0x001330e8      1a30           mov r26, r6
+0x001330ea      1d38           mov r29, r7
+0x001330ec      0a40           mov r10, r8
+0x001330ee      014a           mov 1, r9
+0x001330f0      fc4fc000       shl r28, r9
+0x001330f4      8900           zxb r9
+0x001330f6      bfff16c0       jarl 0x12f10c, lp
+0x001330fa      41e2           add 1, r28
+0x001330fc      dc00           zxh r28
+0x001330fe      68e2           cmp 8, r28
+0x00133100      81ed           bl 0x1330d0
+0x00133102      41ea           add 1, r29
+0x00133104      9d00           zxb r29
+0x00133106      1d50           mov r29, r10
+0x00133108      8a00           zxb r10
+0x0013310a      1d02           callt 29
+0x0013310c      0702           callt 7
+0x0013310e      06d0           mov r6, r26
+0x00133110      07e8           mov r7, r29
+0x00133112      9d00           zxb r29
+=== handler 0x134624 ===
+0x00134624      0902           callt 9
+0x00134626      06e0           mov r6, r28
+0x00134628      07e8           mov r7, r29
+0x0013462a      9d00           zxb r29
+0x0013462c      66ea           cmp 6, r29
+0x0013462e      c305           bnh 0x134636
+0x00134630      20ee1200       movea 18, r0, r29
+0x00134634      f51d           br 0x134672
+0x00134636      1d80           mov r29, r16
+0x00134638      dc81           add r28, r16
+0x0013463a      50070000       st.b r0, 0[r16]
+0x0013463e      bdfffec9       jarl 0x11103c, lp
+0x00134642      1c30           mov r28, r6
+0x00134644      1d38           mov r29, r7
+0x00134646      0a40           mov r10, r8
+0x00134648      014a           mov 1, r9
+0x0013464a      bfffc2aa       jarl 0x12f10c, lp
+0x0013464e      bdffdac9       jarl 0x111028, lp
+0x00134652      1c30           mov r28, r6
+0x00134654      1d38           mov r29, r7
+0x00134656      0a40           mov r10, r8
+0x00134658      024a           mov 2, r9
+0x0013465a      bfffb2aa       jarl 0x12f10c, lp
+0x0013465e      bdffb6c9       jarl 0x111014, lp
+0x00134662      1c30           mov r28, r6
+0x00134664      1d38           mov r29, r7
+0x00134666      0a40           mov r10, r8
+0x00134668      044a           mov 4, r9
+0x0013466a      bfffa2aa       jarl 0x12f10c, lp
+0x0013466e      41ea           add 1, r29
+0x00134670      9d00           zxb r29
+0x00134672      1d50           mov r29, r10
+0x00134674      8a00           zxb r10
+0x00134676      1f02           callt 31
+0x00134678      0902           callt 9
+0x0013467a      06e0           mov r6, r28
+0x0013467c      07e8           mov r7, r29
+0x0013467e      9d00           zxb r29
+0x00134680      66ea           cmp 6, r29
+0x00134682      c305           bnh 0x13468a
+=== handler 0x133164 ===
+0x00133164      0702           callt 7
+0x00133166      06d0           mov r6, r26
+0x00133168      07e8           mov r7, r29
+0x0013316a      9d00           zxb r29
+0x0013316c      66ea           cmp 6, r29
+0x0013316e      c305           bnh 0x133176
+0x00133170      20ee1200       movea 18, r0, r29
+0x00133174      9525           br 0x1331b6
+0x00133176      1d80           mov r29, r16
+0x00133178      da81           add r26, r16
+0x0013317a      50070000       st.b r0, 0[r16]
+0x0013317e      00e2           mov 0, r28
+0x00133180      1c78           mov r28, r15
+0x00133182      c27a           shl 2, r15
+0x00133184      4f7e0200       movhi 2, r15, r15
+0x00133188      2fdf4915       ld.w 5448[r15], r27                     ; 0x1548
+0x0013318c      e0d9           cmp r0, r27
+0x0013318e      e20d           be 0x1331aa
+0x00133190      3f0698311300   mov 0x133198, lp
+0x00133196      7b00           jmp [r27]
+0x00133198      1a30           mov r26, r6
+0x0013319a      1d38           mov r29, r7
+0x0013319c      0a40           mov r10, r8
+0x0013319e      014a           mov 1, r9
+0x001331a0      fc4fc000       shl r28, r9
+0x001331a4      8900           zxb r9
+0x001331a6      bfff66bf       jarl 0x12f10c, lp
+0x001331aa      41e2           add 1, r28
+0x001331ac      dc00           zxh r28
+0x001331ae      67e2           cmp 7, r28
+0x001331b0      81ed           bl 0x133180
+0x001331b2      41ea           add 1, r29
+0x001331b4      9d00           zxb r29
+0x001331b6      1d50           mov r29, r10
+0x001331b8      8a00           zxb r10
+0x001331ba      1d02           callt 29
+0x001331bc      0702           callt 7
+0x001331be      06d0           mov r6, r26
+0x001331c0      07e8           mov r7, r29
+0x001331c2      9d00           zxb r29
+=== handler 0x12FCCC ===
+0x0012fccc      1402           callt 20
+0x0012fcce      07e8           mov r7, r29
+0x0012fcd0      9d00           zxb r29
+0x0012fcd2      06e0           mov r6, r28
+0x0012fcd4      0330           mov sp, r6
+0x0012fcd6      beff246a       jarl 0x1166fa, lp
+0x0012fcda      e3470100       ld.hu 0[sp], r8
+0x0012fcde      1d38           mov r29, r7
+0x0012fce0      1c30           mov r28, r6
+0x0012fce2      bfff8af3       jarl 0x12f06c, lp
+0x0012fce6      8a00           zxb r10
+0x0012fce8      2a02           callt 42
+0x0012fcea      0400           invalid
+0x0012fcec      0400           invalid
+0x0012fcee      1402           callt 20
+0x0012fcf0      07e8           mov r7, r29
+0x0012fcf2      9d00           zxb r29
+0x0012fcf4      06e0           mov r6, r28
+0x0012fcf6      0330           mov sp, r6
+0x0012fcf8      beffd269       jarl 0x1166ca, lp
+0x0012fcfc      e3470100       ld.hu 0[sp], r8
+0x0012fd00      1d38           mov r29, r7
+0x0012fd02      1c30           mov r28, r6
+0x0012fd04      bfff68f3       jarl 0x12f06c, lp
+0x0012fd08      8a00           zxb r10
+0x0012fd0a      2a02           callt 42
+0x0012fd0c      0400           invalid
+0x0012fd0e      0902           callt 9
+0x0012fd10      06e0           mov r6, r28
+0x0012fd12      07e8           mov r7, r29
+0x0012fd14      9d00           zxb r29
+0x0012fd16      beff286a       jarl 0x11673e, lp
+0x0012fd1a      1c30           mov r28, r6
+0x0012fd1c      1d38           mov r29, r7
+0x0012fd1e      0a40           mov r10, r8
+0x0012fd20      bfff4cf3       jarl 0x12f06c, lp
+0x0012fd24      0ae8           mov r10, r29
+0x0012fd26      befffa69       jarl 0x116720, lp
+0x0012fd2a      1c30           mov r28, r6
+0x0012fd2c      1d38           mov r29, r7
+=== handler 0x12FCEE ===
+0x0012fcee      1402           callt 20
+0x0012fcf0      07e8           mov r7, r29
+0x0012fcf2      9d00           zxb r29
+0x0012fcf4      06e0           mov r6, r28
+0x0012fcf6      0330           mov sp, r6
+0x0012fcf8      beffd269       jarl 0x1166ca, lp
+0x0012fcfc      e3470100       ld.hu 0[sp], r8
+0x0012fd00      1d38           mov r29, r7
+0x0012fd02      1c30           mov r28, r6
+0x0012fd04      bfff68f3       jarl 0x12f06c, lp
+0x0012fd08      8a00           zxb r10
+0x0012fd0a      2a02           callt 42
+0x0012fd0c      0400           invalid
+0x0012fd0e      0902           callt 9
+0x0012fd10      06e0           mov r6, r28
+0x0012fd12      07e8           mov r7, r29
+0x0012fd14      9d00           zxb r29
+0x0012fd16      beff286a       jarl 0x11673e, lp
+0x0012fd1a      1c30           mov r28, r6
+0x0012fd1c      1d38           mov r29, r7
+0x0012fd1e      0a40           mov r10, r8
+0x0012fd20      bfff4cf3       jarl 0x12f06c, lp
+0x0012fd24      0ae8           mov r10, r29
+0x0012fd26      befffa69       jarl 0x116720, lp
+0x0012fd2a      1c30           mov r28, r6
+0x0012fd2c      1d38           mov r29, r7
+0x0012fd2e      0a40           mov r10, r8
+0x0012fd30      bfff3cf3       jarl 0x12f06c, lp
+0x0012fd34      0ae8           mov r10, r29
+0x0012fd36      beff6269       jarl 0x116698, lp
+0x0012fd3a      1c30           mov r28, r6
+0x0012fd3c      1d38           mov r29, r7
+0x0012fd3e      0a40           mov r10, r8
+0x0012fd40      bfff2cf3       jarl 0x12f06c, lp
+0x0012fd44      8a00           zxb r10
+0x0012fd46      1f02           callt 31
+0x0012fd48      0902           callt 9
+0x0012fd4a      06e0           mov r6, r28
+0x0012fd4c      07e8           mov r7, r29
+0x0012fd4e      9d00           zxb r29
+=== handler 0x134678 ===
+0x00134678      0902           callt 9
+0x0013467a      06e0           mov r6, r28
+0x0013467c      07e8           mov r7, r29
+0x0013467e      9d00           zxb r29
+0x00134680      66ea           cmp 6, r29
+0x00134682      c305           bnh 0x13468a
+0x00134684      20ee1200       movea 18, r0, r29
+0x00134688      f50d           br 0x1346a6
+0x0013468a      1d80           mov r29, r16
+0x0013468c      dc81           add r28, r16
+0x0013468e      50070000       st.b r0, 0[r16]
+0x00134692      bdfff0c2       jarl 0x110982, lp
+0x00134696      1c30           mov r28, r6
+0x00134698      1d38           mov r29, r7
+0x0013469a      0a40           mov r10, r8
+0x0013469c      014a           mov 1, r9
+0x0013469e      bfff6eaa       jarl 0x12f10c, lp
+0x001346a2      41ea           add 1, r29
+0x001346a4      9d00           zxb r29
+0x001346a6      1d50           mov r29, r10
+0x001346a8      8a00           zxb r10
+0x001346aa      1f02           callt 31
+0x001346ac      0902           callt 9
+0x001346ae      06e0           mov r6, r28
+0x001346b0      07e8           mov r7, r29
+0x001346b2      9d00           zxb r29
+0x001346b4      66ea           cmp 6, r29
+0x001346b6      c305           bnh 0x1346be
+0x001346b8      20ee1200       movea 18, r0, r29
+0x001346bc      f50d           br 0x1346da
+0x001346be      1d80           mov r29, r16
+0x001346c0      dc81           add r28, r16
+0x001346c2      50070000       st.b r0, 0[r16]
+0x001346c6      bdff9adb       jarl 0x112260, lp
+0x001346ca      1c30           mov r28, r6
+0x001346cc      1d38           mov r29, r7
+0x001346ce      0a40           mov r10, r8
+0x001346d0      014a           mov 1, r9
+0x001346d2      bfff3aaa       jarl 0x12f10c, lp
+0x001346d6      41ea           add 1, r29
+=== handler 0x1323CC ===
+0x001323cc      0702           callt 7
+0x001323ce      06d8           mov r6, r27
+0x001323d0      07e8           mov r7, r29
+0x001323d2      9d00           zxb r29
+0x001323d4      65ea           cmp 5, r29
+0x001323d6      c305           bnh 0x1323de
+0x001323d8      20ee1200       movea 18, r0, r29
+0x001323dc      9545           br 0x13245e
+0x001323de      1d80           mov r29, r16
+0x001323e0      db81           add r27, r16
+0x001323e2      50070000       st.b r0, 0[r16]
+0x001323e6      00e2           mov 0, r28
+0x001323e8      1c78           mov r28, r15
+0x001323ea      c27a           shl 2, r15
+0x001323ec      4f7e0200       movhi 2, r15, r15
+0x001323f0      2fd72911       ld.w 4392[r15], r26                     ; 0x1128
+0x001323f4      e0d1           cmp r0, r26
+0x001323f6      e20d           be 0x132412
+0x001323f8      3f0600241300   mov 0x132400, lp
+0x001323fe      7a00           jmp [r26]
+0x00132400      1b30           mov r27, r6
+0x00132402      1d38           mov r29, r7
+0x00132404      0a40           mov r10, r8
+0x00132406      014a           mov 1, r9
+0x00132408      fc4fc000       shl r28, r9
+0x0013240c      8900           zxb r9
+0x0013240e      bffffecc       jarl 0x12f10c, lp
+0x00132412      41e2           add 1, r28
+0x00132414      dc00           zxh r28
+0x00132416      68e2           cmp 8, r28
+0x00132418      81ed           bl 0x1323e8
+0x0013241a      41ea           add 1, r29
+0x0013241c      9d00           zxb r29
+0x0013241e      1d50           mov r29, r10
+0x00132420      db51           add r27, r10
+0x00132422      4a070000       st.b r0, 0[r10]
+0x00132426      00e2           mov 0, r28
+0x00132428      1c88           mov r28, r17
+0x0013242a      c28a           shl 2, r17
+0x0013242c      518e0200       movhi 2, r17, r17
+=== handler 0x1313FA ===
+0x001313fa      0902           callt 9
+0x001313fc      06e0           mov r6, r28
+0x001313fe      07e8           mov r7, r29
+0x00131400      9d00           zxb r29
+0x00131402      beffd282       jarl 0x1196d4, lp
+0x00131406      1c30           mov r28, r6
+0x00131408      1d38           mov r29, r7
+0x0013140a      0a40           mov r10, r8
+0x0013140c      bfff18dd       jarl 0x12f124, lp
+0x00131410      8a00           zxb r10
+0x00131412      1f02           callt 31
+0x00131414      0902           callt 9
+0x00131416      06e0           mov r6, r28
+0x00131418      07e8           mov r7, r29
+0x0013141a      9d00           zxb r29
+0x0013141c      beffae82       jarl 0x1196ca, lp
+0x00131420      1c30           mov r28, r6
+0x00131422      1d38           mov r29, r7
+0x00131424      0a40           mov r10, r8
+0x00131426      bffffedc       jarl 0x12f124, lp
+0x0013142a      8a00           zxb r10
+0x0013142c      1f02           callt 31
+0x0013142e      0902           callt 9
+0x00131430      06e0           mov r6, r28
+0x00131432      07e8           mov r7, r29
+0x00131434      9d00           zxb r29
+0x00131436      beffc869       jarl 0x117dfe, lp
+0x0013143a      1c30           mov r28, r6
+0x0013143c      1d38           mov r29, r7
+0x0013143e      0a40           mov r10, r8
+0x00131440      bfffe4dc       jarl 0x12f124, lp
+0x00131444      8a00           zxb r10
+0x00131446      1f02           callt 31
+0x00131448      0902           callt 9
+0x0013144a      06e0           mov r6, r28
+0x0013144c      07e8           mov r7, r29
+0x0013144e      9d00           zxb r29
+0x00131450      befff22e       jarl 0x114342, lp
+0x00131454      1c30           mov r28, r6
+0x00131456      1d38           mov r29, r7
+=== handler 0x131414 ===
+0x00131414      0902           callt 9
+0x00131416      06e0           mov r6, r28
+0x00131418      07e8           mov r7, r29
+0x0013141a      9d00           zxb r29
+0x0013141c      beffae82       jarl 0x1196ca, lp
+0x00131420      1c30           mov r28, r6
+0x00131422      1d38           mov r29, r7
+0x00131424      0a40           mov r10, r8
+0x00131426      bffffedc       jarl 0x12f124, lp
+0x0013142a      8a00           zxb r10
+0x0013142c      1f02           callt 31
+0x0013142e      0902           callt 9
+0x00131430      06e0           mov r6, r28
+0x00131432      07e8           mov r7, r29
+0x00131434      9d00           zxb r29
+0x00131436      beffc869       jarl 0x117dfe, lp
+0x0013143a      1c30           mov r28, r6
+0x0013143c      1d38           mov r29, r7
+0x0013143e      0a40           mov r10, r8
+0x00131440      bfffe4dc       jarl 0x12f124, lp
+0x00131444      8a00           zxb r10
+0x00131446      1f02           callt 31
+0x00131448      0902           callt 9
+0x0013144a      06e0           mov r6, r28
+0x0013144c      07e8           mov r7, r29
+0x0013144e      9d00           zxb r29
+0x00131450      befff22e       jarl 0x114342, lp
+0x00131454      1c30           mov r28, r6
+0x00131456      1d38           mov r29, r7
+0x00131458      0a40           mov r10, r8
+0x0013145a      bfffcadc       jarl 0x12f124, lp
+0x0013145e      8a00           zxb r10
+0x00131460      1f02           callt 31
+0x00131462      0902           callt 9
+0x00131464      06e0           mov r6, r28
+0x00131466      07e8           mov r7, r29
+0x00131468      9d00           zxb r29
+0x0013146a      beffe22e       jarl 0x11434c, lp
+0x0013146e      1c30           mov r28, r6
+0x00131470      1d38           mov r29, r7
+=== handler 0x1305CE ===
+0x001305ce      0902           callt 9
+0x001305d0      06e0           mov r6, r28
+0x001305d2      07e8           mov r7, r29
+0x001305d4      9d00           zxb r29
+0x001305d6      beff0891       jarl 0x1196de, lp
+0x001305da      1c30           mov r28, r6
+0x001305dc      1d38           mov r29, r7
+0x001305de      0a40           mov r10, r8
+0x001305e0      bfff28ec       jarl 0x12f208, lp
+0x001305e4      8a00           zxb r10
+0x001305e6      1f02           callt 31
+0x001305e8      0902           callt 9
+0x001305ea      06e0           mov r6, r28
+0x001305ec      07e8           mov r7, r29
+0x001305ee      9d00           zxb r29
+0x001305f0      beff0c94       jarl 0x1199fc, lp
+0x001305f4      1c30           mov r28, r6
+0x001305f6      1d38           mov r29, r7
+0x001305f8      0a40           mov r10, r8
+0x001305fa      bfff0eec       jarl 0x12f208, lp
+0x001305fe      8a00           zxb r10
+0x00130600      1f02           callt 31
+0x00130602      0902           callt 9
+0x00130604      06e0           mov r6, r28
+0x00130606      07e8           mov r7, r29
+0x00130608      9d00           zxb r29
+0x0013060a      beff5c75       jarl 0x117b66, lp
+0x0013060e      1c30           mov r28, r6
+0x00130610      1d38           mov r29, r7
+0x00130612      0a40           mov r10, r8
+0x00130614      bffff4eb       jarl 0x12f208, lp
+0x00130618      8a00           zxb r10
+0x0013061a      1f02           callt 31
+0x0013061c      0902           callt 9
+0x0013061e      06e0           mov r6, r28
+0x00130620      07e8           mov r7, r29
+0x00130622      9d00           zxb r29
+0x00130624      beff9237       jarl 0x113db6, lp
+0x00130628      1c30           mov r28, r6
+0x0013062a      1d38           mov r29, r7

@@ -50,6 +50,14 @@ DISPATCH_TABLES = [
     },
 ]
 
+GROUP_A_DLC_OFFSET = 0x01E080
+GROUP_A_PAYLOAD_PTR_OFFSET = 0x01E104
+GROUP_A_AUX_FUNC_A_OFFSET = 0x01E310
+GROUP_A_AUX_FUNC_B_OFFSET = 0x01E51C
+GROUP_A_SCHED_BUCKET_OFFSET = 0x01E730
+GROUP_A_SCHED_MASK_OFFSET = 0x01E7B0
+GROUP_A_COUNT = 131
+
 FILTER_MASK_TABLES = [
     {
         "name": "Filter/mask table A",
@@ -992,6 +1000,291 @@ def write_group_a_tx_trace_csv(
             )
 
 
+def clean_standard_entry(entry: TableEntry) -> bool:
+    return entry.flags == 0 and entry.raw == entry.frame_id << 18
+
+
+def group_a_wire_id(entry: TableEntry, source: int) -> int:
+    if clean_standard_entry(entry):
+        return entry.frame_id
+    return (entry.raw & 0x1FFFFFFF) | source
+
+
+def group_a_pointer(data: bytes, table_offset: int, index: int) -> int | None:
+    offset = table_offset + index * 4
+    if offset + 4 > len(data):
+        return None
+    return int.from_bytes(data[offset : offset + 4], "little")
+
+
+def group_a_byte(data: bytes, table_offset: int, index: int) -> int | None:
+    offset = table_offset + index
+    if offset >= len(data):
+        return None
+    return data[offset]
+
+
+def read_live_projection(path: Path) -> dict[int, dict[str, str]]:
+    if not path.exists():
+        return {}
+    rows: dict[int, dict[str, str]] = {}
+    with path.open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            value = row.get("live_can_id", "")
+            if not value:
+                continue
+            try:
+                rows[int(value, 16)] = row
+            except ValueError:
+                continue
+    return rows
+
+
+def classify_group_a_object(entry: TableEntry, dlc: int | None, exact_live: bool) -> str:
+    if entry.raw == 0x93FFE000 and dlc == 0:
+        return "best_dlc0_heartbeat_or_wake_candidate"
+    if entry.frame_id == 0x100 and dlc == 0:
+        return "standard_dlc0_network_wake_candidate"
+    if entry.frame_id == 0x621:
+        return "standard_network_management_candidate"
+    if entry.frame_id in {0x7F1, 0x641}:
+        return "diagnostic_or_diagnostic_response"
+    if exact_live:
+        return "ipc_origin_live_object"
+    if entry.frame_id in {0x409, 0x410, 0x42B, 0x4FF}:
+        return "low_speed_ipc_projected_family"
+    if entry.frame_id in LOW_SPEED_TX_FOCUS_IDS:
+        return "legacy_standard_body_tx_candidate"
+    return classify_message_role(entry.frame_id)
+
+
+def write_group_a_object_metadata_csv(
+    path: Path,
+    data: bytes,
+    entries: list[TableEntry],
+    dispatch_entries: list[DispatchEntry],
+    live_projection_path: Path,
+) -> None:
+    live_rows = read_live_projection(live_projection_path)
+    group_a = [entry for entry in entries if entry.group == "Group A"]
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=[
+                "index",
+                "table_offset",
+                "raw",
+                "frame_id",
+                "flags_or_variant",
+                "clean_standard_encoding",
+                "dlc",
+                "payload_ram_ptr",
+                "aux_func_a",
+                "aux_func_b",
+                "scheduler_bucket",
+                "scheduler_mask",
+                "object_key",
+                "direct_dispatch_handlers",
+                "wire_id_ipc_source_60",
+                "wire_id_bcm_source_40",
+                "exact_live_source_60",
+                "live_count",
+                "live_period_ms",
+                "live_payload",
+                "role",
+                "wake_power_confidence",
+            ],
+        )
+        writer.writeheader()
+        for entry in group_a:
+            dlc = group_a_byte(data, GROUP_A_DLC_OFFSET, entry.index)
+            payload_ptr = group_a_pointer(data, GROUP_A_PAYLOAD_PTR_OFFSET, entry.index)
+            aux_a = group_a_pointer(data, GROUP_A_AUX_FUNC_A_OFFSET, entry.index)
+            aux_b = group_a_pointer(data, GROUP_A_AUX_FUNC_B_OFFSET, entry.index)
+            bucket = group_a_byte(data, GROUP_A_SCHED_BUCKET_OFFSET, entry.index)
+            mask = (
+                group_a_byte(data, GROUP_A_SCHED_MASK_OFFSET, entry.index)
+                if GROUP_A_SCHED_MASK_OFFSET + entry.index < TABLES[1]["offset"]
+                else None
+            )
+            wire_60 = group_a_wire_id(entry, 0x60)
+            wire_40 = group_a_wire_id(entry, 0x40)
+            live = live_rows.get(wire_60, {})
+            exact_live = bool(live)
+            role = classify_group_a_object(entry, dlc, exact_live)
+            if role == "best_dlc0_heartbeat_or_wake_candidate":
+                confidence = "strong: table+DLC0+null-payload+exact-live-IPC-origin"
+            elif role == "standard_dlc0_network_wake_candidate":
+                confidence = "medium: table+DLC0+live-standard-ID; bus direction unresolved"
+            elif role == "standard_network_management_candidate":
+                confidence = "medium: table+DLC8; payload/sender direction unresolved"
+            elif exact_live:
+                confidence = "medium: exact live IPC-origin object; direction to IPC unresolved"
+            else:
+                confidence = "low-for-wake"
+            matches = dispatch_matches_for_entry(entry, dispatch_entries)
+            writer.writerow(
+                {
+                    "index": entry.index,
+                    "table_offset": hex_addr(entry.offset),
+                    "raw": hex_raw(entry.raw),
+                    "frame_id": hex_id(entry.frame_id),
+                    "flags_or_variant": f"0x{entry.flags:05X}",
+                    "clean_standard_encoding": "yes" if clean_standard_entry(entry) else "no",
+                    "dlc": "" if dlc is None else dlc,
+                    "payload_ram_ptr": hex_addr(payload_ptr) if payload_ptr else "",
+                    "aux_func_a": hex_addr(aux_a) if aux_a else "",
+                    "aux_func_b": hex_addr(aux_b) if aux_b else "",
+                    "scheduler_bucket": "" if bucket is None else bucket,
+                    "scheduler_mask": "" if mask is None else f"0x{mask:02X}",
+                    "object_key": f"0x{entry.raw >> 16:04X}",
+                    "direct_dispatch_handlers": "; ".join(
+                        f"{hex_addr(item.handler)}@{hex_addr(item.offset)}"
+                        for item in matches
+                    ),
+                    "wire_id_ipc_source_60": hex(wire_60),
+                    "wire_id_bcm_source_40": hex(wire_40),
+                    "exact_live_source_60": "yes" if exact_live else "no",
+                    "live_count": live.get("count", ""),
+                    "live_period_ms": live.get("median_period_ms", ""),
+                    "live_payload": live.get("first_payload", ""),
+                    "role": role,
+                    "wake_power_confidence": confidence,
+                }
+            )
+
+
+def wake_power_candidates_markdown(
+    data: bytes,
+    entries: list[TableEntry],
+    dispatch_entries: list[DispatchEntry],
+    live_projection_path: Path,
+) -> str:
+    live_rows = read_live_projection(live_projection_path)
+    group_a = [entry for entry in entries if entry.group == "Group A"]
+    by_index = {entry.index: entry for entry in group_a}
+
+    def row(index: int) -> dict[str, object]:
+        entry = by_index[index]
+        wire_60 = group_a_wire_id(entry, 0x60)
+        live = live_rows.get(wire_60, {})
+        return {
+            "entry": entry,
+            "dlc": group_a_byte(data, GROUP_A_DLC_OFFSET, index),
+            "ptr": group_a_pointer(data, GROUP_A_PAYLOAD_PTR_OFFSET, index),
+            "aux_a": group_a_pointer(data, GROUP_A_AUX_FUNC_A_OFFSET, index),
+            "aux_b": group_a_pointer(data, GROUP_A_AUX_FUNC_B_OFFSET, index),
+            "bucket": group_a_byte(data, GROUP_A_SCHED_BUCKET_OFFSET, index),
+            "mask": group_a_byte(data, GROUP_A_SCHED_MASK_OFFSET, index)
+            if GROUP_A_SCHED_MASK_OFFSET + index < TABLES[1]["offset"]
+            else None,
+            "wire_60": wire_60,
+            "wire_40": group_a_wire_id(entry, 0x40),
+            "live": live,
+            "dispatch": dispatch_matches_for_entry(entry, dispatch_entries),
+        }
+
+    focus_indices = [0, 1, 2, 3, 4, 5, 52, 53, 76, 77, 98, 129]
+    lines = [
+        "# BCM Wake / Power Candidate Notes",
+        "",
+        "Generated by `tools/bcm_gateway_analysis.py`.",
+        "",
+        "## Main Finding",
+        "",
+        "`0x13FFE0xx` is now the strongest firmware-backed wake/keepalive candidate.",
+        "It is Group A index 5, raw `0x93FFE000`, DLC `0`, with no payload RAM",
+        "pointer and no direct payload-builder dispatch wrapper. The direct IPC-only",
+        "capture saw the source-`0x60` form `0x13FFE060` at about 1.2 s. The likely",
+        "BCM-origin trial form is therefore `0x13FFE040` as an extended DLC0 frame.",
+        "",
+        "This does not prove the physical transmitter yet; a normal CANable may still",
+        "be unable to drive true single-wire GMLAN even when it can passively sniff it.",
+        "",
+        "## Candidate Objects",
+        "",
+        "| Index | Raw | Frame | DLC | Payload RAM | Aux A | Aux B | Bucket | Mask | IPC/source 0x60 | BCM/source 0x40 | Live | Interpretation |",
+        "|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|",
+    ]
+    for index in focus_indices:
+        item = row(index)
+        entry = item["entry"]
+        live = item["live"]
+        exact_live = "yes" if live else "no"
+        role = classify_group_a_object(entry, item["dlc"], bool(live))
+        lines.append(
+            f"| {index} | `{hex_raw(entry.raw)}` | {hex_id(entry.frame_id)} | "
+            f"{item['dlc']} | {hex_addr(item['ptr']) if item['ptr'] else ''} | "
+            f"{hex_addr(item['aux_a']) if item['aux_a'] else ''} | "
+            f"{hex_addr(item['aux_b']) if item['aux_b'] else ''} | "
+            f"{item['bucket']} | "
+            f"{f'0x{item['mask']:02X}' if item['mask'] is not None else ''} | "
+            f"{hex(item['wire_60'])} | {hex(item['wire_40'])} | {exact_live} | {role} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## `0x621` Aux Function Notes",
+            "",
+            "`0x100` is also present as a standard DLC0 Group A object at indices",
+            "98 and 129, both with aux entries `0x101EEE` and `0x101F7A`. It was",
+            "seen once in the direct IPC-only capture. Treat `0x100#` as a real",
+            "firmware-backed network wake candidate, but less IPC-specific than",
+            "`0x13FFE040#`. The aux functions do not build payload bytes; they set",
+            "per-object RAM flags/counters in the `0x03FFA61C + 4*object` state",
+            "block. `0x101EEE` sets init/pending bits and counter bytes, while",
+            "`0x101F7A` sets the high pending/transmit flag at object-state byte 2.",
+            "",
+            "Group A index 3 (`0x621`, DLC8) has aux entries at `0x101D64` and",
+            "`0x101C7C`. The `0x101C7C` function looks like a variable payload",
+            "builder: it writes an initial status byte to the caller buffer, copies",
+            "bytes from RAM-backed arrays, and updates per-object RAM flags around",
+            "`0x03FFA61C`. The `0x101D64` function walks indexed byte/mask tables",
+            "and calls `0x103ADE` when state bits change. That is stronger evidence",
+            "that `0x621` is a real network-management/state object, but not enough",
+            "yet to claim the exact wake payload.",
+            "",
+            "## Generic Sender Xrefs",
+            "",
+            "An r2 `-A` xref pass found the generic Group A sender at `0x102836`.",
+            "This function reads the DLC byte from `0x01E080` (`ld.bu -8064[...]`)",
+            "and the payload RAM pointer from `0x01E104` (`ld.w -7932[...]`).",
+            "Its caller around `0x103054` passes object index/state into this sender.",
+            "For Group A index 5 the DLC table returns `0` and the payload pointer",
+            "table returns null, so the generic sender can still emit a valid empty",
+            "CAN object. A second setup/refresh path at `0x104D7C` also references",
+            "the same DLC and payload-pointer tables.",
+            "",
+            "## Transmit Implications",
+            "",
+            "- First wake/keepalive trial should remain extended `0x13FFE040#` at",
+            "  roughly 250 ms to 1200 ms. The firmware evidence says it is a DLC0",
+            "  scheduled object, not a payload builder.",
+            "- Standard `0x100#` is also a firmware-confirmed DLC0 Group A object and",
+            "  remains the best generic network-wake prelude.",
+            "- Standard `0x621` is also a table-confirmed Group A DLC8 object. It is a",
+            "  plausible VNMF/network-management candidate, but the firmware has not yet",
+            "  exposed the exact payload in this pass.",
+            "- `0x641`/`0x7F1` are more likely diagnostic response objects than cluster",
+            "  power wake frames.",
+            "- `0x10424040`, `0x10600040`, and `0x10244040` are useful state-object probes,",
+            "  but they look like payload/status messages rather than the primary wake",
+            "  frame.",
+            "",
+            "## Next Static Targets",
+            "",
+            "1. Find code that iterates Group A index/bucket/mask metadata around",
+            "   `0x01E730` and `0x01E7B0`.",
+            "2. Trace Group A index 5 through the generic scheduler path, because it has",
+            "   no direct payload handler.",
+            "3. Trace standard `0x621` payload sources from its DLC8 object metadata and",
+            "   compare against observed IPC-origin `0x62C` network-management traffic.",
+        ]
+    )
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def write_group_b_rx_trace_csv(
     path: Path,
     entries: list[TableEntry],
@@ -1376,6 +1669,13 @@ def main() -> int:
     write_group_a_tx_trace_csv(
         output_dir / "bcm_group_a_tx_trace.csv", entries, dispatch_entries, log_info
     )
+    write_group_a_object_metadata_csv(
+        output_dir / "bcm_group_a_object_metadata.csv",
+        data,
+        entries,
+        dispatch_entries,
+        output_dir / "ipc_lowspeed_bcm_projection.csv",
+    )
     write_group_b_rx_trace_csv(
         output_dir / "bcm_group_b_rx_trace.csv",
         entries,
@@ -1392,6 +1692,15 @@ def main() -> int:
     (output_dir / "bcm_low_speed_static_message_map.md").write_text(
         low_speed_map_markdown(
             flash_path, entries, dispatch_entries, helper_callsites, log_info
+        ),
+        encoding="utf-8",
+    )
+    (output_dir.parent / "BCM_WAKE_POWER_CANDIDATES.md").write_text(
+        wake_power_candidates_markdown(
+            data,
+            entries,
+            dispatch_entries,
+            output_dir / "ipc_lowspeed_bcm_projection.csv",
         ),
         encoding="utf-8",
     )
