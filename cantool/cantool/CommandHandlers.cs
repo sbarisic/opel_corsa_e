@@ -6,7 +6,7 @@ namespace cantool;
 
 internal static class CommandHandlers
 {
-    private const double InteractiveDefaultSeconds = 15.0;
+    private static readonly TimeSpan MaxSchedulerSleep = TimeSpan.FromMilliseconds(2);
 
     public static int InteractiveMenu()
     {
@@ -36,9 +36,10 @@ internal static class CommandHandlers
                 continue;
             }
 
-            Console.Write($"Duration seconds [{InteractiveDefaultSeconds:0}] (0 = until Ctrl+C): ");
+            var defaultSeconds = selected.DefaultSeconds;
+            Console.Write($"Duration seconds [{defaultSeconds:0}] (0 = until Ctrl+C): ");
             var secondsText = (Console.ReadLine() ?? "").Trim();
-            if (!TryParseDuration(secondsText, out var seconds))
+            if (!TryParseDuration(secondsText, defaultSeconds, out var seconds))
             {
                 Console.WriteLine("Invalid duration.");
                 continue;
@@ -53,7 +54,9 @@ internal static class CommandHandlers
                 rxLogPath: DefaultLiveOutput(logPrefix),
                 banner: duration is null
                     ? $"transmitting {selected.Name} until Ctrl+C"
-                    : $"transmitting {selected.Name} for {seconds:0.###}s");
+                    : $"transmitting {selected.Name} for {seconds:0.###}s",
+                waitForFirstRx: selected.WaitForFirstRx,
+                autoIsoTpFlowControl: selected.AutoIsoTpFlowControl);
             if (result != 0)
             {
                 return result;
@@ -160,12 +163,14 @@ internal static class CommandHandlers
     public static int SendProfile(string[] args)
     {
         var profile = CliOptions.GetString(args, "--profile") ?? Profiles.FirmwareWake;
-        var seconds = CliOptions.GetDouble(args, "--seconds", profile.Equals(Profiles.Gmlan29AllTargeted, StringComparison.OrdinalIgnoreCase) ? 60.0 : 15.0);
+        var seconds = CliOptions.GetDouble(args, "--seconds", Profiles.GetDefaultSeconds(profile));
         return SendSchedule(
             Profiles.GetSchedule(profile),
             TimeSpan.FromSeconds(seconds),
             countLimit: null,
-            CliOptions.GetString(args, "--rx-log"));
+            CliOptions.GetString(args, "--rx-log"),
+            waitForFirstRx: Profiles.WaitsForFirstRx(profile),
+            autoIsoTpFlowControl: Profiles.UsesAutoIsoTpFlowControl(profile));
     }
 
     public static int Summarize(string[] args)
@@ -195,7 +200,14 @@ internal static class CommandHandlers
         return 0;
     }
 
-    private static int SendSchedule(List<ScheduledTxFrame> schedule, TimeSpan? duration, int? countLimit, string? rxLogPath, string? banner = null)
+    private static int SendSchedule(
+        List<ScheduledTxFrame> schedule,
+        TimeSpan? duration,
+        int? countLimit,
+        string? rxLogPath,
+        string? banner = null,
+        bool waitForFirstRx = false,
+        bool autoIsoTpFlowControl = false)
     {
         var outPath = rxLogPath ?? DefaultLiveOutput("cantool_tx_rx");
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
@@ -218,6 +230,35 @@ internal static class CommandHandlers
             Console.WriteLine($"transmitting for {duration?.TotalSeconds:0.###}s; RX log {outPath}");
         }
 
+        var sent = 0;
+        var received = 0;
+        using var writer = new StreamWriter(outPath, append: false);
+        writer.WriteLine("# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4");
+
+        if (waitForFirstRx)
+        {
+            Console.WriteLine("waiting for first RX before starting TX...");
+            writer.WriteLine("# waiting for first RX before starting TX");
+            writer.Flush();
+
+            while (!done.IsSet)
+            {
+                var trigger = device.ReadFrame(timeoutMs: 100);
+                if (trigger is null)
+                {
+                    continue;
+                }
+
+                received++;
+                writer.WriteLine(trigger.Value.ToCandumpLine());
+                writer.WriteLine("# first RX observed; starting TX schedule");
+                writer.Flush();
+                Console.WriteLine(ConsoleFrames.FormatRx(received, trigger.Value));
+                Console.WriteLine("first RX observed; starting TX schedule");
+                break;
+            }
+        }
+
         var now = DateTimeOffset.UtcNow;
         foreach (var item in schedule)
         {
@@ -225,10 +266,6 @@ internal static class CommandHandlers
         }
 
         var end = duration is null ? DateTimeOffset.MaxValue : now + duration.Value;
-        var sent = 0;
-        var received = 0;
-        using var writer = new StreamWriter(outPath, append: false);
-        writer.WriteLine("# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4");
 
         while (!done.IsSet && DateTimeOffset.UtcNow < end && (countLimit is null || sent < countLimit.Value))
         {
@@ -245,27 +282,76 @@ internal static class CommandHandlers
                 item.SentCount++;
                 item.NextDue = item.Period <= TimeSpan.Zero || (item.MaxSends is not null && item.SentCount >= item.MaxSends.Value)
                     ? DateTimeOffset.MaxValue
-                    : now + item.Period;
+                    : item.NextDue + item.Period;
                 writer.WriteLine(ConsoleFrames.FormatTxLogComment(item));
                 writer.Flush();
                 Console.WriteLine(ConsoleFrames.FormatTx(sent, item));
             }
 
-            var frame = device.ReadFrame(timeoutMs: 20);
-            if (frame is null)
-            {
-                continue;
-            }
-
-            received++;
-            var line = frame.Value.ToCandumpLine();
-            writer.WriteLine(line);
-            writer.Flush();
-            Console.WriteLine(ConsoleFrames.FormatRx(received, frame.Value));
+            DrainAvailableRx(device, writer, ref received, ref sent, autoIsoTpFlowControl);
+            SleepUntilNextDue(schedule, end);
         }
 
         Console.WriteLine($"done: sent={sent} rx_frames={received} rx_log={outPath}");
         return 0;
+    }
+
+    private static void DrainAvailableRx(
+        GsUsbDevice device,
+        StreamWriter writer,
+        ref int received,
+        ref int sent,
+        bool autoIsoTpFlowControl)
+    {
+        while (true)
+        {
+            var frame = device.ReadFrame(timeoutMs: 1);
+            if (frame is null)
+            {
+                return;
+            }
+
+            received++;
+            writer.WriteLine(frame.Value.ToCandumpLine());
+            writer.Flush();
+            Console.WriteLine(ConsoleFrames.FormatRx(received, frame.Value));
+
+            if (autoIsoTpFlowControl && IsIpcIsoTpFirstFrame(frame.Value))
+            {
+                var flowControl = new ScheduledTxFrame(0x24C, CliOptions.ParseHexData("300000AAAAAAAAAA"), TimeSpan.Zero, false, "auto ISO-TP flow control for IPC 64C first frame", MaxSends: 1);
+                device.SendFrame(flowControl);
+                sent++;
+                writer.WriteLine(ConsoleFrames.FormatTxLogComment(flowControl));
+                writer.Flush();
+                Console.WriteLine(ConsoleFrames.FormatTx(sent, flowControl));
+            }
+        }
+    }
+
+    private static bool IsIpcIsoTpFirstFrame(CanFrame frame)
+    {
+        return !frame.IsExtended &&
+            frame.CanId == 0x64C &&
+            frame.Data.Length >= 1 &&
+            (frame.Data[0] & 0xF0) == 0x10;
+    }
+
+    private static void SleepUntilNextDue(List<ScheduledTxFrame> schedule, DateTimeOffset end)
+    {
+        var nextDue = schedule
+            .Select(item => item.NextDue)
+            .Where(due => due != DateTimeOffset.MaxValue)
+            .DefaultIfEmpty(end)
+            .Min();
+
+        var wait = (nextDue < end ? nextDue : end) - DateTimeOffset.UtcNow;
+        if (wait <= TimeSpan.Zero)
+        {
+            Thread.Yield();
+            return;
+        }
+
+        Thread.Sleep(wait < MaxSchedulerSleep ? wait : MaxSchedulerSleep);
     }
 
     private static ProfileDefinition? ResolveInteractiveProfile(string input)
@@ -285,11 +371,11 @@ internal static class CommandHandlers
         return Profiles.Available.FirstOrDefault(profile => profile.Name.Equals(input, StringComparison.OrdinalIgnoreCase));
     }
 
-    private static bool TryParseDuration(string input, out double seconds)
+    private static bool TryParseDuration(string input, double defaultSeconds, out double seconds)
     {
         if (input.Length == 0)
         {
-            seconds = InteractiveDefaultSeconds;
+            seconds = defaultSeconds;
             return true;
         }
 
