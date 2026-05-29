@@ -22,6 +22,11 @@ internal static class ConsoleFrames
         return $"[tx {count:00000} t={FormatElapsed()}] {frame.CandumpId}#{Convert.ToHexString(frame.Data)}";
     }
 
+    public static string FormatTxLogComment(ScheduledTxFrame frame)
+    {
+        return $"# tx t={FormatElapsed()} {frame.CandumpId}#{Convert.ToHexString(frame.Data)} note={frame.Note}";
+    }
+
     public static string FormatRx(int count, CanFrame frame)
     {
         return $"[rx {count:00000} t={FormatElapsed()}] {frame.CandumpId}#{frame.DataHex}";

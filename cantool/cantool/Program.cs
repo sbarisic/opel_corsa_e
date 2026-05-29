@@ -46,7 +46,7 @@ internal static class Program
               list
               capture [--seconds N] [--out PATH] [--listen-only]
               send --id ID [--data HEX] [--period-ms N] [--count N] [--seconds N]
-              send-profile --profile default-bench|firmware-wake|opel-reference-probe|gmlan29-probe|gmlan29-known-payloads|gmlan29-chime|gmlan29-speed-sweep [--seconds N]
+              send-profile --profile default-bench|firmware-wake|gmlan29-all-targeted|gmlan29-speed-rpm|gmlan29-speed-rpm-alt-sources|gmlan29-power-mode|gmlan29-environment|gmlan29-chime|gmlan29-known-payloads|gmlan29-speed-sweep|gmlan29-probe|opel-reference-probe [--seconds N]
               summarize --log PATH
 
             CAN timing is the known-good IPC low-speed profile:

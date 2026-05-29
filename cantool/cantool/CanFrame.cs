@@ -109,9 +109,11 @@ internal sealed record ScheduledTxFrame(
     TimeSpan Period,
     bool IsExtended,
     string Note,
-    TimeSpan InitialDelay = default)
+    TimeSpan InitialDelay = default,
+    int? MaxSends = null)
 {
     public DateTimeOffset NextDue { get; set; }
+    public int SentCount { get; set; }
     public string CandumpId => IsExtended ? $"{CanId:X8}" : $"{CanId:X3}";
 
     public byte[] ToGsUsbFrame(bool hwTimestamp)

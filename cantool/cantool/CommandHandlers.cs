@@ -160,7 +160,7 @@ internal static class CommandHandlers
     public static int SendProfile(string[] args)
     {
         var profile = CliOptions.GetString(args, "--profile") ?? Profiles.FirmwareWake;
-        var seconds = CliOptions.GetDouble(args, "--seconds", 15.0);
+        var seconds = CliOptions.GetDouble(args, "--seconds", profile.Equals(Profiles.Gmlan29AllTargeted, StringComparison.OrdinalIgnoreCase) ? 60.0 : 15.0);
         return SendSchedule(
             Profiles.GetSchedule(profile),
             TimeSpan.FromSeconds(seconds),
@@ -242,7 +242,12 @@ internal static class CommandHandlers
 
                 device.SendFrame(item);
                 sent++;
-                item.NextDue = item.Period <= TimeSpan.Zero ? DateTimeOffset.MaxValue : now + item.Period;
+                item.SentCount++;
+                item.NextDue = item.Period <= TimeSpan.Zero || (item.MaxSends is not null && item.SentCount >= item.MaxSends.Value)
+                    ? DateTimeOffset.MaxValue
+                    : now + item.Period;
+                writer.WriteLine(ConsoleFrames.FormatTxLogComment(item));
+                writer.Flush();
                 Console.WriteLine(ConsoleFrames.FormatTx(sent, item));
             }
 
