@@ -188,8 +188,8 @@ internal static class CommandHandlers
             var firstPayload = ordered.First().DataHex;
             var idText = ordered.First().CandumpId;
             var format = group.Key.IsExtended ? "extended" : "standard";
-            var gmlan = group.Key.IsExtended ? Gmlan29Id.Decode(group.Key.CanId).ToSummaryString() : "";
-            Console.WriteLine($"{idText,12} {format,-8} {gmlan,-38} count={ordered.Count,5} period_ms={periodText,10} dlcs={dlcs} payload={firstPayload}");
+            var gmlan = group.Key.IsExtended ? Gmlan29Id.Decode(group.Key.CanId).ToAnnotatedSummaryString() : "";
+            Console.WriteLine($"{idText,12} {format,-8} {gmlan,-76} count={ordered.Count,5} period_ms={periodText,10} dlcs={dlcs} payload={firstPayload}");
         }
 
         return 0;
@@ -242,7 +242,7 @@ internal static class CommandHandlers
 
                 device.SendFrame(item);
                 sent++;
-                item.NextDue = now + item.Period;
+                item.NextDue = item.Period <= TimeSpan.Zero ? DateTimeOffset.MaxValue : now + item.Period;
                 Console.WriteLine(ConsoleFrames.FormatTx(sent, item));
             }
 

@@ -12,6 +12,9 @@ dotnet run --project cantool\cantool\cantool.csproj -- send --id 13FFE040 --seco
 dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile firmware-wake --seconds 15
 dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile opel-reference-probe --seconds 15
 dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile gmlan29-probe --seconds 15
+dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile gmlan29-known-payloads --seconds 15
+dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile gmlan29-chime --seconds 15
+dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile gmlan29-speed-sweep --seconds 15
 dotnet run --project cantool\cantool\cantool.csproj -- summarize --log data\can_logs\live\capture.candump
 ```
 
@@ -27,10 +30,29 @@ older Opel low-speed GMLAN probe set (`0x278` wake, `0x0AA` IPC-on, and a slow
 staggered `0x06C` needle sweep), and low-rate 29-bit GMLAN probes using guessed
 BCM/source `0x40`.
 
+In `firmware-wake`, `621#0140000000000000` is sent once at startup only. The
+steady wake traffic is `100#`, `13FFE040#`, and `621#0040000000000000`.
+
 The `gmlan29-probe` payloads are zero-filled discovery frames for watching IPC
 reaction or status changes. They are not decoded gauge-control payloads yet.
 
+The GMLAN Bible-derived profiles add concrete payload probes:
+
+- `gmlan29-known-payloads` sends wake frames, then battery voltage examples,
+  a vehicle-speed/engine example, and a chime example.
+- `gmlan29-chime` sends three isolated chime command variants.
+- `gmlan29-speed-sweep` sends three arbid `0x028` payloads intended for
+  visible needle/reaction testing.
+
+These are still bench probes, not confirmed Corsa E IPC decodes. The workbook
+examples mix older GM platforms with Corsa E-related data, so visual reaction
+and RX changes matter more than the label names.
+
 Use `capture` when you want a passive receive-only run.
+
+`summarize` annotates 29-bit extended IDs with the decoded GMLAN priority,
+arbitration ID name, and sender range, for example sender `0x060` as
+`Driver Info/Displays` and sender `0x040` as `Body/Integration`.
 
 All commands use the same custom 33.333 kbit/s candleLight timing as
 `tools/ipc_lowspeed_gsusb.py`:

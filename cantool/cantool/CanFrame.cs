@@ -39,6 +39,68 @@ internal readonly record struct Gmlan29Id(int Priority, uint ArbitrationId, uint
     }
 
     public string ToSummaryString() => $"prio={Priority} arbid=0x{ArbitrationId:X3} sender=0x{Sender:X3}";
+    public string ToAnnotatedSummaryString()
+    {
+        var arbidName = Gmlan29Catalog.GetArbitrationName(ArbitrationId);
+        var senderName = Gmlan29Catalog.GetSenderRangeName(Sender);
+        return $"prio={Priority} arbid=0x{ArbitrationId:X3} {arbidName} sender=0x{Sender:X3} {senderName}";
+    }
+}
+
+internal static class Gmlan29Catalog
+{
+    private static readonly Dictionary<uint, string> ArbitrationNames = new()
+    {
+        [0x001] = "System Power Mode",
+        [0x00F] = "Chime Command",
+        [0x010] = "Chime Status",
+        [0x011] = "Dimming Information",
+        [0x012] = "VIN Digits 2-9",
+        [0x013] = "VIN Digits 10-17",
+        [0x018] = "Battery Voltage",
+        [0x025] = "Transmission Gear",
+        [0x026] = "Fuel Information",
+        [0x027] = "Odo/Brake/Wash Level",
+        [0x028] = "Vehicle Speed Information",
+        [0x029] = "Engine Information 1",
+        [0x02F] = "Brake/Cruise Status",
+        [0x032] = "Engine Information 3",
+        [0x037] = "Engine Information 2",
+        [0x061] = "Outside Air Temp",
+        [0x062] = "ABS/Traction Status",
+        [0x068] = "Wheel Controls",
+        [0x180] = "DIC Text Attributes",
+        [0x182] = "DIC Set Display Icon",
+        [0x185] = "DIC Set Display Parameters",
+        [0x186] = "DIC Set Display Text",
+        [0x1FFF] = "Wake/Network Keepalive",
+    };
+
+    public static string GetArbitrationName(uint arbitrationId)
+    {
+        return ArbitrationNames.TryGetValue(arbitrationId, out var name) ? name : "Unknown";
+    }
+
+    public static string GetSenderRangeName(uint sender)
+    {
+        return sender switch
+        {
+            <= 0x01F => "Powertrain",
+            <= 0x03F => "Chassis",
+            <= 0x057 => "Body/Integration",
+            <= 0x05F => "Restraints",
+            <= 0x06F => "Driver Info/Displays",
+            <= 0x07F => "Lighting",
+            <= 0x08F => "Entertainment/Audio",
+            <= 0x097 => "Personal Communication",
+            <= 0x09F => "HVAC",
+            <= 0x0BF => "Convenience",
+            <= 0x0C7 => "Security",
+            <= 0x0CB => "EV Energy",
+            <= 0x0FD => "Future Expansion",
+            _ => "Unknown Sender",
+        };
+    }
 }
 
 internal sealed record ScheduledTxFrame(
