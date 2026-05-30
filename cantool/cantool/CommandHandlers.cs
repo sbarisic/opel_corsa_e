@@ -16,7 +16,19 @@ internal static class CommandHandlers
         0x10244060, 0x103BC060, 0x103D6060, 0x103DA060, 0x10424060,
         0x10448060, 0x1045C060, 0x10774060, 0x10812060, 0x1084A060,
         0x10A04060, 0x10ACE060, 0x10AE8060, 0x10AFC060, 0x10B0A060,
-        0x10600060
+        0x10600060, 0x10308060
+    ];
+    private static readonly HashSet<uint> IpcEffectWatchIds =
+    [
+        0x10244060, 0x1045C060, 0x10ACE060, 0x10AE8060, 0x10AFC060,
+        0x10308060, 0x624, 0x62C, 0x64C
+    ];
+    private static readonly HashSet<uint> IpcEffectTxIds =
+    [
+        0x624, 0x621, 0x1030A080, 0x1030C080, 0x1030A097, 0x1030C097,
+        0x13FFE080, 0x13FFE058, 0x10030040, 0x10050040, 0x10052040,
+        0x10064040, 0x1006E040, 0x1005E040, 0x100C4040, 0x10438040,
+        0x10308040, 0x0AF
     ];
     private static readonly HashSet<uint> IpcWakeEvidenceStandardIds = [0x54C, 0x62C, 0x64C];
     private static readonly HashSet<uint> CommonToolTxIds =
@@ -237,11 +249,11 @@ internal static class CommandHandlers
     public static int DefaultTxRx()
     {
         return SendSchedule(
-            Profiles.GetSchedule(Profiles.DefaultBench),
+            Profiles.GetSchedule(Profiles.IpcSimulator),
             duration: null,
             countLimit: null,
             rxLogPath: DefaultLiveOutput("cantool_default_tx_rx"),
-            banner: "transmitting default-bench profile until Ctrl+C");
+            banner: "transmitting ipc-simulator profile until Ctrl+C");
     }
 
     public static int ListDevices()
@@ -625,7 +637,7 @@ internal static class CommandHandlers
 
     public static int SendProfile(string[] args)
     {
-        var profile = CliOptions.GetString(args, "--profile") ?? Profiles.FirmwareWake;
+        var profile = CliOptions.GetString(args, "--profile") ?? Profiles.IpcSimulator;
         var seconds = CliOptions.GetDouble(args, "--seconds", Profiles.GetDefaultSeconds(profile));
         var duration = seconds <= 0 ? (TimeSpan?)null : TimeSpan.FromSeconds(seconds);
         if (Profiles.IsReadOnlyCapture(profile))
@@ -745,7 +757,60 @@ internal static class CommandHandlers
             Console.WriteLine($"{idText,12} {format,-8} {gmlan,-76} count={ordered.Count,5} period_ms={periodText,10} dlcs={dlcs} payload={firstPayload}");
         }
 
+        PrintIpcEffectSummary(logPath, records);
         return 0;
+    }
+
+    private static void PrintIpcEffectSummary(string logPath, List<CanFrame> records)
+    {
+        var watchedRx = records
+            .Where(frame => IpcEffectWatchIds.Contains(frame.CanId))
+            .GroupBy(frame => (frame.CanId, frame.IsExtended))
+            .OrderBy(group => group.Key.IsExtended ? 1 : 0)
+            .ThenBy(group => group.Key.CanId)
+            .ToList();
+        var events = ParseLogEvents(logPath).ToList();
+        var watchedTx = events
+            .Where(item => item.Kind == LogEventKind.Tx && IpcEffectTxIds.Contains(item.Frame.CanId))
+            .OrderBy(item => item.LineNumber)
+            .ToList();
+
+        if (watchedRx.Count == 0 && watchedTx.Count == 0)
+        {
+            return;
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("IPC effect watch:");
+        foreach (var group in watchedRx)
+        {
+            var ordered = group.OrderBy(frame => frame.Timestamp).ToList();
+            var first = ordered.First();
+            var uniquePayloads = ordered
+                .Select(frame => frame.DataHex)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .Take(8)
+                .ToList();
+            var changed = uniquePayloads.Count > 1 ? "changed" : "stable";
+            Console.WriteLine($"  rx {first.CandumpId,12} count={ordered.Count,5} unique_payloads={uniquePayloads.Count,2} {changed,-7} first={first.DataHex} last={ordered.Last().DataHex} samples={string.Join(",", uniquePayloads)}");
+        }
+
+        if (watchedTx.Count == 0)
+        {
+            return;
+        }
+
+        Console.WriteLine("Relevant TX windows:");
+        foreach (var tx in watchedTx.Take(20))
+        {
+            var note = string.IsNullOrWhiteSpace(tx.Note) ? "" : $" note={tx.Note}";
+            Console.WriteLine($"  tx line {tx.LineNumber,5}: t={tx.Frame.Timestamp,8:0.###}s {tx.Frame.CandumpId}#{tx.Frame.DataHex}{note}");
+        }
+
+        if (watchedTx.Any(item => item.Frame.CanId is 0x100C4040 or 0x1005E040))
+        {
+            Console.WriteLine("  note: 100C4040/1005E040 are the current ABS/traction and brake/cruise OK candidates; correlate these windows with the TC lamp clearing.");
+        }
     }
 
     private static List<CanFrame> ParseRxExcludingTxEchoes(string logPath, out int ignoredEchoes)
@@ -1002,8 +1067,8 @@ internal static class CommandHandlers
         {
             case WakeVerdict.IpcAwake:
                 Console.WriteLine("  1. dotnet run --no-build --project cantool\\cantool\\cantool.csproj -- wake-then-profile --profile ipc-diagnostic-gmlan-classic-probe --seconds 36 --wait-rx-timeout-ms 5000");
-                Console.WriteLine("  2. dotnet run --no-build --project cantool\\cantool\\cantool.csproj -- wake-then-profile --profile ipc-native-keyon-context --seconds 45 --wait-rx-timeout-ms 5000");
-                Console.WriteLine("  3. dotnet run --no-build --project cantool\\cantool\\cantool.csproj -- wake-then-profile --profile ipc-simulator --seconds 30 --wait-rx-timeout-ms 5000");
+                Console.WriteLine("  2. dotnet run --no-build --project cantool\\cantool\\cantool.csproj -- wake-then-profile --profile ipc-simulator --seconds 45 --wait-rx-timeout-ms 5000");
+                Console.WriteLine("  3. dotnet run --no-build --project cantool\\cantool\\cantool.csproj -- wake-then-profile --profile ipc-native-lights-probe --seconds 45 --wait-rx-timeout-ms 5000");
                 break;
             case WakeVerdict.StaleBacklog:
                 Console.WriteLine("  dotnet run --no-build --project cantool\\cantool\\cantool.csproj -- wake-watch");

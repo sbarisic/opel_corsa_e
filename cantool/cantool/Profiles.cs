@@ -2,8 +2,6 @@ namespace cantool;
 
 internal static class Profiles
 {
-    private static readonly byte[] ConservativeFuzzValues = [0x00, 0x01, 0x02, 0x03, 0x04, 0x08, 0x10, 0x20, 0x40, 0x7F, 0x80, 0xC0, 0xFF];
-
     public const string ReadOnly = "read-only";
     public const string IpcReadOnlySniff = "ipc-read-only-sniff";
     public const string IpcAckSniff = "ipc-ack-sniff";
@@ -11,17 +9,17 @@ internal static class Profiles
     public const string IpcWakePulseOnlyProbe = "ipc-wake-pulse-only-probe";
     public const string IpcWakeFirstProbe = "ipc-wake-first-probe";
     public const string IpcWakeRecoveryProbe = "ipc-wake-recovery-probe";
-    public const string DefaultBench = "default-bench";
     public const string IpcSimulator = "ipc-simulator";
-    public const string IpcSimulatorP4Speed = "ipc-simulator-p4-speed";
-    public const string IpcSimulatorAltSources = "ipc-simulator-alt-sources";
-    public const string IpcSimulatorSweep = "ipc-simulator-sweep";
-    public const string IpcBcmLiveObjectProbe = "ipc-bcm-live-object-probe";
-    public const string IpcRestartWakeOnlyProbe = "ipc-restart-wake-only-probe";
-    public const string IpcRestartNmInitOnlyProbe = "ipc-restart-nm-init-only-probe";
-    public const string IpcRestartPresenceOnlyProbe = "ipc-restart-presence-only-probe";
-    public const string IpcRestartKeepaliveOnlyProbe = "ipc-restart-keepalive-only-probe";
-    public const string IpcRestartWakeThenNmInitProbe = "ipc-restart-wake-then-nm-init-probe";
+    public const string IpcSimulatorKeyOnHold = "ipc-simulator-keyon-hold";
+    public const string IpcSimulatorDataFill = "ipc-simulator-data-fill";
+    public const string IpcDicTextRadioProbe = "ipc-dic-text-radio-probe";
+    public const string IpcActiveGaugeContextProbe = "ipc-active-gauge-context-probe";
+    public const string Ipc624StateProbe = "ipc-624-state-probe";
+    public const string IpcTpmsOkDismissProbe = "ipc-tpms-ok-dismiss-probe";
+    public const string IpcNativeLightsProbe = "ipc-native-lights-probe";
+    public const string IpcNativeHandbrakeProbe = "ipc-native-handbrake-probe";
+    public const string IpcSimulatorKeyOnEdge = "ipc-simulator-keyon-edge";
+    public const string IpcSimulatorNativeTransition = "ipc-simulator-native-transition";
     public const string IpcDiagnosticProbe = "ipc-diagnostic-probe";
     public const string IpcDiagnosticSessionProbe = "ipc-diagnostic-session-probe";
     public const string IpcDiagnosticDidScan = "ipc-diagnostic-did-scan";
@@ -35,33 +33,6 @@ internal static class Profiles
     public const string IpcDiagnosticClassic1AScan = "ipc-diagnostic-classic-1a-scan";
     public const string IpcDiagnosticClassic1AC0EfScan = "ipc-diagnostic-classic-1a-c0-ef-scan";
     public const string IpcDiagnosticAa00RepeatProbe = "ipc-diagnostic-aa00-repeat-probe";
-    public const string IpcStandardEngineWarningProbe = "ipc-standard-engine-warning-probe";
-    public const string IpcAstraHLsReferenceProbe = "ipc-astra-h-ls-reference-probe";
-    public const string IpcStandardByteFuzz = "ipc-standard-byte-fuzz";
-    public const string IpcGmlan29ByteFuzz = "ipc-gmlan29-byte-fuzz";
-    public const string IpcGmOpelHmiProbe = "ipc-gm-opel-hmi-probe";
-    public const string IpcNativeBodySeedProbe = "ipc-native-body-seed-probe";
-    public const string IpcNativeContextLite = "ipc-native-context-lite";
-    public const string IpcNativeKeyOnContext = "ipc-native-keyon-context";
-    public const string IpcNativeKeyTransition = "ipc-native-key-transition";
-    public const string IpcNativeExpandedKeyOn = "ipc-native-expanded-keyon";
-    public const string IpcPriorityTier1Probe = "ipc-priority-tier1-probe";
-    public const string IpcPriorityTier2Probe = "ipc-priority-tier2-probe";
-    public const string IpcPriorityTier3Probe = "ipc-priority-tier3-probe";
-    public const string IpcPriorityAllProbe = "ipc-priority-all-probe";
-    public const string IpcPriorityTier1ByteFuzz = "ipc-priority-tier1-byte-fuzz";
-    public const string IpcPriorityTier2ByteFuzz = "ipc-priority-tier2-byte-fuzz";
-    public const string FirmwareWake = "firmware-wake";
-    public const string Gmlan29Probe = "gmlan29-probe";
-    public const string Gmlan29KnownPayloads = "gmlan29-known-payloads";
-    public const string Gmlan29Chime = "gmlan29-chime";
-    public const string Gmlan29SpeedSweep = "gmlan29-speed-sweep";
-    public const string Gmlan29SpeedRpm = "gmlan29-speed-rpm";
-    public const string Gmlan29SpeedRpmAltSources = "gmlan29-speed-rpm-alt-sources";
-    public const string Gmlan29PowerMode = "gmlan29-power-mode";
-    public const string Gmlan29Environment = "gmlan29-environment";
-    public const string Gmlan29AllTargeted = "gmlan29-all-targeted";
-    public const string OpelReferenceProbe = "opel-reference-probe";
 
     public static readonly ProfileDefinition[] Available =
     [
@@ -72,16 +43,17 @@ internal static class Profiles
         new(IpcWakePulseOnlyProbe, "Wake isolation: only repeated SWCAN 100# wake pulses on silent bus", 30.0),
         new(IpcWakeFirstProbe, "Wake first: no wait-for-RX, wake/body context only, no diagnostics", 20.0),
         new(IpcWakeRecoveryProbe, "Wake recovery: no wait-for-RX, staged SWCAN wake/context/diagnostic nudges", 30.0),
-        new(IpcSimulator, "Recommended staged IPC simulator: waits for first RX, then fake BCM/body gateway", 30.0, WaitForFirstRx: true),
-        new(IpcSimulatorP4Speed, "Staged IPC simulator using priority-4 10050040 speed/RPM", 30.0, WaitForFirstRx: true),
-        new(IpcSimulatorAltSources, "Staged IPC simulator cycling alternate speed/RPM source nodes", 45.0, WaitForFirstRx: true),
-        new(IpcSimulatorSweep, "Staged IPC simulator sweeping priority-3 speed/RPM payload values", 30.0, WaitForFirstRx: true),
-        new(IpcBcmLiveObjectProbe, "Quiet BCM-source variants of observed IPC startup/status frames", 45.0, WaitForFirstRx: true),
-        new(IpcRestartWakeOnlyProbe, "Restart isolation: send only SWCAN wake 100# after first RX", 8.0, WaitForFirstRx: true),
-        new(IpcRestartNmInitOnlyProbe, "Restart isolation: send only 621#0140 network-init burst after first RX", 8.0, WaitForFirstRx: true),
-        new(IpcRestartPresenceOnlyProbe, "Restart isolation: send only 13FFE040 presence after first RX", 8.0, WaitForFirstRx: true),
-        new(IpcRestartKeepaliveOnlyProbe, "Restart isolation: send only 621#0040 keepalive after first RX", 8.0, WaitForFirstRx: true),
-        new(IpcRestartWakeThenNmInitProbe, "Restart isolation: 100# wake, pause, then 621#0140 burst", 12.0),
+        new(IpcSimulator, "Native Corsa E IPC simulator: stable key-on hold from real SWCAN captures", 45.0),
+        new(IpcSimulatorKeyOnHold, "Alias for native stable key-on hold replay", 45.0),
+        new(IpcSimulatorDataFill, "Native key-on hold plus transient odometer/fuel/body data candidates", 45.0),
+        new(IpcDicTextRadioProbe, "Native hold plus radio/OnStar DIC text probes; source 0x60 remains RX-only", 60.0),
+        new(Ipc624StateProbe, "Native hold with isolated 621/624 state-heartbeat windows", 45.0),
+        new(IpcActiveGaugeContextProbe, "Native hold plus 0x58/0x80 presence, battery, speed/RPM, and engine context; no 624", 75.0),
+        new(IpcTpmsOkDismissProbe, "Native hold plus safe TPMS OK/dismiss HMI and DIC menu-action button probes", 70.0),
+        new(IpcNativeLightsProbe, "Native hold plus captured lights/night-mode and dimmer candidates", 45.0),
+        new(IpcNativeHandbrakeProbe, "Native hold plus captured handbrake/telltale candidates", 45.0),
+        new(IpcSimulatorKeyOnEdge, "Native Corsa E short pre-key to key-on edge replay", 45.0),
+        new(IpcSimulatorNativeTransition, "Native Corsa E transition replay: off/key-in/key-on/cleanup, can drive odometer-only state", 45.0),
         new(IpcDiagnosticProbe, "Quiet post-RX IPC diagnostics 24C -> 64C", 12.0, WaitForFirstRx: true),
         new(IpcDiagnosticSessionProbe, "Quiet IPC diagnostic sessions, tester-present variants, and VIN DID", 16.0, WaitForFirstRx: true),
         new(IpcDiagnosticDidScan, "Quiet extended-session read-only IPC DID/DTC scan with ISO-TP flow control", 35.0, WaitForFirstRx: true, AutoIsoTpFlowControl: true),
@@ -95,34 +67,6 @@ internal static class Profiles
         new(IpcDiagnosticClassic1AScan, "Quiet read-only classic 0x1A identifier scan: 80-BF and F0-FF", 60.0, WaitForFirstRx: true, AutoIsoTpFlowControl: true),
         new(IpcDiagnosticClassic1AC0EfScan, "Quiet read-only classic 0x1A identifier scan: C0-EF gap", 36.0, WaitForFirstRx: true, AutoIsoTpFlowControl: true),
         new(IpcDiagnosticAa00RepeatProbe, "Quiet read-only AA 00 repeat probe: check if 54C response is stable", 30.0, WaitForFirstRx: true, AutoIsoTpFlowControl: true),
-        new(IpcStandardEngineWarningProbe, "Standard 11-bit 0C9 RPM plus 1E5 warning/service probe", 30.0, WaitForFirstRx: true),
-        new(IpcAstraHLsReferenceProbe, "Astra H LS-CAN/SWCAN reference probe: 108 speed/RPM, 145 engine, body lamps", 60.0, WaitForFirstRx: true),
-        new(IpcStandardByteFuzz, "Conservative deterministic standard 11-bit byte fuzz", 300.0, WaitForFirstRx: true),
-        new(IpcGmlan29ByteFuzz, "Conservative deterministic 29-bit GMLAN byte fuzz", 180.0, WaitForFirstRx: true),
-        new(IpcGmOpelHmiProbe, "GM/Opel HMI/DIC/body probe: dimming, wheel buttons, key/body context, chime, DIC text", 90.0, WaitForFirstRx: true, AutoIsoTpFlowControl: true),
-        new(IpcNativeBodySeedProbe, "Native Corsa E body seed replay from saved BCM captures; no wait-for-RX", 60.0),
-        new(IpcNativeContextLite, "Gentle native Corsa E body context while toggling IPC ignition; no wait-for-RX", 45.0),
-        new(IpcNativeKeyOnContext, "Focused native Corsa E key-on context from keyoff/keyon deltas; no wait-for-RX", 45.0),
-        new(IpcNativeKeyTransition, "Native Corsa E key-off to key-on body context transition; no wait-for-RX", 45.0),
-        new(IpcNativeExpandedKeyOn, "Expanded native Corsa E key-on context from all-ID state deltas; no wait-for-RX", 45.0),
-        new(IpcPriorityTier1Probe, "Priority table tier 1 seed replay: power/body prerequisites", 45.0, WaitForFirstRx: true),
-        new(IpcPriorityTier2Probe, "Priority table tier 2 seed replay: engine/speed/warnings", 45.0, WaitForFirstRx: true),
-        new(IpcPriorityTier3Probe, "Priority table tier 3 seed replay: late body/powertrain/GMLAN probes", 60.0, WaitForFirstRx: true),
-        new(IpcPriorityAllProbe, "Priority table all-tier seed replay in separated windows", 150.0, WaitForFirstRx: true),
-        new(IpcPriorityTier1ByteFuzz, "Focused tier 1 byte fuzz after stable baseline", 180.0, WaitForFirstRx: true),
-        new(IpcPriorityTier2ByteFuzz, "Focused tier 2 byte fuzz after stable baseline", 240.0, WaitForFirstRx: true),
-        new(DefaultBench, "Recommended Corsa E IPC test: wake + GMLAN Bible payload probes"),
-        new(FirmwareWake, "Short wake/init burst plus steady keepalive"),
-        new(Gmlan29AllTargeted, "Run all targeted 29-bit GMLAN payload tests in one sequence", 60.0),
-        new(Gmlan29SpeedRpm, "Vehicle speed/RPM payload test with zero-out near end"),
-        new(Gmlan29SpeedRpmAltSources, "Vehicle speed/RPM payload with alternate source/priority IDs"),
-        new(Gmlan29PowerMode, "System power mode value probes"),
-        new(Gmlan29Environment, "Battery voltage and outside-temperature examples"),
-        new(Gmlan29Chime, "29-bit GMLAN chime command probes with wake prelude"),
-        new(Gmlan29KnownPayloads, "Compatibility bundle matching default GMLAN payload probes"),
-        new(Gmlan29SpeedSweep, "Legacy speed sweep using arbid 0x028"),
-        new(OpelReferenceProbe, "Legacy older Opel 11-bit wake, IPC-on, and needle sweep probes"),
-        new(Gmlan29Probe, "Discovery zero-payload 29-bit GMLAN probes"),
     ];
 
     public static string ProfileNamesForUsage => string.Join("|", Available.Select(item => item.Name));
@@ -136,19 +80,20 @@ internal static class Profiles
     {
         return profile.ToLowerInvariant() switch
         {
-            IpcSimulator => IpcSimulatorSchedule(),
+            IpcSimulator => IpcSimulatorKeyOnHoldSchedule(),
+            IpcSimulatorKeyOnHold => IpcSimulatorKeyOnHoldSchedule(),
+            IpcSimulatorDataFill => IpcSimulatorDataFillSchedule(),
+            IpcDicTextRadioProbe => IpcDicTextRadioProbeSchedule(),
+            Ipc624StateProbe => Ipc624StateProbeSchedule(),
+            IpcActiveGaugeContextProbe => IpcActiveGaugeContextProbeSchedule(),
+            IpcTpmsOkDismissProbe => IpcTpmsOkDismissProbeSchedule(),
+            IpcNativeLightsProbe => IpcNativeLightsProbeSchedule(),
+            IpcNativeHandbrakeProbe => IpcNativeHandbrakeProbeSchedule(),
+            IpcSimulatorKeyOnEdge => IpcSimulatorSchedule(),
+            IpcSimulatorNativeTransition => IpcSimulatorNativeTransitionSchedule(),
             IpcWakePulseOnlyProbe => IpcWakePulseOnlyProbeSchedule(),
             IpcWakeFirstProbe => IpcWakeFirstProbeSchedule(),
             IpcWakeRecoveryProbe => IpcWakeRecoveryProbeSchedule(),
-            IpcSimulatorP4Speed => IpcSimulatorP4SpeedSchedule(),
-            IpcSimulatorAltSources => IpcSimulatorAltSourcesSchedule(),
-            IpcSimulatorSweep => IpcSimulatorSweepSchedule(),
-            IpcBcmLiveObjectProbe => IpcBcmLiveObjectProbeSchedule(),
-            IpcRestartWakeOnlyProbe => IpcRestartIsolationSchedule(IpcRestartWakeOnlyProbe),
-            IpcRestartNmInitOnlyProbe => IpcRestartIsolationSchedule(IpcRestartNmInitOnlyProbe),
-            IpcRestartPresenceOnlyProbe => IpcRestartIsolationSchedule(IpcRestartPresenceOnlyProbe),
-            IpcRestartKeepaliveOnlyProbe => IpcRestartIsolationSchedule(IpcRestartKeepaliveOnlyProbe),
-            IpcRestartWakeThenNmInitProbe => IpcRestartIsolationSchedule(IpcRestartWakeThenNmInitProbe),
             IpcDiagnosticProbe => IpcDiagnosticProbeSchedule(),
             IpcDiagnosticSessionProbe => IpcDiagnosticSessionProbeSchedule(),
             IpcDiagnosticDidScan => IpcDiagnosticDidScanSchedule(),
@@ -162,35 +107,7 @@ internal static class Profiles
             IpcDiagnosticClassic1AScan => IpcDiagnosticClassic1AScanSchedule(),
             IpcDiagnosticClassic1AC0EfScan => IpcDiagnosticClassic1AScanSchedule(Classic1AC0EfScanIdentifiers(), "classic 0x1A C0-EF gap scan"),
             IpcDiagnosticAa00RepeatProbe => IpcDiagnosticAa00RepeatProbeSchedule(),
-            IpcStandardEngineWarningProbe => IpcStandardEngineWarningProbeSchedule(),
-            IpcAstraHLsReferenceProbe => IpcAstraHLsReferenceProbeSchedule(),
-            IpcStandardByteFuzz => IpcStandardByteFuzzSchedule(),
-            IpcGmlan29ByteFuzz => IpcGmlan29ByteFuzzSchedule(),
             ReadOnly => [],
-            IpcGmOpelHmiProbe => IpcGmOpelHmiProbeSchedule(),
-            IpcNativeBodySeedProbe => IpcNativeBodySeedProbeSchedule(),
-            IpcNativeContextLite => IpcNativeContextLiteSchedule(),
-            IpcNativeKeyOnContext => IpcNativeKeyOnContextSchedule(),
-            IpcNativeKeyTransition => IpcNativeKeyTransitionSchedule(),
-            IpcNativeExpandedKeyOn => IpcNativeExpandedKeyOnSchedule(),
-            IpcPriorityTier1Probe => IpcPriorityTier1ProbeSchedule(),
-            IpcPriorityTier2Probe => IpcPriorityTier2ProbeSchedule(),
-            IpcPriorityTier3Probe => IpcPriorityTier3ProbeSchedule(),
-            IpcPriorityAllProbe => IpcPriorityAllProbeSchedule(),
-            IpcPriorityTier1ByteFuzz => IpcPriorityTier1ByteFuzzSchedule(),
-            IpcPriorityTier2ByteFuzz => IpcPriorityTier2ByteFuzzSchedule(),
-            DefaultBench => DefaultBenchSchedule(),
-            FirmwareWake => FirmwareWakeSchedule(),
-            Gmlan29Probe => Gmlan29ProbeSchedule(),
-            Gmlan29KnownPayloads => Gmlan29KnownPayloadsSchedule(),
-            Gmlan29Chime => Gmlan29ChimeSchedule(),
-            Gmlan29SpeedSweep => Gmlan29SpeedSweepSchedule(),
-            Gmlan29SpeedRpm => Gmlan29SpeedRpmSchedule(),
-            Gmlan29SpeedRpmAltSources => Gmlan29SpeedRpmAltSourcesSchedule(),
-            Gmlan29PowerMode => Gmlan29PowerModeSchedule(),
-            Gmlan29Environment => Gmlan29EnvironmentSchedule(),
-            Gmlan29AllTargeted => Gmlan29AllTargetedSchedule(),
-            OpelReferenceProbe => OpelReferenceProbeSchedule(),
             _ => throw new ArgumentException($"unknown profile: {profile}")
         };
     }
@@ -225,166 +142,429 @@ internal static class Profiles
         return Available.FirstOrDefault(item => item.Name.Equals(profile, StringComparison.OrdinalIgnoreCase))?.ReadOnlyFlushStale ?? true;
     }
 
-    private static List<ScheduledTxFrame> DefaultBenchSchedule()
-    {
-        var schedule = NormalWakeSchedule();
-        schedule.AddRange(Gmlan29CorePayloadSchedule(TimeSpan.FromMilliseconds(2000)));
-        return schedule;
-    }
-
     private static List<ScheduledTxFrame> IpcSimulatorSchedule()
     {
-        var schedule = IpcSimulatorBaseSchedule();
-        schedule.Add(new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(50), true, "priority 3 vehicle speed/RPM probe, arbid 0x028, sender 0x40"));
-        schedule.Add(new ScheduledTxFrame(0x1001E058, CliOptions.ParseHexData("867805FF05"), TimeSpan.Zero, true, "GMLAN Bible chime command example after simulator settle", TimeSpan.FromSeconds(5), MaxSends: 1));
-        schedule.Add(new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "priority 3 speed/RPM zero-out frame before simulator stop", TimeSpan.FromSeconds(28), MaxSends: 1));
-        return schedule;
-    }
+        var schedule = new List<ScheduledTxFrame>();
 
-    private static List<ScheduledTxFrame> IpcSimulatorP4SpeedSchedule()
-    {
-        var schedule = IpcSimulatorBaseSchedule();
-        schedule.Add(new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(50), true, "priority 4 vehicle speed/RPM probe, arbid 0x028, sender 0x40"));
-        schedule.Add(new ScheduledTxFrame(0x1001E058, CliOptions.ParseHexData("867805FF05"), TimeSpan.Zero, true, "GMLAN Bible chime command example after simulator settle", TimeSpan.FromSeconds(5), MaxSends: 1));
-        schedule.Add(new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "priority 4 speed/RPM zero-out frame before simulator stop", TimeSpan.FromSeconds(28), MaxSends: 1));
-        return schedule;
-    }
+        var edge = TimeSpan.FromSeconds(3);
+        var hmiStart = TimeSpan.FromSeconds(12);
+        var hmiEnd = TimeSpan.FromSeconds(38);
+        var runEnd = TimeSpan.FromSeconds(45);
 
-    private static List<ScheduledTxFrame> IpcSimulatorAltSourcesSchedule()
-    {
-        var schedule = IpcSimulatorBaseSchedule();
-        schedule.AddRange([
-            new ScheduledTxFrame(0x0C050010, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(50), true, "priority 3 speed/RPM candidate, powertrain sender 0x10", TimeSpan.FromSeconds(2), MaxSends: 160),
-            new ScheduledTxFrame(0x0C050010, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "priority 3 powertrain speed/RPM zero-out", TimeSpan.FromSeconds(10), MaxSends: 1),
-            new ScheduledTxFrame(0x0C050028, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(50), true, "priority 3 speed/RPM candidate, chassis sender 0x28", TimeSpan.FromSeconds(12), MaxSends: 160),
-            new ScheduledTxFrame(0x0C050028, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "priority 3 chassis speed/RPM zero-out", TimeSpan.FromSeconds(20), MaxSends: 1),
-            new ScheduledTxFrame(0x10050010, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(50), true, "priority 4 speed/RPM candidate, powertrain sender 0x10", TimeSpan.FromSeconds(22), MaxSends: 160),
-            new ScheduledTxFrame(0x10050010, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "priority 4 powertrain speed/RPM zero-out", TimeSpan.FromSeconds(30), MaxSends: 1),
-            new ScheduledTxFrame(0x10050028, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(50), true, "priority 4 speed/RPM candidate, chassis sender 0x28", TimeSpan.FromSeconds(32), MaxSends: 160),
-            new ScheduledTxFrame(0x10050028, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "priority 4 chassis speed/RPM zero-out", TimeSpan.FromSeconds(40), MaxSends: 1),
-        ]);
-        return schedule;
-    }
+        AddOneShot(schedule, 0x100, "", false, "native Corsa E SWCAN wake pulse", TimeSpan.Zero);
+        AddOneShot(schedule, 0x13FFE040, "", true, "native fake BCM/source 0x40 presence seed", TimeSpan.Zero);
+        AddOneShot(schedule, 0x621, "0140000000000000", false, "native network-management startup/init seed", TimeSpan.Zero);
+        AddOneShot(schedule, 0x621, "0002000000000000", false, "native short neutral/pre-key network-management seed", TimeSpan.FromMilliseconds(100));
 
-    private static List<ScheduledTxFrame> IpcSimulatorSweepSchedule()
-    {
-        var schedule = IpcSimulatorBaseSchedule();
-        schedule.AddRange([
-            new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(50), true, "priority 3 speed/RPM sweep zero baseline", TimeSpan.FromSeconds(2), MaxSends: 100),
-            new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("0000C80177000000"), TimeSpan.FromMilliseconds(50), true, "priority 3 speed/RPM sweep approx 20 km/h 1500 rpm", TimeSpan.FromSeconds(8), MaxSends: 100),
-            new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(50), true, "priority 3 speed/RPM sweep workbook example", TimeSpan.FromSeconds(14), MaxSends: 100),
-            new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("00025802EE000000"), TimeSpan.FromMilliseconds(50), true, "priority 3 speed/RPM sweep approx 60 km/h 3000 rpm", TimeSpan.FromSeconds(20), MaxSends: 100),
-            new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "priority 3 speed/RPM sweep zero-out", TimeSpan.FromSeconds(28), MaxSends: 1),
-        ]);
-        return schedule;
-    }
+        AddPeriodicWindow(schedule, 0x13FFE040, "", TimeSpan.FromMilliseconds(1200), true, "native fake BCM/source 0x40 presence, captured-like cadence", TimeSpan.FromMilliseconds(1200), runEnd);
 
-    private static List<ScheduledTxFrame> IpcBcmLiveObjectProbeSchedule()
-    {
-        var schedule = IpcQuietBodyBaselineSchedule();
+        AddPeriodicWindow(schedule, 0x621, "0002000000000000", TimeSpan.FromMilliseconds(1000), false, "native short neutral/pre-key network-management context before key-on edge", TimeSpan.FromMilliseconds(1000), edge);
+        AddPeriodicWindow(schedule, 0x10754040, "040000", TimeSpan.FromMilliseconds(1000), true, "native short key-present context before key-on edge", TimeSpan.FromMilliseconds(500), edge);
+        AddPeriodicWindow(schedule, 0x10242040, "01", TimeSpan.FromMilliseconds(1000), true, "native short 10242040 pre-key-on state before edge", TimeSpan.FromMilliseconds(500), edge);
+        AddPeriodicWindow(schedule, 0x102C0040, "0000000000", TimeSpan.FromMilliseconds(1000), true, "native short 102C0040 neutral state before key-on edge", TimeSpan.Zero, edge);
 
-        AddPayloadCycleWindow(
-            schedule,
-            0x10244040,
-            ["02", "06"],
-            TimeSpan.FromMilliseconds(1000),
-            true,
-            "BCM-source variant of live IPC 10244060 status/state frame",
-            TimeSpan.FromSeconds(2),
-            TimeSpan.FromSeconds(40));
+        AddOneShot(schedule, 0x621, "0052000000000000", false, "native key-on network-management edge", edge);
+        AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "native key-on network-management context", edge + TimeSpan.FromMilliseconds(500), runEnd);
 
-        AddPayloadCycleWindow(
-            schedule,
-            0x10424040,
-            ["059964", "079964"],
-            TimeSpan.FromMilliseconds(1000),
-            true,
-            "BCM-source variant of live IPC 10424060 status/config frame",
-            TimeSpan.FromSeconds(2.1),
-            TimeSpan.FromSeconds(40));
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native BCM/body base status from IPC_disconnected capture", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10264040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base zero-status frame", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x102CA040, "0000000000000F00", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base 102CA040 context", TimeSpan.Zero, runEnd);
 
-        AddPayloadCycleWindow(
-            schedule,
-            0x1045C040,
-            ["44", "40"],
-            TimeSpan.FromMilliseconds(2000),
-            true,
-            "BCM-source variant of live IPC 1045C060 byte-state frame",
-            TimeSpan.FromSeconds(2.2),
-            TimeSpan.FromSeconds(40));
+        AddPeriodicWindow(schedule, 0x10220040, "1000000040120000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10220040 short pre-key-on variant", TimeSpan.Zero, edge);
+        AddPeriodicWindow(schedule, 0x10220040, "1000000040080000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10220040 key-on variant", edge, runEnd);
 
-        AddPayloadCycleWindow(
-            schedule,
-            0x10ACE040,
-            ["1E00000000000000", "1E00200000000000", "2B00000000000000"],
-            TimeSpan.FromMilliseconds(750),
-            true,
-            "BCM-source variant of live IPC 10ACE060 boot/status payload family",
-            TimeSpan.FromSeconds(3),
-            TimeSpan.FromSeconds(38));
+        AddPayloadCycleWindow(schedule, 0x10230040, ["0000000000000000", "1000000010000000", "2000000020000000", "3000000030000000"], TimeSpan.FromMilliseconds(250), true, "native BCM/body 10230040 captured counter/state cycle", TimeSpan.Zero, runEnd);
+        AddPayloadCycleWindow(schedule, 0x1022E040, ["1000000010000000", "2000000020000000", "3000000030000000"], TimeSpan.FromMilliseconds(250), true, "native BCM/body 1022E040 key-on counter/state cycle", edge, runEnd - edge);
 
-        AddPayloadCycleWindow(
-            schedule,
-            0x10AE8040,
-            ["030E010104050000", "0016010800000000"],
-            TimeSpan.FromMilliseconds(750),
-            true,
-            "BCM-source variant of live IPC 10AE8060 boot/status payload family",
-            TimeSpan.FromSeconds(3.15),
-            TimeSpan.FromSeconds(38));
+        AddPeriodicWindow(schedule, 0x10240040, "8004880100000007", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10240040 short pre-key-on variant", TimeSpan.Zero, edge);
+        AddPeriodicWindow(schedule, 0x10240040, "83FE880100D70FFD", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10240040 key-on/second-turn variant", edge, runEnd);
 
-        AddPayloadCycleWindow(
-            schedule,
-            0x10B0A040,
-            ["001E04", "002B04"],
-            TimeSpan.FromMilliseconds(1500),
-            true,
-            "BCM-source variant of live IPC 10B0A060 short status family",
-            TimeSpan.FromSeconds(3.3),
-            TimeSpan.FromSeconds(38));
+        AddPeriodicWindow(schedule, 0x102C0040, "803C96B503", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 102C0040 key-on captured context", edge, runEnd);
+        AddPeriodicWindow(schedule, 0x10754040, "040400", TimeSpan.FromMilliseconds(1000), true, "native key/body context key-on hold variant", edge, runEnd);
+        AddPeriodicWindow(schedule, 0x10242040, "02", TimeSpan.FromMilliseconds(1000), true, "native 10242040 second-turn/key-on hold state", edge, runEnd);
 
-        AddPeriodicWindow(schedule, 0x10774040, "00", TimeSpan.FromMilliseconds(1000), true, "BCM-source variant of live IPC 10774060 one-byte status", TimeSpan.FromSeconds(4), TimeSpan.FromSeconds(42));
-        AddPeriodicWindow(schedule, 0x1084A040, "00", TimeSpan.FromMilliseconds(1000), true, "BCM-source variant of live IPC 1084A060 one-byte status", TimeSpan.FromSeconds(4.1), TimeSpan.FromSeconds(42));
-        AddPeriodicWindow(schedule, 0x10812040, "00", TimeSpan.FromMilliseconds(1000), true, "BCM-source variant of live IPC 10812060 one-byte status", TimeSpan.FromSeconds(4.2), TimeSpan.FromSeconds(42));
-        AddPeriodicWindow(schedule, 0x10600040, "01609370015B00", TimeSpan.FromMilliseconds(5000), true, "BCM-source variant of live IPC 10600060 config/range payload", TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(40));
-        AddPeriodicWindow(schedule, 0x10AFC040, "38FFFFFFFFFFFF2B", TimeSpan.FromMilliseconds(5000), true, "BCM-source variant of live IPC 10AFC060 full-state payload", TimeSpan.FromSeconds(6), TimeSpan.FromSeconds(38));
+        AddOneShot(schedule, 0x10414040, "00017B05", true, "native lock/body key-on context one-shot captured variant", edge + TimeSpan.FromSeconds(1));
+        AddPeriodicWindow(schedule, 0x10304058, "96B501", TimeSpan.FromMilliseconds(110), true, "native source 0x58 DIC/icon traffic captured with IPC connected", hmiStart, hmiEnd);
 
-        AddOneShot(schedule, 0x103BC040, "00", true, "BCM-source boot/status one-shot variant of 103BC060", TimeSpan.FromSeconds(8));
-        AddOneShot(schedule, 0x103D6040, "00", true, "BCM-source boot/status one-shot variant of 103D6060", TimeSpan.FromSeconds(8.2));
-        AddOneShot(schedule, 0x103DA040, "00", true, "BCM-source boot/status one-shot variant of 103DA060", TimeSpan.FromSeconds(8.4));
-        AddOneShot(schedule, 0x10448040, "00", true, "BCM-source boot/status one-shot variant of 10448060", TimeSpan.FromSeconds(8.6));
-        AddOneShot(schedule, 0x10A04040, "00", true, "BCM-source boot/status one-shot variant of 10A04060", TimeSpan.FromSeconds(8.8));
+        AddOneShot(schedule, 0x10438040, "01", true, "native HMI button probe DLC-1 press: 0x01", TimeSpan.FromSeconds(20));
+        AddOneShot(schedule, 0x10438040, "00", true, "native HMI button release after 0x01", TimeSpan.FromSeconds(20.15));
+        AddOneShot(schedule, 0x10438040, "02", true, "native HMI button probe DLC-1 press: 0x02", TimeSpan.FromSeconds(24));
+        AddOneShot(schedule, 0x10438040, "00", true, "native HMI button release after 0x02", TimeSpan.FromSeconds(24.15));
 
         return schedule;
     }
 
-    private static List<ScheduledTxFrame> IpcRestartIsolationSchedule(string profile)
+    private static List<ScheduledTxFrame> IpcSimulatorKeyOnHoldSchedule()
     {
-        return profile switch
+        return IpcSimulatorKeyOnHoldSchedule(TimeSpan.FromSeconds(45), includeKeyOnHeartbeat: true);
+    }
+
+    private static List<ScheduledTxFrame> IpcSimulatorKeyOnHoldSchedule(TimeSpan runEnd, bool includeKeyOnHeartbeat, bool includeNativeHmiButtons = true)
+    {
+        var schedule = new List<ScheduledTxFrame>();
+
+        var hmiStart = TimeSpan.FromSeconds(12);
+        var hmiEnd = TimeSpan.FromTicks(Math.Min(TimeSpan.FromSeconds(38).Ticks, runEnd.Ticks));
+
+        AddOneShot(schedule, 0x100, "", false, "native Corsa E SWCAN wake pulse", TimeSpan.Zero);
+        AddOneShot(schedule, 0x13FFE040, "", true, "native fake BCM/source 0x40 presence seed", TimeSpan.Zero);
+        AddOneShot(schedule, 0x621, "0140000000000000", false, "native network-management startup/init seed", TimeSpan.Zero);
+        if (includeKeyOnHeartbeat)
         {
-            IpcRestartWakeOnlyProbe =>
+            AddOneShot(schedule, 0x621, "0052000000000000", false, "native key-on network-management seed", TimeSpan.FromMilliseconds(100));
+        }
+
+        AddPeriodicWindow(schedule, 0x13FFE040, "", TimeSpan.FromMilliseconds(1200), true, "native fake BCM/source 0x40 presence, captured-like cadence", TimeSpan.FromMilliseconds(1200), runEnd);
+        if (includeKeyOnHeartbeat)
+        {
+            AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "native key-on network-management context", TimeSpan.FromMilliseconds(1000), runEnd);
+        }
+
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native BCM/body base status from IPC_disconnected capture", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10264040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base zero-status frame", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x102CA040, "0000000000000F00", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base 102CA040 context", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10220040, "1000000040080000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10220040 key-on variant", TimeSpan.Zero, runEnd);
+
+        AddPayloadCycleWindow(schedule, 0x10230040, ["0000000000000000", "1000000010000000", "2000000020000000", "3000000030000000"], TimeSpan.FromMilliseconds(250), true, "native BCM/body 10230040 captured counter/state cycle", TimeSpan.Zero, runEnd);
+        AddPayloadCycleWindow(schedule, 0x1022E040, ["1000000010000000", "2000000020000000", "3000000030000000"], TimeSpan.FromMilliseconds(250), true, "native BCM/body 1022E040 key-on counter/state cycle", TimeSpan.Zero, runEnd);
+
+        AddPeriodicWindow(schedule, 0x10240040, "83FE880100D70FFD", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10240040 key-on/second-turn variant", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x102C0040, "803C96B503", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 102C0040 key-on captured context", TimeSpan.Zero, runEnd);
+
+        AddPeriodicWindow(schedule, 0x10754040, "040400", TimeSpan.FromMilliseconds(1000), true, "native key/body context immediate key-on hold variant", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10242040, "02", TimeSpan.FromMilliseconds(1000), true, "native 10242040 immediate second-turn/key-on hold state", TimeSpan.Zero, runEnd);
+
+        AddOneShot(schedule, 0x10414040, "00017B05", true, "native lock/body key-on context one-shot captured variant", TimeSpan.FromSeconds(3));
+        AddPeriodicWindow(schedule, 0x10304058, "96B501", TimeSpan.FromMilliseconds(110), true, "native source 0x58 DIC/icon traffic captured with IPC connected", hmiStart, hmiEnd);
+
+        if (includeNativeHmiButtons)
+        {
+            AddOneShot(schedule, 0x10438040, "01", true, "native HMI button probe DLC-1 press: 0x01", TimeSpan.FromSeconds(20));
+            AddOneShot(schedule, 0x10438040, "00", true, "native HMI button release after 0x01", TimeSpan.FromSeconds(20.15));
+            AddOneShot(schedule, 0x10438040, "02", true, "native HMI button probe DLC-1 press: 0x02", TimeSpan.FromSeconds(24));
+            AddOneShot(schedule, 0x10438040, "00", true, "native HMI button release after 0x02", TimeSpan.FromSeconds(24.15));
+        }
+
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> IpcSimulatorDataFillSchedule()
+    {
+        var schedule = IpcSimulatorKeyOnHoldSchedule();
+
+        var start = TimeSpan.FromSeconds(2);
+        var end = TimeSpan.FromSeconds(45);
+
+        AddPeriodicWindow(schedule, 0x10030040, "0075A708", TimeSpan.FromMilliseconds(1000), true, "data fill battery voltage candidate around 14.7 V", start, end);
+        AddPeriodicWindow(schedule, 0x100C4040, "0000000000000000", TimeSpan.FromMilliseconds(500), true, "data fill ABS/traction OK candidate, arbid 0x062 source 0x40", start, end);
+        AddPeriodicWindow(schedule, 0x1005E040, "0000000000000000", TimeSpan.FromMilliseconds(500), true, "data fill brake/cruise OK candidate, arbid 0x02F source 0x40", start, end);
+        AddPeriodicWindow(schedule, 0x10052040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "data fill engine information 1 neutral candidate, arbid 0x029 source 0x40", start, end);
+        AddPeriodicWindow(schedule, 0x1006E040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "data fill engine information 2 neutral candidate, arbid 0x037 source 0x40", start, end);
+        AddPeriodicWindow(schedule, 0x10064040, "0000730000000000", TimeSpan.FromMilliseconds(1000), true, "data fill engine information 3 / temperature candidate, arbid 0x032 source 0x40", start, end);
+        AddPeriodicWindow(schedule, 0x100C2040, "0073", TimeSpan.FromMilliseconds(2000), true, "data fill outside air temperature candidate about 17.5 C, arbid 0x061 source 0x40", start + TimeSpan.FromMilliseconds(250), end);
+
+        AddPayloadHoldSequence(
+            schedule,
+            0x1004C040,
             [
-                new ScheduledTxFrame(0x100, [], TimeSpan.Zero, false, "restart isolation: SWCAN wake 100# one-shot after first IPC RX", MaxSends: 1),
+                ("0000200000000000", "fuel low-ish candidate"),
+                ("0000800000000000", "fuel mid-scale candidate"),
+                ("0000C00000000000", "fuel high-ish candidate"),
+                ("0000000000000000", "fuel neutral/clear candidate"),
             ],
-            IpcRestartNmInitOnlyProbe =>
+            TimeSpan.FromMilliseconds(500),
+            TimeSpan.FromSeconds(5),
+            true,
+            "data fill fuel information arbid 0x026 source 0x40",
+            TimeSpan.FromSeconds(5));
+
+        AddPayloadHoldSequence(
+            schedule,
+            0x1004E040,
             [
-                new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0140000000000000"), TimeSpan.FromMilliseconds(500), false, "restart isolation: 621#0140 network-init burst only, three sends after first IPC RX", MaxSends: 3),
+                ("0000000000000000", "odometer/brake/wash neutral candidate"),
+                ("0001E24000000000", "odometer 123456-style candidate bytes 0-2"),
+                ("000001E240000000", "odometer 123456-style candidate bytes 1-3"),
+                ("01E2400000000000", "odometer 123456-style candidate no leading zero"),
+                ("00000001E2400000", "odometer 123456-style candidate bytes 3-5"),
             ],
-            IpcRestartPresenceOnlyProbe =>
-            [
-                new ScheduledTxFrame(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "restart isolation: fake BCM/source 0x40 presence only"),
-            ],
-            IpcRestartKeepaliveOnlyProbe =>
-            [
-                new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "restart isolation: 621#0040 steady keepalive only"),
-            ],
-            IpcRestartWakeThenNmInitProbe =>
-            [
-                new ScheduledTxFrame(0x100, [], TimeSpan.Zero, false, "restart isolation: SWCAN wake 100# one-shot on otherwise silent IPC", MaxSends: 1),
-                new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0140000000000000"), TimeSpan.FromMilliseconds(500), false, "restart isolation: delayed 621#0140 network-init burst after wake", TimeSpan.FromSeconds(5), MaxSends: 3),
-            ],
-            _ => throw new ArgumentException($"unknown restart isolation profile: {profile}")
+            TimeSpan.FromMilliseconds(500),
+            TimeSpan.FromSeconds(4),
+            true,
+            "data fill odometer/brake/wash arbid 0x027 source 0x40; transient CAN status only, no programming",
+            TimeSpan.FromSeconds(24));
+
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> IpcDicTextRadioProbeSchedule()
+    {
+        var runEnd = TimeSpan.FromSeconds(60);
+        var schedule = IpcSimulatorKeyOnHoldSchedule(runEnd, includeKeyOnHeartbeat: true, includeNativeHmiButtons: false);
+
+        AddPeriodicWindow(schedule, 0x13FFE080, "", TimeSpan.FromMilliseconds(1500), true, "radio/source 0x80 companion presence from connected SWCAN logs", TimeSpan.FromMilliseconds(250), runEnd);
+        AddPeriodicWindow(schedule, 0x13FFE058, "", TimeSpan.FromMilliseconds(1700), true, "SDM/source 0x58 companion presence from connected SWCAN logs", TimeSpan.FromMilliseconds(350), runEnd);
+
+        AddOneShot(schedule, 0x1030A080, "000448800003", true, "radio-source DIC display-parameter probe, arbid 0x185, source 0x80; source 0x60 framing intentionally omitted", TimeSpan.FromSeconds(5));
+        AddOneShot(schedule, 0x1030C080, "4501005445535404", true, "radio-source DIC display-text probe, arbid 0x186, ASCII TEST", TimeSpan.FromSeconds(5.08));
+        AddOneShot(schedule, 0x1030A080, "000448800003", true, "radio-source DIC display-parameter retry", TimeSpan.FromSeconds(20));
+        AddOneShot(schedule, 0x1030C080, "4501005445535404", true, "radio-source DIC display-text retry, ASCII TEST", TimeSpan.FromSeconds(20.08));
+
+        AddOneShot(schedule, 0x1030A097, "000448800003", true, "OnStar-style source 0x97 DIC display-parameter fallback", TimeSpan.FromSeconds(35));
+        AddOneShot(schedule, 0x1030C097, "4501005445535404", true, "OnStar-style source 0x97 DIC display-text fallback, ASCII TEST", TimeSpan.FromSeconds(35.08));
+        AddOneShot(schedule, 0x1030A097, "000448800003", true, "OnStar-style source 0x97 DIC display-parameter retry", TimeSpan.FromSeconds(48));
+        AddOneShot(schedule, 0x1030C097, "4501005445535404", true, "OnStar-style source 0x97 DIC display-text retry, ASCII TEST", TimeSpan.FromSeconds(48.08));
+
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> IpcActiveGaugeContextProbeSchedule()
+    {
+        var runEnd = TimeSpan.FromSeconds(75);
+        var schedule = IpcSimulatorKeyOnHoldSchedule(runEnd, includeKeyOnHeartbeat: true);
+
+        AddPeriodicWindow(schedule, 0x13FFE080, "", TimeSpan.FromMilliseconds(1500), true, "radio/source 0x80 companion presence during active gauge context", TimeSpan.FromMilliseconds(250), runEnd);
+        AddPeriodicWindow(schedule, 0x13FFE058, "", TimeSpan.FromMilliseconds(1700), true, "SDM/source 0x58 companion presence during active gauge context", TimeSpan.FromMilliseconds(350), runEnd);
+
+        AddPeriodicWindow(schedule, 0x10030040, "0060A70800000000", TimeSpan.FromMilliseconds(100), true, "active gauge context battery around 12.6 V, arbid 0x018 source 0x40", TimeSpan.FromSeconds(2.5), runEnd);
+        AddPeriodicWindow(schedule, 0x10052040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "active gauge context engine information 1 neutral companion, arbid 0x029 source 0x40", TimeSpan.FromSeconds(3), runEnd);
+        AddPeriodicWindow(schedule, 0x10064040, "0000730000000000", TimeSpan.FromMilliseconds(1000), true, "active gauge context engine information 3 / temperature companion, arbid 0x032 source 0x40", TimeSpan.FromSeconds(3.1), runEnd);
+        AddPeriodicWindow(schedule, 0x1006E040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "active gauge context engine information 2 neutral companion, arbid 0x037 source 0x40", TimeSpan.FromSeconds(3.2), runEnd);
+        AddPeriodicWindow(schedule, 0x1005E040, "0000000000000000", TimeSpan.FromMilliseconds(500), true, "active gauge context brake/cruise OK companion, arbid 0x02F source 0x40", TimeSpan.FromSeconds(3.3), runEnd);
+        AddPeriodicWindow(schedule, 0x100C4040, "0000000000000000", TimeSpan.FromMilliseconds(500), true, "active gauge context ABS/traction OK companion, arbid 0x062 source 0x40", TimeSpan.FromSeconds(3.4), runEnd);
+
+        AddPeriodicWindow(schedule, 0x10050040, "00012C03A9000000", TimeSpan.FromMilliseconds(100), true, "active gauge context speed/RPM workbook example: 30.0 units, approx 3748 rpm", TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(35));
+        AddPeriodicWindow(schedule, 0x10050040, "0003E802EE000000", TimeSpan.FromMilliseconds(100), true, "active gauge context speed/RPM higher point: 100.0 units, approx 3000 rpm", TimeSpan.FromSeconds(38), TimeSpan.FromSeconds(70));
+        AddOneShot(schedule, 0x10050040, "0000000000000000", true, "active gauge context speed/RPM zero-out before stop", TimeSpan.FromSeconds(72));
+
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> Ipc624StateProbeSchedule()
+    {
+        var runEnd = TimeSpan.FromSeconds(45);
+        var schedule = IpcSimulatorKeyOnHoldSchedule(runEnd, includeKeyOnHeartbeat: false);
+
+        AddOneShot(schedule, 0x621, "0052000000000000", false, "624 isolation: key-on 621 state seed, no 624 yet", TimeSpan.FromMilliseconds(100));
+        AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "624 isolation: key-on 621 state without 624", TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(12));
+        AddOneShot(schedule, 0x624, "0120000000000000", false, "624 isolation: auxiliary state one-shot; watch for 62C", TimeSpan.FromSeconds(13));
+        AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "624 isolation: key-on 621 state with periodic 624", TimeSpan.FromSeconds(13), TimeSpan.FromSeconds(30));
+        AddPeriodicWindow(schedule, 0x624, "0020000000000000", TimeSpan.FromMilliseconds(3000), false, "624 isolation: periodic auxiliary 624 state; watch for 62C", TimeSpan.FromSeconds(15), TimeSpan.FromSeconds(30));
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> IpcTpmsOkDismissProbeSchedule()
+    {
+        var runEnd = TimeSpan.FromSeconds(70);
+        var schedule = IpcSimulatorKeyOnHoldSchedule(runEnd, includeKeyOnHeartbeat: true, includeNativeHmiButtons: false);
+
+        AddPeriodicWindow(schedule, 0x13FFE080, "", TimeSpan.FromMilliseconds(1500), true, "radio/source 0x80 companion presence during TPMS OK/dismiss probe", TimeSpan.FromMilliseconds(250), runEnd);
+        AddPeriodicWindow(schedule, 0x13FFE058, "", TimeSpan.FromMilliseconds(1700), true, "SDM/source 0x58 companion presence during TPMS OK/dismiss probe", TimeSpan.FromMilliseconds(350), runEnd);
+
+        var delay = TimeSpan.FromSeconds(5);
+        var hmiButtonCodes = new byte[] { 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F };
+        foreach (var code in hmiButtonCodes)
+        {
+            var shortPayload = code.ToString("X2");
+            var fullPayload = shortPayload + "00000000000000";
+            AddOneShot(schedule, 0x10438040, shortPayload, true, $"TPMS dismiss HMI DLC-1 button candidate 0x{code:X2}", delay);
+            AddOneShot(schedule, 0x10438040, "00", true, "TPMS dismiss HMI DLC-1 release", delay + TimeSpan.FromMilliseconds(140));
+            delay += TimeSpan.FromMilliseconds(900);
+            AddOneShot(schedule, 0x10438040, fullPayload, true, $"TPMS dismiss HMI full-DLC button candidate 0x{code:X2}", delay);
+            AddOneShot(schedule, 0x10438040, "0000000000000000", true, "TPMS dismiss HMI full-DLC release", delay + TimeSpan.FromMilliseconds(140));
+            delay += TimeSpan.FromMilliseconds(900);
+        }
+
+        delay = TimeSpan.FromSeconds(34);
+        var menuPayloads = new[]
+        {
+            "000001",
+            "000002",
+            "000004",
+            "000008",
+            "000010",
+            "010000",
+            "020000",
+            "040000",
+            "080000",
+            "100000",
         };
+        foreach (var payload in menuPayloads)
+        {
+            AddOneShot(schedule, 0x10308040, payload, true, $"TPMS dismiss DIC menu-action candidate payload {payload}, arbid 0x184 source 0x40", delay);
+            AddOneShot(schedule, 0x10308040, "000000", true, "TPMS dismiss DIC menu-action neutral/release", delay + TimeSpan.FromMilliseconds(150));
+            delay += TimeSpan.FromMilliseconds(1100);
+        }
+
+        delay = TimeSpan.FromSeconds(48);
+        var opelButtonPayloads = new[] { "000000", "010000", "020000", "040000", "080000", "100000", "200000", "400000", "800000" };
+        foreach (var payload in opelButtonPayloads)
+        {
+            AddOneShot(schedule, 0x0AF, payload, false, $"TPMS dismiss Opel 11-bit steering/control candidate payload {payload}", delay);
+            AddOneShot(schedule, 0x0AF, "000000", false, "TPMS dismiss Opel 11-bit steering/control neutral/release", delay + TimeSpan.FromMilliseconds(150));
+            delay += TimeSpan.FromMilliseconds(900);
+        }
+
+        AddOneShot(schedule, 0x10438040, "00", true, "TPMS dismiss final HMI DLC-1 release", runEnd - TimeSpan.FromSeconds(2));
+        AddOneShot(schedule, 0x10438040, "0000000000000000", true, "TPMS dismiss final HMI full-DLC release", runEnd - TimeSpan.FromSeconds(1.8));
+        AddOneShot(schedule, 0x10308040, "000000", true, "TPMS dismiss final DIC menu-action neutral", runEnd - TimeSpan.FromSeconds(1.6));
+        AddOneShot(schedule, 0x0AF, "000000", false, "TPMS dismiss final Opel steering/control neutral", runEnd - TimeSpan.FromSeconds(1.4));
+
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> IpcNativeLightsProbeSchedule()
+    {
+        var runEnd = TimeSpan.FromSeconds(45);
+        var schedule = IpcSimulatorKeyOnHoldSchedule(runEnd, includeKeyOnHeartbeat: true, includeNativeHmiButtons: false);
+
+        AddPeriodicWindow(schedule, 0x13FFE080, "", TimeSpan.FromMilliseconds(1500), true, "lights probe radio/source 0x80 companion presence", TimeSpan.FromMilliseconds(250), runEnd);
+        AddPeriodicWindow(schedule, 0x13FFE058, "", TimeSpan.FromMilliseconds(1700), true, "lights probe SDM/source 0x58 companion presence", TimeSpan.FromMilliseconds(350), runEnd);
+
+        AddPayloadCycleWindow(
+            schedule,
+            0x10240040,
+            ["83FE880100D70000", "83FF880100D70000", "83FE880100D70FFD", "83FF880100D70FFD"],
+            TimeSpan.FromMilliseconds(100),
+            true,
+            "lights probe day/off 10240040 family from connected capture",
+            TimeSpan.FromSeconds(3),
+            TimeSpan.FromSeconds(5));
+        AddPeriodicWindow(schedule, 0x102CC040, "0000C00000000000", TimeSpan.FromMilliseconds(250), true, "lights probe day/off 102CC040 context from connected capture", TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(8));
+        AddPeriodicWindow(schedule, 0x102CA040, "0000000000000F00", TimeSpan.FromMilliseconds(100), true, "lights probe neutral dimmer/illumination level", TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(8));
+
+        AddPayloadCycleWindow(
+            schedule,
+            0x10240040,
+            ["83FE8A1100D70000", "83FF8A1100D70000", "83FE8A1100D70FFD", "83FF8A1100D70FFD"],
+            TimeSpan.FromMilliseconds(100),
+            true,
+            "lights probe night/lights-on 10240040 family from connected capture",
+            TimeSpan.FromSeconds(10),
+            TimeSpan.FromSeconds(18));
+        AddPeriodicWindow(schedule, 0x102CC040, "0400C00000000000", TimeSpan.FromMilliseconds(250), true, "lights probe active 102CC040 lighting context from connected capture", TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(28));
+
+        AddPayloadHoldSequence(
+            schedule,
+            0x102CA040,
+            [
+                ("0000000000010F00", "dimmer ramp low"),
+                ("0000000000270F00", "dimmer ramp low-mid"),
+                ("00000000006D0F00", "dimmer ramp mid"),
+                ("00000000009E0F00", "dimmer ramp high-mid"),
+                ("0000000000C50F00", "dimmer ramp high"),
+                ("0000000000EE0F00", "dimmer ramp near max"),
+                ("0000000000FE0F00", "dimmer ramp max"),
+                ("0000000000000F00", "dimmer neutral"),
+            ],
+            TimeSpan.FromMilliseconds(100),
+            TimeSpan.FromSeconds(1.5),
+            true,
+            "lights probe 102CA040 captured dimmer/illumination ramp",
+            TimeSpan.FromSeconds(12));
+
+        AddPayloadCycleWindow(
+            schedule,
+            0x10240040,
+            ["83FE880100D70000", "83FF880100D70000", "83FE880100D70FFD", "83FF880100D70FFD"],
+            TimeSpan.FromMilliseconds(100),
+            true,
+            "lights probe return to day/off 10240040 family",
+            TimeSpan.FromSeconds(30),
+            TimeSpan.FromSeconds(12));
+        AddPeriodicWindow(schedule, 0x102CC040, "0000C00000000000", TimeSpan.FromMilliseconds(250), true, "lights probe return day/off 102CC040 context", TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(42));
+        AddPeriodicWindow(schedule, 0x102CA040, "0000000000000F00", TimeSpan.FromMilliseconds(100), true, "lights probe final neutral dimmer/illumination level", TimeSpan.FromSeconds(30), runEnd);
+
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> IpcNativeHandbrakeProbeSchedule()
+    {
+        var runEnd = TimeSpan.FromSeconds(45);
+        var schedule = IpcSimulatorKeyOnHoldSchedule(runEnd, includeKeyOnHeartbeat: true, includeNativeHmiButtons: false);
+
+        AddPeriodicWindow(schedule, 0x13FFE080, "", TimeSpan.FromMilliseconds(1500), true, "handbrake probe radio/source 0x80 companion presence", TimeSpan.FromMilliseconds(250), runEnd);
+        AddPeriodicWindow(schedule, 0x13FFE058, "", TimeSpan.FromMilliseconds(1700), true, "handbrake probe SDM/source 0x58 companion presence", TimeSpan.FromMilliseconds(350), runEnd);
+
+        AddPeriodicWindow(schedule, 0x1020C040, "0040040401", TimeSpan.FromMilliseconds(250), true, "handbrake probe released 1020C040 candidate from capture", TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(8));
+        AddPeriodicWindow(schedule, 0x103B4040, "00", TimeSpan.FromMilliseconds(500), true, "handbrake probe released 103B4040 telltale candidate", TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(8));
+
+        AddPeriodicWindow(schedule, 0x1020C040, "00C0040401", TimeSpan.FromMilliseconds(250), true, "handbrake probe asserted 1020C040 candidate from capture", TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(18));
+        AddPeriodicWindow(schedule, 0x103B4040, "04", TimeSpan.FromMilliseconds(500), true, "handbrake probe asserted 103B4040 telltale candidate", TimeSpan.FromSeconds(12), TimeSpan.FromSeconds(18));
+        AddPeriodicWindow(schedule, 0x10220040, "1000000040060000", TimeSpan.FromMilliseconds(500), true, "handbrake probe secondary rare 10220040 state candidate", TimeSpan.FromSeconds(14), TimeSpan.FromSeconds(18));
+
+        AddPeriodicWindow(schedule, 0x1020C040, "0040040401", TimeSpan.FromMilliseconds(250), true, "handbrake probe released 1020C040 candidate", TimeSpan.FromSeconds(20), TimeSpan.FromSeconds(28));
+        AddPeriodicWindow(schedule, 0x103B4040, "00", TimeSpan.FromMilliseconds(500), true, "handbrake probe released 103B4040 telltale candidate", TimeSpan.FromSeconds(20), TimeSpan.FromSeconds(28));
+
+        AddPeriodicWindow(schedule, 0x1020C040, "00C0040401", TimeSpan.FromMilliseconds(250), true, "handbrake probe second asserted pulse 1020C040 candidate", TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(34));
+        AddPeriodicWindow(schedule, 0x103B4040, "04", TimeSpan.FromMilliseconds(500), true, "handbrake probe second asserted pulse 103B4040 candidate", TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(34));
+        AddPeriodicWindow(schedule, 0x1020C040, "0040040401", TimeSpan.FromMilliseconds(250), true, "handbrake probe final released 1020C040 candidate", TimeSpan.FromSeconds(36), runEnd);
+        AddPeriodicWindow(schedule, 0x103B4040, "00", TimeSpan.FromMilliseconds(500), true, "handbrake probe final released 103B4040 telltale candidate", TimeSpan.FromSeconds(36), runEnd);
+
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> IpcSimulatorNativeTransitionSchedule()
+    {
+        var schedule = new List<ScheduledTxFrame>();
+
+        var offStart = TimeSpan.Zero;
+        var keyInStart = TimeSpan.FromSeconds(6);
+        var keyOnStart = TimeSpan.FromSeconds(12);
+        var secondTurnStart = TimeSpan.FromSeconds(28);
+        var cleanupStart = TimeSpan.FromSeconds(42);
+        var runEnd = TimeSpan.FromSeconds(45);
+
+        AddOneShot(schedule, 0x100, "", false, "native Corsa E SWCAN wake pulse", offStart);
+        AddOneShot(schedule, 0x13FFE040, "", true, "native fake BCM/source 0x40 presence seed", offStart);
+        AddOneShot(schedule, 0x621, "0140000000000000", false, "native network-management startup/init seed", offStart);
+        AddOneShot(schedule, 0x621, "0002000000000000", false, "native unlock/key-in network-management seed", TimeSpan.FromMilliseconds(100));
+
+        AddPeriodicWindow(schedule, 0x13FFE040, "", TimeSpan.FromMilliseconds(1200), true, "native fake BCM/source 0x40 presence, captured-like cadence", TimeSpan.FromMilliseconds(1200), cleanupStart);
+        AddPeriodicWindow(schedule, 0x621, "0002000000000000", TimeSpan.FromMilliseconds(1000), false, "native unlock/key-in network-management context", TimeSpan.FromMilliseconds(1000), keyOnStart);
+        AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "native key-on network-management context", keyOnStart, cleanupStart);
+
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native BCM/body base status from IPC_disconnected capture", offStart, cleanupStart);
+        AddPeriodicWindow(schedule, 0x10264040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base zero-status frame", offStart, cleanupStart);
+        AddPeriodicWindow(schedule, 0x102CA040, "0000000000000F00", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base 102CA040 context", offStart, cleanupStart);
+
+        AddPeriodicWindow(schedule, 0x10220040, "1000000040120000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10220040 unlock/key-in variant", offStart, keyOnStart);
+        AddPeriodicWindow(schedule, 0x10220040, "1000000040080000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10220040 key-on variant", keyOnStart, cleanupStart);
+
+        AddPayloadCycleWindow(schedule, 0x10230040, ["0000000000000000", "1000000010000000", "2000000020000000", "3000000030000000"], TimeSpan.FromMilliseconds(250), true, "native BCM/body 10230040 captured counter/state cycle", offStart, cleanupStart);
+        AddPayloadCycleWindow(schedule, 0x1022E040, ["0000000000000000", "1000000010000000", "2000000020000000", "3000000030000000"], TimeSpan.FromMilliseconds(250), true, "native BCM/body 1022E040 captured counter/state cycle", keyInStart, cleanupStart - keyInStart);
+
+        AddPeriodicWindow(schedule, 0x10240040, "8004880100000007", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10240040 base/off variant", offStart, secondTurnStart);
+        AddPeriodicWindow(schedule, 0x10240040, "83FE880100D70FFD", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 10240040 key-on/second-turn variant", secondTurnStart, cleanupStart);
+
+        AddPeriodicWindow(schedule, 0x102C0040, "0000000000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 102C0040 neutral captured context", offStart, keyOnStart);
+        AddPeriodicWindow(schedule, 0x102C0040, "803C96B503", TimeSpan.FromMilliseconds(1000), true, "native BCM/body 102C0040 key-on captured context", keyOnStart, cleanupStart);
+
+        AddPeriodicWindow(schedule, 0x10754040, "000000", TimeSpan.FromMilliseconds(1000), true, "native key/body context no-key/off variant", offStart, keyInStart);
+        AddPeriodicWindow(schedule, 0x10754040, "040000", TimeSpan.FromMilliseconds(1000), true, "native key/body context key-present variant", keyInStart, keyOnStart);
+        AddPeriodicWindow(schedule, 0x10754040, "040400", TimeSpan.FromMilliseconds(1000), true, "native key/body context key-on variant", keyOnStart, cleanupStart);
+
+        AddPeriodicWindow(schedule, 0x10242040, "00", TimeSpan.FromMilliseconds(1000), true, "native 10242040 off/unlock state", offStart, keyInStart);
+        AddPeriodicWindow(schedule, 0x10242040, "01", TimeSpan.FromMilliseconds(1000), true, "native 10242040 key-in/key-on state", keyInStart, secondTurnStart);
+        AddPeriodicWindow(schedule, 0x10242040, "02", TimeSpan.FromMilliseconds(1000), true, "native 10242040 second-turn candidate", secondTurnStart, cleanupStart);
+
+        AddPeriodicWindow(schedule, 0x10304058, "96B501", TimeSpan.FromMilliseconds(110), true, "native source 0x58 DIC/icon traffic captured with IPC connected", TimeSpan.FromSeconds(20), TimeSpan.FromSeconds(36));
+
+        AddOneShot(schedule, 0x10414040, "0000FB05", true, "native lock/body context one-shot captured variant", TimeSpan.FromSeconds(14));
+        AddOneShot(schedule, 0x10414040, "00017B05", true, "native lock/body context one-shot captured variant", TimeSpan.FromSeconds(18));
+
+        AddOneShot(schedule, 0x10438040, "01", true, "native HMI button probe DLC-1 press: 0x01", TimeSpan.FromSeconds(22));
+        AddOneShot(schedule, 0x10438040, "00", true, "native HMI button release after 0x01", TimeSpan.FromSeconds(22.15));
+        AddOneShot(schedule, 0x10438040, "02", true, "native HMI button probe DLC-1 press: 0x02", TimeSpan.FromSeconds(24));
+        AddOneShot(schedule, 0x10438040, "00", true, "native HMI button release after 0x02", TimeSpan.FromSeconds(24.15));
+
+        AddOneShot(schedule, 0x10754040, "000000", true, "native cleanup clear key/body context", cleanupStart);
+        AddOneShot(schedule, 0x102C0040, "0000000000", true, "native cleanup clear 102C0040 context", cleanupStart + TimeSpan.FromMilliseconds(50));
+        AddOneShot(schedule, 0x10242040, "00", true, "native cleanup clear 10242040 state", cleanupStart + TimeSpan.FromMilliseconds(100));
+        AddOneShot(schedule, 0x621, "0040000000000000", false, "native cleanup steady keepalive", cleanupStart + TimeSpan.FromMilliseconds(150));
+        AddOneShot(schedule, 0x13FFE040, "", true, "native cleanup final fake BCM/source 0x40 presence", runEnd - TimeSpan.FromMilliseconds(250));
+
+        return schedule;
     }
 
     private static List<ScheduledTxFrame> IpcDiagnosticProbeSchedule()
@@ -670,544 +850,6 @@ internal static class Profiles
         }
     }
 
-    private static List<ScheduledTxFrame> IpcStandardEngineWarningProbeSchedule()
-    {
-        return
-        [
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.Zero, true, "fake BCM/body gateway broadcast presence after first IPC RX", MaxSends: 1),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.Zero, false, "network-management steady keepalive seed after first IPC RX", MaxSends: 1),
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "fake BCM/body gateway broadcast presence, source 0x40", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "network-management steady keepalive", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x0C9, CliOptions.ParseHexData("0004C40000500000"), TimeSpan.FromMilliseconds(20), false, "standard RPM / engine-state candidate 0x0C9"),
-            new ScheduledTxFrame(0x1E5, CliOptions.ParseHexData("44003910000000C9"), TimeSpan.FromMilliseconds(300), false, "standard warning/service candidate 0x1E5 variant C9", TimeSpan.FromMilliseconds(100)),
-            new ScheduledTxFrame(0x1E5, CliOptions.ParseHexData("44003930000000E9"), TimeSpan.FromMilliseconds(300), false, "standard warning/service candidate 0x1E5 variant E9", TimeSpan.FromMilliseconds(200)),
-            new ScheduledTxFrame(0x1E5, CliOptions.ParseHexData("4400395000000109"), TimeSpan.FromMilliseconds(300), false, "standard warning/service candidate 0x1E5 variant 109", TimeSpan.FromMilliseconds(300)),
-        ];
-    }
-
-    private static List<ScheduledTxFrame> IpcAstraHLsReferenceProbeSchedule()
-    {
-        var schedule = IpcPriorityBaselineSchedule();
-        var start = TimeSpan.FromSeconds(3);
-        var end = TimeSpan.FromSeconds(58);
-        var duration = end - start;
-
-        AddPeriodicWindow(schedule, 0x108, "2320980004E50000", TimeSpan.FromMilliseconds(50), false, "Astra H LS-CAN speed/RPM sample: about 65 km/h and 1253 rpm", start, end);
-        AddPayloadCycleWindow(schedule, 0x145, ["2000015000040000", "00011050A0040000"], TimeSpan.FromMilliseconds(100), false, "Astra H LS-CAN engine state/coolant candidate", start + TimeSpan.FromMilliseconds(10), duration);
-        AddPeriodicWindow(schedule, 0x160, "0210C803", TimeSpan.FromMilliseconds(250), false, "Astra H LS-CAN 0x160 ignition/power-style reference", start + TimeSpan.FromMilliseconds(20), end);
-        AddPeriodicWindow(schedule, 0x170, "20000300", TimeSpan.FromMilliseconds(500), false, "Astra H LS-CAN key-in/ignition-style reference", start + TimeSpan.FromMilliseconds(30), end);
-        AddPeriodicWindow(schedule, 0x235, "00FF", TimeSpan.FromMilliseconds(1000), false, "Astra H LS-CAN LED brightness full", start + TimeSpan.FromMilliseconds(40), end);
-        AddPayloadCycleWindow(schedule, 0x260, ["000000", "25437F", "000000", "3A437F", "000000", "5F327F"], TimeSpan.FromMilliseconds(500), false, "Astra H LS-CAN turn/hazard reference cycle", start + TimeSpan.FromSeconds(4), TimeSpan.FromSeconds(24));
-        AddPeriodicWindow(schedule, 0x375, "00A0", TimeSpan.FromMilliseconds(100), false, "Astra H LS-CAN fuel level reference", start + TimeSpan.FromMilliseconds(60), end);
-        AddPeriodicWindow(schedule, 0x445, "0073", TimeSpan.FromMilliseconds(1000), false, "Astra H LS-CAN outside temperature reference, about 17.5 C", start + TimeSpan.FromMilliseconds(70), end);
-        AddPeriodicWindow(schedule, 0x500, "005C", TimeSpan.FromMilliseconds(1500), false, "Astra H LS-CAN voltage reference", start + TimeSpan.FromMilliseconds(80), end);
-
-        schedule.Add(new ScheduledTxFrame(0x108, CliOptions.ParseHexData("1300000000000000"), TimeSpan.Zero, false, "Astra H LS-CAN speed/RPM zero-out", TimeSpan.FromSeconds(58.5), MaxSends: 1));
-        schedule.Add(new ScheduledTxFrame(0x260, CliOptions.ParseHexData("000000"), TimeSpan.Zero, false, "Astra H LS-CAN turn/hazard off", TimeSpan.FromSeconds(58.7), MaxSends: 1));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcGmOpelHmiProbeSchedule()
-    {
-        var schedule = IpcPriorityBaselineSchedule();
-
-        AddPayloadCycleWindow(
-            schedule,
-            0x10022040,
-            ["0000000000000000", "007F000000000000", "00FF000000000000"],
-            TimeSpan.FromMilliseconds(1000),
-            true,
-            "GM low-speed GMLAN dimming information arbid 0x011",
-            TimeSpan.FromSeconds(3),
-            TimeSpan.FromSeconds(6));
-
-        AddPayloadCycleWindow(
-            schedule,
-            0x0EB,
-            ["0000", "007F", "00FF"],
-            TimeSpan.FromMilliseconds(1000),
-            false,
-            "Opel 11-bit panel brightness byte-1 ramp reference",
-            TimeSpan.FromSeconds(9),
-            TimeSpan.FromSeconds(6));
-
-        var buttonDelay = TimeSpan.FromSeconds(16);
-        var buttonPresses = new (string Payload, string Note)[]
-        {
-            ("0100000000000000", "Astra J / GM HMI steering-wheel volume up"),
-            ("0200000000000000", "Astra J / GM HMI steering-wheel volume down"),
-            ("0300000000000000", "Astra J / GM HMI steering-wheel next track"),
-            ("0400000000000000", "Astra J / GM HMI steering-wheel previous track"),
-            ("0500000000000000", "Astra J / GM HMI steering-wheel source"),
-            ("0600000000000000", "Astra J / GM HMI steering-wheel voice"),
-            ("0700000000000000", "Astra J / GM HMI steering-wheel mute"),
-        };
-
-        foreach (var (payload, note) in buttonPresses)
-        {
-            AddOneShot(schedule, 0x10438040, payload, true, note, buttonDelay);
-            AddOneShot(schedule, 0x10438040, "0000000000000000", true, "Astra J / GM HMI steering-wheel button release", buttonDelay + TimeSpan.FromMilliseconds(150));
-            buttonDelay += TimeSpan.FromMilliseconds(1400);
-        }
-
-        AddOneShot(schedule, 0x10754040, "0400000000000000", true, "Astra J key-present context candidate", TimeSpan.FromSeconds(28));
-        AddOneShot(schedule, 0x10754040, "0000000000000000", true, "Astra J key-present context clear/no-key candidate", TimeSpan.FromSeconds(31));
-        AddOneShot(schedule, 0x10630040, "0100000000000000", true, "Astra J tentative driver-door/body-state candidate", TimeSpan.FromSeconds(32));
-        AddOneShot(schedule, 0x10630040, "0000000000000000", true, "Astra J tentative driver-door/body-state clear", TimeSpan.FromSeconds(35));
-        AddOneShot(schedule, 0x10414040, "0100000000000000", true, "Astra J tentative central-lock/body-state candidate", TimeSpan.FromSeconds(36));
-        AddOneShot(schedule, 0x10414040, "0000000000000000", true, "Astra J tentative central-lock/body-state clear", TimeSpan.FromSeconds(39));
-
-        AddPayloadCycleWindow(
-            schedule,
-            0x0AA,
-            ["600000", "740000", "760000"],
-            TimeSpan.FromMilliseconds(1000),
-            false,
-            "Corsa D Opel key/ignition byte-0 reference",
-            TimeSpan.FromSeconds(41),
-            TimeSpan.FromSeconds(6));
-
-        AddPayloadCycleWindow(
-            schedule,
-            0x131,
-            ["000000", "000040", "000080", "000090", "0000A0"],
-            TimeSpan.FromMilliseconds(1000),
-            false,
-            "Corsa D Opel exterior-light switch byte-2 reference",
-            TimeSpan.FromSeconds(48),
-            TimeSpan.FromSeconds(8));
-
-        AddOneShot(schedule, 0x15E, "06019220", false, "Opel low-speed side/reverse/lights reference", TimeSpan.FromSeconds(57));
-
-        AddOneShot(schedule, 0x1001E058, "867805FF05", true, "GMLAN chime command candidate, source 0x58", TimeSpan.FromSeconds(61));
-        AddOneShot(schedule, 0x1001E040, "867805FF05", true, "GMLAN chime command candidate, fake BCM/source 0x40", TimeSpan.FromSeconds(65));
-        AddOneShot(schedule, 0x1001E060, "867805FF05", true, "GMLAN chime source 0x60 variant; may look IPC-origin", TimeSpan.FromSeconds(69));
-
-        AddOneShot(schedule, 0x10300040, "0000000000000000", true, "DIC ARB text general attributes probe arbid 0x180", TimeSpan.FromSeconds(73));
-        AddOneShot(schedule, 0x10302040, "0000000000000000", true, "DIC ARB text line attributes probe arbid 0x181", TimeSpan.FromSeconds(74));
-        AddOneShot(schedule, 0x10304040, "0000000000000000", true, "DIC ARB text set icon probe arbid 0x182", TimeSpan.FromSeconds(75));
-        AddOneShot(schedule, 0x10308040, "0000000000000000", true, "DIC ARB text menu action/status probe arbid 0x184", TimeSpan.FromSeconds(76));
-        AddOneShot(schedule, 0x1030A040, "0000000000000000", true, "DIC ARB text display parameters probe arbid 0x185", TimeSpan.FromSeconds(77));
-        AddOneShot(schedule, 0x1030C040, "5445535420202020", true, "DIC ARB text display text probe: TEST", TimeSpan.FromSeconds(78));
-
-        AddOneShot(schedule, 0x10438040, "0000000000000000", true, "final HMI button release/neutral", TimeSpan.FromSeconds(86));
-        AddOneShot(schedule, 0x10754040, "0000000000000000", true, "final key-present neutral", TimeSpan.FromSeconds(86.2));
-        AddOneShot(schedule, 0x10630040, "0000000000000000", true, "final door/body-state neutral", TimeSpan.FromSeconds(86.4));
-        AddOneShot(schedule, 0x10414040, "0000000000000000", true, "final lock/body-state neutral", TimeSpan.FromSeconds(86.6));
-
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcGmlan29ByteFuzzSchedule()
-    {
-        var schedule = new List<ScheduledTxFrame>
-        {
-            new(0x100, [], TimeSpan.Zero, false, "SWCAN wakeup after first IPC RX", MaxSends: 1),
-            new(0x13FFE040, [], TimeSpan.Zero, true, "fake BCM/body gateway broadcast presence after first IPC RX", MaxSends: 1),
-            new(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.Zero, false, "network-management steady keepalive seed after first IPC RX", MaxSends: 1),
-            new(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "fake BCM/body gateway broadcast presence during byte fuzz", TimeSpan.FromMilliseconds(1000)),
-            new(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "network-management steady keepalive during byte fuzz", TimeSpan.FromMilliseconds(1000)),
-            new(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(250), true, "conservative system power mode hold during byte fuzz"),
-        };
-
-        var delay = TimeSpan.FromSeconds(8);
-        delay = AddByteSweep(schedule, 0x10002040, "03", [0], delay, TimeSpan.FromMilliseconds(100), "system power mode");
-        delay = AddByteSweep(schedule, 0x10050040, "00012C03A9000000", [0, 1, 2, 3, 4, 5], delay, TimeSpan.FromMilliseconds(100), "vehicle speed/RPM priority 4");
-        delay = AddByteSweep(schedule, 0x0C050040, "00012C03A9000000", [0, 1, 2, 3, 4, 5], delay, TimeSpan.FromMilliseconds(100), "vehicle speed/RPM priority 3");
-
-        schedule.Add(new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "default-duration speed/RPM zero-out priority 4", TimeSpan.FromSeconds(178), MaxSends: 1));
-        schedule.Add(new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "default-duration speed/RPM zero-out priority 3", TimeSpan.FromSeconds(178.2), MaxSends: 1));
-
-        delay = AddByteSweep(schedule, 0x10030040, "0075A708", [0, 1, 2, 3], delay, TimeSpan.FromMilliseconds(100), "battery voltage priority 4");
-        delay = AddByteSweep(schedule, 0x0C030040, "0075A708", [0, 1, 2, 3], delay, TimeSpan.FromMilliseconds(100), "battery voltage priority 3");
-        delay = AddByteSweep(schedule, 0x10052040, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "engine information 1");
-        delay = AddByteSweep(schedule, 0x1006E040, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "engine information 2");
-        delay = AddByteSweep(schedule, 0x1004C040, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "fuel information");
-        delay = AddByteSweep(schedule, 0x1004E040, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "odometer/brake/wash level");
-        delay = AddByteSweep(schedule, 0x1005E040, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "brake/cruise status");
-        delay = AddByteSweep(schedule, 0x1001E058, "867805FF05", [0, 1, 2, 3, 4], delay, TimeSpan.FromMilliseconds(500), "chime command");
-
-        schedule.Add(new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "full-sequence speed/RPM zero-out priority 4", delay, MaxSends: 1));
-        schedule.Add(new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "full-sequence speed/RPM zero-out priority 3", delay + TimeSpan.FromMilliseconds(200), MaxSends: 1));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcStandardByteFuzzSchedule()
-    {
-        var schedule = new List<ScheduledTxFrame>
-        {
-            new(0x100, [], TimeSpan.Zero, false, "SWCAN wakeup after first IPC RX", MaxSends: 1),
-            new(0x13FFE040, [], TimeSpan.Zero, true, "fake BCM/body gateway broadcast presence after first IPC RX", MaxSends: 1),
-            new(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.Zero, false, "network-management steady keepalive seed after first IPC RX", MaxSends: 1),
-            new(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "fake BCM/body gateway broadcast presence during standard-ID byte fuzz", TimeSpan.FromMilliseconds(1000)),
-            new(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "network-management steady keepalive during standard-ID byte fuzz", TimeSpan.FromMilliseconds(1000)),
-            new(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(250), true, "conservative system power mode hold during standard-ID byte fuzz"),
-        };
-
-        var delay = TimeSpan.FromSeconds(8);
-        delay = AddByteSweep(schedule, 0x0C9, "0004C40000500000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "standard engine/RPM candidate 0x0C9", isExtended: false);
-        delay = AddByteSweep(schedule, 0x1E5, "44003910000000C9", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "standard warning/service candidate 0x1E5", isExtended: false);
-        delay = AddByteSweep(schedule, 0x3E9, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "standard vehicle-speed candidate 0x3E9", isExtended: false);
-        delay = AddByteSweep(schedule, 0x4C1, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "standard coolant/temperature candidate 0x4C1", isExtended: false);
-        delay = AddByteSweep(schedule, 0x4D1, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "standard oil/fuel/service candidate 0x4D1", isExtended: false);
-        delay = AddByteSweep(schedule, 0x3D1, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "standard limiter/dashboard-settings candidate 0x3D1", isExtended: false);
-        delay = AddByteSweep(schedule, 0x160, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "standard ignition/power candidate 0x160", isExtended: false);
-        delay = AddByteSweep(schedule, 0x1F1, "0000000000000000", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "standard ignition/environment candidate 0x1F1", isExtended: false);
-
-        delay = AddByteSweep(schedule, 0x0AA, "74A13B", Enumerable.Range(0, 3), delay, TimeSpan.FromMilliseconds(100), "older Opel IPC-on candidate 0x0AA", isExtended: false);
-        delay = AddByteSweep(schedule, 0x06C, "000000000000001E", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "older Opel direct needle candidate 0x06C", isExtended: false);
-        delay = AddByteSweep(schedule, 0x092, "150000000000000C", Enumerable.Range(0, 8), delay, TimeSpan.FromMilliseconds(100), "older Opel cruise telltale candidate 0x092", isExtended: false);
-        delay = AddByteSweep(schedule, 0x104, "7F3280", Enumerable.Range(0, 3), delay, TimeSpan.FromMilliseconds(100), "older Opel indicator/hazard candidate 0x104", isExtended: false);
-        delay = AddByteSweep(schedule, 0x119, "60051E0133", Enumerable.Range(0, 5), delay, TimeSpan.FromMilliseconds(250), "older Opel chime candidate 0x119", isExtended: false);
-        delay = AddByteSweep(schedule, 0x15E, "06019220", Enumerable.Range(0, 4), delay, TimeSpan.FromMilliseconds(100), "older Opel lights telltale candidate 0x15E", isExtended: false);
-
-        schedule.Add(new ScheduledTxFrame(0x0C9, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, false, "standard engine/RPM zero-out", delay, MaxSends: 1));
-        schedule.Add(new ScheduledTxFrame(0x1E5, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, false, "standard warning/service zero-out", delay + TimeSpan.FromMilliseconds(200), MaxSends: 1));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcPriorityTier1ProbeSchedule()
-    {
-        var schedule = IpcPriorityBaselineSchedule();
-        AddTier1SeedWindow(schedule, TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(40));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcNativeBodySeedProbeSchedule()
-    {
-        var schedule = NormalWakeSchedule();
-        var start = TimeSpan.FromSeconds(2);
-        var end = TimeSpan.FromSeconds(58);
-        AddPayloadCycleWindow(
-            schedule,
-            0x0F1,
-            ["000000400000", "1C0000400000", "280000400000", "340000400000"],
-            TimeSpan.FromMilliseconds(15),
-            false,
-            "native Corsa E fast BCM/body state cycle 0x0F1 from saved captures",
-            start,
-            end - start);
-        AddPeriodicWindow(schedule, 0x451, "000000000000", TimeSpan.FromMilliseconds(20), false, "native Corsa E display/body status 0x451", start + TimeSpan.FromMilliseconds(5), end);
-        AddPayloadCycleWindow(
-            schedule,
-            0x12A,
-            ["0006606B00000080", "0000606B00000080", "0000605900000080", "0000605D00008080", "0006605E00008080", "0006605D00008080"],
-            TimeSpan.FromMilliseconds(100),
-            false,
-            "native Corsa E door/belt/body/DIC 0x12A observed variants",
-            start + TimeSpan.FromMilliseconds(20),
-            end - start);
-        AddPayloadCycleWindow(
-            schedule,
-            0x135,
-            ["04080A0002180000", "04080D0002180000", "00080A0002180000", "00080D0002180000", "00080D0202180000"],
-            TimeSpan.FromMilliseconds(100),
-            false,
-            "native Corsa E packed body/display status 0x135 observed variants",
-            start + TimeSpan.FromMilliseconds(40),
-            end - start);
-        AddPayloadCycleWindow(
-            schedule,
-            0x137,
-            ["0000000000000000", "0000000030000000"],
-            TimeSpan.FromMilliseconds(100),
-            false,
-            "native Corsa E packed body/display status 0x137 observed variants",
-            start + TimeSpan.FromMilliseconds(60),
-            end - start);
-        AddPeriodicWindow(schedule, 0x139, "0000000000000000", TimeSpan.FromMilliseconds(100), false, "native Corsa E body/display status 0x139", start + TimeSpan.FromMilliseconds(80), end);
-        AddPayloadCycleWindow(
-            schedule,
-            0x160,
-            ["803C96B503", "0000000000"],
-            TimeSpan.FromMilliseconds(100),
-            false,
-            "native Corsa E compact power/body state 0x160 observed variants",
-            start + TimeSpan.FromMilliseconds(100),
-            end - start);
-        AddPayloadCycleWindow(
-            schedule,
-            0x1F1,
-            ["AE0F173E18000072", "800E000018000072", "850F173E18000072", "AB0F173E18000072"],
-            TimeSpan.FromMilliseconds(100),
-            false,
-            "native Corsa E power/ignition/environment 0x1F1 observed variants",
-            start + TimeSpan.FromMilliseconds(120),
-            end - start);
-        AddPeriodicWindow(schedule, 0x4E1, "4B34303238383139", TimeSpan.FromMilliseconds(1000), false, "native Corsa E VIN/config fragment 0x4E1", start + TimeSpan.FromMilliseconds(200), end);
-        AddPeriodicWindow(schedule, 0x514, "3056305845503638", TimeSpan.FromMilliseconds(1000), false, "native Corsa E VIN/config fragment 0x514", start + TimeSpan.FromMilliseconds(300), end);
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcNativeContextLiteSchedule()
-    {
-        var schedule = NormalWakeSchedule();
-        schedule.Add(new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(250), true, "lite native context system power mode hold 0x03", TimeSpan.FromMilliseconds(500), MaxSends: 170));
-
-        var start = TimeSpan.FromMilliseconds(750);
-        var end = TimeSpan.FromSeconds(44);
-        AddPayloadCycleWindow(
-            schedule,
-            0x0F1,
-            ["000000400000", "1C0000400000", "280000400000", "340000400000"],
-            TimeSpan.FromMilliseconds(60),
-            false,
-            "lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus",
-            start,
-            end - start);
-        AddPeriodicWindow(schedule, 0x451, "000000000000", TimeSpan.FromMilliseconds(100), false, "lite native Corsa E display/body status 0x451", start + TimeSpan.FromMilliseconds(10), end);
-        AddPayloadCycleWindow(
-            schedule,
-            0x12A,
-            ["0006606B00000080", "0000606B00000080", "0000605900000080", "0000605D00008080"],
-            TimeSpan.FromMilliseconds(500),
-            false,
-            "lite native Corsa E door/belt/body/DIC 0x12A observed variants",
-            start + TimeSpan.FromMilliseconds(40),
-            end - start);
-        AddPayloadCycleWindow(
-            schedule,
-            0x135,
-            ["04080A0002180000", "04080D0002180000", "00080A0002180000", "00080D0002180000"],
-            TimeSpan.FromMilliseconds(500),
-            false,
-            "lite native Corsa E packed body/display status 0x135 observed variants",
-            start + TimeSpan.FromMilliseconds(80),
-            end - start);
-        AddPayloadCycleWindow(
-            schedule,
-            0x137,
-            ["0000000000000000", "0000000030000000"],
-            TimeSpan.FromMilliseconds(500),
-            false,
-            "lite native Corsa E packed body/display status 0x137 observed variants",
-            start + TimeSpan.FromMilliseconds(120),
-            end - start);
-        AddPeriodicWindow(schedule, 0x139, "0000000000000000", TimeSpan.FromMilliseconds(500), false, "lite native Corsa E body/display status 0x139", start + TimeSpan.FromMilliseconds(160), end);
-        AddPayloadCycleWindow(
-            schedule,
-            0x160,
-            ["803C96B503", "0000000000"],
-            TimeSpan.FromMilliseconds(500),
-            false,
-            "lite native Corsa E compact power/body state 0x160 observed variants",
-            start + TimeSpan.FromMilliseconds(200),
-            end - start);
-        AddPayloadCycleWindow(
-            schedule,
-            0x1F1,
-            ["AE0F173E18000072", "800E000018000072", "850F173E18000072", "AB0F173E18000072"],
-            TimeSpan.FromMilliseconds(500),
-            false,
-            "lite native Corsa E power/ignition/environment 0x1F1 observed variants",
-            start + TimeSpan.FromMilliseconds(240),
-            end - start);
-        AddPeriodicWindow(schedule, 0x4E1, "4B34303238383139", TimeSpan.FromMilliseconds(2000), false, "lite native Corsa E VIN/config fragment 0x4E1", start + TimeSpan.FromMilliseconds(300), end);
-        AddPeriodicWindow(schedule, 0x514, "3056305845503638", TimeSpan.FromMilliseconds(2000), false, "lite native Corsa E VIN/config fragment 0x514", start + TimeSpan.FromMilliseconds(400), end);
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcNativeKeyOnContextSchedule()
-    {
-        var schedule = NormalWakeSchedule();
-        schedule.Add(new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(100), true, "key-on context GMLAN system power mode hold 0x03", TimeSpan.FromMilliseconds(500), MaxSends: 430));
-
-        var start = TimeSpan.FromMilliseconds(700);
-        var end = TimeSpan.FromSeconds(44);
-        AddPayloadCycleWindow(
-            schedule,
-            0x0F1,
-            ["000000400000", "1C0000400000", "280000400000", "340000400000"],
-            TimeSpan.FromMilliseconds(30),
-            false,
-            "key-on native fast BCM/body state cycle 0x0F1",
-            start,
-            end - start);
-        AddPeriodicWindow(schedule, 0x451, "000000000000", TimeSpan.FromMilliseconds(50), false, "key-on native body/display status 0x451", start + TimeSpan.FromMilliseconds(5), end);
-        AddPeriodicWindow(schedule, 0x160, "803C96B503", TimeSpan.FromMilliseconds(100), false, "key-on native compact power/body state 0x160 from keyoff/keyon delta", start + TimeSpan.FromMilliseconds(10), end);
-        AddPeriodicWindow(schedule, 0x1F1, "AE0F173E18000072", TimeSpan.FromMilliseconds(100), false, "key-on native ignition/environment state 0x1F1 from keyoff/keyon delta", start + TimeSpan.FromMilliseconds(20), end);
-        AddPeriodicWindow(schedule, 0x12A, "0000605D00008080", TimeSpan.FromMilliseconds(100), false, "key-on native door/belt/body/DIC state 0x12A dominant", start + TimeSpan.FromMilliseconds(30), end);
-        AddPeriodicWindow(schedule, 0x135, "04080D0002180000", TimeSpan.FromMilliseconds(100), false, "key-on native packed body/display status 0x135 dominant", start + TimeSpan.FromMilliseconds(40), end);
-        AddPeriodicWindow(schedule, 0x137, "0000000000000000", TimeSpan.FromMilliseconds(100), false, "key-on native packed body/display status 0x137 dominant", start + TimeSpan.FromMilliseconds(50), end);
-        AddPeriodicWindow(schedule, 0x139, "0000000000000000", TimeSpan.FromMilliseconds(100), false, "key-on native body/display status 0x139", start + TimeSpan.FromMilliseconds(60), end);
-        AddPeriodicWindow(schedule, 0x4E1, "4B34303238383139", TimeSpan.FromMilliseconds(1000), false, "key-on native VIN/config fragment 0x4E1", start + TimeSpan.FromMilliseconds(100), end);
-        AddPeriodicWindow(schedule, 0x514, "3056305845503638", TimeSpan.FromMilliseconds(1000), false, "key-on native VIN/config fragment 0x514", start + TimeSpan.FromMilliseconds(200), end);
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcNativeKeyTransitionSchedule()
-    {
-        var schedule = NormalWakeSchedule();
-
-        var keyOffStart = TimeSpan.FromMilliseconds(700);
-        var keyOffEnd = TimeSpan.FromSeconds(4);
-        AddPayloadCycleWindow(
-            schedule,
-            0x0F1,
-            ["1C0000400000", "280000400000", "340000400000", "000000400000"],
-            TimeSpan.FromMilliseconds(40),
-            false,
-            "transition key-off native BCM/body state cycle 0x0F1",
-            keyOffStart,
-            keyOffEnd - keyOffStart);
-        AddPeriodicWindow(schedule, 0x451, "000000000000", TimeSpan.FromMilliseconds(50), false, "transition key-off body/display status 0x451", keyOffStart + TimeSpan.FromMilliseconds(5), keyOffEnd);
-        AddPeriodicWindow(schedule, 0x160, "0000000000", TimeSpan.FromMilliseconds(100), false, "transition key-off compact power/body state 0x160", keyOffStart + TimeSpan.FromMilliseconds(10), keyOffEnd);
-        AddPeriodicWindow(schedule, 0x1F1, "800E000018000072", TimeSpan.FromMilliseconds(100), false, "transition key-off ignition/environment state 0x1F1", keyOffStart + TimeSpan.FromMilliseconds(20), keyOffEnd);
-        AddPeriodicWindow(schedule, 0x12A, "0000605D00000080", TimeSpan.FromMilliseconds(100), false, "transition key-off door/belt/body/DIC state 0x12A", keyOffStart + TimeSpan.FromMilliseconds(30), keyOffEnd);
-        AddPeriodicWindow(schedule, 0x135, "00080D0002180000", TimeSpan.FromMilliseconds(100), false, "transition key-off packed body/display status 0x135", keyOffStart + TimeSpan.FromMilliseconds(40), keyOffEnd);
-        AddPeriodicWindow(schedule, 0x137, "0000000000000000", TimeSpan.FromMilliseconds(100), false, "transition key-off packed body/display status 0x137", keyOffStart + TimeSpan.FromMilliseconds(50), keyOffEnd);
-        AddPeriodicWindow(schedule, 0x139, "0000000000000000", TimeSpan.FromMilliseconds(100), false, "transition key-off body/display status 0x139", keyOffStart + TimeSpan.FromMilliseconds(60), keyOffEnd);
-
-        schedule.Add(new ScheduledTxFrame(0x100, [], TimeSpan.Zero, false, "transition key-on edge SWCAN wake one-shot", TimeSpan.FromSeconds(4), MaxSends: 1));
-        schedule.Add(new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(100), true, "transition key-on GMLAN system power mode hold 0x03", TimeSpan.FromSeconds(4), MaxSends: 400));
-
-        var keyOnStart = TimeSpan.FromSeconds(4);
-        var keyOnEnd = TimeSpan.FromSeconds(44);
-        AddPayloadCycleWindow(
-            schedule,
-            0x0F1,
-            ["000000400000", "1C0000400000", "280000400000", "340000400000"],
-            TimeSpan.FromMilliseconds(30),
-            false,
-            "transition key-on native fast BCM/body state cycle 0x0F1",
-            keyOnStart + TimeSpan.FromMilliseconds(30),
-            keyOnEnd - keyOnStart);
-        AddPeriodicWindow(schedule, 0x451, "000000000000", TimeSpan.FromMilliseconds(50), false, "transition key-on body/display status 0x451", keyOnStart + TimeSpan.FromMilliseconds(35), keyOnEnd);
-        AddPeriodicWindow(schedule, 0x160, "803C96B503", TimeSpan.FromMilliseconds(100), false, "transition key-on compact power/body state 0x160", keyOnStart + TimeSpan.FromMilliseconds(40), keyOnEnd);
-        AddPeriodicWindow(schedule, 0x1F1, "AE0F173E18000072", TimeSpan.FromMilliseconds(100), false, "transition key-on ignition/environment state 0x1F1", keyOnStart + TimeSpan.FromMilliseconds(50), keyOnEnd);
-        AddPeriodicWindow(schedule, 0x12A, "0000605D00008080", TimeSpan.FromMilliseconds(100), false, "transition key-on door/belt/body/DIC state 0x12A", keyOnStart + TimeSpan.FromMilliseconds(60), keyOnEnd);
-        AddPeriodicWindow(schedule, 0x135, "04080D0002180000", TimeSpan.FromMilliseconds(100), false, "transition key-on packed body/display status 0x135", keyOnStart + TimeSpan.FromMilliseconds(70), keyOnEnd);
-        AddPeriodicWindow(schedule, 0x137, "0000000000000000", TimeSpan.FromMilliseconds(100), false, "transition key-on packed body/display status 0x137", keyOnStart + TimeSpan.FromMilliseconds(80), keyOnEnd);
-        AddPeriodicWindow(schedule, 0x139, "0000000000000000", TimeSpan.FromMilliseconds(100), false, "transition key-on body/display status 0x139", keyOnStart + TimeSpan.FromMilliseconds(90), keyOnEnd);
-        AddPeriodicWindow(schedule, 0x4E1, "4B34303238383139", TimeSpan.FromMilliseconds(1000), false, "transition key-on VIN/config fragment 0x4E1", keyOnStart + TimeSpan.FromMilliseconds(150), keyOnEnd);
-        AddPeriodicWindow(schedule, 0x514, "3056305845503638", TimeSpan.FromMilliseconds(1000), false, "transition key-on VIN/config fragment 0x514", keyOnStart + TimeSpan.FromMilliseconds(250), keyOnEnd);
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcNativeExpandedKeyOnSchedule()
-    {
-        var schedule = IpcNativeKeyOnContextSchedule();
-        var start = TimeSpan.FromMilliseconds(800);
-        var end = TimeSpan.FromSeconds(44);
-
-        AddPeriodicWindow(schedule, 0x0C1, "2000000020000000", TimeSpan.FromMilliseconds(100), false, "expanded key-on changed ID 0x0C1 from all-ID state delta", start + TimeSpan.FromMilliseconds(10), end);
-        AddPeriodicWindow(schedule, 0x0C5, "2000000020000000", TimeSpan.FromMilliseconds(100), false, "expanded key-on changed ID 0x0C5 from all-ID state delta", start + TimeSpan.FromMilliseconds(20), end);
-        AddPeriodicWindow(schedule, 0x0D1, "8000BFFA00FA00", TimeSpan.FromMilliseconds(100), false, "expanded key-on changed ID 0x0D1 from all-ID state delta", start + TimeSpan.FromMilliseconds(30), end);
-        AddPeriodicWindow(schedule, 0x1C8, "40000000FFFF3FFF", TimeSpan.FromMilliseconds(100), false, "expanded key-on changed ID 0x1C8 from all-ID state delta", start + TimeSpan.FromMilliseconds(40), end);
-        AddPeriodicWindow(schedule, 0x1E1, "00000400011CC0", TimeSpan.FromMilliseconds(100), false, "expanded key-on changed ID 0x1E1 from all-ID state delta", start + TimeSpan.FromMilliseconds(50), end);
-        AddPayloadCycleWindow(schedule, 0x1F3, ["C0FC00", "003C00", "803C00"], TimeSpan.FromMilliseconds(100), false, "expanded key-on changed ID 0x1F3 observed variants", start + TimeSpan.FromMilliseconds(60), end - start);
-        AddPeriodicWindow(schedule, 0x210, "020001FF", TimeSpan.FromMilliseconds(250), false, "expanded key-on changed ID 0x210 from all-ID state delta", start + TimeSpan.FromMilliseconds(70), end);
-        AddPeriodicWindow(schedule, 0x214, "040001FE0802", TimeSpan.FromMilliseconds(250), false, "expanded key-on changed ID 0x214 from all-ID state delta", start + TimeSpan.FromMilliseconds(80), end);
-        AddPeriodicWindow(schedule, 0x2F9, "0B000000000007", TimeSpan.FromMilliseconds(250), false, "expanded key-on changed ID 0x2F9 from all-ID state delta", start + TimeSpan.FromMilliseconds(90), end);
-        AddPeriodicWindow(schedule, 0x3CB, "304D00000FE6", TimeSpan.FromMilliseconds(250), false, "expanded key-on changed ID 0x3CB from all-ID state delta", start + TimeSpan.FromMilliseconds(100), end);
-        AddPeriodicWindow(schedule, 0x17D, "2A2443FF2000", TimeSpan.FromMilliseconds(250), false, "expanded key-on changed ID 0x17D from all-ID state delta", start + TimeSpan.FromMilliseconds(110), end);
-        AddPayloadCycleWindow(schedule, 0x1E5, ["44FFA0500000026F", "44FFA0700000028F"], TimeSpan.FromMilliseconds(500), false, "expanded warning/service ID 0x1E5 key-on variants", start + TimeSpan.FromMilliseconds(120), end - start);
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcPriorityTier2ProbeSchedule()
-    {
-        var schedule = IpcPriorityBaselineSchedule();
-        AddTier2SeedWindow(schedule, TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(40));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcPriorityTier3ProbeSchedule()
-    {
-        var schedule = IpcPriorityBaselineSchedule();
-        AddTier3SeedWindow(schedule, TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(55));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcPriorityAllProbeSchedule()
-    {
-        var schedule = IpcPriorityBaselineSchedule();
-        AddTier1SeedWindow(schedule, TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(42));
-        AddTier2SeedWindow(schedule, TimeSpan.FromSeconds(50), TimeSpan.FromSeconds(42));
-        AddTier3SeedWindow(schedule, TimeSpan.FromSeconds(97), TimeSpan.FromSeconds(48));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcPriorityTier1ByteFuzzSchedule()
-    {
-        var schedule = IpcPriorityBaselineSchedule();
-        var delay = TimeSpan.FromSeconds(8);
-        delay = AddByteSweep(schedule, 0x1F1, "AE0F173E18000072", [0, 1, 4, 7], delay, TimeSpan.FromMilliseconds(100), "tier 1 power/ignition/environment 0x1F1", isExtended: false);
-        delay = AddByteSweep(schedule, 0x160, "803C96B503", [0, 1], delay, TimeSpan.FromMilliseconds(100), "tier 1 ignition/power mode 0x160", isExtended: false);
-        delay = AddByteSweep(schedule, 0x12A, "0000605D00008080", [0, 4, 6, 7], delay, TimeSpan.FromMilliseconds(100), "tier 1 door/belt/body/DIC 0x12A", isExtended: false);
-        delay = AddByteSweep(schedule, 0x140, "000202", Enumerable.Range(0, 3), delay, TimeSpan.FromMilliseconds(100), "tier 1 turn/lighting/body 0x140", isExtended: false);
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcPriorityTier2ByteFuzzSchedule()
-    {
-        var schedule = IpcPriorityBaselineSchedule();
-        var delay = TimeSpan.FromSeconds(8);
-
-        var start = delay;
-        delay = AddByteSweep(schedule, 0x0C9, "8412DC0000500000", [0, 1, 2], delay, TimeSpan.FromMilliseconds(100), "tier 2 RPM/engine state 0x0C9", isExtended: false);
-        AddPeriodicWindow(schedule, 0x0D3, "2BBC0007001000FF", TimeSpan.FromMilliseconds(20), false, "tier 2 static 0x0D3 companion during 0x0C9 fuzz", start, delay);
-
-        start = delay;
-        delay = AddByteSweep(schedule, 0x0D3, "2BBC0007001000FF", [0, 1, 2], delay, TimeSpan.FromMilliseconds(100), "tier 2 0x0D3 companion/mirror state", isExtended: false);
-        AddPayloadCycleWindow(schedule, 0x0C9, ["8412DC0000500000", "0000000000500000"], TimeSpan.FromMilliseconds(20), false, "tier 2 static 0x0C9 cycle during 0x0D3 fuzz", start, delay - start);
-
-        delay = AddByteSweep(schedule, 0x3E9, "0010800000108000", [0, 1, 2, 3], delay, TimeSpan.FromMilliseconds(100), "tier 2 vehicle speed/distance 0x3E9", isExtended: false);
-        delay = AddByteSweep(schedule, 0x4C1, "0000730000000000", [2], delay, TimeSpan.FromMilliseconds(100), "tier 2 coolant/IAT/temperature 0x4C1 byte 2", isExtended: false);
-        delay = AddByteSweep(schedule, 0x4D1, "C900000000000000", [0, 1], delay, TimeSpan.FromMilliseconds(100), "tier 2 oil/fuel/service 0x4D1", isExtended: false);
-
-        AddPayloadCycleWindow(schedule, 0x1E5, ["44FFA0100000022F", "44FFA0300000024F", "44FFA0500000026F", "44FFA0700000028F"], TimeSpan.FromMilliseconds(100), false, "tier 2 known 0x1E5 warning/service sequence before fuzz", delay, TimeSpan.FromSeconds(4));
-        delay += TimeSpan.FromSeconds(4);
-        delay = AddByteSweep(schedule, 0x1E5, "44FFA0100000022F", [1, 2, 3, 7], delay, TimeSpan.FromMilliseconds(100), "tier 2 gateway warning/service 0x1E5", isExtended: false);
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> IpcPriorityBaselineSchedule()
-    {
-        return
-        [
-            new ScheduledTxFrame(0x100, [], TimeSpan.Zero, false, "priority baseline SWCAN wakeup after first IPC RX", MaxSends: 1),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "priority baseline network-management steady keepalive"),
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "priority baseline fake BCM/source 0x40 presence"),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(100), true, "priority baseline system power mode candidate"),
-            new ScheduledTxFrame(0x24C, CliOptions.ParseHexData("021003AAAAAAAAAA"), TimeSpan.Zero, false, "priority baseline IPC diagnostic extended-session sanity check; watch for 64C", TimeSpan.FromSeconds(2), MaxSends: 1),
-        ];
-    }
-
-    private static void AddTier1SeedWindow(List<ScheduledTxFrame> schedule, TimeSpan start, TimeSpan duration)
-    {
-        var end = start + duration;
-        AddPeriodicWindow(schedule, 0x1F1, "AE0F173E18000072", TimeSpan.FromMilliseconds(100), false, "tier 1 power/ignition/environment seed 0x1F1", start, end);
-        AddPeriodicWindow(schedule, 0x160, "803C96B503", TimeSpan.FromMilliseconds(100), false, "tier 1 ignition/power mode seed 0x160", start + TimeSpan.FromMilliseconds(20), end);
-        AddPayloadCycleWindow(schedule, 0x0F1, ["000000400000", "1C0000400000", "280000400000", "340000400000"], TimeSpan.FromMilliseconds(10), false, "tier 1 fast BCM/body state cycle 0x0F1", start + TimeSpan.FromMilliseconds(40), duration);
-        AddPeriodicWindow(schedule, 0x12A, "0000605D00008080", TimeSpan.FromMilliseconds(100), false, "tier 1 door/belt/body/DIC seed 0x12A", start + TimeSpan.FromMilliseconds(60), end);
-        AddPeriodicWindow(schedule, 0x140, "000202", TimeSpan.FromMilliseconds(1000), false, "tier 1 turn/lighting/body seed 0x140", start + TimeSpan.FromMilliseconds(80), end);
-    }
-
-    private static void AddTier2SeedWindow(List<ScheduledTxFrame> schedule, TimeSpan start, TimeSpan duration)
-    {
-        var end = start + duration;
-        AddPayloadCycleWindow(schedule, 0x0C9, ["8412DC0000500000", "0000000000500000"], TimeSpan.FromMilliseconds(20), false, "tier 2 RPM/engine state cycle 0x0C9", start, duration);
-        AddPeriodicWindow(schedule, 0x0D3, "2BBC0007001000FF", TimeSpan.FromMilliseconds(20), false, "tier 2 0x0D3 companion/mirror state", start + TimeSpan.FromMilliseconds(10), end);
-        AddPayloadCycleWindow(schedule, 0x3E9, ["0000800000008000", "0010800000108000", "0040800000408000"], TimeSpan.FromMilliseconds(50), false, "tier 2 vehicle speed/distance cycle 0x3E9", start + TimeSpan.FromMilliseconds(20), duration);
-        AddPeriodicWindow(schedule, 0x4C1, "0000730000000000", TimeSpan.FromMilliseconds(250), false, "tier 2 coolant/IAT/temperature seed 0x4C1", start + TimeSpan.FromMilliseconds(40), end);
-        AddPayloadCycleWindow(schedule, 0x4D1, ["C900000000000000", "E900000000000000"], TimeSpan.FromMilliseconds(100), false, "tier 2 oil/fuel/service cycle 0x4D1", start + TimeSpan.FromMilliseconds(60), duration);
-        AddPayloadCycleWindow(schedule, 0x1E5, ["44FFA0100000022F", "44FFA0300000024F", "44FFA0500000026F", "44FFA0700000028F"], TimeSpan.FromMilliseconds(100), false, "tier 2 gateway warning/service cycle 0x1E5", start + TimeSpan.FromMilliseconds(80), duration);
-    }
-
-    private static void AddTier3SeedWindow(List<ScheduledTxFrame> schedule, TimeSpan start, TimeSpan duration)
-    {
-        var end = start + duration;
-        AddPeriodicWindow(schedule, 0x1E1, "00000400010000", TimeSpan.FromMilliseconds(30), false, "tier 3 body/status seed 0x1E1", start, end);
-        AddPayloadCycleWindow(schedule, 0x1F3, ["407C00", "803C00", "C0FC00"], TimeSpan.FromMilliseconds(30), false, "tier 3 body/status cycle 0x1F3", start + TimeSpan.FromMilliseconds(10), duration);
-        AddPeriodicWindow(schedule, 0x3CB, "313F0000144B", TimeSpan.FromMilliseconds(100), false, "tier 3 body/counter/status seed 0x3CB", start + TimeSpan.FromMilliseconds(20), end);
-        AddPeriodicWindow(schedule, 0x1F5, "ED00000F1800031C", TimeSpan.FromMilliseconds(50), false, "tier 3 powertrain status/keepalive seed 0x1F5", start + TimeSpan.FromMilliseconds(30), end);
-        AddPeriodicWindow(schedule, 0x3F9, "8000000000000007", TimeSpan.FromMilliseconds(50), false, "tier 3 powertrain status/keepalive seed 0x3F9", start + TimeSpan.FromMilliseconds(40), end);
-        AddPeriodicWindow(schedule, 0x10050040, "00012C03A9000000", TimeSpan.FromMilliseconds(50), true, "tier 3 weak GMLAN29 vehicle speed/RPM candidate priority 4", start + TimeSpan.FromMilliseconds(50), end);
-        AddPeriodicWindow(schedule, 0x0C050040, "00012C03A9000000", TimeSpan.FromMilliseconds(50), true, "tier 3 weak GMLAN29 vehicle speed/RPM candidate priority 3", start + TimeSpan.FromMilliseconds(60), end);
-        AddPeriodicWindow(schedule, 0x1001E058, "867805FF05", TimeSpan.Zero, true, "tier 3 GMLAN29 chime command one-shot", end - TimeSpan.FromSeconds(5), end);
-    }
-
     private static void AddOneShot(
         List<ScheduledTxFrame> schedule,
         uint canId,
@@ -1237,6 +879,31 @@ internal static class Profiles
         }
     }
 
+    private static void AddPayloadHoldSequence(
+        List<ScheduledTxFrame> schedule,
+        uint canId,
+        (string Payload, string Label)[] payloads,
+        TimeSpan period,
+        TimeSpan hold,
+        bool isExtended,
+        string note,
+        TimeSpan start)
+    {
+        for (var i = 0; i < payloads.Length; i++)
+        {
+            var windowStart = start + TimeSpan.FromTicks(hold.Ticks * i);
+            AddPeriodicWindow(
+                schedule,
+                canId,
+                payloads[i].Payload,
+                period,
+                isExtended,
+                $"{note}: {payloads[i].Label}",
+                windowStart,
+                windowStart + hold);
+        }
+    }
+
     private static void AddPeriodicWindow(
         List<ScheduledTxFrame> schedule,
         uint canId,
@@ -1259,61 +926,6 @@ internal static class Profiles
         }
 
         schedule.Add(new ScheduledTxFrame(canId, CliOptions.ParseHexData(payload), period, isExtended, note, start, MaxSends: maxSends));
-    }
-
-    private static TimeSpan AddByteSweep(
-        List<ScheduledTxFrame> schedule,
-        uint canId,
-        string basePayloadHex,
-        IEnumerable<int> byteIndexes,
-        TimeSpan startDelay,
-        TimeSpan sendPeriod,
-        string note,
-        bool isExtended = true)
-    {
-        var basePayload = CliOptions.ParseHexData(basePayloadHex);
-        var valueWindow = sendPeriod == TimeSpan.FromMilliseconds(500) ? TimeSpan.FromMilliseconds(500) : TimeSpan.FromSeconds(1);
-        var sendsPerValue = Math.Max(1, (int)Math.Round(valueWindow.TotalMilliseconds / sendPeriod.TotalMilliseconds));
-        var delay = startDelay;
-
-        foreach (var byteIndex in byteIndexes)
-        {
-            if (byteIndex < 0 || byteIndex >= basePayload.Length)
-            {
-                throw new ArgumentOutOfRangeException(nameof(byteIndexes), $"byte index {byteIndex} is outside payload length {basePayload.Length}");
-            }
-
-            foreach (var value in ConservativeFuzzValues)
-            {
-                var payload = basePayload.ToArray();
-                payload[byteIndex] = value;
-                schedule.Add(new ScheduledTxFrame(
-                    canId,
-                    payload,
-                    sendPeriod,
-                    isExtended,
-                    $"byte fuzz {note} byte={byteIndex} value=0x{value:X2}",
-                    delay,
-                    MaxSends: sendsPerValue));
-                delay += valueWindow;
-            }
-        }
-
-        return delay;
-    }
-
-    private static List<ScheduledTxFrame> IpcSimulatorBaseSchedule()
-    {
-        return
-        [
-            new ScheduledTxFrame(0x100, [], TimeSpan.Zero, false, "SWCAN wakeup after first IPC RX", MaxSends: 1),
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.Zero, true, "fake BCM/body gateway broadcast presence after first IPC RX", MaxSends: 1),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.Zero, false, "network-management steady keepalive seed after first IPC RX", MaxSends: 1),
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "fake BCM/body gateway broadcast presence, source 0x40", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "network-management steady keepalive", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(100), true, "system power mode run candidate, short DLC value 0x03"),
-            new ScheduledTxFrame(0x0C030040, CliOptions.ParseHexData("0075A708"), TimeSpan.FromMilliseconds(1000), true, "battery voltage example, priority 3, arbid 0x018, sender 0x40"),
-        ];
     }
 
     private static List<ScheduledTxFrame> IpcWakeRecoveryProbeSchedule()
@@ -1367,201 +979,6 @@ internal static class Profiles
         ];
     }
 
-    private static List<ScheduledTxFrame> IpcQuietBodyBaselineSchedule()
-    {
-        return
-        [
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.Zero, true, "quiet fake BCM/source 0x40 presence after first IPC RX", MaxSends: 1),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.Zero, false, "quiet network-management steady keepalive seed after first IPC RX", MaxSends: 1),
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "quiet fake BCM/source 0x40 presence; no hard wake/init burst", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "quiet network-management steady keepalive; no 621#0140 startup burst", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(250), true, "quiet system power mode hold, source 0x40, short DLC value 0x03", TimeSpan.FromMilliseconds(500)),
-        ];
-    }
-
-    private static List<ScheduledTxFrame> FirmwareWakeSchedule()
-    {
-        return
-        [
-            new ScheduledTxFrame(0x100, [], TimeSpan.Zero, false, "SWCAN wakeup, startup one-shot", MaxSends: 1),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0140000000000000"), TimeSpan.FromMilliseconds(500), false, "network-management initiate, three-frame startup burst", MaxSends: 3),
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "extended broadcast presence / keepalive from source 0x40"),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "network-management steady keepalive"),
-        ];
-    }
-
-    private static List<ScheduledTxFrame> NormalWakeSchedule()
-    {
-        return
-        [
-            new ScheduledTxFrame(0x100, [], TimeSpan.Zero, false, "SWCAN wakeup, normal one-shot", MaxSends: 1),
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.Zero, true, "normal fake BCM/source 0x40 presence seed", MaxSends: 1),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.Zero, false, "normal network-management steady keepalive seed", MaxSends: 1),
-            new ScheduledTxFrame(0x13FFE040, [], TimeSpan.FromMilliseconds(1000), true, "normal fake BCM/source 0x40 presence; no 621#0140 startup burst", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x621, CliOptions.ParseHexData("0040000000000000"), TimeSpan.FromMilliseconds(1000), false, "normal network-management steady keepalive; no 621#0140 startup burst", TimeSpan.FromMilliseconds(1000)),
-        ];
-    }
-
-    private static List<ScheduledTxFrame> OpelReferenceProbeSchedule()
-    {
-        return
-        [
-            new ScheduledTxFrame(0x278, CliOptions.ParseHexData("0048500000000000"), TimeSpan.FromMilliseconds(1000), false, "older Opel low-speed GMLAN wake reference", TimeSpan.FromMilliseconds(100)),
-            new ScheduledTxFrame(0x0AA, CliOptions.ParseHexData("74A13B"), TimeSpan.FromMilliseconds(200), false, "older Opel IPC-on reference", TimeSpan.FromMilliseconds(150)),
-            new ScheduledTxFrame(0x06C, CliOptions.ParseHexData("000000000000001E"), TimeSpan.FromMilliseconds(2000), false, "older Opel direct needle sweep low", TimeSpan.FromMilliseconds(300)),
-            new ScheduledTxFrame(0x06C, CliOptions.ParseHexData("002000002000001E"), TimeSpan.FromMilliseconds(2000), false, "older Opel direct needle sweep quarter", TimeSpan.FromMilliseconds(800)),
-            new ScheduledTxFrame(0x06C, CliOptions.ParseHexData("004000004000001E"), TimeSpan.FromMilliseconds(2000), false, "older Opel direct needle sweep half", TimeSpan.FromMilliseconds(1300)),
-            new ScheduledTxFrame(0x06C, CliOptions.ParseHexData("008000008000001E"), TimeSpan.FromMilliseconds(2000), false, "older Opel direct needle sweep high", TimeSpan.FromMilliseconds(1800)),
-        ];
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29ProbeSchedule()
-    {
-        return
-        [
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(500), true, "GMLAN 29-bit arbid 0x001 system power mode, guessed source 0x40"),
-            new ScheduledTxFrame(0x10030040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(1000), true, "GMLAN 29-bit arbid 0x018 battery voltage, guessed source 0x40", TimeSpan.FromMilliseconds(100)),
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(1000), true, "GMLAN 29-bit arbid 0x028 vehicle speed information, guessed source 0x40", TimeSpan.FromMilliseconds(200)),
-            new ScheduledTxFrame(0x10052040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(1000), true, "GMLAN 29-bit arbid 0x029 engine information 1, guessed source 0x40", TimeSpan.FromMilliseconds(300)),
-            new ScheduledTxFrame(0x1004C040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(1500), true, "GMLAN 29-bit arbid 0x026 fuel information, guessed source 0x40", TimeSpan.FromMilliseconds(400)),
-            new ScheduledTxFrame(0x1004E040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(1500), true, "GMLAN 29-bit arbid 0x027 odometer/brake/wash level, guessed source 0x40", TimeSpan.FromMilliseconds(500)),
-            new ScheduledTxFrame(0x1005E040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(1500), true, "GMLAN 29-bit arbid 0x02F brake/cruise status, guessed source 0x40", TimeSpan.FromMilliseconds(600)),
-        ];
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29KnownPayloadsSchedule()
-    {
-        var schedule = NormalWakeSchedule();
-        schedule.AddRange(Gmlan29CorePayloadSchedule(TimeSpan.FromMilliseconds(2000)));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29ChimeSchedule()
-    {
-        return WithWakePrelude(Gmlan29ChimePayloads(TimeSpan.Zero));
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29SpeedRpmSchedule()
-    {
-        return WithWakePrelude(Gmlan29SpeedRpmPayloads(TimeSpan.Zero));
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29SpeedRpmAltSourcesSchedule()
-    {
-        return WithWakePrelude(Gmlan29SpeedRpmAltSourcePayloads(TimeSpan.Zero));
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29PowerModeSchedule()
-    {
-        return WithWakePrelude(Gmlan29PowerModePayloads(TimeSpan.Zero));
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29EnvironmentSchedule()
-    {
-        return WithWakePrelude(Gmlan29EnvironmentPayloads(TimeSpan.Zero));
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29AllTargetedSchedule()
-    {
-        var schedule = NormalWakeSchedule();
-        schedule.AddRange(Gmlan29SpeedRpmPayloads(TimeSpan.FromSeconds(2)));
-        schedule.AddRange(Gmlan29SpeedRpmAltSourcePayloads(TimeSpan.FromSeconds(13)));
-        schedule.AddRange(Gmlan29PowerModePayloads(TimeSpan.FromSeconds(27)));
-        schedule.AddRange(Gmlan29EnvironmentPayloads(TimeSpan.FromSeconds(38)));
-        schedule.AddRange(Gmlan29ChimePayloads(TimeSpan.FromSeconds(47)));
-        return schedule;
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29SpeedRpmPayloads(TimeSpan offset)
-    {
-        return new List<ScheduledTxFrame>
-        {
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(75), true, "GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40", MaxSends: 90),
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "GMLAN speed/RPM zero-out frame", TimeSpan.FromMilliseconds(9500), MaxSends: 1),
-        }.Select(frame => frame with { InitialDelay = frame.InitialDelay + offset }).ToList();
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29SpeedRpmAltSourcePayloads(TimeSpan offset)
-    {
-        return new List<ScheduledTxFrame>
-        {
-            new ScheduledTxFrame(0x0C050040, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(100), true, "priority 3 arbid 0x028 speed/RPM candidate, sender 0x40", MaxSends: 35),
-            new ScheduledTxFrame(0x10050010, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(100), true, "priority 4 arbid 0x028 speed/RPM candidate, engine-controller sender 0x10", TimeSpan.FromMilliseconds(4000), MaxSends: 35),
-            new ScheduledTxFrame(0x10050028, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(100), true, "priority 4 arbid 0x028 speed/RPM candidate, brake-controller sender 0x28", TimeSpan.FromMilliseconds(8000), MaxSends: 35),
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "GMLAN speed/RPM zero-out frame", TimeSpan.FromMilliseconds(12000), MaxSends: 1),
-        }.Select(frame => frame with { InitialDelay = frame.InitialDelay + offset }).ToList();
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29PowerModePayloads(TimeSpan offset)
-    {
-        return new List<ScheduledTxFrame>
-        {
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("02"), TimeSpan.FromMilliseconds(3000), true, "system power mode short DLC value 0x02"),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(3000), true, "system power mode short DLC value 0x03", TimeSpan.FromMilliseconds(500)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("04"), TimeSpan.FromMilliseconds(3000), true, "system power mode short DLC value 0x04", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("0200000000000000"), TimeSpan.FromMilliseconds(3000), true, "system power mode full DLC value 0x02", TimeSpan.FromMilliseconds(1500)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("0300000000000000"), TimeSpan.FromMilliseconds(3000), true, "system power mode full DLC value 0x03", TimeSpan.FromMilliseconds(2000)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("0400000000000000"), TimeSpan.FromMilliseconds(3000), true, "system power mode full DLC value 0x04", TimeSpan.FromMilliseconds(2500)),
-        }.Select(frame => frame with { InitialDelay = frame.InitialDelay + offset }).ToList();
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29EnvironmentPayloads(TimeSpan offset)
-    {
-        return new List<ScheduledTxFrame>
-        {
-            new ScheduledTxFrame(0x10030040, CliOptions.ParseHexData("0075A708"), TimeSpan.FromMilliseconds(1000), true, "battery voltage example, priority 4, arbid 0x018, sender 0x40"),
-            new ScheduledTxFrame(0x0C030040, CliOptions.ParseHexData("0075A708"), TimeSpan.FromMilliseconds(1000), true, "battery voltage example, priority 3, arbid 0x018, sender 0x40", TimeSpan.FromMilliseconds(250)),
-            new ScheduledTxFrame(0x100C2099, CliOptions.ParseHexData("0073"), TimeSpan.FromMilliseconds(2000), true, "outside air temp 17.5 C example, arbid 0x061, sender 0x99", TimeSpan.FromMilliseconds(500)),
-            new ScheduledTxFrame(0x100C2099, CliOptions.ParseHexData("006C"), TimeSpan.FromMilliseconds(2000), true, "outside air temp 14.0 C example, arbid 0x061, sender 0x99", TimeSpan.FromMilliseconds(1500)),
-        }.Select(frame => frame with { InitialDelay = frame.InitialDelay + offset }).ToList();
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29ChimePayloads(TimeSpan offset)
-    {
-        return
-        [
-            new ScheduledTxFrame(0x1001E058, CliOptions.ParseHexData("867805FF05"), TimeSpan.Zero, true, "GMLAN Bible low chime example", offset, MaxSends: 1),
-            new ScheduledTxFrame(0x1001E058, CliOptions.ParseHexData("847803FF05"), TimeSpan.Zero, true, "GMLAN Bible beep-style chime probe", offset + TimeSpan.FromMilliseconds(3000), MaxSends: 1),
-            new ScheduledTxFrame(0x1001E058, CliOptions.ParseHexData("877803FF05"), TimeSpan.Zero, true, "GMLAN Bible high chime probe", offset + TimeSpan.FromMilliseconds(6000), MaxSends: 1),
-        ];
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29SpeedSweepSchedule()
-    {
-        return WithWakePrelude([
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.FromMilliseconds(3000), true, "GMLAN arbid 0x028 vehicle speed / engine zero baseline"),
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000640000000000"), TimeSpan.FromMilliseconds(3000), true, "GMLAN arbid 0x028 low speed value probe", TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(3000), true, "GMLAN Bible speed/RPM example payload", TimeSpan.FromMilliseconds(2000)),
-        ]);
-    }
-
-    private static List<ScheduledTxFrame> Gmlan29CorePayloadSchedule(TimeSpan offset)
-    {
-        return
-        [
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("00012C03A9000000"), TimeSpan.FromMilliseconds(75), true, "GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40", offset, MaxSends: 120),
-            new ScheduledTxFrame(0x10030040, CliOptions.ParseHexData("0075A708"), TimeSpan.FromMilliseconds(1000), true, "battery voltage example, priority 4, arbid 0x018, sender 0x40", offset + TimeSpan.FromMilliseconds(125)),
-            new ScheduledTxFrame(0x0C030040, CliOptions.ParseHexData("0075A708"), TimeSpan.FromMilliseconds(1000), true, "battery voltage example, priority 3, arbid 0x018, sender 0x40", offset + TimeSpan.FromMilliseconds(250)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("02"), TimeSpan.FromMilliseconds(3000), true, "system power mode short DLC value 0x02", offset + TimeSpan.FromMilliseconds(500)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("03"), TimeSpan.FromMilliseconds(3000), true, "system power mode short DLC value 0x03", offset + TimeSpan.FromMilliseconds(1000)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("04"), TimeSpan.FromMilliseconds(3000), true, "system power mode short DLC value 0x04", offset + TimeSpan.FromMilliseconds(1500)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("0200000000000000"), TimeSpan.FromMilliseconds(3000), true, "system power mode full DLC value 0x02", offset + TimeSpan.FromMilliseconds(2000)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("0300000000000000"), TimeSpan.FromMilliseconds(3000), true, "system power mode full DLC value 0x03", offset + TimeSpan.FromMilliseconds(2500)),
-            new ScheduledTxFrame(0x10002040, CliOptions.ParseHexData("0400000000000000"), TimeSpan.FromMilliseconds(3000), true, "system power mode full DLC value 0x04", offset + TimeSpan.FromMilliseconds(3000)),
-            new ScheduledTxFrame(0x1001E058, CliOptions.ParseHexData("867805FF05"), TimeSpan.Zero, true, "GMLAN Bible chime command example, arbid 0x00F, sender 0x58", offset + TimeSpan.FromMilliseconds(9000), MaxSends: 1),
-            new ScheduledTxFrame(0x10050040, CliOptions.ParseHexData("0000000000000000"), TimeSpan.Zero, true, "GMLAN speed/RPM zero-out frame", offset + TimeSpan.FromMilliseconds(12000), MaxSends: 1),
-        ];
-    }
-
-    private static List<ScheduledTxFrame> WithWakePrelude(List<ScheduledTxFrame> probes)
-    {
-        var schedule = NormalWakeSchedule();
-        schedule.AddRange(probes.Select(frame => frame with
-        {
-            InitialDelay = frame.InitialDelay + TimeSpan.FromMilliseconds(2000)
-        }));
-        return schedule;
-    }
 }
 
 internal sealed record ProfileDefinition(
