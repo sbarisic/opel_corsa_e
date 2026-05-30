@@ -1,0 +1,2158 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=126.846s 100# note=native Corsa E SWCAN wake pulse
+# tx t=126.846s 13FFE040# note=native fake BCM/source 0x40 presence seed
+# tx t=126.846s 621#0140000000000000 note=native network-management startup/init seed
+# tx t=126.847s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=126.847s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=126.847s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=126.847s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=126.847s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=126.847s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=126.847s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=126.848s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=126.848s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=126.848s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=126.848s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=126.848s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+(1780168018.093000) can0 100#
+(1780168018.093000) can0 13FFE040#
+(1780168018.093000) can0 621#0140000000000000
+# tx t=126.957s 621#0052000000000000 note=native key-on network-management seed
+# tx t=126.958s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.053s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.100s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=127.100s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=127.100s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=127.148s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.258s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.351s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.351s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=127.351s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=127.351s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=127.351s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=127.446s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.557s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.604s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=127.604s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=127.604s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=127.651s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.746s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.858s 621#0052000000000000 note=native key-on network-management context
+# tx t=127.858s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=127.858s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=127.859s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=127.859s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=127.859s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=127.859s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=127.859s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=127.859s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=127.859s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=127.859s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=127.859s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=127.860s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=127.951s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.058s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=128.059s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.106s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=128.106s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=128.106s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=128.154s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.248s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.358s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.358s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=128.358s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=128.358s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=128.359s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=128.451s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.546s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.609s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=128.609s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=128.609s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=128.656s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.750s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.860s 621#0052000000000000 note=native key-on network-management context
+# tx t=128.860s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=128.861s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=128.861s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=128.861s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=128.861s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=128.861s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=128.861s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=128.861s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=128.861s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=128.861s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=128.862s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=128.862s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=128.955s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.051s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.098s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=129.099s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=129.099s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=129.147s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.256s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=129.256s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.351s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.351s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=129.351s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=129.351s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=129.351s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=129.460s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.555s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.602s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=129.602s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=129.602s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=129.649s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.759s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.853s 621#0052000000000000 note=native key-on network-management context
+# tx t=129.853s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=129.853s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=129.853s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=129.854s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=129.854s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=129.854s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=129.854s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=129.854s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=129.854s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=129.854s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=129.854s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=129.854s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=129.949s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.060s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.107s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=130.107s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=130.107s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=130.154s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.247s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.356s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.357s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=130.357s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=130.357s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=130.357s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=130.450s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=130.450s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.558s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.605s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=130.605s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=130.605s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=130.653s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.760s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.854s 621#0052000000000000 note=native key-on network-management context
+# tx t=130.854s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=130.854s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=130.854s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=130.854s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=130.854s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=130.854s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=130.855s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=130.855s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=130.855s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=130.855s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=130.855s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=130.855s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=130.949s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=131.061s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=131.107s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=131.108s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=131.108s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=131.154s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=131.250s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=131.362s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=131.362s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=131.362s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=131.362s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=131.362s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+# tx t=131.455s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168022.700000) can0 10210040#0000800000008000
+(1780168022.703000) can0 10264040#0000000000000000
+(1780168022.706000) can0 102CA040#0000000000000F00
+(1780168022.711000) can0 10220040#1000000040080000
+(1780168022.714000) can0 10244060#00
+(1780168022.732000) can0 10230040#0000000000000000
+(1780168022.732000) can0 103BC060#00
+(1780168022.732000) can0 1022E040#1000000010000000
+(1780168022.732000) can0 10444060#00
+(1780168022.732000) can0 10240040#83FE880100D10FFD
+(1780168022.734000) can0 10448060#00
+(1780168022.738000) can0 102C0040#803C96B503
+(1780168022.741000) can0 1045C060#00
+(1780168022.745000) can0 10754040#040400
+(1780168022.763000) can0 10242040#02
+(1780168022.763000) can0 1020C040#0040040401
+(1780168022.764000) can0 103B4040#00
+(1780168022.764000) can0 621#0052000000000000
+(1780168022.764000) can0 10210040#0000800000008000
+(1780168022.764000) can0 10210040#0000800000008000
+(1780168022.767000) can0 10774060#00
+(1780168022.769000) can0 10A04060#00
+(1780168022.773000) can0 10ACE060#1E00000000000000
+(1780168022.778000) can0 10AE8060#030E010104050000
+# tx t=131.550s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168022.795000) can0 10B0A060#001E04
+(1780168022.796000) can0 13FFE060#
+(1780168022.796000) can0 10230040#1000000010000000
+(1780168022.796000) can0 1022E040#2000000020000000
+(1780168022.796000) can0 1020C040#0040040401
+(1780168022.800000) can0 10210040#0000800000008000
+(1780168022.804000) can0 10210040#0000800000008000
+(1780168022.807000) can0 10210040#0000800000008000
+(1780168022.827000) can0 10230040#2000000020000000
+(1780168022.828000) can0 1022E040#3000000030000000
+(1780168022.828000) can0 1020C040#0040040401
+(1780168022.828000) can0 103B4040#00
+(1780168022.829000) can0 10210040#0000800000008000
+(1780168022.833000) can0 10210040#0000800000008000
+(1780168022.835000) can0 10230040#3000000030000000
+(1780168022.840000) can0 1022E040#1000000010000000
+# tx t=131.598s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=131.599s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=131.599s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168022.844000) can0 1020C040#0040040401
+(1780168022.848000) can0 10210040#0000800000008000
+(1780168022.853000) can0 10210040#0000800000008000
+(1780168022.856000) can0 621#0052000000000000
+(1780168022.875000) can0 10210040#0000800000008000
+(1780168022.875000) can0 10264040#0000000000000000
+(1780168022.875000) can0 102CA040#0000000000000F00
+(1780168022.875000) can0 10220040#1000000040080000
+(1780168022.877000) can0 10230040#0000000000000000
+(1780168022.882000) can0 1022E040#2000000020000000
+(1780168022.886000) can0 10240040#83FE880100D10FFD
+(1780168022.891000) can0 102C0040#803C96B503
+(1780168022.895000) can0 10754040#040400
+(1780168022.899000) can0 10242040#02
+(1780168022.903000) can0 1020C040#0040040401
+(1780168022.906000) can0 103B4040#00
+# tx t=131.662s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=131.662s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168022.908000) can0 10210040#0000800000008000
+(1780168022.912000) can0 13FFE040#
+(1780168022.914000) can0 10210040#0000800000008000
+(1780168022.918000) can0 10230040#1000000010000000
+(1780168022.921000) can0 1022E040#3000000030000000
+(1780168022.938000) can0 1020C040#0040040401
+(1780168022.938000) can0 10210040#0000800000008000
+(1780168022.938000) can0 10210040#0000800000008000
+(1780168022.938000) can0 10210040#0000800000008000
+(1780168022.942000) can0 10230040#2000000020000000
+(1780168022.946000) can0 1022E040#1000000010000000
+(1780168022.950000) can0 1020C040#0040040401
+(1780168022.969000) can0 103B4040#00
+(1780168022.970000) can0 10210040#0000800000008000
+(1780168022.970000) can0 10210040#0000800000008000
+(1780168022.970000) can0 10230040#3000000030000000
+(1780168022.970000) can0 1022E040#2000000020000000
+(1780168022.974000) can0 1020C040#0040040401
+(1780168022.978000) can0 10210040#0000800000008000
+(1780168022.983000) can0 10230040#3000000030000000
+# tx t=131.755s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.001000) can0 1022E040#2000000020000000
+(1780168023.001000) can0 1020C040#0040040401
+(1780168023.001000) can0 13FFE040#
+(1780168023.001000) can0 10210040#0000800000008000
+(1780168023.002000) can0 10210040#0000800000008000
+(1780168023.031000) can0 62C#0112000000000000
+(1780168023.032000) can0 10244060#00
+(1780168023.032000) can0 103BC060#00
+(1780168023.032000) can0 1045C060#00
+(1780168023.032000) can0 10ACE060#1E00000000000000
+(1780168023.033000) can0 10AE8060#030E010104050000
+(1780168023.036000) can0 10B0A060#002B04
+(1780168023.038000) can0 13FFE060#
+(1780168023.063000) can0 10AE8060#030E010104050000
+# tx t=131.850s 621#0052000000000000 note=native key-on network-management context
+# tx t=131.850s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=131.850s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=131.850s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=131.851s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=131.851s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=131.851s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=131.851s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=131.851s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=131.851s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=131.851s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=131.851s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=131.851s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+(1780168023.097000) can0 10AE8060#0016010800000000
+(1780168023.097000) can0 621#0052000000000000
+(1780168023.097000) can0 10210040#0000800000008000
+(1780168023.097000) can0 10264040#0000000000000000
+(1780168023.099000) can0 102CA040#0000000000000F00
+(1780168023.103000) can0 10220040#1000000040080000
+(1780168023.107000) can0 10230040#0000000000000000
+(1780168023.127000) can0 1022E040#3000000030000000
+(1780168023.127000) can0 10240040#83FE880100D10FFD
+(1780168023.127000) can0 102C0040#803C96B503
+(1780168023.127000) can0 10754040#040400
+(1780168023.129000) can0 10242040#02
+(1780168023.133000) can0 1020C040#0040040401
+(1780168023.135000) can0 103BC060#00
+(1780168023.138000) can0 103B4040#00
+(1780168023.158000) can0 10ACE060#1E00000000000000
+(1780168023.158000) can0 10308060#000002
+(1780168023.161000) can0 103D6060#00
+(1780168023.164000) can0 103DA060#00
+(1780168023.167000) can0 10424060#059964
+(1780168023.169000) can0 1045C060#40
+(1780168023.172000) can0 10812060#00
+(1780168023.174000) can0 1084A060#00
+# tx t=131.962s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.207000) can0 10210040#0000800000008000
+(1780168023.251000) can0 10244060#02
+(1780168023.269000) can0 10ACE060#2B00000000000000
+# tx t=132.055s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.300000) can0 10210040#0000800000008000
+# tx t=132.103s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=132.103s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=132.103s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168023.348000) can0 10230040#1000000010000000
+(1780168023.348000) can0 1022E040#1000000010000000
+(1780168023.348000) can0 1020C040#0040040401
+(1780168023.362000) can0 10244060#02
+(1780168023.373000) can0 10ACE060#1E00200000000000
+# tx t=132.148s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.394000) can0 10AFC060#38FFFFFFFFFFFF2B
+(1780168023.394000) can0 10210040#0000800000008000
+(1780168023.424000) can0 10774060#00
+(1780168023.456000) can0 10600060#0160B902007B00
+# tx t=132.258s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.503000) can0 10210040#0000800000008000
+# tx t=132.351s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=132.352s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=132.352s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=132.352s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=132.352s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+(1780168023.597000) can0 10210040#0000800000008000
+(1780168023.597000) can0 10230040#2000000020000000
+(1780168023.597000) can0 1022E040#2000000020000000
+(1780168023.601000) can0 1020C040#0040040401
+(1780168023.605000) can0 103B4040#00
+# tx t=132.446s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.691000) can0 10210040#0000800000008000
+# tx t=132.556s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.801000) can0 10210040#0000800000008000
+# tx t=132.603s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=132.603s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=132.603s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168023.848000) can0 10230040#3000000030000000
+(1780168023.848000) can0 1022E040#3000000030000000
+(1780168023.849000) can0 1020C040#0040040401
+# tx t=132.651s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.896000) can0 10210040#0000800000008000
+# tx t=132.746s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168023.992000) can0 13FFE060#
+(1780168023.992000) can0 10210040#0000800000008000
+# tx t=132.856s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=132.856s 621#0052000000000000 note=native key-on network-management context
+# tx t=132.856s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=132.856s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=132.857s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=132.857s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=132.857s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=132.857s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=132.857s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=132.857s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=132.857s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=132.857s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=132.857s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=132.857s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+(1780168024.102000) can0 13FFE040#
+(1780168024.102000) can0 621#0052000000000000
+(1780168024.103000) can0 10210040#0000800000008000
+(1780168024.103000) can0 10264040#0000000000000000
+(1780168024.107000) can0 102CA040#0000000000000F00
+(1780168024.111000) can0 10220040#1000000040080000
+(1780168024.116000) can0 10230040#0000000000000000
+(1780168024.133000) can0 1022E040#1000000010000000
+(1780168024.133000) can0 10240040#83FE880100D10FFD
+(1780168024.133000) can0 102C0040#803C96B503
+(1780168024.134000) can0 10754040#040400
+(1780168024.138000) can0 10242040#02
+(1780168024.141000) can0 1020C040#0040040401
+(1780168024.144000) can0 103B4040#00
+(1780168024.164000) can0 10424060#059964
+# tx t=132.952s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168024.197000) can0 10210040#0000800000008000
+# tx t=133.047s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168024.292000) can0 10210040#0000800000008000
+# tx t=133.110s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=133.110s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=133.110s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168024.355000) can0 10230040#1000000010000000
+(1780168024.355000) can0 1022E040#2000000020000000
+(1780168024.355000) can0 1020C040#0040040401
+# tx t=133.157s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168024.402000) can0 10210040#0000800000008000
+# tx t=133.251s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168024.496000) can0 10210040#0000800000008000
+# tx t=133.361s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=133.361s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=133.361s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=133.361s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=133.361s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+(1780168024.606000) can0 10210040#0000800000008000
+(1780168024.606000) can0 10230040#2000000020000000
+(1780168024.606000) can0 1022E040#3000000030000000
+(1780168024.610000) can0 1020C040#0040040401
+(1780168024.614000) can0 103B4040#00
+# tx t=133.455s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168024.700000) can0 10210040#0000800000008000
+# tx t=133.549s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168024.794000) can0 10210040#0000800000008000
+# tx t=133.597s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=133.597s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=133.597s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168024.843000) can0 10230040#3000000030000000
+(1780168024.843000) can0 1022E040#1000000010000000
+(1780168024.843000) can0 1020C040#0040040401
+# tx t=133.660s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168024.905000) can0 10210040#0000800000008000
+# tx t=133.755s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.000000) can0 10210040#0000800000008000
+# tx t=133.849s 621#0052000000000000 note=native key-on network-management context
+# tx t=133.849s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=133.849s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=133.849s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=133.849s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=133.850s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=133.850s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=133.850s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=133.850s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=133.850s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=133.850s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=133.850s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=133.850s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+(1780168025.095000) can0 621#0052000000000000
+(1780168025.095000) can0 10210040#0000800000008000
+(1780168025.095000) can0 10264040#0000000000000000
+(1780168025.097000) can0 102CA040#0000000000000F00
+(1780168025.102000) can0 10220040#1000000040080000
+(1780168025.106000) can0 10230040#0000000000000000
+(1780168025.125000) can0 1022E040#2000000020000000
+(1780168025.125000) can0 10240040#83FE880100D10FFD
+(1780168025.125000) can0 102C0040#803C96B503
+(1780168025.126000) can0 10754040#040400
+(1780168025.128000) can0 10242040#02
+(1780168025.132000) can0 1020C040#0040040401
+(1780168025.135000) can0 103B4040#00
+(1780168025.161000) can0 10424060#079964
+(1780168025.190000) can0 13FFE060#
+# tx t=133.959s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.204000) can0 10210040#0000800000008000
+# tx t=134.055s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=134.055s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.300000) can0 13FFE040#
+(1780168025.301000) can0 10210040#0000800000008000
+# tx t=134.102s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=134.102s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=134.103s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168025.348000) can0 10230040#1000000010000000
+(1780168025.348000) can0 1022E040#3000000030000000
+(1780168025.348000) can0 1020C040#0040040401
+# tx t=134.149s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.394000) can0 10210040#0000800000008000
+# tx t=134.259s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.505000) can0 10210040#0000800000008000
+# tx t=134.355s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=134.355s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=134.355s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=134.355s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=134.355s 103B4040#00 note=parking-brake clear window 0-8s: 103B4040#00
+(1780168025.600000) can0 10210040#0000800000008000
+(1780168025.601000) can0 10230040#2000000020000000
+(1780168025.601000) can0 1022E040#1000000010000000
+(1780168025.604000) can0 1020C040#0040040401
+(1780168025.608000) can0 103B4040#00
+# tx t=134.449s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.694000) can0 10210040#0000800000008000
+# tx t=134.560s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.806000) can0 10210040#0000800000008000
+# tx t=134.607s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=134.607s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=134.607s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168025.852000) can0 10230040#3000000030000000
+(1780168025.852000) can0 1022E040#2000000020000000
+(1780168025.852000) can0 1020C040#0040040401
+# tx t=134.654s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.899000) can0 10210040#0000800000008000
+# tx t=134.749s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168025.995000) can0 10210040#0000800000008000
+(1780168026.026000) can0 62C#0040000000000000
+# tx t=134.861s 621#0052000000000000 note=native key-on network-management context
+# tx t=134.861s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=134.861s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=134.861s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=134.861s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=134.861s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=134.862s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=134.862s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=134.862s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=134.862s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=134.862s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=134.862s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=134.862s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168026.107000) can0 621#0052000000000000
+(1780168026.107000) can0 10210040#0000800000008000
+(1780168026.107000) can0 10264040#0000000000000000
+(1780168026.109000) can0 102CA040#0000000000000F00
+(1780168026.114000) can0 10220040#1000000040080000
+(1780168026.118000) can0 10230040#0000000000000000
+(1780168026.136000) can0 1022E040#3000000030000000
+(1780168026.137000) can0 10240040#83FE880100D10FFD
+(1780168026.137000) can0 102C0040#803C96B503
+(1780168026.137000) can0 10754040#040400
+(1780168026.140000) can0 10242040#02
+(1780168026.143000) can0 1020C040#0040040401
+(1780168026.146000) can0 103B4040#04
+(1780168026.168000) can0 10424060#079964
+# tx t=134.954s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168026.199000) can0 10210040#0000800000008000
+# tx t=135.049s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168026.294000) can0 10210040#0000800000008000
+# tx t=135.096s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=135.096s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=135.096s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168026.342000) can0 10230040#1000000010000000
+(1780168026.342000) can0 1022E040#1000000010000000
+(1780168026.342000) can0 1020C040#0040040401
+# tx t=135.159s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168026.404000) can0 13FFE060#
+(1780168026.404000) can0 10210040#0000800000008000
+# tx t=135.253s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=135.253s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168026.498000) can0 13FFE040#
+(1780168026.498000) can0 10210040#0000800000008000
+# tx t=135.347s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=135.348s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=135.348s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=135.348s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=135.348s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168026.593000) can0 10210040#0000800000008000
+(1780168026.593000) can0 10230040#2000000020000000
+(1780168026.593000) can0 1022E040#2000000020000000
+(1780168026.597000) can0 1020C040#0040040401
+(1780168026.601000) can0 103B4040#04
+# tx t=135.458s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168026.703000) can0 10210040#0000800000008000
+# tx t=135.554s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168026.799000) can0 10210040#0000800000008000
+# tx t=135.601s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=135.601s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=135.601s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168026.846000) can0 10230040#3000000030000000
+(1780168026.846000) can0 1022E040#3000000030000000
+(1780168026.846000) can0 1020C040#0040040401
+# tx t=135.648s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168026.893000) can0 10210040#0000800000008000
+# tx t=135.757s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.002000) can0 10210040#0000800000008000
+# tx t=135.851s 621#0052000000000000 note=native key-on network-management context
+# tx t=135.851s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=135.851s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=135.851s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=135.852s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=135.852s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=135.852s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=135.852s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=135.852s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=135.852s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=135.852s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=135.852s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=135.852s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168027.097000) can0 621#0052000000000000
+(1780168027.097000) can0 10210040#0000800000008000
+(1780168027.098000) can0 10264040#0000000000000000
+(1780168027.100000) can0 102CA040#0000000000000F00
+(1780168027.104000) can0 10220040#1000000040080000
+(1780168027.108000) can0 10230040#0000000000000000
+(1780168027.128000) can0 1022E040#1000000010000000
+(1780168027.128000) can0 10240040#83FE880100D10FFD
+(1780168027.128000) can0 102C0040#803C96B503
+(1780168027.128000) can0 10754040#040400
+(1780168027.130000) can0 10242040#02
+(1780168027.134000) can0 1020C040#0040040401
+(1780168027.137000) can0 103B4040#04
+(1780168027.160000) can0 10424060#079964
+# tx t=135.946s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.191000) can0 10210040#0000800000008000
+# tx t=136.058s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.303000) can0 10210040#0000800000008000
+# tx t=136.104s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=136.105s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=136.105s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168027.350000) can0 10230040#1000000010000000
+(1780168027.350000) can0 1022E040#2000000020000000
+(1780168027.350000) can0 1020C040#0040040401
+# tx t=136.152s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.398000) can0 10210040#0000800000008000
+# tx t=136.262s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.507000) can0 10210040#0000800000008000
+# tx t=136.355s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=136.356s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=136.356s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=136.356s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=136.356s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168027.601000) can0 13FFE060#
+(1780168027.601000) can0 10210040#0000800000008000
+(1780168027.601000) can0 10230040#2000000020000000
+(1780168027.601000) can0 1022E040#3000000030000000
+(1780168027.605000) can0 1020C040#0040040401
+(1780168027.609000) can0 103B4040#04
+# tx t=136.450s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=136.450s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.695000) can0 13FFE040#
+(1780168027.695000) can0 10210040#0000800000008000
+(1780168027.790000) can0 10244060#02
+# tx t=136.560s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.805000) can0 10210040#0000800000008000
+# tx t=136.608s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=136.608s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=136.608s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168027.853000) can0 10230040#3000000030000000
+(1780168027.854000) can0 1022E040#1000000010000000
+(1780168027.854000) can0 1020C040#0040040401
+# tx t=136.655s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.900000) can0 10210040#0000800000008000
+# tx t=136.750s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168027.995000) can0 10210040#0000800000008000
+# tx t=136.859s 621#0052000000000000 note=native key-on network-management context
+# tx t=136.859s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=136.859s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=136.859s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=136.860s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=136.860s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=136.860s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=136.860s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=136.860s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=136.860s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=136.860s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=136.860s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=136.860s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168028.105000) can0 621#0052000000000000
+(1780168028.105000) can0 10210040#0000800000008000
+(1780168028.106000) can0 10264040#0000000000000000
+(1780168028.108000) can0 102CA040#0000000000000F00
+(1780168028.112000) can0 10220040#1000000040080000
+(1780168028.117000) can0 10230040#0000000000000000
+(1780168028.136000) can0 1022E040#2000000020000000
+(1780168028.136000) can0 10240040#83FE880100D10FFD
+(1780168028.136000) can0 102C0040#803C96B503
+(1780168028.137000) can0 10754040#040400
+(1780168028.138000) can0 10242040#02
+(1780168028.142000) can0 1020C040#0040040401
+(1780168028.145000) can0 103B4040#04
+# tx t=136.955s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168028.200000) can0 10210040#0000800000008000
+(1780168028.209000) can0 10424060#079964
+# tx t=137.050s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168028.295000) can0 10210040#0000800000008000
+# tx t=137.097s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=137.097s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=137.098s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168028.343000) can0 10230040#1000000010000000
+(1780168028.343000) can0 1022E040#3000000030000000
+(1780168028.343000) can0 1020C040#0040040401
+# tx t=137.160s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168028.405000) can0 10210040#0000800000008000
+# tx t=137.255s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168028.500000) can0 10210040#0000800000008000
+# tx t=137.350s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=137.351s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=137.351s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=137.351s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=137.351s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168028.596000) can0 10210040#0000800000008000
+(1780168028.596000) can0 10230040#2000000020000000
+(1780168028.596000) can0 1022E040#1000000010000000
+(1780168028.600000) can0 1020C040#0040040401
+(1780168028.604000) can0 103B4040#04
+# tx t=137.461s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168028.706000) can0 10210040#0000800000008000
+# tx t=137.556s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168028.801000) can0 13FFE060#
+(1780168028.801000) can0 10210040#0000800000008000
+# tx t=137.603s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=137.603s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=137.603s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168028.848000) can0 10230040#3000000030000000
+(1780168028.848000) can0 1022E040#2000000020000000
+(1780168028.848000) can0 1020C040#0040040401
+# tx t=137.651s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=137.651s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168028.896000) can0 13FFE040#
+(1780168028.896000) can0 10210040#0000800000008000
+# tx t=137.746s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168028.991000) can0 10210040#0000800000008000
+(1780168029.022000) can0 62C#0040000000000000
+# tx t=137.856s 621#0052000000000000 note=native key-on network-management context
+# tx t=137.856s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=137.856s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=137.856s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=137.857s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=137.857s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=137.857s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=137.857s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=137.857s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=137.857s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=137.857s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=137.857s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=137.857s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168029.102000) can0 621#0052000000000000
+(1780168029.102000) can0 10210040#0000800000008000
+(1780168029.102000) can0 10264040#0000000000000000
+(1780168029.105000) can0 102CA040#0000000000000F00
+(1780168029.109000) can0 10220040#1000000040080000
+(1780168029.114000) can0 10230040#0000000000000000
+(1780168029.134000) can0 1022E040#3000000030000000
+(1780168029.134000) can0 10240040#83FE880100D10FFD
+(1780168029.134000) can0 102C0040#803C96B503
+(1780168029.134000) can0 10754040#040400
+(1780168029.135000) can0 10242040#02
+(1780168029.139000) can0 1020C040#0040040401
+(1780168029.142000) can0 103B4040#04
+# tx t=137.951s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168029.196000) can0 10210040#0000800000008000
+# tx t=138.046s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168029.291000) can0 10210040#0000800000008000
+# tx t=138.109s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=138.110s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=138.110s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168029.355000) can0 10230040#1000000010000000
+(1780168029.355000) can0 1022E040#1000000010000000
+(1780168029.355000) can0 1020C040#0040040401
+# tx t=138.156s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168029.402000) can0 10210040#0000800000008000
+# tx t=138.251s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168029.497000) can0 10210040#0000800000008000
+# tx t=138.346s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=138.347s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=138.347s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=138.347s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=138.347s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168029.592000) can0 10210040#0000800000008000
+(1780168029.592000) can0 10230040#2000000020000000
+(1780168029.592000) can0 1022E040#2000000020000000
+(1780168029.596000) can0 1020C040#0040040401
+(1780168029.600000) can0 103B4040#04
+# tx t=138.457s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168029.702000) can0 10210040#0000800000008000
+# tx t=138.552s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168029.797000) can0 10210040#0000800000008000
+# tx t=138.598s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=138.598s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=138.598s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168029.843000) can0 10230040#3000000030000000
+(1780168029.843000) can0 1022E040#3000000030000000
+(1780168029.844000) can0 1020C040#0040040401
+# tx t=138.661s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168029.906000) can0 10210040#0000800000008000
+# tx t=138.757s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.002000) can0 13FFE060#
+(1780168030.002000) can0 10210040#0000800000008000
+# tx t=138.852s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=138.852s 621#0052000000000000 note=native key-on network-management context
+# tx t=138.852s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=138.852s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=138.853s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=138.853s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=138.853s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=138.853s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=138.853s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=138.853s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=138.853s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=138.853s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=138.853s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=138.854s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168030.099000) can0 13FFE040#
+(1780168030.099000) can0 621#0052000000000000
+(1780168030.099000) can0 10210040#0000800000008000
+(1780168030.099000) can0 10264040#0000000000000000
+(1780168030.103000) can0 102CA040#0000000000000F00
+(1780168030.107000) can0 10220040#1000000040080000
+(1780168030.112000) can0 10230040#0000000000000000
+(1780168030.128000) can0 1022E040#1000000010000000
+(1780168030.128000) can0 10240040#83FE880100D10FFD
+(1780168030.128000) can0 102C0040#803C96B503
+(1780168030.129000) can0 10754040#040400
+(1780168030.133000) can0 10242040#02
+(1780168030.137000) can0 1020C040#0040040401
+(1780168030.140000) can0 103B4040#04
+# tx t=138.946s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.191000) can0 10210040#0000800000008000
+# tx t=139.057s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.302000) can0 10210040#0000800000008000
+# tx t=139.105s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=139.105s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=139.106s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168030.351000) can0 10230040#1000000010000000
+(1780168030.351000) can0 1022E040#2000000020000000
+(1780168030.351000) can0 1020C040#0040040401
+# tx t=139.152s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.398000) can0 10210040#0000800000008000
+# tx t=139.261s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.507000) can0 10210040#0000800000008000
+# tx t=139.358s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=139.358s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=139.358s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=139.358s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=139.358s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168030.603000) can0 10210040#0000800000008000
+(1780168030.603000) can0 10230040#2000000020000000
+(1780168030.604000) can0 1022E040#3000000030000000
+(1780168030.607000) can0 1020C040#0040040401
+(1780168030.611000) can0 103B4040#04
+# tx t=139.453s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.698000) can0 10210040#0000800000008000
+# tx t=139.548s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.793000) can0 10210040#0000800000008000
+# tx t=139.609s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=139.609s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=139.609s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168030.854000) can0 10230040#3000000030000000
+(1780168030.854000) can0 1022E040#1000000010000000
+(1780168030.854000) can0 1020C040#0040040401
+# tx t=139.655s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.900000) can0 10210040#0000800000008000
+# tx t=139.749s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168030.994000) can0 10210040#0000800000008000
+# tx t=139.860s 621#0052000000000000 note=native key-on network-management context
+# tx t=139.860s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=139.860s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=139.860s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=139.861s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=139.861s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=139.861s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=139.861s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=139.861s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=139.861s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=139.861s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=139.861s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=139.862s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168031.107000) can0 621#0052000000000000
+(1780168031.107000) can0 10210040#0000800000008000
+(1780168031.107000) can0 10264040#0000000000000000
+(1780168031.109000) can0 102CA040#0000000000000F00
+(1780168031.113000) can0 10220040#1000000040080000
+(1780168031.117000) can0 10230040#0000000000000000
+(1780168031.137000) can0 1022E040#2000000020000000
+(1780168031.137000) can0 10240040#83FE880100D10FFD
+(1780168031.137000) can0 102C0040#803C96B503
+(1780168031.137000) can0 10754040#040400
+(1780168031.139000) can0 10242040#02
+(1780168031.143000) can0 1020C040#0040040401
+(1780168031.146000) can0 103B4040#04
+# tx t=139.956s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168031.201000) can0 13FFE060#
+(1780168031.201000) can0 10210040#0000800000008000
+# tx t=140.049s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=140.049s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168031.295000) can0 13FFE040#
+(1780168031.295000) can0 10210040#0000800000008000
+# tx t=140.112s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=140.112s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=140.112s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168031.357000) can0 10230040#1000000010000000
+(1780168031.357000) can0 1022E040#3000000030000000
+(1780168031.357000) can0 1020C040#0040040401
+# tx t=140.158s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168031.404000) can0 10210040#0000800000008000
+# tx t=140.253s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168031.499000) can0 10210040#0000800000008000
+# tx t=140.348s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=140.349s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=140.349s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=140.349s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=140.349s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168031.594000) can0 10210040#0000800000008000
+(1780168031.594000) can0 10230040#2000000020000000
+(1780168031.594000) can0 1022E040#1000000010000000
+(1780168031.598000) can0 1020C040#0040040401
+(1780168031.602000) can0 103B4040#04
+# tx t=140.459s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168031.704000) can0 10210040#0000800000008000
+# tx t=140.554s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168031.799000) can0 10210040#0000800000008000
+# tx t=140.601s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=140.601s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=140.601s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168031.846000) can0 10230040#3000000030000000
+(1780168031.847000) can0 1022E040#2000000020000000
+(1780168031.847000) can0 1020C040#0040040401
+# tx t=140.647s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168031.892000) can0 10210040#0000800000008000
+# tx t=140.759s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.004000) can0 10210040#0000800000008000
+(1780168032.012000) can0 62C#0040000000000000
+# tx t=140.853s 621#0052000000000000 note=native key-on network-management context
+# tx t=140.853s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=140.853s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=140.854s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=140.854s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=140.854s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=140.854s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=140.854s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=140.854s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=140.854s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=140.854s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=140.854s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=140.855s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168032.100000) can0 621#0052000000000000
+(1780168032.100000) can0 10210040#0000800000008000
+(1780168032.100000) can0 10264040#0000000000000000
+(1780168032.102000) can0 102CA040#0000000000000F00
+(1780168032.106000) can0 10220040#1000000040080000
+(1780168032.111000) can0 10230040#0000000000000000
+(1780168032.129000) can0 1022E040#3000000030000000
+(1780168032.129000) can0 10240040#83FE880100D10FFD
+(1780168032.129000) can0 102C0040#803C96B503
+(1780168032.129000) can0 10754040#040400
+(1780168032.132000) can0 10242040#02
+(1780168032.136000) can0 1020C040#0040040401
+(1780168032.139000) can0 103B4040#04
+# tx t=140.947s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.192000) can0 10210040#0000800000008000
+# tx t=141.056s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.301000) can0 10210040#0000800000008000
+# tx t=141.103s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=141.103s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=141.104s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168032.349000) can0 10230040#1000000010000000
+(1780168032.349000) can0 1022E040#1000000010000000
+(1780168032.349000) can0 1020C040#0040040401
+(1780168032.387000) can0 13FFE060#
+# tx t=141.150s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.396000) can0 10210040#0000800000008000
+# tx t=141.261s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=141.261s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.506000) can0 13FFE040#
+(1780168032.506000) can0 10210040#0000800000008000
+# tx t=141.354s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=141.355s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=141.355s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=141.355s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=141.355s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168032.600000) can0 10210040#0000800000008000
+(1780168032.601000) can0 10230040#2000000020000000
+(1780168032.601000) can0 1022E040#2000000020000000
+(1780168032.604000) can0 1020C040#0040040401
+(1780168032.608000) can0 103B4040#04
+# tx t=141.450s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.695000) can0 10210040#0000800000008000
+(1780168032.789000) can0 10244060#02
+# tx t=141.560s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.805000) can0 10210040#0000800000008000
+# tx t=141.607s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=141.607s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=141.607s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168032.852000) can0 10230040#3000000030000000
+(1780168032.852000) can0 1022E040#3000000030000000
+(1780168032.852000) can0 1020C040#0040040401
+# tx t=141.655s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.900000) can0 10210040#0000800000008000
+# tx t=141.750s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168032.995000) can0 10210040#0000800000008000
+# tx t=141.861s 621#0052000000000000 note=native key-on network-management context
+# tx t=141.861s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=141.861s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=141.862s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=141.862s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=141.862s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=141.862s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=141.862s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=141.862s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=141.862s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=141.862s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=141.862s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=141.862s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168033.107000) can0 621#0052000000000000
+(1780168033.107000) can0 10210040#0000800000008000
+(1780168033.108000) can0 10264040#0000000000000000
+(1780168033.110000) can0 102CA040#0000000000000F00
+(1780168033.114000) can0 10220040#1000000040080000
+(1780168033.119000) can0 10230040#0000000000000000
+(1780168033.138000) can0 1022E040#1000000010000000
+(1780168033.138000) can0 10240040#83FE880100D10FFD
+(1780168033.138000) can0 102C0040#803C96B503
+(1780168033.139000) can0 10754040#040400
+(1780168033.140000) can0 10242040#02
+(1780168033.144000) can0 1020C040#0040040401
+(1780168033.147000) can0 103B4040#04
+# tx t=141.956s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168033.201000) can0 10210040#0000800000008000
+# tx t=142.051s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168033.296000) can0 10210040#0000800000008000
+# tx t=142.098s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=142.099s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=142.099s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168033.344000) can0 10230040#1000000010000000
+(1780168033.344000) can0 1022E040#2000000020000000
+(1780168033.344000) can0 1020C040#0040040401
+# tx t=142.146s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168033.392000) can0 10210040#0000800000008000
+# tx t=142.257s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168033.502000) can0 10210040#0000800000008000
+# tx t=142.351s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=142.352s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=142.352s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=142.352s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=142.352s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168033.597000) can0 13FFE060#
+(1780168033.597000) can0 10210040#0000800000008000
+(1780168033.597000) can0 10230040#2000000020000000
+(1780168033.598000) can0 1022E040#3000000030000000
+(1780168033.601000) can0 1020C040#0040040401
+(1780168033.605000) can0 103B4040#04
+# tx t=142.447s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=142.447s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168033.692000) can0 13FFE040#
+(1780168033.692000) can0 10210040#0000800000008000
+# tx t=142.558s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168033.803000) can0 10210040#0000800000008000
+# tx t=142.605s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=142.605s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=142.605s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168033.850000) can0 10230040#3000000030000000
+(1780168033.850000) can0 1022E040#1000000010000000
+(1780168033.850000) can0 1020C040#0040040401
+# tx t=142.653s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168033.898000) can0 10210040#0000800000008000
+# tx t=142.761s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168034.007000) can0 10210040#0000800000008000
+# tx t=142.857s 621#0052000000000000 note=native key-on network-management context
+# tx t=142.857s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=142.857s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=142.857s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=142.857s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=142.858s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=142.858s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=142.858s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=142.858s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=142.858s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=142.858s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=142.858s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=142.858s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168034.103000) can0 621#0052000000000000
+(1780168034.103000) can0 10210040#0000800000008000
+(1780168034.103000) can0 10264040#0000000000000000
+(1780168034.105000) can0 102CA040#0000000000000F00
+(1780168034.110000) can0 10220040#1000000040080000
+(1780168034.114000) can0 10230040#0000000000000000
+(1780168034.134000) can0 1022E040#2000000020000000
+(1780168034.134000) can0 10240040#83FE880100D10FFD
+(1780168034.134000) can0 102C0040#803C96B503
+(1780168034.134000) can0 10754040#040400
+(1780168034.136000) can0 10242040#02
+(1780168034.140000) can0 1020C040#0040040401
+(1780168034.143000) can0 103B4040#04
+# tx t=142.952s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168034.197000) can0 10210040#0000800000008000
+# tx t=143.047s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168034.292000) can0 10210040#0000800000008000
+# tx t=143.110s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=143.110s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=143.111s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168034.356000) can0 10230040#1000000010000000
+(1780168034.356000) can0 1022E040#3000000030000000
+(1780168034.356000) can0 1020C040#0040040401
+# tx t=143.157s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168034.403000) can0 10210040#0000800000008000
+# tx t=143.252s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168034.498000) can0 10210040#0000800000008000
+# tx t=143.362s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=143.362s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=143.362s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=143.362s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=143.362s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168034.607000) can0 10210040#0000800000008000
+(1780168034.607000) can0 10230040#2000000020000000
+(1780168034.608000) can0 1022E040#1000000010000000
+(1780168034.611000) can0 1020C040#0040040401
+(1780168034.615000) can0 103B4040#04
+# tx t=143.457s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168034.702000) can0 10210040#0000800000008000
+# tx t=143.550s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168034.795000) can0 13FFE060#
+(1780168034.795000) can0 10210040#0000800000008000
+# tx t=143.598s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=143.598s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=143.598s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168034.843000) can0 10230040#3000000030000000
+(1780168034.844000) can0 1022E040#2000000020000000
+(1780168034.844000) can0 1020C040#0040040401
+# tx t=143.646s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=143.646s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168034.891000) can0 13FFE040#
+(1780168034.891000) can0 10210040#0000800000008000
+# tx t=143.757s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.002000) can0 10210040#0000800000008000
+(1780168035.010000) can0 62C#0040000000000000
+# tx t=143.852s 621#0052000000000000 note=native key-on network-management context
+# tx t=143.852s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=143.852s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=143.852s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=143.853s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=143.853s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=143.853s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=143.853s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=143.853s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=143.853s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=143.853s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=143.853s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=143.854s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168035.099000) can0 621#0052000000000000
+(1780168035.099000) can0 10210040#0000800000008000
+(1780168035.099000) can0 10264040#0000000000000000
+(1780168035.101000) can0 102CA040#0000000000000F00
+(1780168035.105000) can0 10220040#1000000040080000
+(1780168035.109000) can0 10230040#0000000000000000
+(1780168035.128000) can0 1022E040#3000000030000000
+(1780168035.128000) can0 10240040#83FE880100D10FFD
+(1780168035.128000) can0 102C0040#803C96B503
+(1780168035.128000) can0 10754040#040400
+(1780168035.131000) can0 10242040#02
+(1780168035.135000) can0 1020C040#0040040401
+(1780168035.138000) can0 103B4040#04
+# tx t=143.946s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.191000) can0 10210040#0000800000008000
+# tx t=144.057s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.302000) can0 10210040#0000800000008000
+# tx t=144.104s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=144.104s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=144.105s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168035.350000) can0 10230040#1000000010000000
+(1780168035.350000) can0 1022E040#1000000010000000
+(1780168035.350000) can0 1020C040#0040040401
+# tx t=144.152s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.398000) can0 10210040#0000800000008000
+# tx t=144.246s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.491000) can0 10210040#0000800000008000
+# tx t=144.357s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=144.357s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=144.357s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=144.357s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=144.357s 103B4040#04 note=parking-brake ON window 8-18s: confirmed 103B4040#04
+(1780168035.602000) can0 10210040#0000800000008000
+(1780168035.602000) can0 10230040#2000000020000000
+(1780168035.603000) can0 1022E040#2000000020000000
+(1780168035.606000) can0 1020C040#0040040401
+(1780168035.610000) can0 103B4040#04
+# tx t=144.450s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.695000) can0 10210040#0000800000008000
+# tx t=144.560s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.805000) can0 10210040#0000800000008000
+# tx t=144.607s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=144.607s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=144.607s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168035.852000) can0 10230040#3000000030000000
+(1780168035.852000) can0 1022E040#3000000030000000
+(1780168035.852000) can0 1020C040#0040040401
+# tx t=144.654s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.899000) can0 10210040#0000800000008000
+# tx t=144.747s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168035.992000) can0 13FFE060#
+(1780168035.992000) can0 10210040#0000800000008000
+# tx t=144.858s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=144.858s 621#0052000000000000 note=native key-on network-management context
+# tx t=144.858s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=144.859s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=144.859s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=144.859s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=144.859s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=144.859s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=144.859s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=144.859s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=144.859s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=144.859s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=144.859s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=144.860s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168036.105000) can0 13FFE040#
+(1780168036.105000) can0 621#0052000000000000
+(1780168036.105000) can0 10210040#0000800000008000
+(1780168036.105000) can0 10264040#0000000000000000
+(1780168036.109000) can0 102CA040#0000000000000F00
+(1780168036.113000) can0 10220040#1000000040080000
+(1780168036.118000) can0 10230040#0000000000000000
+(1780168036.122000) can0 1022E040#1000000010000000
+(1780168036.127000) can0 10240040#83FE880100D10FFD
+(1780168036.131000) can0 102C0040#803C96B503
+(1780168036.150000) can0 10754040#040400
+(1780168036.150000) can0 10242040#02
+(1780168036.150000) can0 1020C040#0040040401
+(1780168036.150000) can0 103B4040#00
+# tx t=144.953s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168036.198000) can0 10210040#0000800000008000
+# tx t=145.047s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168036.292000) can0 10210040#0000800000008000
+# tx t=145.111s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=145.112s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=145.112s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168036.357000) can0 10230040#1000000010000000
+(1780168036.357000) can0 1022E040#2000000020000000
+(1780168036.357000) can0 1020C040#0040040401
+# tx t=145.159s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168036.404000) can0 10210040#0000800000008000
+# tx t=145.254s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168036.500000) can0 10210040#0000800000008000
+# tx t=145.347s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=145.348s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=145.348s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=145.348s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=145.348s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168036.593000) can0 10210040#0000800000008000
+(1780168036.593000) can0 10230040#2000000020000000
+(1780168036.593000) can0 1022E040#3000000030000000
+(1780168036.597000) can0 1020C040#0040040401
+(1780168036.601000) can0 103B4040#00
+# tx t=145.459s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168036.704000) can0 10210040#0000800000008000
+# tx t=145.553s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168036.798000) can0 10210040#0000800000008000
+# tx t=145.601s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=145.601s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=145.601s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168036.846000) can0 10230040#3000000030000000
+(1780168036.846000) can0 1022E040#1000000010000000
+(1780168036.847000) can0 1020C040#0040040401
+# tx t=145.648s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168036.893000) can0 10210040#0000800000008000
+# tx t=145.759s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.004000) can0 10210040#0000800000008000
+# tx t=145.852s 621#0052000000000000 note=native key-on network-management context
+# tx t=145.852s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=145.852s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=145.852s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=145.853s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=145.853s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=145.853s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=145.853s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=145.853s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=145.853s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=145.853s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=145.853s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=145.853s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168037.098000) can0 621#0052000000000000
+(1780168037.098000) can0 10210040#0000800000008000
+(1780168037.098000) can0 10264040#0000000000000000
+(1780168037.101000) can0 102CA040#0000000000000F00
+(1780168037.105000) can0 10220040#1000000040080000
+(1780168037.109000) can0 10230040#0000000000000000
+(1780168037.129000) can0 1022E040#2000000020000000
+(1780168037.129000) can0 10240040#83FE880100D10FFD
+(1780168037.129000) can0 102C0040#803C96B503
+(1780168037.130000) can0 10754040#040400
+(1780168037.131000) can0 10242040#02
+(1780168037.135000) can0 1020C040#0040040401
+(1780168037.138000) can0 103B4040#00
+# tx t=145.948s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.193000) can0 13FFE060#
+(1780168037.193000) can0 10210040#0000800000008000
+# tx t=146.059s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=146.060s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.305000) can0 13FFE040#
+(1780168037.305000) can0 10210040#0000800000008000
+# tx t=146.105s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=146.106s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=146.106s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168037.351000) can0 10230040#1000000010000000
+(1780168037.351000) can0 1022E040#3000000030000000
+(1780168037.351000) can0 1020C040#0040040401
+# tx t=146.152s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.398000) can0 10210040#0000800000008000
+# tx t=146.248s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.494000) can0 10210040#0000800000008000
+# tx t=146.360s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=146.360s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=146.360s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=146.360s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=146.360s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168037.605000) can0 10210040#0000800000008000
+(1780168037.606000) can0 10230040#2000000020000000
+(1780168037.606000) can0 1022E040#1000000010000000
+(1780168037.609000) can0 1020C040#0040040401
+(1780168037.613000) can0 103B4040#00
+# tx t=146.452s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.697000) can0 10210040#0000800000008000
+# tx t=146.547s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.792000) can0 10244060#02
+(1780168037.792000) can0 10210040#0000800000008000
+# tx t=146.610s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=146.610s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=146.610s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168037.855000) can0 10230040#3000000030000000
+(1780168037.855000) can0 1022E040#2000000020000000
+(1780168037.856000) can0 1020C040#0040040401
+# tx t=146.657s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.902000) can0 10210040#0000800000008000
+# tx t=146.752s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168037.997000) can0 10210040#0000800000008000
+(1780168038.005000) can0 62C#0040000000000000
+# tx t=146.847s 621#0052000000000000 note=native key-on network-management context
+# tx t=146.847s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=146.847s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=146.848s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=146.848s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=146.848s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=146.848s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=146.848s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=146.848s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=146.848s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=146.849s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=146.849s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=146.849s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168038.094000) can0 621#0052000000000000
+(1780168038.094000) can0 10210040#0000800000008000
+(1780168038.094000) can0 10264040#0000000000000000
+(1780168038.096000) can0 102CA040#0000000000000F00
+(1780168038.100000) can0 10220040#1000000040080000
+(1780168038.104000) can0 10230040#0000000000000000
+(1780168038.123000) can0 1022E040#3000000030000000
+(1780168038.123000) can0 10240040#83FE880100D10FFD
+(1780168038.123000) can0 102C0040#803C96B503
+(1780168038.123000) can0 10754040#040400
+(1780168038.126000) can0 10242040#02
+(1780168038.130000) can0 1020C040#0040040401
+(1780168038.133000) can0 103B4040#00
+# tx t=146.957s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168038.202000) can0 10210040#0000800000008000
+# tx t=147.052s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168038.297000) can0 10210040#0000800000008000
+# tx t=147.099s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=147.099s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=147.100s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168038.345000) can0 10230040#1000000010000000
+(1780168038.345000) can0 1022E040#1000000010000000
+(1780168038.345000) can0 1020C040#0040040401
+(1780168038.383000) can0 13FFE060#
+# tx t=147.147s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168038.393000) can0 10210040#0000800000008000
+# tx t=147.260s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=147.260s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168038.505000) can0 13FFE040#
+(1780168038.505000) can0 10210040#0000800000008000
+# tx t=147.353s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=147.354s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=147.354s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=147.354s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=147.354s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168038.599000) can0 10210040#0000800000008000
+(1780168038.599000) can0 10230040#2000000020000000
+(1780168038.599000) can0 1022E040#2000000020000000
+(1780168038.603000) can0 1020C040#0040040401
+(1780168038.607000) can0 103B4040#00
+# tx t=147.450s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168038.695000) can0 10210040#0000800000008000
+# tx t=147.561s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168038.806000) can0 10210040#0000800000008000
+# tx t=147.607s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=147.607s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=147.607s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168038.852000) can0 10230040#3000000030000000
+(1780168038.852000) can0 1022E040#3000000030000000
+(1780168038.853000) can0 1020C040#0040040401
+# tx t=147.654s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168038.899000) can0 10210040#0000800000008000
+# tx t=147.750s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168038.995000) can0 10210040#0000800000008000
+# tx t=147.861s 621#0052000000000000 note=native key-on network-management context
+# tx t=147.861s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=147.861s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=147.861s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=147.862s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=147.862s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=147.862s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=147.862s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=147.862s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=147.862s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=147.862s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=147.862s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=147.862s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168039.107000) can0 621#0052000000000000
+(1780168039.107000) can0 10210040#0000800000008000
+(1780168039.108000) can0 10264040#0000000000000000
+(1780168039.110000) can0 102CA040#0000000000000F00
+(1780168039.114000) can0 10220040#1000000040080000
+(1780168039.119000) can0 10230040#0000000000000000
+(1780168039.137000) can0 1022E040#1000000010000000
+(1780168039.137000) can0 10240040#83FE880100D10FFD
+(1780168039.137000) can0 102C0040#803C96B503
+(1780168039.137000) can0 10754040#040400
+(1780168039.140000) can0 10242040#02
+(1780168039.144000) can0 1020C040#0040040401
+(1780168039.147000) can0 103B4040#00
+# tx t=147.956s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168039.201000) can0 10210040#0000800000008000
+# tx t=148.050s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168039.295000) can0 10210040#0000800000008000
+# tx t=148.098s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=148.099s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=148.099s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168039.344000) can0 10230040#1000000010000000
+(1780168039.344000) can0 1022E040#2000000020000000
+(1780168039.344000) can0 1020C040#0040040401
+# tx t=148.161s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168039.406000) can0 10210040#0000800000008000
+# tx t=148.256s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168039.502000) can0 10210040#0000800000008000
+# tx t=148.350s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=148.351s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=148.351s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=148.351s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=148.351s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168039.596000) can0 13FFE060#
+(1780168039.596000) can0 10210040#0000800000008000
+(1780168039.596000) can0 10230040#2000000020000000
+(1780168039.596000) can0 1022E040#3000000030000000
+(1780168039.600000) can0 1020C040#0040040401
+(1780168039.604000) can0 103B4040#00
+# tx t=148.462s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=148.462s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168039.707000) can0 13FFE040#
+(1780168039.707000) can0 10210040#0000800000008000
+# tx t=148.557s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168039.802000) can0 10210040#0000800000008000
+# tx t=148.604s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=148.604s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=148.604s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168039.849000) can0 10230040#3000000030000000
+(1780168039.849000) can0 1022E040#1000000010000000
+(1780168039.850000) can0 1020C040#0040040401
+# tx t=148.651s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168039.896000) can0 10210040#0000800000008000
+# tx t=148.746s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168039.991000) can0 10210040#0000800000008000
+# tx t=148.855s 621#0052000000000000 note=native key-on network-management context
+# tx t=148.855s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=148.855s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=148.855s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=148.856s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=148.856s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=148.856s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=148.856s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=148.856s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=148.856s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=148.856s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=148.856s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=148.856s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168040.101000) can0 621#0052000000000000
+(1780168040.102000) can0 10210040#0000800000008000
+(1780168040.102000) can0 10264040#0000000000000000
+(1780168040.104000) can0 102CA040#0000000000000F00
+(1780168040.108000) can0 10220040#1000000040080000
+(1780168040.112000) can0 10230040#0000000000000000
+(1780168040.132000) can0 1022E040#2000000020000000
+(1780168040.132000) can0 10240040#83FE880100D10FFD
+(1780168040.132000) can0 102C0040#803C96B503
+(1780168040.132000) can0 10754040#040400
+(1780168040.134000) can0 10242040#02
+(1780168040.138000) can0 1020C040#0040040401
+(1780168040.141000) can0 103B4040#00
+# tx t=148.951s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168040.196000) can0 10210040#0000800000008000
+# tx t=149.046s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168040.291000) can0 10210040#0000800000008000
+# tx t=149.108s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=149.108s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=149.109s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168040.354000) can0 10230040#1000000010000000
+(1780168040.354000) can0 1022E040#3000000030000000
+(1780168040.354000) can0 1020C040#0040040401
+# tx t=149.154s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168040.400000) can0 10210040#0000800000008000
+# tx t=149.247s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168040.493000) can0 10210040#0000800000008000
+# tx t=149.359s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=149.359s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=149.359s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=149.359s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=149.359s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168040.604000) can0 10210040#0000800000008000
+(1780168040.604000) can0 10230040#2000000020000000
+(1780168040.605000) can0 1022E040#1000000010000000
+(1780168040.608000) can0 1020C040#0040040401
+(1780168040.612000) can0 103B4040#00
+# tx t=149.452s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168040.697000) can0 10210040#0000800000008000
+# tx t=149.547s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168040.792000) can0 13FFE060#
+(1780168040.792000) can0 10210040#0000800000008000
+# tx t=149.609s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=149.609s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=149.609s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168040.854000) can0 10230040#3000000030000000
+(1780168040.854000) can0 1022E040#2000000020000000
+(1780168040.854000) can0 1020C040#0040040401
+# tx t=149.656s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=149.656s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168040.901000) can0 13FFE040#
+(1780168040.901000) can0 10210040#0000800000008000
+# tx t=149.752s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168040.997000) can0 10210040#0000800000008000
+(1780168041.005000) can0 62C#0040000000000000
+# tx t=149.846s 621#0052000000000000 note=native key-on network-management context
+# tx t=149.846s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=149.846s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=149.846s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=149.847s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=149.847s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=149.847s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=149.847s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=149.847s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=149.847s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=149.848s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=149.848s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=149.848s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168041.093000) can0 621#0052000000000000
+(1780168041.093000) can0 10210040#0000800000008000
+(1780168041.093000) can0 10264040#0000000000000000
+(1780168041.095000) can0 102CA040#0000000000000F00
+(1780168041.099000) can0 10220040#1000000040080000
+(1780168041.103000) can0 10230040#0000000000000000
+(1780168041.122000) can0 1022E040#3000000030000000
+(1780168041.122000) can0 10240040#83FE880100D10FFD
+(1780168041.122000) can0 102C0040#803C96B503
+(1780168041.122000) can0 10754040#040400
+(1780168041.125000) can0 10242040#02
+(1780168041.129000) can0 1020C040#0040040401
+(1780168041.132000) can0 103B4040#00
+# tx t=149.955s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168041.200000) can0 10210040#0000800000008000
+# tx t=150.050s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168041.295000) can0 10210040#0000800000008000
+# tx t=150.096s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=150.097s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=150.097s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168041.342000) can0 10230040#1000000010000000
+(1780168041.342000) can0 1022E040#1000000010000000
+(1780168041.342000) can0 1020C040#0040040401
+# tx t=150.159s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168041.404000) can0 10210040#0000800000008000
+# tx t=150.252s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168041.498000) can0 10210040#0000800000008000
+# tx t=150.348s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=150.348s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=150.348s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=150.348s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=150.348s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168041.593000) can0 10210040#0000800000008000
+(1780168041.593000) can0 10230040#2000000020000000
+(1780168041.593000) can0 1022E040#2000000020000000
+(1780168041.597000) can0 1020C040#0040040401
+(1780168041.601000) can0 103B4040#00
+# tx t=150.459s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168041.704000) can0 10210040#0000800000008000
+# tx t=150.553s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168041.798000) can0 10210040#0000800000008000
+# tx t=150.601s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=150.601s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=150.601s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168041.846000) can0 10230040#3000000030000000
+(1780168041.846000) can0 1022E040#3000000030000000
+(1780168041.847000) can0 1020C040#0040040401
+# tx t=150.648s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168041.893000) can0 10210040#0000800000008000
+(1780168041.988000) can0 13FFE060#
+# tx t=150.759s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.004000) can0 10210040#0000800000008000
+# tx t=150.853s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=150.853s 621#0052000000000000 note=native key-on network-management context
+# tx t=150.853s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=150.853s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=150.854s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=150.854s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=150.854s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=150.854s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=150.854s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=150.854s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=150.854s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=150.854s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=150.854s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=150.854s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168042.100000) can0 13FFE040#
+(1780168042.100000) can0 621#0052000000000000
+(1780168042.100000) can0 10210040#0000800000008000
+(1780168042.100000) can0 10264040#0000000000000000
+(1780168042.104000) can0 102CA040#0000000000000F00
+(1780168042.108000) can0 10220040#1000000040080000
+(1780168042.113000) can0 10230040#0000000000000000
+(1780168042.130000) can0 1022E040#1000000010000000
+(1780168042.130000) can0 10240040#83FE880100D10FFD
+(1780168042.130000) can0 102C0040#803C96B503
+(1780168042.130000) can0 10754040#040400
+(1780168042.134000) can0 10242040#02
+(1780168042.138000) can0 1020C040#0040040401
+(1780168042.141000) can0 103B4040#00
+# tx t=150.948s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.193000) can0 10210040#0000800000008000
+# tx t=151.056s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.301000) can0 10210040#0000800000008000
+# tx t=151.102s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=151.103s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=151.103s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168042.348000) can0 10230040#1000000010000000
+(1780168042.348000) can0 1022E040#2000000020000000
+(1780168042.348000) can0 1020C040#0040040401
+# tx t=151.149s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.395000) can0 10210040#0000800000008000
+# tx t=151.260s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.506000) can0 10210040#0000800000008000
+# tx t=151.353s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=151.354s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=151.354s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=151.354s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=151.354s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168042.599000) can0 10210040#0000800000008000
+(1780168042.599000) can0 10230040#2000000020000000
+(1780168042.599000) can0 1022E040#3000000030000000
+(1780168042.603000) can0 1020C040#0040040401
+(1780168042.607000) can0 103B4040#00
+# tx t=151.449s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.694000) can0 10210040#0000800000008000
+(1780168042.789000) can0 10244060#02
+# tx t=151.560s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.805000) can0 10210040#0000800000008000
+# tx t=151.607s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=151.607s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=151.607s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168042.852000) can0 10230040#3000000030000000
+(1780168042.852000) can0 1022E040#1000000010000000
+(1780168042.853000) can0 1020C040#0040040401
+# tx t=151.653s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.898000) can0 10210040#0000800000008000
+# tx t=151.748s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168042.993000) can0 10210040#0000800000008000
+# tx t=151.858s 621#0052000000000000 note=native key-on network-management context
+# tx t=151.858s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=151.858s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=151.858s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=151.859s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=151.859s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=151.859s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=151.859s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=151.859s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=151.859s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=151.859s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=151.859s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=151.859s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168043.104000) can0 621#0052000000000000
+(1780168043.105000) can0 10210040#0000800000008000
+(1780168043.105000) can0 10264040#0000000000000000
+(1780168043.107000) can0 102CA040#0000000000000F00
+(1780168043.111000) can0 10220040#1000000040080000
+(1780168043.116000) can0 10230040#0000000000000000
+(1780168043.135000) can0 1022E040#2000000020000000
+(1780168043.135000) can0 10240040#83FE880100D10FFD
+(1780168043.135000) can0 102C0040#803C96B503
+(1780168043.136000) can0 10754040#040400
+(1780168043.137000) can0 10242040#02
+(1780168043.141000) can0 1020C040#0040040401
+(1780168043.144000) can0 103B4040#00
+(1780168043.181000) can0 13FFE060#
+# tx t=151.954s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168043.199000) can0 10210040#0000800000008000
+# tx t=152.050s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=152.050s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168043.295000) can0 13FFE040#
+(1780168043.295000) can0 10210040#0000800000008000
+# tx t=152.098s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=152.099s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=152.099s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168043.344000) can0 10230040#1000000010000000
+(1780168043.344000) can0 1022E040#3000000030000000
+(1780168043.344000) can0 1020C040#0040040401
+# tx t=152.147s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168043.392000) can0 10210040#0000800000008000
+# tx t=152.255s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168043.500000) can0 10210040#0000800000008000
+# tx t=152.350s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=152.350s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=152.350s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=152.350s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=152.350s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168043.595000) can0 10210040#0000800000008000
+(1780168043.595000) can0 10230040#2000000020000000
+(1780168043.596000) can0 1022E040#1000000010000000
+(1780168043.599000) can0 1020C040#0040040401
+(1780168043.603000) can0 103B4040#00
+# tx t=152.459s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168043.704000) can0 10210040#0000800000008000
+# tx t=152.555s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168043.800000) can0 10210040#0000800000008000
+# tx t=152.603s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=152.603s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=152.603s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168043.848000) can0 10230040#3000000030000000
+(1780168043.849000) can0 1022E040#2000000020000000
+(1780168043.849000) can0 1020C040#0040040401
+# tx t=152.650s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168043.895000) can0 10210040#0000800000008000
+(1780168044.002000) can0 62C#0040000000000000
+# tx t=152.761s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168044.006000) can0 10210040#0000800000008000
+# tx t=152.855s 621#0052000000000000 note=native key-on network-management context
+# tx t=152.855s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=152.855s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=152.855s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=152.856s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=152.856s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=152.856s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=152.856s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=152.856s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=152.856s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=152.856s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=152.856s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=152.857s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168044.102000) can0 621#0052000000000000
+(1780168044.102000) can0 10210040#0000800000008000
+(1780168044.102000) can0 10264040#0000000000000000
+(1780168044.104000) can0 102CA040#0000000000000F00
+(1780168044.108000) can0 10220040#1000000040080000
+(1780168044.112000) can0 10230040#0000000000000000
+(1780168044.132000) can0 1022E040#3000000030000000
+(1780168044.132000) can0 10240040#83FE880100D10FFD
+(1780168044.132000) can0 102C0040#803C96B503
+(1780168044.132000) can0 10754040#040400
+(1780168044.134000) can0 10242040#02
+(1780168044.138000) can0 1020C040#0040040401
+(1780168044.141000) can0 103B4040#00
+# tx t=152.950s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168044.195000) can0 10210040#0000800000008000
+# tx t=153.061s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168044.306000) can0 10210040#0000800000008000
+# tx t=153.108s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=153.109s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=153.109s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168044.354000) can0 10230040#1000000010000000
+(1780168044.354000) can0 1022E040#1000000010000000
+(1780168044.354000) can0 1020C040#0040040401
+(1780168044.384000) can0 13FFE060#
+# tx t=153.154s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168044.400000) can0 10210040#0000800000008000
+# tx t=153.249s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=153.250s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168044.495000) can0 13FFE040#
+(1780168044.495000) can0 10210040#0000800000008000
+# tx t=153.362s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=153.362s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=153.362s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=153.362s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=153.362s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168044.607000) can0 10210040#0000800000008000
+(1780168044.608000) can0 10230040#2000000020000000
+(1780168044.608000) can0 1022E040#2000000020000000
+(1780168044.611000) can0 1020C040#0040040401
+(1780168044.615000) can0 103B4040#00
+# tx t=153.456s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168044.701000) can0 10210040#0000800000008000
+# tx t=153.551s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168044.796000) can0 10210040#0000800000008000
+# tx t=153.597s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=153.597s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=153.597s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168044.842000) can0 10230040#3000000030000000
+(1780168044.843000) can0 1022E040#3000000030000000
+(1780168044.843000) can0 1020C040#0040040401
+# tx t=153.661s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168044.906000) can0 10210040#0000800000008000
+# tx t=153.756s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.001000) can0 10210040#0000800000008000
+# tx t=153.850s 621#0052000000000000 note=native key-on network-management context
+# tx t=153.850s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=153.850s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=153.850s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=153.850s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=153.851s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=153.851s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=153.851s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=153.851s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=153.851s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=153.851s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=153.851s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=153.852s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168045.097000) can0 621#0052000000000000
+(1780168045.097000) can0 10210040#0000800000008000
+(1780168045.097000) can0 10264040#0000000000000000
+(1780168045.098000) can0 102CA040#0000000000000F00
+(1780168045.103000) can0 10220040#1000000040080000
+(1780168045.107000) can0 10230040#0000000000000000
+(1780168045.124000) can0 1022E040#1000000010000000
+(1780168045.125000) can0 10240040#83FE880100D10FFD
+(1780168045.125000) can0 102C0040#803C96B503
+(1780168045.125000) can0 10754040#040400
+(1780168045.129000) can0 10242040#02
+(1780168045.132000) can0 1020C040#0040040401
+(1780168045.135000) can0 103B4040#00
+# tx t=153.958s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.203000) can0 10210040#0000800000008000
+# tx t=154.054s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.299000) can0 10210040#0000800000008000
+# tx t=154.101s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=154.102s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=154.102s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168045.347000) can0 10230040#1000000010000000
+(1780168045.347000) can0 1022E040#2000000020000000
+(1780168045.347000) can0 1020C040#0040040401
+# tx t=154.148s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.394000) can0 10210040#0000800000008000
+# tx t=154.260s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.505000) can0 10210040#0000800000008000
+(1780168045.580000) can0 13FFE060#
+# tx t=154.355s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=154.355s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=154.355s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=154.355s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=154.356s 103B4040#00 note=parking-brake OFF window 18-28s: 103B4040#00
+(1780168045.601000) can0 10210040#0000800000008000
+(1780168045.601000) can0 10230040#2000000020000000
+(1780168045.601000) can0 1022E040#3000000030000000
+(1780168045.604000) can0 1020C040#0040040401
+(1780168045.608000) can0 103B4040#00
+# tx t=154.449s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=154.449s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.694000) can0 13FFE040#
+(1780168045.694000) can0 10210040#0000800000008000
+# tx t=154.559s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.804000) can0 10210040#0000800000008000
+# tx t=154.607s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=154.607s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=154.607s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168045.852000) can0 10230040#3000000030000000
+(1780168045.852000) can0 1022E040#1000000010000000
+(1780168045.853000) can0 1020C040#0040040401
+# tx t=154.655s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.900000) can0 10210040#0000800000008000
+# tx t=154.750s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168045.995000) can0 10210040#0000800000008000
+# tx t=154.860s 621#0052000000000000 note=native key-on network-management context
+# tx t=154.860s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=154.861s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=154.861s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=154.861s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=154.861s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=154.861s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=154.861s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=154.861s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=154.861s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=154.862s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=154.862s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=154.862s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168046.107000) can0 621#0052000000000000
+(1780168046.107000) can0 10210040#0000800000008000
+(1780168046.107000) can0 10264040#0000000000000000
+(1780168046.109000) can0 102CA040#0000000000000F00
+(1780168046.113000) can0 10220040#1000000040080000
+(1780168046.118000) can0 10230040#0000000000000000
+(1780168046.137000) can0 1022E040#2000000020000000
+(1780168046.137000) can0 10240040#83FE880100D10FFD
+(1780168046.137000) can0 102C0040#803C96B503
+(1780168046.138000) can0 10754040#040400
+(1780168046.139000) can0 10242040#02
+(1780168046.143000) can0 1020C040#0040040401
+(1780168046.146000) can0 103B4040#04
+# tx t=154.954s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168046.199000) can0 10210040#0000800000008000
+# tx t=155.061s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168046.306000) can0 10210040#0000800000008000
+# tx t=155.108s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=155.108s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=155.109s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168046.354000) can0 10230040#1000000010000000
+(1780168046.354000) can0 1022E040#3000000030000000
+(1780168046.354000) can0 1020C040#0040040401
+# tx t=155.155s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168046.401000) can0 10210040#0000800000008000
+# tx t=155.249s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168046.495000) can0 10210040#0000800000008000
+# tx t=155.358s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=155.358s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=155.358s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=155.358s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=155.358s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168046.603000) can0 10210040#0000800000008000
+(1780168046.604000) can0 10230040#2000000020000000
+(1780168046.604000) can0 1022E040#1000000010000000
+(1780168046.607000) can0 1020C040#0040040401
+(1780168046.611000) can0 103B4040#04
+# tx t=155.453s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168046.698000) can0 10210040#0000800000008000
+# tx t=155.547s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168046.792000) can0 13FFE060#
+(1780168046.792000) can0 10210040#0000800000008000
+# tx t=155.610s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=155.610s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=155.610s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168046.855000) can0 10230040#3000000030000000
+(1780168046.856000) can0 1022E040#2000000020000000
+(1780168046.856000) can0 1020C040#0040040401
+# tx t=155.658s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=155.658s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168046.903000) can0 13FFE040#
+(1780168046.903000) can0 10210040#0000800000008000
+# tx t=155.753s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168046.998000) can0 10210040#0000800000008000
+(1780168047.001000) can0 62C#0040000000000000
+# tx t=155.846s 621#0052000000000000 note=native key-on network-management context
+# tx t=155.846s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=155.846s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=155.846s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=155.847s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=155.847s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=155.847s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=155.847s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=155.847s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=155.847s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=155.847s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=155.847s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=155.847s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168047.092000) can0 621#0052000000000000
+(1780168047.093000) can0 10210040#0000800000008000
+(1780168047.093000) can0 10264040#0000000000000000
+(1780168047.095000) can0 102CA040#0000000000000F00
+(1780168047.099000) can0 10220040#1000000040080000
+(1780168047.103000) can0 10230040#0000000000000000
+(1780168047.123000) can0 1022E040#3000000030000000
+(1780168047.123000) can0 10240040#83FE880100D10FFD
+(1780168047.123000) can0 102C0040#803C96B503
+(1780168047.123000) can0 10754040#040400
+(1780168047.125000) can0 10242040#02
+(1780168047.129000) can0 1020C040#0040040401
+(1780168047.132000) can0 103B4040#04
+# tx t=155.958s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168047.203000) can0 10210040#0000800000008000
+# tx t=156.054s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168047.299000) can0 10210040#0000800000008000
+# tx t=156.102s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=156.102s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=156.103s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168047.348000) can0 10230040#1000000010000000
+(1780168047.348000) can0 1022E040#1000000010000000
+(1780168047.348000) can0 1020C040#0040040401
+# tx t=156.149s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168047.395000) can0 10210040#0000800000008000
+# tx t=156.260s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168047.506000) can0 10210040#0000800000008000
+# tx t=156.354s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=156.355s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=156.355s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=156.355s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=156.355s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168047.600000) can0 10210040#0000800000008000
+(1780168047.600000) can0 10230040#2000000020000000
+(1780168047.600000) can0 1022E040#2000000020000000
+(1780168047.604000) can0 1020C040#0040040401
+(1780168047.608000) can0 103B4040#04
+# tx t=156.450s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168047.695000) can0 10210040#0000800000008000
+(1780168047.789000) can0 10244060#02
+# tx t=156.559s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168047.804000) can0 10210040#0000800000008000
+# tx t=156.607s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=156.607s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=156.607s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168047.852000) can0 10230040#3000000030000000
+(1780168047.852000) can0 1022E040#3000000030000000
+(1780168047.853000) can0 1020C040#0040040401
+# tx t=156.653s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168047.898000) can0 10210040#0000800000008000
+# tx t=156.747s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168047.992000) can0 13FFE060#
+(1780168047.992000) can0 10210040#0000800000008000
+# tx t=156.859s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=156.859s 621#0052000000000000 note=native key-on network-management context
+# tx t=156.859s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=156.860s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=156.860s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=156.860s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=156.860s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=156.860s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=156.860s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=156.860s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=156.860s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=156.860s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=156.861s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=156.861s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168048.106000) can0 13FFE040#
+(1780168048.106000) can0 621#0052000000000000
+(1780168048.106000) can0 10210040#0000800000008000
+(1780168048.106000) can0 10264040#0000000000000000
+(1780168048.110000) can0 102CA040#0000000000000F00
+(1780168048.114000) can0 10220040#1000000040080000
+(1780168048.119000) can0 10230040#0000000000000000
+(1780168048.136000) can0 1022E040#1000000010000000
+(1780168048.136000) can0 10240040#83FE880100D10FFD
+(1780168048.136000) can0 102C0040#803C96B503
+(1780168048.137000) can0 10754040#040400
+(1780168048.141000) can0 10242040#02
+(1780168048.144000) can0 1020C040#0040040401
+(1780168048.147000) can0 103B4040#04
+# tx t=156.954s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168048.199000) can0 10210040#0000800000008000
+# tx t=157.049s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168048.295000) can0 10210040#0000800000008000
+# tx t=157.096s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=157.097s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=157.097s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168048.342000) can0 10230040#1000000010000000
+(1780168048.342000) can0 1022E040#2000000020000000
+(1780168048.342000) can0 1020C040#0040040401
+# tx t=157.159s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168048.404000) can0 10210040#0000800000008000
+# tx t=157.254s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168048.500000) can0 10210040#0000800000008000
+# tx t=157.350s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=157.350s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=157.350s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=157.350s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=157.350s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168048.596000) can0 10210040#0000800000008000
+(1780168048.596000) can0 10230040#2000000020000000
+(1780168048.596000) can0 1022E040#3000000030000000
+(1780168048.599000) can0 1020C040#0040040401
+(1780168048.603000) can0 103B4040#04
+# tx t=157.460s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168048.705000) can0 10210040#0000800000008000
+# tx t=157.555s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168048.800000) can0 10210040#0000800000008000
+# tx t=157.602s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=157.602s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=157.602s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168048.847000) can0 10230040#3000000030000000
+(1780168048.847000) can0 1022E040#1000000010000000
+(1780168048.848000) can0 1020C040#0040040401
+# tx t=157.650s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168048.895000) can0 10210040#0000800000008000
+# tx t=157.746s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168048.991000) can0 10210040#0000800000008000
+# tx t=157.856s 621#0052000000000000 note=native key-on network-management context
+# tx t=157.856s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=157.856s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=157.857s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=157.857s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=157.857s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=157.857s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=157.857s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=157.857s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=157.857s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=157.857s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=157.858s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=157.858s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168049.103000) can0 621#0052000000000000
+(1780168049.103000) can0 10210040#0000800000008000
+(1780168049.103000) can0 10264040#0000000000000000
+(1780168049.105000) can0 102CA040#0000000000000F00
+(1780168049.109000) can0 10220040#1000000040080000
+(1780168049.114000) can0 10230040#0000000000000000
+(1780168049.134000) can0 1022E040#2000000020000000
+(1780168049.134000) can0 10240040#83FE880100D10FFD
+(1780168049.134000) can0 102C0040#803C96B503
+(1780168049.134000) can0 10754040#040400
+(1780168049.135000) can0 10242040#02
+(1780168049.139000) can0 1020C040#0040040401
+(1780168049.142000) can0 103B4040#04
+(1780168049.179000) can0 13FFE060#
+# tx t=157.950s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168049.196000) can0 10210040#0000800000008000
+# tx t=158.060s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=158.060s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168049.306000) can0 13FFE040#
+(1780168049.306000) can0 10210040#0000800000008000
+# tx t=158.108s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=158.109s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=158.109s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168049.354000) can0 10230040#1000000010000000
+(1780168049.354000) can0 1022E040#3000000030000000
+(1780168049.354000) can0 1020C040#0040040401
+# tx t=158.155s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168049.401000) can0 10210040#0000800000008000
+# tx t=158.248s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168049.494000) can0 10210040#0000800000008000
+# tx t=158.361s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=158.361s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=158.361s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=158.361s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=158.361s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168049.606000) can0 10210040#0000800000008000
+(1780168049.606000) can0 10230040#2000000020000000
+(1780168049.607000) can0 1022E040#1000000010000000
+(1780168049.610000) can0 1020C040#0040040401
+(1780168049.614000) can0 103B4040#04
+# tx t=158.457s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168049.702000) can0 10210040#0000800000008000
+# tx t=158.553s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168049.798000) can0 10210040#0000800000008000
+# tx t=158.601s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=158.601s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=158.601s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168049.846000) can0 10230040#3000000030000000
+(1780168049.847000) can0 1022E040#2000000020000000
+(1780168049.847000) can0 1020C040#0040040401
+# tx t=158.648s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168049.893000) can0 10210040#0000800000008000
+(1780168049.999000) can0 62C#0040000000000000
+# tx t=158.759s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168050.004000) can0 10210040#0000800000008000
+# tx t=158.853s 621#0052000000000000 note=native key-on network-management context
+# tx t=158.853s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=158.853s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=158.853s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=158.853s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=158.854s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=158.854s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=158.854s 10240040#83FE880100D10FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D10FFD
+# tx t=158.854s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=158.854s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=158.854s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=158.854s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=158.854s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168050.099000) can0 621#0052000000000000
+(1780168050.099000) can0 10210040#0000800000008000
+(1780168050.099000) can0 10264040#0000000000000000
+(1780168050.102000) can0 102CA040#0000000000000F00
+(1780168050.106000) can0 10220040#1000000040080000
+(1780168050.110000) can0 10230040#0000000000000000
+(1780168050.130000) can0 1022E040#3000000030000000
+(1780168050.130000) can0 10240040#83FE880100D10FFD
+(1780168050.130000) can0 102C0040#803C96B503
+(1780168050.130000) can0 10754040#040400
+(1780168050.132000) can0 10242040#02
+(1780168050.136000) can0 1020C040#0040040401
+(1780168050.139000) can0 103B4040#04
+# tx t=158.948s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168050.193000) can0 10210040#0000800000008000
+# tx t=159.059s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168050.304000) can0 10210040#0000800000008000
+# tx t=159.106s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=159.107s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=159.107s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168050.352000) can0 10230040#1000000010000000
+(1780168050.352000) can0 1022E040#1000000010000000
+(1780168050.352000) can0 1020C040#0040040401
+(1780168050.383000) can0 13FFE060#
+# tx t=159.153s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168050.399000) can0 10210040#0000800000008000
+# tx t=159.248s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=159.249s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168050.494000) can0 13FFE040#
+(1780168050.494000) can0 10210040#0000800000008000
+# tx t=159.360s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+# tx t=159.360s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=159.360s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=159.360s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+# tx t=159.360s 103B4040#04 note=parking-brake ON window 28-38s: confirmed 103B4040#04
+(1780168050.605000) can0 10210040#0000800000008000
+(1780168050.606000) can0 10230040#2000000020000000
+(1780168050.606000) can0 1022E040#2000000020000000
+(1780168050.609000) can0 1020C040#0040040401
+(1780168050.613000) can0 103B4040#04
+# tx t=159.454s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168050.699000) can0 10210040#0000800000008000
+# tx t=159.548s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168050.793000) can0 10210040#0000800000008000
+# tx t=159.610s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=159.610s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=159.610s 1020C040#0040040401 note=parking-brake support state held released: 1020C040 neutral/released
+(1780168050.855000) can0 10230040#3000000030000000
+(1780168050.855000) can0 1022E040#3000000030000000
+(1780168050.856000) can0 1020C040#0040040401
+# tx t=159.657s 10210040#0000800000008000 note=native captured 10210040 speed/status baseline from IPC_disconnected capture
+(1780168050.902000) can0 10210040#0000800000008000
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

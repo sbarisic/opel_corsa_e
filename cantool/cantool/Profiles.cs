@@ -13,6 +13,7 @@ internal static class Profiles
     public const string IpcSimulatorKeyOnHold = "ipc-simulator-keyon-hold";
     public const string IpcNativeKeyFirstTurnReplay = "ipc-native-key-first-turn-replay";
     public const string IpcWrappedGaugeProbe = "ipc-wrapped-gauge-probe";
+    public const string IpcRpmWordSweep = "ipc-rpm-word-sweep";
     public const string IpcSimulatorDataFill = "ipc-simulator-data-fill";
     public const string IpcDicTextRadioProbe = "ipc-dic-text-radio-probe";
     public const string IpcActiveGaugeContextProbe = "ipc-active-gauge-context-probe";
@@ -23,6 +24,11 @@ internal static class Profiles
     public const string IpcNativeTcProbe = "ipc-native-tc-probe";
     public const string IpcNativeDimOdoProbe = "ipc-native-dim-odo-probe";
     public const string IpcLiveReload = "ipc-live-reload";
+    public const string IpcRangeFuzzer00 = "ipc-range-fuzzer00";
+    public const string IpcRangeFuzzer = "ipc-range-fuzzer";
+    public const string IpcRangeFuzzer20 = "ipc-range-fuzzer20";
+    public const string IpcRangeFuzzer30 = "ipc-range-fuzzer30";
+    public const string IpcRangeFuzzerE0 = "ipc-range-fuzzerE0";
     public const string IpcSimulatorKeyOnEdge = "ipc-simulator-keyon-edge";
     public const string IpcSimulatorNativeTransition = "ipc-simulator-native-transition";
     public const string IpcDiagnosticProbe = "ipc-diagnostic-probe";
@@ -59,9 +65,15 @@ internal static class Profiles
         new(IpcNativeHandbrakeProbe, "Native source-0x40 parking-brake/handbrake telltale toggle using 103B4040#04", 45.0),
         new(IpcNativeTcProbe, "Native source-0x40 TC telltale toggle using confirmed 102CC040#0400C00000000000", 45.0),
         new(IpcLiveReload, "Live-reload send_profile.can and transmit only enabled rows while you edit", 0.0),
+        new(IpcRangeFuzzer00, "Interactive source-0x40 arb 0x000-0x0FF fuzzer with keyboard event markers", 0.0),
+        new(IpcRangeFuzzer, "Interactive source-0x40 arb 0x100-0x1FF fuzzer with keyboard event markers", 0.0),
+        new(IpcRangeFuzzer20, "Interactive source-0x40 arb 0x200-0x2FF fuzzer with keyboard event markers", 0.0),
+        new(IpcRangeFuzzer30, "Interactive source-0x40 arb 0x300-0x3FF fuzzer with keyboard event markers", 0.0),
+        new(IpcRangeFuzzerE0, "Interactive source-0x40 arb 0xE00-0xEFF fuzzer with keyboard event markers", 0.0),
         new(IpcNativeKeyFirstTurnReplay, "Native source-0x40 key-first-turn replay from IPC-disconnected SWCAN logs", 60.0),
         new(IpcNativeDimOdoProbe, "Native source-0x40 dim/odometer isolation: window 10240040, 102CA040, and 10248040", 75.0),
         new(IpcWrappedGaugeProbe, "Native key-first-turn replay plus wrapped 11-bit RPM/speed/temp/service candidates", 90.0),
+        new(IpcRpmWordSweep, "Interactive full RPM word sweep with speedometer progress and keyboard markers", 185.0),
         new(IpcSimulatorKeyOnEdge, "Native Corsa E short pre-key to key-on edge replay", 45.0),
         new(IpcSimulatorNativeTransition, "Native Corsa E transition replay: off/key-in/key-on/cleanup, can drive odometer-only state", 45.0),
         new(IpcDiagnosticProbe, "Quiet post-RX IPC diagnostics 24C -> 64C", 12.0, WaitForFirstRx: true),
@@ -94,6 +106,7 @@ internal static class Profiles
             IpcSimulatorKeyOnHold => IpcSimulatorKeyOnHoldSchedule(),
             IpcNativeKeyFirstTurnReplay => IpcNativeKeyFirstTurnReplaySchedule(),
             IpcWrappedGaugeProbe => IpcWrappedGaugeProbeSchedule(),
+            IpcRpmWordSweep => IpcRpmWordSweepSchedule(),
             IpcSimulatorDataFill => IpcSimulatorDataFillSchedule(),
             IpcDicTextRadioProbe => IpcDicTextRadioProbeSchedule(),
             Ipc624StateProbe => Ipc624StateProbeSchedule(),
@@ -104,6 +117,11 @@ internal static class Profiles
             IpcNativeTcProbe => IpcNativeTcProbeSchedule(),
             IpcNativeDimOdoProbe => IpcNativeDimOdoProbeSchedule(),
             IpcLiveReload => [],
+            IpcRangeFuzzer00 => [],
+            IpcRangeFuzzer => [],
+            IpcRangeFuzzer20 => [],
+            IpcRangeFuzzer30 => [],
+            "ipc-range-fuzzere0" => [],
             IpcSimulatorKeyOnEdge => IpcSimulatorSchedule(),
             IpcSimulatorNativeTransition => IpcSimulatorNativeTransitionSchedule(),
             IpcWakePulseOnlyProbe => IpcWakePulseOnlyProbeSchedule(),
@@ -181,7 +199,7 @@ internal static class Profiles
         AddOneShot(schedule, 0x621, "0052000000000000", false, "native key-on network-management edge", edge);
         AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "native key-on network-management context", edge + TimeSpan.FromMilliseconds(500), runEnd);
 
-        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native BCM/body base status from IPC_disconnected capture", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native captured 10210040 speed/status baseline from IPC_disconnected capture", TimeSpan.Zero, runEnd);
         AddPeriodicWindow(schedule, 0x10264040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base zero-status frame", TimeSpan.Zero, runEnd);
         AddPeriodicWindow(schedule, 0x102CA040, "0000000000000F00", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base 102CA040 context", TimeSpan.Zero, runEnd);
 
@@ -242,7 +260,7 @@ internal static class Profiles
             AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "native key-on network-management context", TimeSpan.FromMilliseconds(1000), runEnd);
         }
 
-        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native BCM/body base status from IPC_disconnected capture", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native captured 10210040 speed/status baseline from IPC_disconnected capture", TimeSpan.Zero, runEnd);
         AddPeriodicWindow(schedule, 0x10264040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base zero-status frame", TimeSpan.Zero, runEnd);
         if (includeNative102CA040)
         {
@@ -295,7 +313,7 @@ internal static class Profiles
         AddPeriodicWindow(schedule, 0x13FFE040, "", TimeSpan.FromMilliseconds(1200), true, "native key-first-turn replay BCM/source 0x40 presence", TimeSpan.FromMilliseconds(1200), runEnd);
         AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "native key-first-turn replay 621 key-on keepalive", TimeSpan.FromMilliseconds(1000), runEnd);
 
-        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native key-first-turn replay source 0x40 body status 0x108", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native key-first-turn replay captured 10210040 speed/status baseline", TimeSpan.Zero, runEnd);
         AddPeriodicWindow(schedule, 0x10220040, "1000000040080000", TimeSpan.FromMilliseconds(100), true, "native key-first-turn replay source 0x40 body status 0x110", TimeSpan.Zero, runEnd);
         AddPayloadCycleWindow(schedule, 0x1022E040, ["1000000010000000", "2000000020000000", "3000000030000000", "0000000000000000"], TimeSpan.FromMilliseconds(100), true, "native key-first-turn replay source 0x40 1022E040 captured state cycle", TimeSpan.Zero, runEnd);
         AddPayloadCycleWindow(schedule, 0x10230040, ["0000000000000000", "1000000010000000", "2000000020000000", "3000000030000000"], TimeSpan.FromMilliseconds(100), true, "native key-first-turn replay source 0x40 10230040 captured state cycle", TimeSpan.Zero, runEnd);
@@ -385,6 +403,77 @@ internal static class Profiles
         return schedule;
     }
 
+    private static List<ScheduledTxFrame> IpcRpmWordSweepSchedule()
+    {
+        var runEnd = TimeSpan.FromSeconds(185);
+        var schedule = IpcRpmWordSweepBaseline(runEnd);
+        var start = TimeSpan.FromSeconds(5);
+        var hold = TimeSpan.FromSeconds(6);
+        var period = TimeSpan.FromMilliseconds(20);
+
+        var targets = new (uint CanId, string BasePayload, string Label)[]
+        {
+            (0x10220040, "1000000040080000", "10220040 body/status speed-limiter-adjacent"),
+            (0x10240040, "83FE880100D70FFD", "10240040 TC/lamp/state"),
+            (0x10248040, "00005DA6A300", "10248040 dynamic body/DIC status"),
+            (0x10264040, "0000000000000000", "10264040 ABS/traction/eco status"),
+            (0x102CA040, "0000000000000F00", "102CA040 body/DIC status"),
+            (0x102E0040, "840000000000005A", "102E0040 temp/status"),
+            (0x1062C040, "000BF7B714", "1062C040 ABS/traction/eco companion"),
+            (0x10ACA040, "28F0000000000000", "10ACA040 extended status"),
+            (0x10AEC040, "02081E08049FFF2C", "10AEC040 extended status")
+        };
+
+        foreach (var target in targets)
+        {
+            foreach (var offset in RpmWordOffsets(target.BasePayload))
+            {
+                AddRpmWordSweepWindow(
+                    schedule,
+                    target.CanId,
+                    target.BasePayload,
+                    offset,
+                    period,
+                    hold,
+                    start,
+                    $"{target.Label} rpm-word offset {offset}");
+                start += hold;
+            }
+        }
+
+        AddPeriodicWindow(
+            schedule,
+            0x10210040,
+            "0000800000008000",
+            TimeSpan.FromMilliseconds(100),
+            true,
+            "rpm word sweep cleanup: zero speed/status baseline",
+            runEnd - TimeSpan.FromSeconds(2),
+            runEnd);
+
+        return schedule;
+    }
+
+    private static List<ScheduledTxFrame> IpcRpmWordSweepBaseline(TimeSpan runEnd)
+    {
+        var schedule = new List<ScheduledTxFrame>
+        {
+            new(0x100, [], TimeSpan.Zero, false, "rpm word sweep SWCAN wake pulse", MaxSends: 1),
+            new(0x13FFE040, [], TimeSpan.Zero, true, "rpm word sweep BCM/source 0x40 presence seed", MaxSends: 1),
+            new(0x621, CliOptions.ParseHexData("0052000000000000"), TimeSpan.Zero, false, "rpm word sweep key-on 621 seed", TimeSpan.FromMilliseconds(100), MaxSends: 1),
+        };
+
+        AddPeriodicWindow(schedule, 0x13FFE040, "", TimeSpan.FromMilliseconds(1200), true, "rpm word sweep BCM/source 0x40 presence", TimeSpan.FromMilliseconds(1200), runEnd);
+        AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "rpm word sweep key-on 621 keepalive", TimeSpan.FromSeconds(1), runEnd);
+        AddPeriodicWindow(schedule, 0x102C0040, "803C96B503", TimeSpan.FromMilliseconds(100), true, "rpm word sweep ignition/power-mode key-on context", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10242040, "02", TimeSpan.FromMilliseconds(1000), true, "rpm word sweep second-turn/key-on sub-state", TimeSpan.FromMilliseconds(500), runEnd);
+        AddPeriodicWindow(schedule, 0x10754040, "040400", TimeSpan.FromMilliseconds(1000), true, "rpm word sweep key-present/key-on context", TimeSpan.FromMilliseconds(600), runEnd);
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "rpm word sweep zero speed/status baseline", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x102CC040, "0000400000000000", TimeSpan.FromMilliseconds(250), true, "rpm word sweep confirmed speed-valid prerequisite", TimeSpan.Zero, runEnd);
+
+        return schedule;
+    }
+
     private static List<ScheduledTxFrame> IpcNativeDimOdoProbeSchedule()
     {
         var runEnd = TimeSpan.FromSeconds(75);
@@ -397,7 +486,7 @@ internal static class Profiles
         AddPeriodicWindow(schedule, 0x13FFE040, "", TimeSpan.FromMilliseconds(1200), true, "dim/odo isolation BCM/source 0x40 presence", TimeSpan.FromMilliseconds(1200), runEnd);
         AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "dim/odo isolation key-on 621 keepalive", TimeSpan.FromMilliseconds(1000), runEnd);
 
-        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "dim/odo isolation core source 0x40 body status 0x108", TimeSpan.Zero, runEnd);
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "dim/odo isolation core captured 10210040 speed/status baseline", TimeSpan.Zero, runEnd);
         AddPeriodicWindow(schedule, 0x10220040, "1000000040080000", TimeSpan.FromMilliseconds(100), true, "dim/odo isolation core source 0x40 body status 0x110", TimeSpan.Zero, runEnd);
         AddPeriodicWindow(schedule, 0x10264040, "0000000000000000", TimeSpan.FromMilliseconds(500), true, "dim/odo isolation core source 0x40 body status 0x132", TimeSpan.Zero, runEnd);
         AddPeriodicWindow(schedule, 0x102C0040, "803C96B503", TimeSpan.FromMilliseconds(100), true, "dim/odo isolation core wrapped 0x160 ignition/power mode", TimeSpan.Zero, runEnd);
@@ -721,7 +810,7 @@ internal static class Profiles
         AddPeriodicWindow(schedule, 0x621, "0002000000000000", TimeSpan.FromMilliseconds(1000), false, "native unlock/key-in network-management context", TimeSpan.FromMilliseconds(1000), keyOnStart);
         AddPeriodicWindow(schedule, 0x621, "0052000000000000", TimeSpan.FromMilliseconds(1000), false, "native key-on network-management context", keyOnStart, cleanupStart);
 
-        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native BCM/body base status from IPC_disconnected capture", offStart, cleanupStart);
+        AddPeriodicWindow(schedule, 0x10210040, "0000800000008000", TimeSpan.FromMilliseconds(100), true, "native captured 10210040 speed/status baseline from IPC_disconnected capture", offStart, cleanupStart);
         AddPeriodicWindow(schedule, 0x10264040, "0000000000000000", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base zero-status frame", offStart, cleanupStart);
         AddPeriodicWindow(schedule, 0x102CA040, "0000000000000F00", TimeSpan.FromMilliseconds(1000), true, "native BCM/body base 102CA040 context", offStart, cleanupStart);
 
@@ -1104,6 +1193,42 @@ internal static class Profiles
                 windowStart,
                 windowStart + hold);
         }
+    }
+
+    private static IEnumerable<int> RpmWordOffsets(string basePayload)
+    {
+        var byteCount = basePayload.Length / 2;
+        for (var offset = 0; offset <= byteCount - 2; offset++)
+        {
+            yield return offset;
+        }
+    }
+
+    private static void AddRpmWordSweepWindow(
+        List<ScheduledTxFrame> schedule,
+        uint canId,
+        string basePayload,
+        int byteOffset,
+        TimeSpan period,
+        TimeSpan hold,
+        TimeSpan start,
+        string note)
+    {
+        var variants = new (string Payload, string Label)[]
+        {
+            (ReplacePayloadWord(basePayload, byteOffset, "0C80"), "800 rpm raw 0x0C80"),
+            (ReplacePayloadWord(basePayload, byteOffset, "12C0"), "1200 rpm raw 0x12C0"),
+            (ReplacePayloadWord(basePayload, byteOffset, "1F40"), "2000 rpm raw 0x1F40"),
+            (ReplacePayloadWord(basePayload, byteOffset, "2EE0"), "3000 rpm raw 0x2EE0")
+        };
+
+        AddPayloadHoldSequence(schedule, canId, variants, period, hold / variants.Length, true, note, start);
+    }
+
+    private static string ReplacePayloadWord(string basePayload, int byteOffset, string word)
+    {
+        var charOffset = byteOffset * 2;
+        return string.Concat(basePayload.AsSpan(0, charOffset), word, basePayload.AsSpan(charOffset + 4));
     }
 
     private static void AddPeriodicWindow(

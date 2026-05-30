@@ -1,9 +1,12 @@
 # send_profile.can
 # Columns: period_ms, CAN_MESSAGE, enabled, note
 # Edit enabled to true for the one message you want to test, then save.
+# Keep every candidate disabled by default. Enable only one 10210040 speed row at a time.
 # Run with:
 #   dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile ipc-live-reload --seconds 0
 period_ms,message,enabled,note
+
+# --- Native key-on baseline/context ---
 1000,100#,false,SWCAN wake pulse
 1200,13FFE040#,false,BCM source 0x40 presence
 1000,621#0052000000000000,false,key-on network-management keepalive
@@ -11,7 +14,7 @@ period_ms,message,enabled,note
 1000,10242040#01,false,key first-turn only odometer state
 1000,10242040#02,false,key second-turn full bright state
 1000,10754040#040400,false,key present key-on context
-100,10210040#0000800000008000,false,native body base 0x108
+100,10210040#0000800000008000,false,captured 10210040 speed/status baseline; disable while testing speed rows
 100,10220040#1000000040080000,false,native body base 0x110
 250,1022E040#1000000010000000,false,native body counter/state 0x117 value 1
 250,1022E040#3000000030000000,false,native body counter/state 0x117 value 3
@@ -22,12 +25,81 @@ period_ms,message,enabled,note
 100,10240040#0000000000000000,false,unknown
 100,10264040#0000000000000000,false,native body base 0x132
 100,102CA040#0000000000000F00,false,native body base 0x165
+
+# --- 10210040 confirmed speedometer byte0 ---
+# 102CC040#0000400000000000 needs to be sent for these to work.
+500,10210040#FFFFFFFFFFFFFFFF,false,
+100,10210040#0000000000000000,false,speed_0_kmh_candidate
+100,10210040#0100000000000000,false,about 4 kmh confirmed
+100,10210040#0200000000000000,false,about 8 kmh confirmed
+100,10210040#0300000000000000,false,about 12 kmh confirmed
+100,10210040#0500000000000000,false,speed_20_kmh_candidate - shows 22 kmh
+100,10210040#0800000000000000,false,speed_32_kmh_candidate - shows 36 kmh
+100,10210040#0A00000000000000,false,speed_40_kmh_candidate - shows 44 kmh
+100,10210040#0F00000000000000,false,speed_60_kmh_candidate - shows 66 kmh
+100,10210040#1000000000000000,false,about 75 kmh confirmed - shows 70 kmh
+100,10210040#1400000000000000,false,speed_80_kmh_candidate - shows 88 kmh
+100,10210040#1900000000000000,false,speed_100_kmh_candidate - shows about 106 kmh
+100,10210040#2000000000000000,false,about 133 kmh confirmed - shows 134 kmh
+100,10210040#3000000000000000,false,about 198 kmh confirmed - shows 198 kmh
+100,10210040#0F08484848484848,true,speed_60_kmh_candidate - shows 66 kmh
+
+# Confirmed speed limiter
+20,10220040#0000000000000000,false,--Speed limiter disabled
+20,10220040#00000FF020000000,false,--Speed limiter 265 kmh
+20,10220040#0000001020000000,false,--Speed limiter 1 kmh
+20,10220040#000000F020000000,false,--Speed limiter 15 kmh
+20,10220040#000000F120000000,false,--Speed limiter 16 kmh
+20,10220040#000001F020000000,false,--Speed limiter 33 kmh
+20,10220040#000001F120000000,false,--Speed limiter 33 kmh
+
+# --- 10210040 byte1/status experiment, fixed byte0 0x10 ---
+500,10210040#1000000000000000,false,speed_byte1_00_baseline_confirmed
+500,10210040#1001000000000000,false,speed_byte1_01
+500,10210040#1002000000000000,false,speed_byte1_02
+500,10210040#1004000000000000,false,speed_byte1_04
+500,10210040#1008000000000000,false,speed_byte1_08
+500,10210040#1010000000000000,false,speed_byte1_10
+500,10210040#1080000000000000,false,speed_byte1_80
+
+# --- 10210040 mirrored BE16 speed format, 100 ms ---
+# Formula hypothesis: raw = round((kmh / 1.60934) * 100), payload = raw 80 00 raw 80 00.
+# Keep 102CC040#0000400000000000 enabled; disable the captured 10210040 baseline and byte0-only speed rows while testing these.
+100,10210040#0000800000008000,false,speed_mirrored_0_kmh_raw_0000
+100,10210040#0137800001378000,false,speed_mirrored_5_kmh_raw_0137
+100,10210040#026D8000026D8000,false,speed_mirrored_10_kmh_raw_026D
+100,10210040#04DB800004DB8000,false,speed_mirrored_20_kmh_raw_04DB
+100,10210040#0748800007488000,false,speed_mirrored_30_kmh_raw_0748
+100,10210040#09B5800009B58000,false,speed_mirrored_40_kmh_raw_09B5
+100,10210040#0C2380000C238000,false,speed_mirrored_50_kmh_raw_0C23
+100,10210040#0E9080000E908000,false,speed_mirrored_60_kmh_raw_0E90
+100,10210040#136B8000136B8000,false,speed_mirrored_80_kmh_raw_136B
+100,10210040#1846800018468000,false,speed_mirrored_100_kmh_raw_1846
+100,10210040#1D2080001D208000,false,speed_mirrored_120_kmh_raw_1D20
+100,10210040#21FB800021FB8000,false,speed_mirrored_140_kmh_raw_21FB
+100,10210040#26D6800026D68000,false,speed_mirrored_160_kmh_raw_26D6
+100,10210040#2BB180002BB18000,false,speed_mirrored_180_kmh_raw_2BB1
+100,10210040#308B8000308B8000,false,speed_mirrored_200_kmh_raw_308B
+
+# --- TC telltale candidates ---
 250,102CC040#0400C00000000000,false,TC telltale ON confirmed
-250,102CC040#0000C00000000000,false,TC telltale clear candidate
+250,102CC040#0000400000000000,false,speed valid prerequisite / TC telltale clear candidate
+250,102CC040#0000000000000000,false,TC matrix 000000 - also turns off TC light
+250,102CC040#0000800000000000,false,TC matrix 000080 - turns off TC light
+250,102CC040#0400000000000000,false,TC matrix 040000 - also turns off TC light
+250,102CC040#0400800000000000,false,TC matrix 040080
+250,102CC040#0800000000000000,false,TC matrix 080000
+250,102CC040#0800800000000000,false,TC matrix 080080
+250,102CC040#0800C00000000000,false,TC matrix 0800C0
+250,102CC040#0000C00000000000,true,speed valid prerequisite confirmed, and rest just in case
+
+# --- Parking brake and lighting candidates ---
 500,103B4040#04,false,parking brake ON confirmed
 500,103B4040#00,false,parking brake OFF confirmed
-500,103B4040#0400000000000000,false,parking brake ON bit
-500,1020C040#0040040401,false,parking brake support released candidate
+500,103B4040#01,false,parking brake bit 01
+500,103B4040#02,false,parking brake bit 02
+500,103B4040#08,false,parking brake bit 08
+500,103B4040#0400000000000000,false,parking brake ON bit long DLC
 500,1020C040#0010000000,false,rear fog light on
 500,1020C040#0020000000,false,long beam light on
 500,1020C040#0030000000,false,long beam light on and rear fog light on
@@ -37,30 +109,602 @@ period_ms,message,enabled,note
 500,1020C040#0070000000,false,low beams on and long beam on and rear fog light on
 500,1020C040#0002000000,false,fog light on
 500,1020C040#0072000000,false,fog light on and low beams on and long beam on and rear fog light on
-500,1020C040#0100000000,false,
-500,1020C040#0200000000,false,
-
-500,1020C040#0000000000000000,false,
+500,1020C040#0100000000,false,light/status byte0 01
+500,1020C040#0200000000,false,light/status byte0 02
+500,1020C040#0000000000000000,false,lights neutral long DLC
 500,1020C040#1800000000000000,false,left and right blinker on
-
-500,10210040#1000000000000000,false,about 75 kmh
-500,10210040#2000000000000000,false,about 133 kmh
-500,10210040#3000000000000000,false,about 198 kmh
-500,10210040#0100000000000000,false,about 4 kmh
-500,10210040#0200000000000000,false,about 8 kmh
-500,10210040#0300000000000000,false,about 12 kmh
-
 500,1020C040#0800000000,false,left blinker const on
 500,1020C040#1000000000,false,right blinker const on
-500,1020C040#0000000000000000,false,
+
+# --- Body/lock and DIC/status candidates ---
+500,10632040#0000,false,door/body state clear
+500,10632040#4000,false,door/body state set
+500,10414040#0000FB05,false,lock/body context captured 0000FB05
+500,10414040#00017B05,false,lock/body context captured 00017B05
+500,10414040#0000C10A,false,lock/body context captured 0000C10A
 500,10248040#0000000000000000,false,turn off battery light
 500,10248040#0400000000000000,false,turn on battery light
-500,103CA040#0000000000000000,false,
-500,10240040#FFFFFFFFFFFFFFFF,false,Turns off TC light potentially
-500,10248040#00005DA6A300,false,dim/odometer DIC status candidate
-100,10192040#0004C40000500000,false,wrapped RPM engine-state candidate
-100,107D2040#0010800000108000,false,wrapped speed odometer candidate
-250,10982040#0000730000000000,false,wrapped coolant/temp candidate
-250,103CA040#44003910000000C9,false,wrapped warning/service candidate C9
-250,103CA040#44003930000000E9,false,wrapped warning/service candidate E9
-250,103CA040#4400395000000109,false,wrapped warning/service candidate 0109
+500,10248040#00005BA6A500,false,dim/odometer DIC status candidate 5B
+500,10248040#00005CA6A400,false,dim/odometer DIC status candidate 5C
+500,10248040#00005DA6A300,false,dim/odometer DIC status candidate 5D
+500,10248040#00005EA6A400,false,dim/odometer DIC status candidate 5E
+500,10248040#000060A6A400,false,dim/odometer DIC status candidate 60
+
+
+
+# base captured payload: 1000000040080000
+20,10220040#0C80000040080000,false,10220040 RPM word0 800
+20,10220040#12C0000040080000,false,10220040 RPM word0 1200
+20,10220040#1F40000040080000,false,10220040 RPM word0 2000
+
+20,10220040#10000C8040080000,false,10220040 RPM word1 800
+20,10220040#100012C040080000,false,10220040 RPM word1 1200
+20,10220040#0000000000000000,false,--Speed limiter disabled
+20,10220040#00000FF020000000,false,--Speed limiter 265 kmh
+20,10220040#0000001020000000,false,--Speed limiter 1 kmh
+20,10220040#000000F020000000,false,--Speed limiter 15 kmh
+20,10220040#000000F120000000,false,--Speed limiter 16 kmh
+20,10220040#000001F020000000,false,--Speed limiter 33 kmh
+20,10220040#000001F120000000,false,--Speed limiter 33 kmh
+
+250,10220040#EEEEEEEEEEEEEEEE,false,
+250,10264040#EEEEEEEEEEEEEEEE,false,-- Eco mode something
+
+
+1200,13FFE040#EEEEEEEEEEEEEEEE,false,--
+1000,621#EEEEEEEEEEEEEEEE,false,--
+100,102C0040#EEEEEEEEEEEEEEEE,false,--
+1000,10242040#EEEEEEEEEEEEEEEE,false,--
+250,10754040#080EE00000000000,false,--Some on screen messages
+
+# --- Fuzzer marked candidates from ipc-range-fuzzer 0x100-0x1FF pass ---
+100,1020C040#EEEEEEEEEEEEEEEE,false,fuzzer mark arb=0x106
+100,10210040#0000000000000000,false,fuzzer mark arb=0x108
+100,10220040#FFFFFFFFFFFFFFFF,false,fuzzer mark arb=0x110
+100,1022C040#0000000000000000,false,fuzzer mark arb=0x116
+100,10240040#0000000000000000,false,fuzzer mark arb=0x120
+100,10242040#8888888888888888,false,fuzzer mark arb=0x121
+100,10260040#FFFFFFFFFFFFFFFF,false,fuzzer mark arb=0x130
+100,10264040#FFFFFFFFFFFFFFFF,false,fuzzer mark arb=0x132
+100,10264040#0100000000000000,false,--enable ABS light
+100,10264040#0000000000000000,false,--disable ABS light
+
+100,102E0040#FFFFFFFFFFFFFFFF,false,fuzzer mark arb=0x170
+100,102F6040#8888888888888888,false,fuzzer mark arb=0x17B
+100,102F8040#EEEEEEEEEEEEEEEE,false,fuzzer mark arb=0x17C
+100,102FA040#EEEEEEEEEEEEEEEE,false,--removes door open indicators
+100,10330040#FFFFFFFFFFFFFFFF,false,fuzzer mark arb=0x198
+100,10394040#FFFFFFFFFFFFFFFF,false,fuzzer mark arb=0x1CA
+100,103D0040#EEEEEEEEEEEEEEEE,false,--some messages
+100,103D0040#8888888888888888,false,--some messages
+100,103D2040#EEEEEEEEEEEEEEEE,false,--some messages
+100,103DC040#FFFFFFFFFFFFFFFF,false,--some messages
+100,10242040#EEEEEEEEEEEEEEEE,false,--some messages
+100,102E0040#0000000000000070,false,-- 70 deg C
+100,102E0040#0000000000000080,false,-- 90 deg C
+100,102E0040#00000000000000B0,false,-- 130 deg
+100,102E0040#00000000000000E0,false,-- 130 deg
+100,103D2040#FFFFFFFFFFFFFFFF,false,fuzzer nearby arb=0x1E9
+
+100,107E0040#EEEEEEEEEEEEEEEE,false,-- 130 deg
+
+# --- Raw 11-bit engine/RPM candidates ---
+# Recommended first test: enable the context rows below, enable 1BC#080100007C000000, and enable exactly one 0C9 RPM row.
+# If 0C9 alone does nothing, also enable 0D3#2BBC0007001000FF with the same single 0C9 row.
+1200,13FFE040#,false,raw RPM test context BCM/source 0x40 presence
+1000,621#0052000000000000,false,raw RPM test context key-on network-management keepalive
+100,102C0040#803C96B503,false,raw RPM test context ignition/power-mode key-on
+1000,10242040#02,false,raw RPM test context key second-turn sub-state
+1000,10754040#040400,false,raw RPM test context key-present key-on
+250,102CC040#0000400000000000,false,raw RPM test context speed-valid prerequisite
+
+20,0C9#8407D00000500000,false,raw 11-bit 0C9 RPM 500 rpm candidate
+20,0C9#840C800000500000,false,raw 11-bit 0C9 RPM 800 rpm candidate
+20,0C9#8412C00000500000,false,raw 11-bit 0C9 RPM 1200 rpm candidate
+20,0C9#841F400000500000,false,raw 11-bit 0C9 RPM 2000 rpm candidate
+20,0C9#842EE00000500000,false,raw 11-bit 0C9 RPM 3000 rpm candidate
+
+20,0D3#2BBC0007001000FF,false,raw 11-bit 0D3 companion for 0C9 test
+100,1BC#080100007C000000,false,raw 11-bit engine-running validity/context candidate
+100,1BC#480100007C000000,false,raw 11-bit alternate engine/RPM activity context
+100,1BD#0000000000000000,false,raw 11-bit engine context frame
+100,1C1#0000000000000000,false,raw 11-bit engine context frame
+50,1F5#0000000F00000700,false,raw 11-bit powertrain keepalive/status context
+100,2C5#0000000000000000,false,raw 11-bit engine context frame
+100,3D1#1000000000000000,false,raw 11-bit speed limiter/DIC settings context
+50,3E9#0000800000008000,false,raw 11-bit vehicle speed baseline context
+50,3F9#8000000000000007,false,raw 11-bit powertrain/status context
+250,4C1#0000730000000000,false,raw 11-bit coolant/IAT/temp context
+100,4D1#C900000000000000,false,raw 11-bit oil/fuel/service context
+
+# --- Wrapped raw 11-bit engine/RPM candidates, source 0x40 ---
+# Formula: wrapped_id = 0x10000000 | (standard_id << 13) | 0x40.
+# Recommended first test: keep context active, enable 10378040#080100007C000000, and enable exactly one 10192040 RPM row.
+# If 10192040 alone does nothing, also enable 101A6040#2BBC0007001000FF with the same single 10192040 row.
+20,10192040#8407D00000500000,false,wrapped 0C9->10192040 RPM 500 rpm source 0x40
+20,10192040#840C800000500000,false,wrapped 0C9->10192040 RPM 800 rpm source 0x40
+20,10192040#8412C00000500000,false,wrapped 0C9->10192040 RPM 1200 rpm source 0x40
+20,10192040#841F400000500000,false,wrapped 0C9->10192040 RPM 2000 rpm source 0x40
+20,10192040#842EE00000500000,false,wrapped 0C9->10192040 RPM 3000 rpm source 0x40
+
+20,101A6040#2BBC0007001000FF,false,wrapped 0D3->101A6040 companion for wrapped 0C9 test
+100,10378040#080100007C000000,false,wrapped 1BC->10378040 engine-running validity/context candidate
+100,10378040#480100007C000000,false,wrapped 1BC->10378040 alternate engine/RPM activity context
+100,1037A040#0000000000000000,false,wrapped 1BD->1037A040 engine context frame
+100,10382040#0000000000000000,false,wrapped 1C1->10382040 engine context frame
+50,103EA040#0000000F00000700,false,wrapped 1F5->103EA040 powertrain keepalive/status context
+100,1058A040#0000000000000000,false,wrapped 2C5->1058A040 engine context frame
+100,107A2040#1000000000000000,false,wrapped 3D1->107A2040 speed limiter/DIC settings context
+50,107D2040#0000800000008000,false,wrapped 3E9->107D2040 vehicle speed baseline context
+50,107F2040#8000000000000007,false,wrapped 3F9->107F2040 powertrain/status context
+250,10982040#0000730000000000,false,wrapped 4C1->10982040 coolant/IAT/temp context
+100,109A2040#C900000000000000,false,wrapped 4D1->109A2040 oil/fuel/service context
+
+# --- Real capture source-0x40 candidates from IPC connected/disconnected logs ---
+# New rows in this section are disabled. Keep source 0x60 receive-only.
+# 10210040 is confirmed speedometer. Enable only one speed row at a time.
+# 102CC040#0000400000000000 or 102CC040#EEEEEEEEEEEEEEEE is the known speed-valid prerequisite.
+# Raw 0C9 and wrapped 10192040 RPM tests showed no reaction so this section favors real car SWCAN frames.
+# Suggested context while testing one row at a time:
+# 13FFE040# + 621#0052000000000000 + 102C0040#803C96B503 + 10242040#02 + 102CC040#0000400000000000
+
+# Captured 1020C040 lights/body variants. 103B4040#04 remains confirmed parking brake.
+100,1020C040#0000000401,false,real capture arb 0x106 lights/body state
+100,1020C040#0000001501,false,real capture arb 0x106 lights/body state
+100,1020C040#0040040401,false,real capture arb 0x106 lights/body released-like state
+100,1020C040#0040041501,false,real capture arb 0x106 lights/body state
+100,1020C040#0080000401,false,real capture arb 0x106 connected-only body state
+100,1020C040#00C0040401,false,real capture arb 0x106 handbrake support candidate
+100,1020C040#0100000001,false,real capture arb 0x106 lights/body state
+100,1020C040#0100001101,false,real capture arb 0x106 lights/body state
+100,1020C040#0100040001,false,real capture arb 0x106 lights/body state
+100,1020C040#0140040001,false,real capture arb 0x106 lights/body state
+
+# Captured 10220040 speed-limiter/status variants.
+100,10220040#1000000040060000,false,real capture arb 0x110 body/status variant
+100,10220040#10000000400A0000,false,real capture arb 0x110 body/status variant
+100,10220040#1000000040120000,false,real capture arb 0x110 body/status variant
+
+# Captured source-0x40 IDs not previously represented in the live profile.
+250,1022A040#00B00000000000,false,real capture arb 0x115 body/status candidate
+250,1022A040#00B00080000000,false,real capture arb 0x115 body/status candidate
+250,1022A040#00F00080000000,false,real capture arb 0x115 body/status candidate
+250,1022C040#00000000,false,real capture arb 0x116 body/status candidate
+250,1022E040#0000000000000000,false,real capture arb 0x117 body/status cycle
+250,1022E040#2000000020000000,false,real capture arb 0x117 body/status cycle
+250,1022E040#0000000080011FE8,false,real capture arb 0x117 connected-only body/status cycle
+250,1022E040#20000000A0011FE8,false,real capture arb 0x117 connected-only body/status cycle
+250,10230040#1000000010000000,false,real capture arb 0x118 body/status cycle
+250,10230040#3000000030000000,false,real capture arb 0x118 body/status cycle
+
+# Captured 10240040 TC/lamp/state variants.
+100,10240040#8000880100D40000,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100D40FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100D60000,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100D60FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100D70000,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100D70FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100D80000,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100D80FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100DA0000,false,real capture arb 0x120 TC/lamp state
+100,10240040#8000880100DA0FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#80008A1100D70000,false,real capture arb 0x120 TC/lamp state
+100,10240040#80008A1100D70FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#80008A1100D80000,false,real capture arb 0x120 TC/lamp state
+100,10240040#80008A1100D80FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#8004880100000007,false,real capture arb 0x120 lamp/state captured baseline
+100,10240040#83FC8A1100D80FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FD880100D60000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FD880100D70000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FD880100D70FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FD8A1100D70000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FD8A1100D70FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FD8A1100D80000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100000000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100D10000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100D40000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100D40FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100D60000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100D60FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100D70000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100D80000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100D80FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100DA0000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE880100DA0FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE8A1100D70000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE8A1100D70FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE8A1100D80000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FE8A1100D80FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100000000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100000FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D10000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D10FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D40000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D40FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D60000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D60FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D70000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D80000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100D80FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100DA0000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF880100DA0FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF8A1100D70000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF8A1100D70FFD,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF8A1100D80000,false,real capture arb 0x120 TC/lamp state
+100,10240040#83FF8A1100D80FFD,false,real capture arb 0x120 TC/lamp state
+
+# Captured lower-rate body/display/status variants.
+1000,10242040#00,false,real capture arb 0x121 key/off sub-state
+500,10248040#00005BA6A600,false,real capture arb 0x124 display/status candidate
+500,10248040#00005CA6A300,false,real capture arb 0x124 display/status candidate
+500,10248040#00005CA6A500,false,real capture arb 0x124 display/status candidate
+500,10248040#00005CA6A600,false,real capture arb 0x124 display/status candidate
+500,10248040#00005DA6A400,false,real capture arb 0x124 display/status candidate
+500,10248040#00005DA6A500,false,real capture arb 0x124 display/status candidate
+500,10248040#00005DA6A600,false,real capture arb 0x124 display/status candidate
+500,10248040#00005EA6A300,false,real capture arb 0x124 display/status candidate
+500,10248040#00005FA6A300,false,real capture arb 0x124 display/status candidate
+500,10248040#00005FA6A400,false,real capture arb 0x124 display/status candidate
+500,10248040#000060A6A300,false,real capture arb 0x124 display/status candidate
+500,10248040#000061A6A300,false,real capture arb 0x124 display/status candidate
+500,10248040#000061A6A400,false,real capture arb 0x124 display/status candidate
+250,10250040#0000,false,real capture arb 0x128 status candidate
+250,10250040#0200,false,real capture arb 0x128 status candidate
+250,10264040#0002000000000000,false,real capture arb 0x132 ABS/traction/eco status candidate
+250,10264040#000F000000000000,false,real capture arb 0x132 ABS/traction/eco status candidate
+250,10288040#000000,false,real capture arb 0x144 sparse body/status candidate
+100,102C0040#0000000000,false,real capture arb 0x160 ignition/power off-state
+
+# Captured 102CA040 and related body/DIC/status variants.
+250,102CA040#0000000000010F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000110F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000190F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000001D0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000270F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000280F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000002F0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000300F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000340F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000430F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000490F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000004D0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000004E0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000550F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000005A0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000006D0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000730F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000770F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000007B0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000880F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000008D0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#00000000009E0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000A00F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000AA0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000AE0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000AF0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000B70F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000C20F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000C50F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000C80F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000D10F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000D50F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000DB0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000DD0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000E30F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000E40F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000EE0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000F70F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CA040#0000000000FE0F00,false,real capture arb 0x165 body/DIC status candidate
+250,102CC040#0000C00000000000,false,real capture arb 0x166 alternate speed-valid/status prerequisite
+250,102CE040#0700070000000000,false,real capture arb 0x167 body/status candidate
+250,102D0040#0000000000000000,false,real capture arb 0x168 body/status candidate
+
+# Captured temp/status and sparse body candidates.
+100,102E0040#840000000000004D,false,real capture arb 0x170 temp/status candidate
+100,102E0040#840000000000004E,false,real capture arb 0x170 temp/status candidate
+100,102E0040#840000000000005A,false,real capture arb 0x170 temp/status candidate
+500,0C2F6040#00,false,real capture priority3 arb 0x17B sparse status candidate
+500,0C2F8040#00,false,real capture priority3 arb 0x17C sparse status candidate
+500,0C2FA040#00,false,real capture priority3 arb 0x17D sparse status candidate
+500,0C394040#4020FFFF00,false,real capture priority3 arb 0x1CA status candidate
+500,0C394040#C020FFFF00,false,real capture priority3 arb 0x1CA status candidate
+500,103A6040#8329,false,real capture arb 0x1D3 sparse status candidate
+500,103D4040#2424393B393B,false,real capture arb 0x1EA sparse status candidate
+500,103DC040#0585,false,real capture arb 0x1EE message/status candidate
+500,10400040#863C00FF58,false,real capture arb 0x200 key/removal transition candidate
+500,10428040#00,false,real capture arb 0x214 sparse status candidate
+250,10438040#00,false,real capture arb 0x21C HMI button release candidate
+250,10438040#01,false,real capture arb 0x21C HMI button candidate
+250,10438040#02,false,real capture arb 0x21C HMI button candidate
+
+# Captured source-0x40 higher-arb body/HMI/status candidates.
+250,1062C040#000BF76A13,false,real capture arb 0x316 ABS/traction/eco companion candidate
+250,1062C040#000BF7B513,false,real capture arb 0x316 ABS/traction/eco companion candidate
+250,1062C040#000BF7B613,false,real capture arb 0x316 ABS/traction/eco companion candidate
+250,1062C040#000BF7B714,false,real capture arb 0x316 ABS/traction/eco companion candidate
+250,1062C040#000BF7B715,false,real capture arb 0x316 ABS/traction/eco companion candidate
+250,1062C040#000BF7BC15,false,real capture arb 0x316 ABS/traction/eco companion candidate
+250,1062C040#000BF7BD15,false,real capture arb 0x316 ABS/traction/eco companion candidate
+250,1062C040#000BF7BE15,false,real capture arb 0x316 ABS/traction/eco companion candidate
+250,1062C040#000BF7BE16,false,real capture arb 0x316 ABS/traction/eco companion candidate
+500,0C630040#81,false,real capture priority3 arb 0x318 sparse status candidate
+250,10644040#0000FF,false,real capture arb 0x322 body/status candidate
+250,10644040#0200FA,false,real capture arb 0x322 body/status candidate
+250,10644040#02FAFA,false,real capture arb 0x322 body/status candidate
+500,10646040#00,false,real capture arb 0x323 sparse status candidate
+500,1064A040#2D2D,false,real capture arb 0x325 sparse status candidate
+500,106AA040#00,false,real capture arb 0x355 sparse status candidate
+500,106B0040#00,false,real capture arb 0x358 sparse status candidate
+250,106B8040#0000000000000000,false,real capture arb 0x35C body/HMI status candidate
+250,106C0040#00B5D1DE00,false,real capture arb 0x360 body/HMI status candidate
+500,10714040#09,false,real capture arb 0x38A sparse status candidate
+500,10718040#0106,false,real capture arb 0x38C lock/unlock sparse status candidate
+500,10728040#04,false,real capture arb 0x394 sparse status candidate
+1000,10754040#000000,false,real capture arb 0x3AA key no-key context
+1000,10754040#040000,false,real capture arb 0x3AA key-present context
+1000,10758040#000000,false,real capture arb 0x3AC context/state candidate
+1000,10758040#020000,false,real capture arb 0x3AC context/state candidate
+1000,10758040#040000,false,real capture arb 0x3AC context/state candidate
+1000,10758040#060000,false,real capture arb 0x3AC context/state candidate
+1000,10758040#080000,false,real capture arb 0x3AC context/state candidate
+1000,10758040#0A0000,false,real capture arb 0x3AC context/state candidate
+1000,10758040#0C0000,false,real capture arb 0x3AC context/state candidate
+500,1077C040#303003B9,false,false capture arb 0x3BE sparse status candidate
+250,10780040#0000000000000000,false,real capture arb 0x3C0 body/HMI status candidate
+250,10780040#0000000008000000,false,real capture arb 0x3C0 body/HMI status candidate
+250,10788040#100A00000000,false,real capture arb 0x3C4 body/HMI status candidate
+250,10788040#180A00000000,false,real capture arb 0x3C4 body/HMI status candidate
+250,10800040#000000000000,false,real capture arb 0x400 body/HMI status candidate
+250,10800040#020000000000,false,real capture arb 0x400 body/HMI status candidate
+250,10806040#0000000000,false,real capture arb 0x403 body/HMI status candidate
+250,1080A040#00000000,false,real capture arb 0x405 body/HMI status candidate
+250,1080E040#0000000000000000,false,real capture arb 0x407 body/HMI status candidate
+250,10814040#00000000,false,real capture arb 0x40A body/HMI status candidate
+500,10ACA040#28F0000000000000,false,real capture arb 0x565 sparse status candidate
+500,10ACA040#2C811C0000000000,false,real capture arb 0x565 sparse status candidate
+500,10AEC040#02081E08049FFF2C,false,real capture arb 0x576 sparse status candidate
+500,10AEC040#082492393FFFFF28,false,real capture arb 0x576 sparse status candidate
+
+# Lower-priority VIN fragments from real source 0x40 captures. Usually leave disabled.
+1000,10EC4040#3056305845503638,false,real capture VIN fragment source 0x40 low priority
+1000,10EC8040#4B34303238383139,false,real capture VIN fragment source 0x40 low priority
+
+# --- Connected-only non-IPC companion candidates source 0x58 and source 0x80 ---
+# These appeared with the IPC connected. They may support DIC/HMI/display behavior.
+# Source 0x60 is intentionally omitted because it is IPC-origin.
+1700,13FFE058#,false,real capture source 0x58 presence companion
+250,10304058#96B501,false,real capture source 0x58 DIC/icon companion
+500,10320058#0000000000000000,false,real capture source 0x58 display companion
+500,10324058#800000000000,false,real capture source 0x58 display companion
+500,10324058#800037DC0000,false,real capture source 0x58 display companion
+500,10330058#737373000000,false,real capture source 0x58 display companion
+500,10330058#7373F3000000,false,real capture source 0x58 display companion
+500,10330058#F37373000000,false,real capture source 0x58 display companion
+500,10330058#F373F3000000,false,real capture source 0x58 display companion
+500,10336058#00,false,real capture source 0x58 sparse display companion
+1500,13FFE080#,false,real capture source 0x80 presence companion
+500,1029C080#00,false,real capture source 0x80 sparse HMI/radio companion
+500,10340080#00,false,real capture source 0x80 sparse HMI/radio companion
+500,1036A080#00,false,real capture source 0x80 HMI/radio companion
+500,1036A080#01,false,real capture source 0x80 HMI/radio companion
+500,1040A080#00,false,real capture source 0x80 HMI/radio companion
+500,1040A080#01,false,real capture source 0x80 HMI/radio companion
+500,106D0080#0000,false,real capture source 0x80 HMI/radio companion
+500,10730080#13,false,real capture source 0x80 HMI/radio companion
+500,107A0080#000000,false,real capture source 0x80 HMI/radio companion
+500,107B6080#00,false,real capture source 0x80 HMI/radio companion
+500,107BA080#00,false,real capture source 0x80 HMI/radio companion
+500,108E0080#1A051E031CAB,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031CF8,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031D17,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031D22,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031D31,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031D3B,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031DC0,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031DC1,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031E40,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031E79,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031E98,false,real capture source 0x80 DIC/HMI changing value
+500,108E0080#1A051E031EA1,false,real capture source 0x80 DIC/HMI changing value
+
+
+# -- From WEB
+
+# --- RPM / engine-context candidate sweep ---
+# Format: period_ms,message,enabled,note
+# Keep speed sanity active separately:
+#   250,102CC040#EEEEEEEEEEEEEEEE,true,speed-valid prerequisite
+#   100,10210040#0F08484848484848,true,known speed sanity
+
+# === 102E0040 arb 0x170, engine-looking candidate ===
+250,102E0040#0000000000000000,false,-- 102E0040 neutral
+250,102E0040#EEEEEEEEEEEEEEEE,false,-- 102E0040 all EE
+250,102E0040#FFFFFFFFFFFFFFFF,false,-- 102E0040 all FF
+20,102E0040#840C80000000005A,false,-- 102E0040 E78-like 800 rpm bytes1-2
+20,102E0040#8412C0000000005A,false,-- 102E0040 E78-like 1200 rpm bytes1-2
+20,102E0040#841F40000000005A,false,-- 102E0040 E78-like 2000 rpm bytes1-2
+20,102E0040#842EE0000000005A,false,-- 102E0040 E78-like 3000 rpm bytes1-2
+20,102E0040#840012C00000005A,false,-- 102E0040 1200 rpm bytes2-3
+20,102E0040#84001F400000005A,false,-- 102E0040 2000 rpm bytes2-3
+20,102E0040#84000012C000005A,false,-- 102E0040 1200 rpm bytes3-4
+20,102E0040#8400001F4000005A,false,-- 102E0040 2000 rpm bytes3-4
+
+# === 10240040 arb 0x120, frequent dynamic key-on/context frame ===
+250,10240040#0000000000000000,false,-- 10240040 neutral
+250,10240040#EEEEEEEEEEEEEEEE,false,-- 10240040 all EE
+250,10240040#FFFFFFFFFFFFFFFF,false,-- 10240040 all FF
+20,10240040#12C0880100D70FFD,false,-- 10240040 1200 rpm word0, keep captured suffix
+20,10240040#1F40880100D70FFD,false,-- 10240040 2000 rpm word0, keep captured suffix
+20,10240040#83FE12C000D70FFD,false,-- 10240040 1200 rpm word1
+20,10240040#83FE1F4000D70FFD,false,-- 10240040 2000 rpm word1
+20,10240040#83FE880112C00FFD,false,-- 10240040 1200 rpm word2
+20,10240040#83FE88011F400FFD,false,-- 10240040 2000 rpm word2
+20,10240040#83FE880100D712C0,false,-- 10240040 1200 rpm word3
+20,10240040#83FE880100D71F40,false,-- 10240040 2000 rpm word3
+
+# === 10248040 arb 0x124, battery/DIC/status candidate ===
+250,10248040#0000000000000000,false,-- 10248040 neutral / battery light off confirmed
+250,10248040#0400000000000000,false,-- 10248040 battery light on confirmed
+250,10248040#EEEEEEEEEEEEEEEE,false,-- 10248040 all EE
+250,10248040#FFFFFFFFFFFFFFFF,false,-- 10248040 all FF
+20,10248040#12C0000000000000,false,-- 10248040 1200 rpm word0
+20,10248040#1F40000000000000,false,-- 10248040 2000 rpm word0
+20,10248040#000012C000000000,false,-- 10248040 1200 rpm word1
+20,10248040#00001F4000000000,false,-- 10248040 2000 rpm word1
+20,10248040#0000000012C00000,false,-- 10248040 1200 rpm word2
+20,10248040#000000001F400000,false,-- 10248040 2000 rpm word2
+
+# === 10264040 arb 0x132, eco/ABS/drive-status area ===
+250,10264040#0000000000000000,false,-- 10264040 neutral
+250,10264040#EEEEEEEEEEEEEEEE,false,-- 10264040 all EE / eco-mode candidate
+250,10264040#FFFFFFFFFFFFFFFF,false,-- 10264040 all FF
+20,10264040#12C0000000000000,false,-- 10264040 1200 rpm word0
+20,10264040#1F40000000000000,false,-- 10264040 2000 rpm word0
+20,10264040#000012C000000000,false,-- 10264040 1200 rpm word1
+20,10264040#00001F4000000000,false,-- 10264040 2000 rpm word1
+20,10264040#0000000012C00000,false,-- 10264040 1200 rpm word2
+20,10264040#000000001F400000,false,-- 10264040 2000 rpm word2
+100,10264040#0100000000000000,false,-- 10264040 byte0 bit 01
+100,10264040#0200000000000000,false,-- 10264040 byte0 bit 02
+100,10264040#0400000000000000,false,-- 10264040 byte0 bit 04
+100,10264040#0800000000000000,false,-- 10264040 byte0 bit 08
+100,10264040#1000000000000000,false,-- 10264040 byte0 bit 10
+100,10264040#2000000000000000,false,-- 10264040 byte0 bit 20
+100,10264040#4000000000000000,false,-- 10264040 byte0 bit 40
+100,10264040#8000000000000000,false,-- 10264040 byte0 bit 80
+
+# === 102CA040 arb 0x165, body/status base ===
+250,102CA040#0000000000000F00,false,-- 102CA040 captured/native base
+250,102CA040#0000000000000000,false,-- 102CA040 neutral
+250,102CA040#EEEEEEEEEEEEEEEE,false,-- 102CA040 all EE
+250,102CA040#FFFFFFFFFFFFFFFF,false,-- 102CA040 all FF
+20,102CA040#12C0000000000F00,false,-- 102CA040 1200 rpm word0, keep 0F00 suffix
+20,102CA040#1F40000000000F00,false,-- 102CA040 2000 rpm word0, keep 0F00 suffix
+20,102CA040#000012C000000F00,false,-- 102CA040 1200 rpm word1
+20,102CA040#00001F4000000F00,false,-- 102CA040 2000 rpm word1
+20,102CA040#0000000012C00F00,false,-- 102CA040 1200 rpm word2
+20,102CA040#000000001F400F00,false,-- 102CA040 2000 rpm word2
+
+# === 102CC040 arb 0x166, TC/speed-valid/chassis context ===
+250,102CC040#0000400000000000,false,-- 102CC040 clean speed-valid / TC-clear confirmed
+250,102CC040#EEEEEEEEEEEEEEEE,false,-- 102CC040 all EE / speed-valid prerequisite confirmed
+250,102CC040#0400C00000000000,false,-- 102CC040 TC telltale ON confirmed
+250,102CC040#0000000000000000,false,-- 102CC040 neutral / TC-clear candidate
+250,102CC040#FFFFFFFFFFFFFFFF,false,-- 102CC040 all FF
+20,102CC040#12C0400000000000,false,-- 102CC040 1200 rpm word0 + validity byte
+20,102CC040#1F40400000000000,false,-- 102CC040 2000 rpm word0 + validity byte
+20,102CC040#000012C000000000,false,-- 102CC040 1200 rpm word1
+20,102CC040#00001F4000000000,false,-- 102CC040 2000 rpm word1
+20,102CC040#0000400012C00000,false,-- 102CC040 1200 rpm word2 + keep validity
+20,102CC040#000040001F400000,false,-- 102CC040 2000 rpm word2 + keep validity
+
+# === 103D0040 DIC/message/status candidate ===
+250,103D0040#0000000000000000,false,-- 103D0040 neutral
+250,103D0040#EEEEEEEEEEEEEEEE,false,-- 103D0040 all EE
+250,103D0040#FFFFFFFFFFFFFFFF,false,-- 103D0040 all FF
+20,103D0040#12C0000000000000,false,-- 103D0040 1200 rpm word0
+20,103D0040#1F40000000000000,false,-- 103D0040 2000 rpm word0
+20,103D0040#000012C000000000,false,-- 103D0040 1200 rpm word1
+20,103D0040#00001F4000000000,false,-- 103D0040 2000 rpm word1
+
+# === 103D2040 DIC/message/status candidate ===
+250,103D2040#0000000000000000,false,-- 103D2040 neutral
+250,103D2040#EEEEEEEEEEEEEEEE,false,-- 103D2040 all EE
+250,103D2040#FFFFFFFFFFFFFFFF,false,-- 103D2040 all FF
+20,103D2040#12C0000000000000,false,-- 103D2040 1200 rpm word0
+20,103D2040#1F40000000000000,false,-- 103D2040 2000 rpm word0
+20,103D2040#000012C000000000,false,-- 103D2040 1200 rpm word1
+20,103D2040#00001F4000000000,false,-- 103D2040 2000 rpm word1
+
+# === 103DC040 DIC/message/status candidate ===
+250,103DC040#0000000000000000,false,-- 103DC040 neutral
+250,103DC040#EEEEEEEEEEEEEEEE,false,-- 103DC040 all EE
+250,103DC040#FFFFFFFFFFFFFFFF,false,-- 103DC040 all FF
+20,103DC040#12C0000000000000,false,-- 103DC040 1200 rpm word0
+20,103DC040#1F40000000000000,false,-- 103DC040 2000 rpm word0
+20,103DC040#000012C000000000,false,-- 103DC040 1200 rpm word1
+20,103DC040#00001F4000000000,false,-- 103DC040 2000 rpm word1
+
+20,102E0040#8412C0000000005A,false,-- RPM candidate arb 0x170 source 0x40
+20,102E0010#8412C0000000005A,false,-- RPM candidate arb 0x170 source 0x10 ECM-like
+20,102E0028#8412C0000000005A,false,-- RPM candidate arb 0x170 source 0x28 EBCM/chassis-like
+20,102E0058#8412C0000000005A,false,-- RPM candidate arb 0x170 source 0x58 HMI/display-like
+20,102E0080#8412C0000000005A,false,-- RPM candidate arb 0x170 source 0x80 HMI/radio-like
+
+250,102CC040#0000400000000000,false,-- arb 0x166 source 0x40 confirmed speed-valid/TC context
+250,102CC028#0000400000000000,false,-- arb 0x166 source 0x28 EBCM/chassis candidate
+250,102CC010#0000400000000000,false,-- arb 0x166 source 0x10 ECM candidate
+250,102CC058#0000400000000000,false,-- arb 0x166 source 0x58 display/HMI candidate
+250,102CC080#0000400000000000,false,-- arb 0x166 source 0x80 radio/HMI candidate
+
+100,10210040#0F00000000000000,false,-- speed arb 0x108 source 0x40 BCM confirmed source
+100,10210028#0F00000000000000,false,-- speed arb 0x108 source 0x28 EBCM/chassis candidate
+100,10210010#0F00000000000000,false,-- speed arb 0x108 source 0x10 ECM candidate
+100,10210058#0F00000000000000,false,-- speed arb 0x108 source 0x58 display/HMI candidate
+100,10210080#0F00000000000000,false,-- speed arb 0x108 source 0x80 radio/HMI candidate
+100,10210099#0F00000000000000,false,-- speed arb 0x108 source 0x99 sensor/HVAC-style candidate
+100,10210060#0F00000000000000,false,-- speed arb 0x108 source 0x60 IPC self-source test, low priority
+
+# === Previous 102CA040 RPM timing candidates (not confirmed) ===
+# Later manual testing says 102CA040 itself is not the answer. Keep these only as historical timing candidates.
+# Keep key-on context active while testing: 13FFE040#, 621#005200..., 102C0040#803C96B503, 10242040#02, 10754040#040400.
+# Keep 102CC040#0000400000000000 enabled as the confirmed speed-valid prerequisite.
+# Enable only one 102CA040 RPM row at a time. Test at 20 ms. Start with byte0 1200, 2000, and 3000 rpm.
+20,102CA040#07D0000000000F00,false,102CA040 calibration RPM byte0 500 rpm raw 0x07D0
+20,102CA040#0C80000000000F00,false,102CA040 likely RPM byte0 800 rpm raw 0x0C80
+20,102CA040#0FA0000000000F00,false,102CA040 calibration RPM byte0 1000 rpm raw 0x0FA0
+20,102CA040#12C0000000000F00,false,102CA040 likely RPM byte0 1200 rpm raw 0x12C0
+20,102CA040#1770000000000F00,false,102CA040 calibration RPM byte0 1500 rpm raw 0x1770
+20,102CA040#1F40000000000F00,false,102CA040 likely RPM byte0 2000 rpm raw 0x1F40
+20,102CA040#2710000000000F00,false,102CA040 calibration RPM byte0 2500 rpm raw 0x2710
+20,102CA040#2EE0000000000F00,false,102CA040 likely RPM byte0 3000 rpm raw 0x2EE0
+20,102CA040#36B0000000000F00,false,102CA040 calibration RPM byte0 3500 rpm raw 0x36B0
+# Fallback rows for timing uncertainty around the 90% sweep-progress observation.
+20,102CA040#000C800000000F00,false,102CA040 fallback RPM offset1 800 rpm raw 0x0C80
+20,102CA040#0012C00000000F00,false,102CA040 fallback RPM offset1 1200 rpm raw 0x12C0
+20,102CA040#001F400000000F00,false,102CA040 fallback RPM offset1 2000 rpm raw 0x1F40
+20,102CA040#002EE00000000F00,false,102CA040 fallback RPM offset1 3000 rpm raw 0x2EE0
+20,102CA040#00000C8000000F00,false,102CA040 fallback RPM offset2 800 rpm raw 0x0C80
+20,102CA040#000012C000000F00,false,102CA040 fallback RPM offset2 1200 rpm raw 0x12C0
+20,102CA040#00001F4000000F00,false,102CA040 fallback RPM offset2 2000 rpm raw 0x1F40
+20,102CA040#00002EE000000F00,false,102CA040 fallback RPM offset2 3000 rpm raw 0x2EE0
+20,102CA040#0000000C80000F00,false,102CA040 fallback RPM offset3 800 rpm raw 0x0C80
+20,102CA040#00000012C0000F00,false,102CA040 fallback RPM offset3 1200 rpm raw 0x12C0
+20,102CA040#0000001F40000F00,false,102CA040 fallback RPM offset3 2000 rpm raw 0x1F40
+20,102CA040#0000002EE0000F00,false,102CA040 fallback RPM offset3 3000 rpm raw 0x2EE0
+
+
+20,102CA040#0000110000000000,false,-- 1000 RPM
+20,102CA040#00001EC000000000,false,-- 2000 RPM
+20,102CA040#00002E0000000000,false,-- 3000 RPM
+20,102CA040#00003E0000000000,true,-- 4000 RPM
+20,102CA040#00004E0000000000,false,-- 5000 RPM
+20,102CA040#00005D5000000000,false,-- 6000 RPM
+20,102CA040#00006D0000000000,false,-- 7000 RPM
+20,102CA040#00007D0000000000,false,-- 8000 RPM
+20,102CA040#0000000000000001,false,-- enable speed limiter icon
+
+# === RPM sweep marker neighborhood: 5 before / 5 after marks ===
+# Extracted from cantool_ipc-rpm-word-sweep_tx_rx_20260531_004659.candump.
+# Marks covered full_index 109-116, so this block includes full_index 104-121.
+# Keep normal key-on context active and enable one row at a time.
+100,10210040#0C00000000000000,false,marker-neighbor interleaved progress frame during marks; speedometer progress around 47-50 kmh
+250,102CC040#0000000000000000,false,marker-neighbor interleaved baseline during marks; speed-valid prerequisite
+20,10264040#0000000000002EE0,false,marker-neighbor full_index 104/232; 5 before first mark; ABS/traction/eco status offset6 3000 rpm raw 0x2EE0
+20,102CA040#0C80000000000F00,false,marker-neighbor full_index 105/232; 4 before first mark; body/DIC status offset0 800 rpm raw 0x0C80
+20,102CA040#12C0000000000F00,false,marker-neighbor full_index 106/232; 3 before first mark; body/DIC status offset0 1200 rpm raw 0x12C0
+20,102CA040#1F40000000000F00,false,marker-neighbor full_index 107/232; 2 before first mark; body/DIC status offset0 2000 rpm raw 0x1F40
+20,102CA040#2EE0000000000F00,false,marker-neighbor full_index 108/232; 1 before first mark; body/DIC status offset0 3000 rpm raw 0x2EE0
+20,102CA040#000C800000000F00,false,marker-neighbor full_index 109/232; marked; body/DIC status offset1 800 rpm raw 0x0C80
+20,102CA040#0012C00000000F00,false,marker-neighbor full_index 110/232; marked; body/DIC status offset1 1200 rpm raw 0x12C0
+20,102CA040#001F400000000F00,false,marker-neighbor full_index 111/232; marked; body/DIC status offset1 2000 rpm raw 0x1F40
+20,102CA040#002EE00000000F00,false,marker-neighbor full_index 112/232; marked; body/DIC status offset1 3000 rpm raw 0x2EE0
+20,102CA040#00000C8000000F00,false,marker-neighbor full_index 113/232; marked; body/DIC status offset2 800 rpm raw 0x0C80
+20,102CA040#000012C000000F00,false,marker-neighbor full_index 114/232; marked; body/DIC status offset2 1200 rpm raw 0x12C0
+20,102CA040#00001F4000000F00,false,marker-neighbor full_index 115/232; marked; body/DIC status offset2 2000 rpm raw 0x1F40
+20,102CA040#00002EE000000F00,false,marker-neighbor full_index 116/232; marked; body/DIC status offset2 3000 rpm raw 0x2EE0
+20,102CA040#0000000C80000F00,false,marker-neighbor full_index 117/232; 1 after last mark; body/DIC status offset3 800 rpm raw 0x0C80
+20,102CA040#00000012C0000F00,false,marker-neighbor full_index 118/232; 2 after last mark; body/DIC status offset3 1200 rpm raw 0x12C0
+20,102CA040#0000001F40000F00,false,marker-neighbor full_index 119/232; 3 after last mark; body/DIC status offset3 2000 rpm raw 0x1F40
+20,102CA040#0000002EE0000F00,false,marker-neighbor full_index 120/232; 4 after last mark; body/DIC status offset3 3000 rpm raw 0x2EE0
+20,102CA040#000000000C800F00,false,marker-neighbor full_index 121/232; 5 after last mark; body/DIC status offset4 800 rpm raw 0x0C80

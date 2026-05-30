@@ -9,6 +9,7 @@ namespace cantool;
 internal static class CommandHandlers
 {
     private static readonly Regex TxCommentRegex = new(@"^# tx t=(?<rel>[0-9.]+)s (?<id>[0-9A-Fa-f]+)#(?<data>[0-9A-Fa-f]*)\s+note=(?<note>.*)$", RegexOptions.Compiled);
+    private static readonly Regex FuzzMarkRegex = new(@"^# mark t=(?<rel>[0-9.]+)s key=(?<key>\S+)\s+active=(?<id>[0-9A-Fa-f]+)#(?<data>[0-9A-Fa-f]*)\s+note=(?<note>.*)$", RegexOptions.Compiled);
     private static readonly Regex RxLineRegex = new(@"^\((?<ts>[^)]+)\)\s+\S+\s+(?<id>[0-9A-Fa-f]+)#(?<data>[0-9A-Fa-f]*)", RegexOptions.Compiled);
     private static readonly Regex WakeMatrixPhaseRegex = new(@"^# wake-matrix phase=(?<phase>\S+)\s+name=(?<name>\S+)\s+active_100=(?<active>\S+)(?:\s+active_nm_init=(?<nm>\S+))?\s+instruction=(?<instruction>.*)$", RegexOptions.Compiled);
     private static readonly HashSet<uint> IpcBootBurstIds =
@@ -41,6 +42,22 @@ internal static class CommandHandlers
 
     private static readonly TimeSpan MaxSchedulerSleep = TimeSpan.FromMilliseconds(2);
     private static readonly TimeSpan LiveReloadPollPeriod = TimeSpan.FromMilliseconds(250);
+    private static readonly TimeSpan RangeFuzzerActivePeriod = TimeSpan.FromMilliseconds(100);
+    private static readonly TimeSpan RangeFuzzerCandidateHold = TimeSpan.FromMilliseconds(800);
+    private static readonly TimeSpan RangeFuzzerProgressPeriod = TimeSpan.FromMilliseconds(100);
+    private const uint RangeFuzzerProgressCanId = 0x10210040;
+    private const int RangeFuzzerProgressMaxSpeedKmh = 100;
+    private const int RangeFuzzerProgressMaxSpeedByte = 0x19;
+    private static readonly TimeSpan RpmWordSweepActivePeriod = TimeSpan.FromMilliseconds(20);
+    private static readonly TimeSpan RpmWordSweepCandidateHold = TimeSpan.FromMilliseconds(1500);
+    private static readonly TimeSpan RpmWordSweepProgressPeriod = TimeSpan.FromMilliseconds(100);
+    private static readonly string[] RangeFuzzerPayloads =
+    [
+        "EEEEEEEEEEEEEEEE",
+        "FFFFFFFFFFFFFFFF",
+        "8888888888888888",
+        "0000000000000000"
+    ];
 
     public static int InteractiveMenu()
     {
@@ -182,6 +199,23 @@ internal static class CommandHandlers
                     banner: duration is null
                         ? $"live-reload transmitting from send_profile.can until Ctrl+C"
                         : $"live-reload transmitting from send_profile.can for {seconds:0.###}s")
+                : IsRangeFuzzerProfile(selected.Name)
+                ? SendIpcRangeFuzzerProfile(
+                    [],
+                    duration,
+                    selected.Name,
+                    rxLogPath: DefaultLiveOutput(logPrefix),
+                    banner: duration is null
+                        ? $"interactive source-0x40 range fuzzer {FormatRangeFuzzerRange(GetRangeFuzzerRange(selected.Name))} until range complete or Ctrl+C"
+                        : $"interactive source-0x40 range fuzzer {FormatRangeFuzzerRange(GetRangeFuzzerRange(selected.Name))} for {seconds:0.###}s")
+                : selected.Name.Equals(Profiles.IpcRpmWordSweep, StringComparison.OrdinalIgnoreCase)
+                ? SendIpcRpmWordSweepProfile(
+                    [],
+                    duration,
+                    rxLogPath: DefaultLiveOutput(logPrefix),
+                    banner: duration is null
+                        ? "interactive full RPM word sweep until range complete or Ctrl+C"
+                        : $"interactive full RPM word sweep for {seconds:0.###}s")
                 : SendSchedule(
                     Profiles.GetSchedule(selected.Name),
                     duration,
@@ -667,6 +701,16 @@ internal static class CommandHandlers
             return SendLiveReloadProfile(args, duration);
         }
 
+        if (IsRangeFuzzerProfile(profile))
+        {
+            return SendIpcRangeFuzzerProfile(args, duration, profile);
+        }
+
+        if (profile.Equals(Profiles.IpcRpmWordSweep, StringComparison.OrdinalIgnoreCase))
+        {
+            return SendIpcRpmWordSweepProfile(args, duration);
+        }
+
         return SendSchedule(
             Profiles.GetSchedule(profile),
             duration,
@@ -774,6 +818,488 @@ internal static class CommandHandlers
         return 0;
     }
 
+    private static int SendIpcRpmWordSweepProfile(
+        string[] args,
+        TimeSpan? duration,
+        string? rxLogPath = null,
+        string? banner = null)
+    {
+        var fullCandidates = BuildRpmWordSweepCandidates().ToList();
+        var candidates = fullCandidates;
+        var outPath = rxLogPath ?? CliOptions.GetString(args, "--rx-log") ?? DefaultLiveOutput($"cantool_{Profiles.IpcRpmWordSweep}_tx_rx");
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+
+        using var device = GsUsbDevice.Open(listenOnly: false);
+        using var done = new ConsoleCancelScope();
+
+        var baseline = BuildRpmWordSweepBaseline();
+        var sent = 0;
+        var received = 0;
+        var paused = false;
+        var stopRequested = false;
+        var candidateIndex = 0;
+        var activeNextDue = DateTimeOffset.MinValue;
+        var activeWindowEnd = DateTimeOffset.MinValue;
+        ScheduledTxFrame? activeFrame = null;
+        var progressFrame = BuildRpmWordSweepProgressFrame(candidates[0]);
+        var progressNextDue = DateTimeOffset.MinValue;
+
+        Console.WriteLine(banner ?? (duration is null
+            ? $"interactive full RPM word sweep until complete or Ctrl+C; RX log {outPath}"
+            : $"interactive full RPM word sweep for {duration.Value.TotalSeconds:0.###}s; RX log {outPath}"));
+        Console.WriteLine($"full candidates: {candidates.Count}/{fullCandidates.Count}; full indexes 1-{fullCandidates.Count}");
+        Console.WriteLine("keys: m/space=mark, b=bad marker, n=skip candidate, p=pause/resume, q=quit");
+        if (Console.IsInputRedirected)
+        {
+            Console.WriteLine("console input is redirected; keyboard markers are disabled for this run");
+        }
+
+        using var writer = new StreamWriter(outPath, append: false);
+        writer.WriteLine($"# cantool {Profiles.IpcRpmWordSweep} TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4");
+        writer.WriteLine($"# rpm-word-sweep mode=interactive upper_half=false full_sweep=true full_candidates={fullCandidates.Count} active_candidates={candidates.Count} first_full_index=1 active_period_ms={RpmWordSweepActivePeriod.TotalMilliseconds:0.###} hold_ms={RpmWordSweepCandidateHold.TotalMilliseconds:0.###}");
+        writer.WriteLine($"# rpm-word-sweep progress_indicator id={RangeFuzzerProgressCanId:X8} period_ms={RpmWordSweepProgressPeriod.TotalMilliseconds:0.###} display=0-{RangeFuzzerProgressMaxSpeedKmh}kmh note=uses confirmed 10210040 speedometer feed");
+        writer.WriteLine("# mark keys: m/space=manual event, b=bad/restart/disruptive, n=skip, p=pause/resume, q=quit");
+
+        if (CliOptions.HasFlag(args, "--no-flush"))
+        {
+            writer.WriteLine("# stale RX flush skipped");
+            Console.WriteLine("stale RX flush skipped");
+        }
+        else if (CliOptions.HasFlag(args, "--log-flush"))
+        {
+            DrainStartupRxToLog(device, writer, ref received, TimeSpan.FromMilliseconds(300));
+        }
+        else
+        {
+            var flushed = device.FlushStale(TimeSpan.FromMilliseconds(300));
+            if (flushed > 0)
+            {
+                Console.WriteLine($"flushed {flushed} stale RX frame(s)");
+            }
+        }
+
+        var started = DateTimeOffset.UtcNow;
+        var end = duration is null ? DateTimeOffset.MaxValue : started + duration.Value;
+        foreach (var item in baseline)
+        {
+            item.NextDue = started + item.InitialDelay;
+        }
+        progressNextDue = started;
+
+        StartCandidate(started);
+
+        while (!done.IsSet && !stopRequested && DateTimeOffset.UtcNow < end)
+        {
+            var now = DateTimeOffset.UtcNow;
+            while (TryReadConsoleKey(out var keyInfo))
+            {
+                HandleRpmSweepKey(keyInfo);
+                if (stopRequested)
+                {
+                    break;
+                }
+            }
+
+            if (stopRequested)
+            {
+                break;
+            }
+
+            now = DateTimeOffset.UtcNow;
+            foreach (var item in baseline)
+            {
+                if (now < item.NextDue)
+                {
+                    continue;
+                }
+
+                device.SendFrame(item);
+                sent++;
+                item.SentCount++;
+                item.NextDue = item.Period <= TimeSpan.Zero || (item.MaxSends is not null && item.SentCount >= item.MaxSends.Value)
+                    ? DateTimeOffset.MaxValue
+                    : item.NextDue + item.Period;
+                writer.WriteLine(ConsoleFrames.FormatTxLogComment(item));
+                writer.Flush();
+                Console.WriteLine(ConsoleFrames.FormatTx(sent, item));
+            }
+
+            if (!paused && activeFrame is not null && now >= activeWindowEnd)
+            {
+                EndCandidate("completed");
+                candidateIndex++;
+                if (candidateIndex >= candidates.Count)
+                {
+                    Console.WriteLine("RPM word sweep complete");
+                    break;
+                }
+
+                StartCandidate(now);
+            }
+
+            if (!paused && activeFrame is not null && now >= activeNextDue)
+            {
+                device.SendFrame(activeFrame);
+                sent++;
+                activeFrame.SentCount++;
+                activeNextDue += activeFrame.Period;
+                writer.WriteLine(ConsoleFrames.FormatTxLogComment(activeFrame));
+                writer.Flush();
+                Console.WriteLine(ConsoleFrames.FormatTx(sent, activeFrame));
+            }
+
+            if (!paused && now >= progressNextDue)
+            {
+                if (activeFrame?.CanId != RangeFuzzerProgressCanId)
+                {
+                    device.SendFrame(progressFrame);
+                    sent++;
+                    progressFrame.SentCount++;
+                    writer.WriteLine(ConsoleFrames.FormatTxLogComment(progressFrame));
+                    writer.Flush();
+                    Console.WriteLine(ConsoleFrames.FormatTx(sent, progressFrame));
+                }
+
+                progressNextDue += RpmWordSweepProgressPeriod;
+            }
+
+            DrainAvailableRx(device, writer, ref received, ref sent, autoIsoTpFlowControl: false);
+            Thread.Sleep(MaxSchedulerSleep);
+        }
+
+        DrainFinalRxToLog(device, writer, ref received, ref sent, autoIsoTpFlowControl: false, TimeSpan.FromMilliseconds(300));
+        Console.WriteLine($"done: sent={sent} rx_frames={received} rx_log={outPath}");
+        return 0;
+
+        void StartCandidate(DateTimeOffset now)
+        {
+            var candidate = candidates[candidateIndex];
+            activeFrame = candidate.ToFrame(RpmWordSweepActivePeriod);
+            progressFrame = BuildRpmWordSweepProgressFrame(candidate);
+            activeNextDue = now;
+            activeWindowEnd = now + RpmWordSweepCandidateHold;
+            var line = $"# rpm-window-start t={FormatFuzzerElapsed()}s full_index={candidate.FullIndex + 1}/{candidate.FullCount} upper_index={candidateIndex + 1}/{candidates.Count} active={activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)} note={SanitizeLogValue(activeFrame.Note)}";
+            writer.WriteLine(line);
+            writer.Flush();
+            Console.WriteLine(line);
+        }
+
+        void EndCandidate(string reason)
+        {
+            if (activeFrame is null)
+            {
+                return;
+            }
+
+            var candidate = candidates[candidateIndex];
+            var line = $"# rpm-window-end t={FormatFuzzerElapsed()}s full_index={candidate.FullIndex + 1}/{candidate.FullCount} upper_index={candidateIndex + 1}/{candidates.Count} active={activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)} reason={SanitizeLogValue(reason)}";
+            writer.WriteLine(line);
+            writer.Flush();
+        }
+
+        void HandleRpmSweepKey(ConsoleKeyInfo keyInfo)
+        {
+            if (activeFrame is null)
+            {
+                return;
+            }
+
+            var key = keyInfo.Key;
+            if (key == ConsoleKey.Spacebar || key == ConsoleKey.M)
+            {
+                WriteFuzzerMark(writer, key == ConsoleKey.Spacebar ? "space" : "m", activeFrame, "manual visible RPM event marker");
+                Console.WriteLine($"marked {activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)}");
+                return;
+            }
+
+            if (key == ConsoleKey.B)
+            {
+                WriteFuzzerMark(writer, "b", activeFrame, "bad/restart/disruptive marker");
+                Console.WriteLine($"bad marker {activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)}");
+                return;
+            }
+
+            if (key == ConsoleKey.N)
+            {
+                WriteFuzzerMark(writer, "n", activeFrame, "manual skip current RPM candidate");
+                EndCandidate("manual skip");
+                candidateIndex++;
+                if (candidateIndex >= candidates.Count)
+                {
+                    stopRequested = true;
+                    Console.WriteLine("skip reached end of RPM sweep");
+                    return;
+                }
+
+                StartCandidate(DateTimeOffset.UtcNow);
+                return;
+            }
+
+            if (key == ConsoleKey.P)
+            {
+                paused = !paused;
+                WriteFuzzerMark(writer, "p", activeFrame, paused ? "paused" : "resumed");
+                if (!paused)
+                {
+                    var now = DateTimeOffset.UtcNow;
+                    activeNextDue = now;
+                    activeWindowEnd = now + RpmWordSweepCandidateHold;
+                    progressNextDue = now;
+                }
+
+                Console.WriteLine(paused ? "RPM sweep paused; press p to resume" : "RPM sweep resumed");
+                return;
+            }
+
+            if (key == ConsoleKey.Q)
+            {
+                WriteFuzzerMark(writer, "q", activeFrame, "manual quit");
+                stopRequested = true;
+            }
+        }
+    }
+
+    private static int SendIpcRangeFuzzerProfile(
+        string[] args,
+        TimeSpan? duration,
+        string profileName,
+        string? rxLogPath = null,
+        string? banner = null)
+    {
+        var range = GetRangeFuzzerRange(profileName);
+        var rangeLabel = FormatRangeFuzzerRange(range);
+        var outPath = rxLogPath ?? CliOptions.GetString(args, "--rx-log") ?? DefaultLiveOutput($"cantool_{profileName}_tx_rx");
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+
+        using var device = GsUsbDevice.Open(listenOnly: false);
+        using var done = new ConsoleCancelScope();
+
+        var candidates = BuildRangeFuzzerCandidates(range).ToList();
+        var baseline = BuildRangeFuzzerBaseline();
+        var sent = 0;
+        var received = 0;
+        var paused = false;
+        var stopRequested = false;
+        var candidateIndex = 0;
+        var activeNextDue = DateTimeOffset.MinValue;
+        var activeWindowEnd = DateTimeOffset.MinValue;
+        ScheduledTxFrame? activeFrame = null;
+        var progressFrame = BuildRangeFuzzerProgressFrame(candidateIndex, candidates.Count);
+        var progressNextDue = DateTimeOffset.MinValue;
+
+        Console.WriteLine(banner ?? (duration is null
+            ? $"interactive source-0x40 range fuzzer {rangeLabel} until complete or Ctrl+C; RX log {outPath}"
+            : $"interactive source-0x40 range fuzzer {rangeLabel} for {duration.Value.TotalSeconds:0.###}s; RX log {outPath}"));
+        Console.WriteLine("keys: m/space=mark, b=bad marker, n=skip candidate, p=pause/resume, q=quit");
+        if (Console.IsInputRedirected)
+        {
+            Console.WriteLine("console input is redirected; keyboard markers are disabled for this run");
+        }
+
+        using var writer = new StreamWriter(outPath, append: false);
+        writer.WriteLine($"# cantool {profileName} TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4");
+        writer.WriteLine($"# fuzzer profile={profileName} source=0x040 arb_start=0x{range.FirstArbitrationId:X3} arb_end=0x{range.LastArbitrationId:X3} active_period_ms={RangeFuzzerActivePeriod.TotalMilliseconds:0.###} hold_ms={RangeFuzzerCandidateHold.TotalMilliseconds:0.###}");
+        writer.WriteLine("# fuzzer payloads=EEEEEEEEEEEEEEEE,FFFFFFFFFFFFFFFF,8888888888888888,0000000000000000");
+        writer.WriteLine($"# fuzzer progress_indicator id={RangeFuzzerProgressCanId:X8} period_ms={RangeFuzzerProgressPeriod.TotalMilliseconds:0.###} display=0-{RangeFuzzerProgressMaxSpeedKmh}kmh note=uses confirmed 10210040 speedometer feed");
+        writer.WriteLine("# mark keys: m/space=manual event, b=bad/restart/disruptive, n=skip, p=pause/resume, q=quit");
+
+        if (CliOptions.HasFlag(args, "--no-flush"))
+        {
+            writer.WriteLine("# stale RX flush skipped");
+            Console.WriteLine("stale RX flush skipped");
+        }
+        else if (CliOptions.HasFlag(args, "--log-flush"))
+        {
+            DrainStartupRxToLog(device, writer, ref received, TimeSpan.FromMilliseconds(300));
+        }
+        else
+        {
+            var flushed = device.FlushStale(TimeSpan.FromMilliseconds(300));
+            if (flushed > 0)
+            {
+                Console.WriteLine($"flushed {flushed} stale RX frame(s)");
+            }
+        }
+
+        var started = DateTimeOffset.UtcNow;
+        var end = duration is null ? DateTimeOffset.MaxValue : started + duration.Value;
+        foreach (var item in baseline)
+        {
+            item.NextDue = started + item.InitialDelay;
+        }
+        progressNextDue = started;
+
+        StartCandidate(started);
+
+        while (!done.IsSet && !stopRequested && DateTimeOffset.UtcNow < end)
+        {
+            var now = DateTimeOffset.UtcNow;
+            while (TryReadConsoleKey(out var keyInfo))
+            {
+                HandleRangeFuzzerKey(keyInfo);
+                if (stopRequested)
+                {
+                    break;
+                }
+            }
+
+            if (stopRequested)
+            {
+                break;
+            }
+
+            now = DateTimeOffset.UtcNow;
+            foreach (var item in baseline)
+            {
+                if (now < item.NextDue)
+                {
+                    continue;
+                }
+
+                device.SendFrame(item);
+                sent++;
+                item.SentCount++;
+                item.NextDue = item.Period <= TimeSpan.Zero || (item.MaxSends is not null && item.SentCount >= item.MaxSends.Value)
+                    ? DateTimeOffset.MaxValue
+                    : item.NextDue + item.Period;
+                writer.WriteLine(ConsoleFrames.FormatTxLogComment(item));
+                writer.Flush();
+                Console.WriteLine(ConsoleFrames.FormatTx(sent, item));
+            }
+
+            if (!paused && activeFrame is not null && now >= activeWindowEnd)
+            {
+                EndCandidate("completed");
+                candidateIndex++;
+                if (candidateIndex >= candidates.Count)
+                {
+                    Console.WriteLine("fuzzer range complete");
+                    break;
+                }
+
+                StartCandidate(now);
+            }
+
+            if (!paused && activeFrame is not null && now >= activeNextDue)
+            {
+                device.SendFrame(activeFrame);
+                sent++;
+                activeFrame.SentCount++;
+                activeNextDue += activeFrame.Period;
+                writer.WriteLine(ConsoleFrames.FormatTxLogComment(activeFrame));
+                writer.Flush();
+                Console.WriteLine(ConsoleFrames.FormatTx(sent, activeFrame));
+            }
+
+            if (!paused && now >= progressNextDue)
+            {
+                if (activeFrame?.CanId != RangeFuzzerProgressCanId)
+                {
+                    device.SendFrame(progressFrame);
+                    sent++;
+                    progressFrame.SentCount++;
+                    writer.WriteLine(ConsoleFrames.FormatTxLogComment(progressFrame));
+                    writer.Flush();
+                    Console.WriteLine(ConsoleFrames.FormatTx(sent, progressFrame));
+                }
+
+                progressNextDue += RangeFuzzerProgressPeriod;
+            }
+
+            DrainAvailableRx(device, writer, ref received, ref sent, autoIsoTpFlowControl: false);
+            Thread.Sleep(MaxSchedulerSleep);
+        }
+
+        DrainFinalRxToLog(device, writer, ref received, ref sent, autoIsoTpFlowControl: false, TimeSpan.FromMilliseconds(300));
+        Console.WriteLine($"done: sent={sent} rx_frames={received} rx_log={outPath}");
+        return 0;
+
+        void StartCandidate(DateTimeOffset now)
+        {
+            activeFrame = candidates[candidateIndex].ToFrame(RangeFuzzerActivePeriod);
+            progressFrame = BuildRangeFuzzerProgressFrame(candidateIndex, candidates.Count);
+            activeNextDue = now;
+            activeWindowEnd = now + RangeFuzzerCandidateHold;
+            var line = $"# fuzz-window-start t={FormatFuzzerElapsed()}s index={candidateIndex + 1}/{candidates.Count} active={activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)} note={SanitizeLogValue(activeFrame.Note)}";
+            writer.WriteLine(line);
+            writer.Flush();
+            Console.WriteLine(line);
+        }
+
+        void EndCandidate(string reason)
+        {
+            if (activeFrame is null)
+            {
+                return;
+            }
+
+            var line = $"# fuzz-window-end t={FormatFuzzerElapsed()}s index={candidateIndex + 1}/{candidates.Count} active={activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)} reason={SanitizeLogValue(reason)}";
+            writer.WriteLine(line);
+            writer.Flush();
+        }
+
+        void HandleRangeFuzzerKey(ConsoleKeyInfo keyInfo)
+        {
+            if (activeFrame is null)
+            {
+                return;
+            }
+
+            var key = keyInfo.Key;
+            if (key == ConsoleKey.Spacebar || key == ConsoleKey.M)
+            {
+                WriteFuzzerMark(writer, key == ConsoleKey.Spacebar ? "space" : "m", activeFrame, "manual visible event marker");
+                Console.WriteLine($"marked {activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)}");
+                return;
+            }
+
+            if (key == ConsoleKey.B)
+            {
+                WriteFuzzerMark(writer, "b", activeFrame, "bad/restart/disruptive marker");
+                Console.WriteLine($"bad marker {activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)}");
+                return;
+            }
+
+            if (key == ConsoleKey.N)
+            {
+                WriteFuzzerMark(writer, "n", activeFrame, "manual skip current candidate");
+                EndCandidate("manual skip");
+                candidateIndex++;
+                if (candidateIndex >= candidates.Count)
+                {
+                    stopRequested = true;
+                    Console.WriteLine("skip reached end of fuzzer range");
+                    return;
+                }
+
+                StartCandidate(DateTimeOffset.UtcNow);
+                return;
+            }
+
+            if (key == ConsoleKey.P)
+            {
+                paused = !paused;
+                WriteFuzzerMark(writer, "p", activeFrame, paused ? "paused" : "resumed");
+                if (!paused)
+                {
+                    var now = DateTimeOffset.UtcNow;
+                    activeNextDue = now;
+                    activeWindowEnd = now + RangeFuzzerCandidateHold;
+                    progressNextDue = now;
+                }
+
+                Console.WriteLine(paused ? "fuzzer paused; press p to resume" : "fuzzer resumed");
+                return;
+            }
+
+            if (key == ConsoleKey.Q)
+            {
+                WriteFuzzerMark(writer, "q", activeFrame, "manual quit");
+                stopRequested = true;
+            }
+        }
+    }
+
     private static void TryReloadLiveProfile(
         string path,
         ref DateTime lastLoadedWriteUtc,
@@ -814,6 +1340,285 @@ internal static class CommandHandlers
             Console.WriteLine(line);
             Console.WriteLine("active live schedule cleared; fix the file and save again");
         }
+    }
+
+    private static IEnumerable<RangeFuzzerCandidate> BuildRangeFuzzerCandidates(RangeFuzzerRange range)
+    {
+        const uint source = 0x040;
+        for (uint arb = range.FirstArbitrationId; arb <= range.LastArbitrationId; arb++)
+        {
+            foreach (var payload in RangeFuzzerPayloads)
+            {
+                yield return new RangeFuzzerCandidate(
+                    0x10000000 | (arb << 13) | source,
+                    payload,
+                    $"fuzz source=0x040 arb=0x{arb:X3} wrapped_std=0x{arb:X3} payload={payload}");
+            }
+        }
+    }
+
+    private static IEnumerable<RpmWordSweepCandidate> BuildRpmWordSweepCandidates()
+    {
+        var targets = new (uint CanId, string BasePayload, string Label)[]
+        {
+            (0x10220040, "1000000040080000", "10220040 body/status speed-limiter-adjacent"),
+            (0x10240040, "83FE880100D70FFD", "10240040 TC/lamp/state"),
+            (0x10248040, "00005DA6A300", "10248040 dynamic body/DIC status"),
+            (0x10264040, "0000000000000000", "10264040 ABS/traction/eco status"),
+            (0x102CA040, "0000000000000F00", "102CA040 body/DIC status"),
+            (0x102E0040, "840000000000005A", "102E0040 temp/status"),
+            (0x1062C040, "000BF7B714", "1062C040 ABS/traction/eco companion"),
+            (0x10ACA040, "28F0000000000000", "10ACA040 extended status"),
+            (0x10AEC040, "02081E08049FFF2C", "10AEC040 extended status")
+        };
+        var rawVariants = new (string Word, string Label)[]
+        {
+            ("0C80", "800 rpm raw 0x0C80"),
+            ("12C0", "1200 rpm raw 0x12C0"),
+            ("1F40", "2000 rpm raw 0x1F40"),
+            ("2EE0", "3000 rpm raw 0x2EE0")
+        };
+        var pending = new List<(uint CanId, string PayloadHex, string Note)>();
+
+        foreach (var target in targets)
+        {
+            foreach (var offset in RpmWordOffsets(target.BasePayload))
+            {
+                foreach (var variant in rawVariants)
+                {
+                    var payload = ReplacePayloadWord(target.BasePayload, offset, variant.Word);
+                    pending.Add((
+                        target.CanId,
+                        payload,
+                        $"{target.Label} rpm-word offset {offset}: {variant.Label}"));
+                }
+            }
+        }
+
+        for (var index = 0; index < pending.Count; index++)
+        {
+            var candidate = pending[index];
+            yield return new RpmWordSweepCandidate(
+                candidate.CanId,
+                candidate.PayloadHex,
+                $"{candidate.Note}; full_index={index + 1}/{pending.Count}",
+                index,
+                pending.Count);
+        }
+    }
+
+    private static IEnumerable<int> RpmWordOffsets(string basePayload)
+    {
+        var byteCount = basePayload.Length / 2;
+        for (var offset = 0; offset <= byteCount - 2; offset++)
+        {
+            yield return offset;
+        }
+    }
+
+    private static string ReplacePayloadWord(string basePayload, int byteOffset, string word)
+    {
+        var charOffset = byteOffset * 2;
+        return string.Concat(basePayload.AsSpan(0, charOffset), word, basePayload.AsSpan(charOffset + 4));
+    }
+
+    private static List<ScheduledTxFrame> BuildRpmWordSweepBaseline()
+    {
+        return
+        [
+            new ScheduledTxFrame(
+                0x100,
+                [],
+                TimeSpan.Zero,
+                false,
+                "rpm word sweep baseline SWCAN wake pulse",
+                MaxSends: 1),
+            new ScheduledTxFrame(
+                0x13FFE040,
+                [],
+                TimeSpan.FromMilliseconds(1200),
+                true,
+                "rpm word sweep baseline BCM/source 0x40 presence"),
+            new ScheduledTxFrame(
+                0x621,
+                CliOptions.ParseHexData("0052000000000000"),
+                TimeSpan.FromMilliseconds(1000),
+                false,
+                "rpm word sweep baseline key-on 621 keepalive"),
+            new ScheduledTxFrame(
+                0x102C0040,
+                CliOptions.ParseHexData("803C96B503"),
+                TimeSpan.FromMilliseconds(100),
+                true,
+                "rpm word sweep baseline ignition/power-mode key-on context"),
+            new ScheduledTxFrame(
+                0x10242040,
+                CliOptions.ParseHexData("02"),
+                TimeSpan.FromMilliseconds(1000),
+                true,
+                "rpm word sweep baseline key second-turn sub-state",
+                TimeSpan.FromMilliseconds(500)),
+            new ScheduledTxFrame(
+                0x10754040,
+                CliOptions.ParseHexData("040400"),
+                TimeSpan.FromMilliseconds(1000),
+                true,
+                "rpm word sweep baseline key-present/key-on context",
+                TimeSpan.FromMilliseconds(600)),
+            new ScheduledTxFrame(
+                0x102CC040,
+                CliOptions.ParseHexData("0000400000000000"),
+                TimeSpan.FromMilliseconds(250),
+                true,
+                "rpm word sweep baseline confirmed speed-valid prerequisite")
+        ];
+    }
+
+    private static List<ScheduledTxFrame> BuildRangeFuzzerBaseline()
+    {
+        return
+        [
+            new ScheduledTxFrame(
+                0x100,
+                [],
+                TimeSpan.Zero,
+                false,
+                "fuzzer baseline SWCAN wake pulse",
+                MaxSends: 1),
+            new ScheduledTxFrame(
+                0x13FFE040,
+                [],
+                TimeSpan.FromMilliseconds(1200),
+                true,
+                "fuzzer baseline BCM/source 0x40 presence"),
+            new ScheduledTxFrame(
+                0x621,
+                CliOptions.ParseHexData("0052000000000000"),
+                TimeSpan.FromMilliseconds(1000),
+                false,
+                "fuzzer baseline key-on network-management keepalive"),
+            new ScheduledTxFrame(
+                0x102C0040,
+                CliOptions.ParseHexData("803C96B503"),
+                TimeSpan.FromMilliseconds(100),
+                true,
+                "fuzzer baseline ignition/power-mode key-on context"),
+            new ScheduledTxFrame(
+                0x10242040,
+                CliOptions.ParseHexData("02"),
+                TimeSpan.FromMilliseconds(1000),
+                true,
+                "fuzzer baseline key second-turn sub-state"),
+            new ScheduledTxFrame(
+                0x102CC040,
+                CliOptions.ParseHexData("EEEEEEEEEEEEEEEE"),
+                TimeSpan.FromMilliseconds(250),
+                true,
+                "fuzzer heartbeat speed-valid prerequisite confirmed")
+        ];
+    }
+
+    private static ScheduledTxFrame BuildRangeFuzzerProgressFrame(int candidateIndex, int candidateCount)
+    {
+        var progress = candidateCount <= 1
+            ? 100.0
+            : candidateIndex * 100.0 / (candidateCount - 1);
+        return BuildSpeedometerProgressFrame(
+            progress,
+            RangeFuzzerProgressPeriod,
+            $"fuzzer progress indicator {{0:0.0}}% target {{1}} kmh via confirmed 10210040 byte0=0x{{2:X2}}");
+    }
+
+    private static ScheduledTxFrame BuildRpmWordSweepProgressFrame(RpmWordSweepCandidate candidate)
+    {
+        var progress = candidate.FullCount <= 1
+            ? 100.0
+            : candidate.FullIndex * 100.0 / (candidate.FullCount - 1);
+        return BuildSpeedometerProgressFrame(
+            progress,
+            RpmWordSweepProgressPeriod,
+            $"RPM sweep progress indicator {{0:0.0}}% full_index={candidate.FullIndex + 1}/{candidate.FullCount} target {{1}} kmh via confirmed 10210040 byte0=0x{{2:X2}}");
+    }
+
+    private static ScheduledTxFrame BuildSpeedometerProgressFrame(double progress, TimeSpan period, string noteFormat)
+    {
+        var targetKmh = (int)Math.Round(progress * RangeFuzzerProgressMaxSpeedKmh / 100.0);
+        var speedByte = (byte)Math.Clamp(
+            (int)Math.Round(progress * RangeFuzzerProgressMaxSpeedByte / 100.0),
+            0,
+            RangeFuzzerProgressMaxSpeedByte);
+        var data = new byte[] { speedByte, 0, 0, 0, 0, 0, 0, 0 };
+        var note = string.Format(CultureInfo.InvariantCulture, noteFormat, progress, targetKmh, speedByte);
+
+        return new ScheduledTxFrame(
+            RangeFuzzerProgressCanId,
+            data,
+            period,
+            true,
+            note);
+    }
+
+    private static bool TryReadConsoleKey(out ConsoleKeyInfo key)
+    {
+        key = default;
+        if (Console.IsInputRedirected)
+        {
+            return false;
+        }
+
+        try
+        {
+            if (!Console.KeyAvailable)
+            {
+                return false;
+            }
+
+            key = Console.ReadKey(intercept: true);
+            return true;
+        }
+        catch (InvalidOperationException)
+        {
+            return false;
+        }
+    }
+
+    private static void WriteFuzzerMark(StreamWriter writer, string key, ScheduledTxFrame activeFrame, string note)
+    {
+        var line = $"# mark t={FormatFuzzerElapsed()}s key={SanitizeLogValue(key)} active={activeFrame.CandumpId}#{Convert.ToHexString(activeFrame.Data)} note={SanitizeLogValue($"{note}; {activeFrame.Note}")}";
+        writer.WriteLine(line);
+        writer.Flush();
+    }
+
+    private static string FormatFuzzerElapsed()
+    {
+        return AppClock.ElapsedSeconds.ToString("000.000", CultureInfo.InvariantCulture);
+    }
+
+    private static bool IsRangeFuzzerProfile(string profile)
+    {
+        return profile.Equals(Profiles.IpcRangeFuzzer00, StringComparison.OrdinalIgnoreCase) ||
+            profile.Equals(Profiles.IpcRangeFuzzer, StringComparison.OrdinalIgnoreCase) ||
+            profile.Equals(Profiles.IpcRangeFuzzer20, StringComparison.OrdinalIgnoreCase) ||
+            profile.Equals(Profiles.IpcRangeFuzzer30, StringComparison.OrdinalIgnoreCase) ||
+            profile.Equals(Profiles.IpcRangeFuzzerE0, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static RangeFuzzerRange GetRangeFuzzerRange(string profile)
+    {
+        return profile.ToLowerInvariant() switch
+        {
+            Profiles.IpcRangeFuzzer00 => new RangeFuzzerRange(0x000, 0x0FF),
+            Profiles.IpcRangeFuzzer => new RangeFuzzerRange(0x100, 0x1FF),
+            Profiles.IpcRangeFuzzer20 => new RangeFuzzerRange(0x200, 0x2FF),
+            Profiles.IpcRangeFuzzer30 => new RangeFuzzerRange(0x300, 0x3FF),
+            "ipc-range-fuzzere0" => new RangeFuzzerRange(0xE00, 0xEFF),
+            _ => throw new ArgumentException($"unknown range fuzzer profile: {profile}")
+        };
+    }
+
+    private static string FormatRangeFuzzerRange(RangeFuzzerRange range)
+    {
+        return $"arb 0x{range.FirstArbitrationId:X3}-0x{range.LastArbitrationId:X3}";
     }
 
     private static List<ScheduledTxFrame> LoadLiveReloadSchedule(string path, out int rows, out int active)
@@ -1003,8 +1808,11 @@ internal static class CommandHandlers
             "# send_profile.can",
             "# Columns: period_ms, CAN_MESSAGE, enabled, note",
             "# Edit enabled to true/on/1 for the one message you want to test, then save.",
+            "# Keep every candidate disabled by default. Enable only one 10210040 speed row at a time.",
             "# The live-reload profile keeps RX logging while it reloads this file.",
             "period_ms,message,enabled,note",
+            "",
+            "# --- Native key-on baseline/context ---",
             "1000,100#,false,SWCAN wake pulse",
             "1200,13FFE040#,false,BCM source 0x40 presence",
             "1000,621#0052000000000000,false,key-on network-management keepalive",
@@ -1012,7 +1820,7 @@ internal static class CommandHandlers
             "1000,10242040#01,false,key first-turn sub-state",
             "1000,10242040#02,false,key second-turn sub-state",
             "1000,10754040#040400,false,key present key-on context",
-            "100,10210040#0000800000008000,false,native body base 0x108",
+            "100,10210040#0000800000008000,false,captured 10210040 speed/status baseline; disable while testing speed rows",
             "100,10220040#1000000040080000,false,native body base 0x110",
             "250,1022E040#1000000010000000,false,native body counter/state 0x117 value 1",
             "250,1022E040#3000000030000000,false,native body counter/state 0x117 value 3",
@@ -1020,21 +1828,151 @@ internal static class CommandHandlers
             "250,10230040#2000000020000000,false,native body counter/state 0x118 value 2",
             "100,10240040#83FE880100D10FFD,false,lights-off neutral candidate",
             "100,10240040#83FE880100D70FFD,false,key-on lights/context captured value",
+            "100,10240040#0000000000000000,false,unknown",
+            "20,10240040#83FE12C000D70FFD,false,TC message/lamp ON finding; turns off TC with message",
+            "20,10240040#83FE1F4000D70FFD,false,TC message/lamp OFF finding; turns TC back on with message",
             "100,10264040#0000000000000000,false,native body base 0x132",
             "100,102CA040#0000000000000F00,false,native body base 0x165",
+            "",
+            "# --- 10210040 confirmed speedometer byte0 ---",
+            "# 102CC040#0000400000000000 needs to be sent for these to work.",
+            "100,10210040#0000000000000000,false,speed_0_kmh_candidate",
+            "100,10210040#0100000000000000,false,about 4 kmh confirmed",
+            "100,10210040#0200000000000000,false,about 8 kmh confirmed",
+            "100,10210040#0300000000000000,false,about 12 kmh confirmed",
+            "100,10210040#0500000000000000,false,speed_20_kmh_candidate",
+            "100,10210040#0800000000000000,false,speed_32_kmh_candidate",
+            "100,10210040#0A00000000000000,false,speed_40_kmh_candidate",
+            "100,10210040#0F00000000000000,false,speed_60_kmh_candidate",
+            "100,10210040#1000000000000000,false,about 75 kmh confirmed",
+            "100,10210040#1400000000000000,false,speed_80_kmh_candidate",
+            "100,10210040#1900000000000000,false,speed_100_kmh_candidate",
+            "100,10210040#2000000000000000,false,about 133 kmh confirmed",
+            "100,10210040#3000000000000000,false,about 198 kmh confirmed",
+            "",
+            "# --- 10210040 byte1/status experiment, fixed byte0 0x10 ---",
+            "500,10210040#1000000000000000,false,speed_byte1_00_baseline_confirmed",
+            "500,10210040#1001000000000000,false,speed_byte1_01",
+            "500,10210040#1002000000000000,false,speed_byte1_02",
+            "500,10210040#1004000000000000,false,speed_byte1_04",
+            "500,10210040#1008000000000000,false,speed_byte1_08",
+            "500,10210040#1010000000000000,false,speed_byte1_10",
+            "500,10210040#1080000000000000,false,speed_byte1_80",
+            "",
+            "# --- 10210040 mirrored BE16 speed format, 100 ms ---",
+            "# Formula hypothesis: raw = round((kmh / 1.60934) * 100), payload = raw 80 00 raw 80 00.",
+            "# Keep 102CC040#0000400000000000 enabled; disable the captured 10210040 baseline and byte0-only speed rows while testing these.",
+            "100,10210040#0000800000008000,false,speed_mirrored_0_kmh_raw_0000",
+            "100,10210040#0137800001378000,false,speed_mirrored_5_kmh_raw_0137",
+            "100,10210040#026D8000026D8000,false,speed_mirrored_10_kmh_raw_026D",
+            "100,10210040#04DB800004DB8000,false,speed_mirrored_20_kmh_raw_04DB",
+            "100,10210040#0748800007488000,false,speed_mirrored_30_kmh_raw_0748",
+            "100,10210040#09B5800009B58000,false,speed_mirrored_40_kmh_raw_09B5",
+            "100,10210040#0C2380000C238000,false,speed_mirrored_50_kmh_raw_0C23",
+            "100,10210040#0E9080000E908000,false,speed_mirrored_60_kmh_raw_0E90",
+            "100,10210040#136B8000136B8000,false,speed_mirrored_80_kmh_raw_136B",
+            "100,10210040#1846800018468000,false,speed_mirrored_100_kmh_raw_1846",
+            "100,10210040#1D2080001D208000,false,speed_mirrored_120_kmh_raw_1D20",
+            "100,10210040#21FB800021FB8000,false,speed_mirrored_140_kmh_raw_21FB",
+            "100,10210040#26D6800026D68000,false,speed_mirrored_160_kmh_raw_26D6",
+            "100,10210040#2BB180002BB18000,false,speed_mirrored_180_kmh_raw_2BB1",
+            "100,10210040#308B8000308B8000,false,speed_mirrored_200_kmh_raw_308B",
+            "",
+            "# --- TC telltale candidates ---",
             "250,102CC040#0400C00000000000,false,TC telltale ON confirmed",
-            "250,102CC040#0000C00000000000,false,TC telltale clear candidate",
+            "250,102CC040#0000400000000000,false,speed valid prerequisite / TC telltale clear candidate",
+            "250,102CC040#0000C00000000000,false,old TC telltale clear candidate",
+            "250,102CC040#0000000000000000,false,TC matrix 000000",
+            "250,102CC040#0000800000000000,false,TC matrix 000080",
+            "250,102CC040#0400000000000000,false,TC matrix 040000",
+            "250,102CC040#0400800000000000,false,TC matrix 040080",
+            "250,102CC040#0800000000000000,false,TC matrix 080000",
+            "250,102CC040#0800800000000000,false,TC matrix 080080",
+            "250,102CC040#0800C00000000000,false,TC matrix 0800C0",
+            "500,10240040#FFFFFFFFFFFFFFFF,false,Turns off TC light potentially",
+            "",
+            "# --- Parking brake and lighting candidates ---",
             "500,103B4040#04,false,parking brake ON confirmed",
             "500,103B4040#00,false,parking brake OFF confirmed",
+            "500,103B4040#01,false,parking brake bit 01",
+            "500,103B4040#02,false,parking brake bit 02",
+            "500,103B4040#08,false,parking brake bit 08",
+            "500,103B4040#0400000000000000,false,parking brake ON bit long DLC",
             "500,1020C040#0040040401,false,parking brake support released candidate",
             "500,1020C040#00C0040401,false,parking brake support asserted candidate",
+            "500,1020C040#0010000000,false,rear fog light on",
+            "500,1020C040#0020000000,false,long beam light on",
+            "500,1020C040#0030000000,false,long beam light on and rear fog light on",
+            "500,1020C040#0040000000,false,low beams on",
+            "500,1020C040#0050000000,false,low beams on and rear fog light on",
+            "500,1020C040#0060000000,false,low beams on and long beam on",
+            "500,1020C040#0070000000,false,low beams on and long beam on and rear fog light on",
+            "500,1020C040#0002000000,false,fog light on",
+            "500,1020C040#0072000000,false,fog light on and low beams on and long beam on and rear fog light on",
+            "500,1020C040#0100000000,false,light/status byte0 01",
+            "500,1020C040#0200000000,false,light/status byte0 02",
+            "500,1020C040#0000000000000000,false,lights neutral long DLC",
+            "500,1020C040#1800000000000000,false,left and right blinker on",
+            "500,1020C040#0800000000,false,left blinker const on",
+            "500,1020C040#1000000000,false,right blinker const on",
+            "",
+            "# --- Body/lock and DIC/status candidates ---",
+            "500,10632040#0000,false,door/body state clear",
+            "500,10632040#4000,false,door/body state set",
+            "500,10414040#0000FB05,false,lock/body context captured 0000FB05",
+            "500,10414040#00017B05,false,lock/body context captured 00017B05",
+            "500,10414040#0000C10A,false,lock/body context captured 0000C10A",
+            "500,10248040#0000000000000000,false,turn off battery light",
+            "500,10248040#0400000000000000,false,turn on battery light",
+            "500,10248040#00005BA6A500,false,dim/odometer DIC status candidate 5B",
+            "500,10248040#00005CA6A400,false,dim/odometer DIC status candidate 5C",
             "500,10248040#00005DA6A300,false,dim/odometer DIC status candidate",
+            "500,10248040#00005EA6A400,false,dim/odometer DIC status candidate 5E",
+            "500,10248040#000060A6A400,false,dim/odometer DIC status candidate 60",
+            "",
+            "# --- Wrapped RPM/temp/service candidates ---",
+            "100,10192040#0000000000500000,false,wrapped RPM neutral engine-state candidate",
             "100,10192040#0004C40000500000,false,wrapped RPM engine-state candidate",
-            "100,107D2040#0010800000108000,false,wrapped speed odometer candidate",
+            "100,10192040#8412DC0000500000,false,wrapped RPM alternate engine-state candidate",
+            "100,101A6040#2BBC0007001000FF,false,wrapped RPM companion 0D3 candidate",
+            "100,101A6040#0000000000000000,false,wrapped RPM companion neutral",
+            "500,107D2040#0000000000000000,false,wrapped speed lower-priority neutral",
+            "500,107D2040#0000800000008000,false,wrapped speed lower-priority seed",
+            "500,107D2040#0010800000108000,false,wrapped speed lower-priority candidate",
+            "500,107D2040#0040800000408000,false,wrapped speed lower-priority candidate high",
+            "250,10982040#0000490000000000,false,wrapped coolant/temp low candidate",
             "250,10982040#0000730000000000,false,wrapped coolant/temp candidate",
+            "250,10982040#00008C0000000000,false,wrapped coolant/temp warm candidate",
+            "250,10982040#0000AA0000000000,false,wrapped coolant/temp hot candidate",
+            "250,109A2040#0000000000000000,false,wrapped oil/service neutral",
+            "250,109A2040#C900000000000000,false,wrapped oil/service C9",
+            "250,109A2040#E900000000000000,false,wrapped oil/service E9",
+            "250,103CA040#0000000000000000,false,wrapped warning/service neutral",
             "250,103CA040#44003910000000C9,false,wrapped warning/service candidate C9",
             "250,103CA040#44003930000000E9,false,wrapped warning/service candidate E9",
             "250,103CA040#4400395000000109,false,wrapped warning/service candidate 0109",
+            "250,103CA040#44FFA0100000022F,false,wrapped warning/service alternate 22F",
+            "250,103CA040#44FFA0300000024F,false,wrapped warning/service alternate 24F",
+            "250,103CA040#44FFA0500000026F,false,wrapped warning/service alternate 26F",
+            "250,103CA040#44FFA0700000028F,false,wrapped warning/service alternate 28F",
+            "",
+            "# --- HMI/DIC text and button candidates ---",
+            "500,10438040#0000000000000000,false,HMI button release",
+            "500,10438040#0100000000000000,false,HMI volume up candidate",
+            "500,10438040#0200000000000000,false,HMI volume down candidate",
+            "500,10438040#0500000000000000,false,HMI source candidate",
+            "1000,1030A080#000448800003,false,DIC text radio display parameters",
+            "1000,1030C080#4501005445535404,false,DIC text radio TEST payload",
+            "",
+            "# --- 10220040 speed-limiter / RPM word candidates ---",
+            "20,10220040#10000C8040080000,false,10220040 RPM word1 800",
+            "20,10220040#100012C040080000,false,10220040 RPM word1 1200",
+            "20,10220040#00000FF020000000,false,--Speed limiter 265 kmh",
+            "20,10220040#0000001020000000,false,--Speed limiter 1 kmh",
+            "20,10220040#000000F020000000,false,--Speed limiter 15 kmh",
+            "20,10220040#000000F120000000,false,--Speed limiter 16 kmh",
+            "20,10220040#000001F020000000,true,--Speed limiter 33 kmh",
+            "20,10220040#000001F120000000,true,--Speed limiter 33 kmh",
         ];
     }
 
@@ -1131,6 +2069,7 @@ internal static class CommandHandlers
         }
 
         PrintIpcEffectSummary(logPath, records);
+        PrintFuzzMarkSummary(logPath);
         return 0;
     }
 
@@ -1139,7 +2078,7 @@ internal static class CommandHandlers
         var decoded = Gmlan29Id.Decode(canId);
         var summary = decoded.ToAnnotatedSummaryString();
         return decoded.Sender == 0x040 && decoded.ArbitrationId <= 0x7FF
-            ? $"{summary} wrapped_std=0x{decoded.ArbitrationId:X3}"
+            ? $"{summary} wrapped_std=0x{decoded.ArbitrationId:X3} arb=0x{decoded.ArbitrationId:X3} source=0x040"
             : summary;
     }
 
@@ -1192,6 +2131,26 @@ internal static class CommandHandlers
         if (watchedTx.Any(item => item.Frame.CanId is 0x100C4040 or 0x1005E040))
         {
             Console.WriteLine("  note: 100C4040/1005E040 are the current ABS/traction and brake/cruise OK candidates; correlate these windows with the TC lamp clearing.");
+        }
+    }
+
+    private static void PrintFuzzMarkSummary(string logPath)
+    {
+        var marks = ParseFuzzMarks(logPath).ToList();
+        if (marks.Count == 0)
+        {
+            return;
+        }
+
+        Console.WriteLine();
+        Console.WriteLine($"Fuzzer marks: {marks.Count}");
+        foreach (var mark in marks)
+        {
+            var wrapped = mark.ActiveFrame.IsExtended
+                ? FormatGmlanSummary(mark.ActiveFrame.CanId)
+                : "";
+            var suffix = string.IsNullOrWhiteSpace(wrapped) ? "" : $" {wrapped}";
+            Console.WriteLine($"  line {mark.LineNumber,5}: key={mark.Key,-5} active={mark.ActiveFrame.CandumpId}#{mark.ActiveFrame.DataHex}{suffix} note={mark.Note}");
         }
     }
 
@@ -1597,6 +2556,34 @@ internal static class CommandHandlers
             return 0;
         }
 
+        if (definition.Name.Equals(Profiles.IpcRpmWordSweep, StringComparison.OrdinalIgnoreCase))
+        {
+            var fullCandidates = BuildRpmWordSweepCandidates().ToList();
+            Console.WriteLine("interactive RPM word sweep: dynamic TX schedule generated at runtime");
+            Console.WriteLine($"full sweep: active candidates {fullCandidates.Count}/{fullCandidates.Count}; full indexes 1-{fullCandidates.Count}");
+            Console.WriteLine($"active period: {RpmWordSweepActivePeriod.TotalMilliseconds:0.###}ms; hold per candidate: {RpmWordSweepCandidateHold.TotalMilliseconds:0.###}ms");
+            Console.WriteLine("baseline: 100#, 13FFE040#, 621#0052..., 102C0040#803C96B503, 10242040#02, 10754040#040400, 102CC040#000040...");
+            Console.WriteLine($"progress indicator: {RangeFuzzerProgressCanId:X8} every {RpmWordSweepProgressPeriod.TotalMilliseconds:0.###}ms, 0-{RangeFuzzerProgressMaxSpeedKmh} km/h across full sweep");
+            Console.WriteLine("keys: m/space=mark, b=bad marker, n=skip, p=pause/resume, q=quit");
+            return 0;
+        }
+
+        if (IsRangeFuzzerProfile(definition.Name))
+        {
+            var range = GetRangeFuzzerRange(definition.Name);
+            var candidateCount = BuildRangeFuzzerCandidates(range).Count();
+            var payloads = string.Join(",", RangeFuzzerPayloads);
+            Console.WriteLine("interactive range fuzzer: dynamic TX schedule generated at runtime");
+            Console.WriteLine($"range: source=0x040 {FormatRangeFuzzerRange(range)}");
+            Console.WriteLine($"active candidates: {candidateCount} ({RangeFuzzerPayloads.Length} payloads per arbitration ID)");
+            Console.WriteLine($"active period: {RangeFuzzerActivePeriod.TotalMilliseconds:0.###}ms; hold per candidate: {RangeFuzzerCandidateHold.TotalMilliseconds:0.###}ms");
+            Console.WriteLine($"payloads: {payloads}");
+            Console.WriteLine("baseline: 100#, 13FFE040#, 621#0052..., 102C0040#803C96B503, 10242040#02, 102CC040#EEEE...");
+            Console.WriteLine($"progress indicator: {RangeFuzzerProgressCanId:X8} every {RangeFuzzerProgressPeriod.TotalMilliseconds:0.###}ms, 0-{RangeFuzzerProgressMaxSpeedKmh} km/h across range");
+            Console.WriteLine("keys: m/space=mark, b=bad marker, n=skip, p=pause/resume, q=quit");
+            return 0;
+        }
+
         var schedule = Profiles.GetSchedule(definition.Name);
         Console.WriteLine($"TX schedule: {schedule.Count} item(s)");
         foreach (var item in schedule.OrderBy(item => item.InitialDelay).ThenBy(item => item.CanId).ThenBy(item => Convert.ToHexString(item.Data)))
@@ -1688,6 +2675,32 @@ internal static class CommandHandlers
                     string.IsNullOrEmpty(rxDataText) ? [] : Convert.FromHexString(rxDataText),
                     rxIdText.Length > 3),
                 "");
+        }
+    }
+
+    private static IEnumerable<FuzzMark> ParseFuzzMarks(string path)
+    {
+        var lineNumber = 0;
+        foreach (var line in File.ReadLines(path))
+        {
+            lineNumber++;
+            var match = FuzzMarkRegex.Match(line.Trim());
+            if (!match.Success)
+            {
+                continue;
+            }
+
+            var idText = match.Groups["id"].Value;
+            var dataText = match.Groups["data"].Value;
+            yield return new FuzzMark(
+                lineNumber,
+                match.Groups["key"].Value,
+                new CanFrame(
+                    double.Parse(match.Groups["rel"].Value, CultureInfo.InvariantCulture),
+                    uint.Parse(idText, NumberStyles.HexNumber, CultureInfo.InvariantCulture),
+                    string.IsNullOrEmpty(dataText) ? [] : Convert.FromHexString(dataText),
+                    idText.Length > 3),
+                match.Groups["note"].Value);
         }
     }
 
@@ -2365,6 +3378,50 @@ internal sealed record LogEvent(
     LogEventKind Kind,
     CanFrame Frame,
     string Note);
+
+internal sealed record FuzzMark(
+    int LineNumber,
+    string Key,
+    CanFrame ActiveFrame,
+    string Note);
+
+internal sealed record RangeFuzzerRange(
+    uint FirstArbitrationId,
+    uint LastArbitrationId);
+
+internal sealed record RangeFuzzerCandidate(
+    uint CanId,
+    string PayloadHex,
+    string Note)
+{
+    public ScheduledTxFrame ToFrame(TimeSpan period)
+    {
+        return new ScheduledTxFrame(
+            CanId,
+            CliOptions.ParseHexData(PayloadHex),
+            period,
+            true,
+            Note);
+    }
+}
+
+internal sealed record RpmWordSweepCandidate(
+    uint CanId,
+    string PayloadHex,
+    string Note,
+    int FullIndex,
+    int FullCount)
+{
+    public ScheduledTxFrame ToFrame(TimeSpan period)
+    {
+        return new ScheduledTxFrame(
+            CanId,
+            CliOptions.ParseHexData(PayloadHex),
+            period,
+            true,
+            Note);
+    }
+}
 
 internal sealed record WakeMatrixPhase(
     string Name,
