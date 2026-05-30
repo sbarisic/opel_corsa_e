@@ -1,6 +1,6 @@
 # send_profile.can
 # Columns: period_ms, CAN_MESSAGE, enabled, note
-# Edit enabled to true/on/1 for the one message you want to test, then save.
+# Edit enabled to true for the one message you want to test, then save.
 # Run with:
 #   dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile ipc-live-reload --seconds 0
 period_ms,message,enabled,note
@@ -11,8 +11,8 @@ period_ms,message,enabled,note
 1000,10242040#01,false,key first-turn only odometer state
 1000,10242040#02,false,key second-turn full bright state
 1000,10754040#040400,false,key present key-on context
-100,10210040#0000800000008000,true,native body base 0x108
-100,10220040#1000000040080000,true,native body base 0x110
+100,10210040#0000800000008000,false,native body base 0x108
+100,10220040#1000000040080000,false,native body base 0x110
 250,1022E040#1000000010000000,false,native body counter/state 0x117 value 1
 250,1022E040#3000000030000000,false,native body counter/state 0x117 value 3
 250,10230040#0000000000000000,false,native body counter/state 0x118 value 0
@@ -43,11 +43,12 @@ period_ms,message,enabled,note
 500,1020C040#0000000000000000,false,
 500,1020C040#1800000000000000,false,left and right blinker on
 
-500,107D2040#0000000000000000,false,
-500,107D2040#1111111111111111,false,
-500,107D2040#2222222222222222,false,
-500,107D2040#4444444444444444,false,
-500,107D2040#8888888888888888,false,
+500,10210040#1000000000000000,false,about 75 kmh
+500,10210040#2000000000000000,false,about 133 kmh
+500,10210040#3000000000000000,false,about 198 kmh
+500,10210040#0100000000000000,false,about 4 kmh
+500,10210040#0200000000000000,false,about 8 kmh
+500,10210040#0300000000000000,false,about 12 kmh
 
 500,1020C040#0800000000,false,left blinker const on
 500,1020C040#1000000000,false,right blinker const on
