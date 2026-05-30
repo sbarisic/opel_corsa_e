@@ -1,0 +1,69 @@
+# cantool wake-matrix capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# mode=normal guided physical wake matrix
+# phase_seconds=12 stop_on_wake=True passive_only=False include_nm_init=True
+# wake-matrix preclear discarded_count=0 duration_ms=300
+# wake-matrix phase=1/6 name=pin3-passive active_100=False active_nm_init=False instruction=connect SWCAN/CAN-H lead to IPC low-speed pin 3; toggle/apply pin 8 +12 V during this phase
+# wake-matrix phase=2/6 name=pin4-passive active_100=False active_nm_init=False instruction=move SWCAN/CAN-H lead to IPC low-speed pin 4; toggle/apply pin 8 +12 V during this phase
+# wake-matrix phase=3/6 name=pin3-active-100 active_100=True active_nm_init=False instruction=connect SWCAN/CAN-H lead to IPC low-speed pin 3; toggle pin 8; tool sends 100# once per second
+# tx t=024.435s 100# note=wake-matrix active phase SWCAN wake 100#
+(1780083398.655000) can0 100#
+# tx t=025.446s 100# note=wake-matrix active phase SWCAN wake 100#
+(1780083399.663000) can0 100#
+# tx t=026.443s 100# note=wake-matrix active phase SWCAN wake 100#
+(1780083400.660000) can0 100#
+# tx t=027.439s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=028.439s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=029.439s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=030.444s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=031.444s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=032.448s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=033.451s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=034.452s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=035.448s 100# note=wake-matrix active phase SWCAN wake 100#
+# wake-matrix phase=4/6 name=pin4-active-100 active_100=True active_nm_init=False instruction=move SWCAN/CAN-H lead to IPC low-speed pin 4; toggle pin 8; tool sends 100# once per second
+# tx t=036.449s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=037.453s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=038.459s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=039.462s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=040.467s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=041.471s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=042.477s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=043.452s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=044.451s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=045.452s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=046.450s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=047.476s 100# note=wake-matrix active phase SWCAN wake 100#
+# wake-matrix phase=5/6 name=pin3-active-nm-init active_100=True active_nm_init=True instruction=connect SWCAN/CAN-H lead to IPC low-speed pin 3; toggle pin 8; tool sends 100# plus sparse 621#0140 network-init
+# tx t=048.474s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=048.474s 621#0140000000000000 note=wake-matrix active phase 621#0140 network-init
+# tx t=049.477s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=050.478s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=051.505s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=051.506s 621#0140000000000000 note=wake-matrix active phase 621#0140 network-init
+# tx t=052.476s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=053.481s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=054.481s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=054.482s 621#0140000000000000 note=wake-matrix active phase 621#0140 network-init
+# tx t=055.485s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=056.485s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=057.484s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=057.484s 621#0140000000000000 note=wake-matrix active phase 621#0140 network-init
+# tx t=058.479s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=059.504s 100# note=wake-matrix active phase SWCAN wake 100#
+# wake-matrix phase=6/6 name=pin4-active-nm-init active_100=True active_nm_init=True instruction=move SWCAN/CAN-H lead to IPC low-speed pin 4; toggle pin 8; tool sends 100# plus sparse 621#0140 network-init
+# tx t=060.501s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=060.501s 621#0140000000000000 note=wake-matrix active phase 621#0140 network-init
+# tx t=061.531s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=062.526s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=063.521s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=063.522s 621#0140000000000000 note=wake-matrix active phase 621#0140 network-init
+# tx t=064.522s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=065.519s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=066.516s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=066.516s 621#0140000000000000 note=wake-matrix active phase 621#0140 network-init
+# tx t=067.515s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=068.509s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=069.509s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=069.509s 621#0140000000000000 note=wake-matrix active phase 621#0140 network-init
+# tx t=070.504s 100# note=wake-matrix active phase SWCAN wake 100#
+# tx t=071.505s 100# note=wake-matrix active phase SWCAN wake 100#

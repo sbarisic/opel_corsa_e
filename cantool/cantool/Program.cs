@@ -22,10 +22,18 @@ internal static class Program
             return args[0].ToLowerInvariant() switch
             {
                 "list" => CommandHandlers.ListDevices(),
+                "bench-health" => CommandHandlers.BenchHealth(args[1..]),
+                "wake-watch" => CommandHandlers.WakeWatch(args[1..]),
+                "wake-matrix" => CommandHandlers.WakeMatrix(args[1..]),
+                "wake-then-profile" => CommandHandlers.WakeThenProfile(args[1..]),
                 "capture" => CommandHandlers.Capture(args[1..]),
                 "send" => CommandHandlers.Send(args[1..]),
                 "send-profile" => CommandHandlers.SendProfile(args[1..]),
                 "summarize" => CommandHandlers.Summarize(args[1..]),
+                "analyze-diag" => CommandHandlers.AnalyzeDiagnostics(args[1..]),
+                "analyze-restart" => CommandHandlers.AnalyzeRestart(args[1..]),
+                "analyze-wake" => CommandHandlers.AnalyzeWake(args[1..]),
+                "profile-info" => CommandHandlers.ProfileInfo(args[1..]),
                 _ => Fail($"unknown command: {args[0]}")
             };
         }
@@ -38,21 +46,36 @@ internal static class Program
 
     private static void PrintUsage()
     {
-        Console.WriteLine("""
+        Console.WriteLine($$"""
             cantool - candleLight/gs_usb low-speed CAN helper
 
             Commands:
-              <no args>   open interactive profile sender menu
+              <no args>   open interactive profile runner menu
               list
-              capture [--seconds N] [--out PATH] [--listen-only]
+              bench-health [--seconds N]
+              wake-watch [--seconds N] [--out PATH] [--preclear-ms N] [--no-preclear] [--stop-on-wake]
+              wake-matrix [--phase-seconds N] [--out PATH] [--passive-only] [--include-nm-init] [--manual-advance] [--no-stop-on-wake]
+              wake-then-profile --profile NAME [--seconds N] [--wait-rx-timeout-ms N] [--no-preclear]
+              capture [--seconds N] [--out PATH] [--listen-only] [--no-flush] [--log-flush]
               send --id ID [--data HEX] [--period-ms N] [--count N] [--seconds N]
-              send-profile --profile read-only|ipc-simulator|ipc-simulator-p4-speed|ipc-simulator-alt-sources|ipc-simulator-sweep|ipc-diagnostic-probe|ipc-diagnostic-session-probe|ipc-diagnostic-did-scan|ipc-diagnostic-f1-range-scan|ipc-diagnostic-local-range-scan|ipc-diagnostic-local-range-slow-scan|ipc-diagnostic-read21-local-scan|ipc-standard-engine-warning-probe|ipc-standard-byte-fuzz|ipc-gmlan29-byte-fuzz|default-bench|firmware-wake|gmlan29-all-targeted|gmlan29-speed-rpm|gmlan29-speed-rpm-alt-sources|gmlan29-power-mode|gmlan29-environment|gmlan29-chime|gmlan29-known-payloads|gmlan29-speed-sweep|gmlan29-probe|opel-reference-probe [--seconds N]
-              summarize --log PATH
+              send-profile --profile {{Profiles.ProfileNamesForUsage}} [--seconds N] [--wait-rx-timeout-ms N] [--no-flush] [--log-flush]
+              summarize (--log PATH | --latest [--pattern GLOB]) [--ignore-tx-echo]
+              analyze-diag (--log PATH | --latest [--pattern GLOB]) [--positive-only]
+              analyze-restart (--log PATH | --latest [--pattern GLOB]) [--window-ms N] [--min-unique N]
+              analyze-wake (--log PATH | --latest [--pattern GLOB])
+              profile-info [--profile NAME]
 
             CAN timing is the known-good IPC low-speed profile:
               bitrate 33.333 kbit/s, brp=255, prop=1, phase1=13, phase2=5, sjw=4
-            Interactive menu default profile is read-only; ipc-simulator defaults to 30 seconds and waits for first RX before TX
-            read-only opens the adapter in gs_usb listen-only mode, logs RX frames, and never transmits
+            Interactive menu default: ipc-read-only-sniff, listen-only until Ctrl+C with no TX
+            Interactive wake shortcuts:
+              w = wake-watch --stop-on-wake, no TX; wait for ARMED, then toggle IPC pin 8 run/crank
+              m = wake-matrix --manual-advance, guided pin 3 / pin 4 wake matrix with log phase markers
+              d = wake then classic IPC diagnostics after first RX
+              i = wake then isolated classic IPC diagnostics after first RX
+              c = wake then confirmed IPC identity diagnostics after first RX
+              s = wake then staged IPC simulator after first RX
+            Use ipc-ack-sniff when the standalone IPC may need the adapter to ACK frames.
             """);
     }
 

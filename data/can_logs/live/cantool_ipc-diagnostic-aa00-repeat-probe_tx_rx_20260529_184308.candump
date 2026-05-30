@@ -1,0 +1,222 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# waiting for first RX before starting TX
+(1780072989.837000) can0 13FFE060#
+# first RX observed; starting TX schedule
+# tx t=085.146s 100# note=SWCAN wakeup after first IPC RX
+# tx t=085.146s 13FFE040# note=fake BCM/body gateway broadcast presence after first IPC RX
+# tx t=085.146s 621#0140000000000000 note=network-management initiate after first IPC RX
+# tx t=085.147s 621#0040000000000000 note=network-management steady keepalive seed after first IPC RX
+(1780072989.837000) can0 100#
+(1780072989.838000) can0 13FFE040#
+(1780072989.838000) can0 621#0140000000000000
+(1780072989.838000) can0 621#0040000000000000
+(1780072989.865000) can0 10244060#02
+(1780072989.865000) can0 103BC060#00
+(1780072989.865000) can0 10448060#00
+(1780072989.865000) can0 1045C060#44
+(1780072989.865000) can0 10774060#00
+(1780072989.866000) can0 10A04060#00
+(1780072989.867000) can0 10ACE060#1E00200000000000
+(1780072989.871000) can0 10AE8060#030E010104050000
+(1780072989.896000) can0 103D6060#00
+(1780072989.896000) can0 103DA060#00
+(1780072989.896000) can0 10812060#00
+(1780072989.896000) can0 1084A060#00
+(1780072989.899000) can0 10AE8060#0016010800000000
+(1780072989.927000) can0 13FFE060#
+(1780072989.989000) can0 10ACE060#2B00000000000000
+(1780072989.999000) can0 10AFC060#38FFFFFFFFFFFF2B
+(1780072990.050000) can0 10424060#079964
+# tx t=086.146s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=086.147s 621#0040000000000000 note=network-management steady keepalive
+(1780072990.838000) can0 13FFE040#
+(1780072990.838000) can0 621#0040000000000000
+(1780072991.121000) can0 13FFE060#
+# tx t=087.149s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=087.149s 621#0040000000000000 note=network-management steady keepalive
+# tx t=087.149s 24C#021003AAAAAAAAAA note=AA 00 repeat probe session/init 0x10 0x03; known useful response is 64C#0150...
+(1780072991.840000) can0 13FFE040#
+(1780072991.840000) can0 621#0040000000000000
+(1780072991.841000) can0 24C#021003AAAAAAAAAA
+(1780072991.870000) can0 64C#0150AAAAAAAAAAAA
+(1780072992.315000) can0 13FFE060#
+# tx t=088.157s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=088.157s 621#0040000000000000 note=network-management steady keepalive
+# tx t=088.157s 24C#013EAAAAAAAAAAAA note=AA 00 repeat probe tester-present without subfunction; known useful response is 64C#017E...
+(1780072992.848000) can0 13FFE040#
+(1780072992.848000) can0 621#0040000000000000
+(1780072992.848000) can0 24C#013EAAAAAAAAAAAA
+(1780072992.880000) can0 64C#017EAAAAAAAAAAAA
+(1780072993.425000) can0 10244060#06
+(1780072993.485000) can0 10424060#079964
+(1780072993.515000) can0 13FFE060#
+(1780072993.635000) can0 10244060#06
+(1780072993.705000) can0 1045C060#40
+# tx t=089.146s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=089.147s 621#0040000000000000 note=network-management steady keepalive
+(1780072993.838000) can0 13FFE040#
+(1780072993.838000) can0 621#0040000000000000
+(1780072994.497000) can0 10424060#079964
+(1780072994.718000) can0 13FFE060#
+# tx t=090.153s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=090.153s 621#0040000000000000 note=network-management steady keepalive
+# tx t=090.154s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 1/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780072994.844000) can0 13FFE040#
+(1780072994.845000) can0 621#0040000000000000
+(1780072994.845000) can0 24C#02AA00AAAAAAAAAA
+(1780072994.876000) can0 54C#0000000000000000
+(1780072995.484000) can0 10424060#079964
+# tx t=091.160s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=091.160s 621#0040000000000000 note=network-management steady keepalive
+(1780072995.851000) can0 13FFE040#
+(1780072995.851000) can0 621#0040000000000000
+(1780072995.914000) can0 13FFE060#
+(1780072996.484000) can0 10424060#079964
+# tx t=092.154s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=092.154s 621#0040000000000000 note=network-management steady keepalive
+# tx t=092.154s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 2/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780072996.845000) can0 13FFE040#
+(1780072996.845000) can0 621#0040000000000000
+(1780072996.845000) can0 24C#02AA00AAAAAAAAAA
+(1780072996.876000) can0 54C#0000000000000000
+(1780072997.127000) can0 13FFE060#
+(1780072997.483000) can0 10424060#079964
+# tx t=093.158s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=093.158s 621#0040000000000000 note=network-management steady keepalive
+(1780072997.849000) can0 13FFE040#
+(1780072997.850000) can0 621#0040000000000000
+(1780072997.864000) can0 64C#0160AAAAAAAAAAAA
+(1780072998.321000) can0 13FFE060#
+(1780072998.635000) can0 10244060#06
+# tx t=094.148s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=094.148s 621#0040000000000000 note=network-management steady keepalive
+# tx t=094.148s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 3/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780072998.839000) can0 13FFE040#
+(1780072998.840000) can0 621#0040000000000000
+(1780072998.840000) can0 24C#02AA00AAAAAAAAAA
+(1780072998.870000) can0 54C#0000000000000000
+(1780072999.512000) can0 13FFE060#
+# tx t=095.152s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=095.152s 621#0040000000000000 note=network-management steady keepalive
+(1780072999.843000) can0 13FFE040#
+(1780072999.844000) can0 621#0040000000000000
+(1780073000.711000) can0 13FFE060#
+# tx t=096.147s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=096.147s 621#0040000000000000 note=network-management steady keepalive
+# tx t=096.147s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 4/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780073000.838000) can0 13FFE040#
+(1780073000.838000) can0 621#0040000000000000
+(1780073000.838000) can0 24C#02AA00AAAAAAAAAA
+(1780073000.869000) can0 54C#0000000000000000
+# tx t=097.150s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=097.150s 621#0040000000000000 note=network-management steady keepalive
+(1780073001.841000) can0 13FFE040#
+(1780073001.841000) can0 621#0040000000000000
+(1780073001.912000) can0 13FFE060#
+# tx t=098.153s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=098.153s 621#0040000000000000 note=network-management steady keepalive
+# tx t=098.154s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 5/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780073002.845000) can0 13FFE040#
+(1780073002.845000) can0 621#0040000000000000
+(1780073002.845000) can0 24C#02AA00AAAAAAAAAA
+(1780073002.875000) can0 54C#0000000000000000
+(1780073003.110000) can0 13FFE060#
+(1780073003.631000) can0 10244060#06
+# tx t=099.161s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=099.161s 621#0040000000000000 note=network-management steady keepalive
+(1780073003.852000) can0 13FFE040#
+(1780073003.852000) can0 621#0040000000000000
+(1780073004.323000) can0 13FFE060#
+# tx t=100.151s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=100.151s 621#0040000000000000 note=network-management steady keepalive
+# tx t=100.151s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 6/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780073004.842000) can0 13FFE040#
+(1780073004.842000) can0 621#0040000000000000
+(1780073004.842000) can0 24C#02AA00AAAAAAAAAA
+(1780073004.874000) can0 54C#0000000000000000
+(1780073005.509000) can0 13FFE060#
+# tx t=101.161s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=101.161s 621#0040000000000000 note=network-management steady keepalive
+(1780073005.852000) can0 13FFE040#
+(1780073005.852000) can0 621#0040000000000000
+(1780073006.708000) can0 13FFE060#
+# tx t=102.154s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=102.154s 621#0040000000000000 note=network-management steady keepalive
+# tx t=102.154s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 7/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780073006.845000) can0 13FFE040#
+(1780073006.846000) can0 621#0040000000000000
+(1780073006.846000) can0 24C#02AA00AAAAAAAAAA
+(1780073006.877000) can0 54C#0000000000000000
+# tx t=103.147s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=103.148s 621#0040000000000000 note=network-management steady keepalive
+(1780073007.839000) can0 13FFE040#
+(1780073007.839000) can0 621#0040000000000000
+(1780073007.908000) can0 13FFE060#
+(1780073008.627000) can0 10244060#06
+# tx t=104.151s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=104.151s 621#0040000000000000 note=network-management steady keepalive
+# tx t=104.151s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 8/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780073008.842000) can0 13FFE040#
+(1780073008.842000) can0 621#0040000000000000
+(1780073008.843000) can0 24C#02AA00AAAAAAAAAA
+(1780073008.873000) can0 54C#0000000000000000
+(1780073009.107000) can0 13FFE060#
+# tx t=105.155s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=105.156s 621#0040000000000000 note=network-management steady keepalive
+(1780073009.847000) can0 13FFE040#
+(1780073009.847000) can0 621#0040000000000000
+(1780073010.317000) can0 13FFE060#
+# tx t=106.159s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=106.159s 621#0040000000000000 note=network-management steady keepalive
+# tx t=106.159s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 9/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780073010.850000) can0 13FFE040#
+(1780073010.850000) can0 621#0040000000000000
+(1780073010.851000) can0 24C#02AA00AAAAAAAAAA
+(1780073010.881000) can0 54C#0000000000000000
+(1780073011.506000) can0 13FFE060#
+# tx t=107.162s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=107.162s 621#0040000000000000 note=network-management steady keepalive
+(1780073011.853000) can0 13FFE040#
+(1780073011.853000) can0 621#0040000000000000
+(1780073012.705000) can0 13FFE060#
+# tx t=108.154s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=108.154s 621#0040000000000000 note=network-management steady keepalive
+# tx t=108.155s 24C#02AA00AAAAAAAAAA note=AA 00 repeat probe 10/10; watch for repeated 54C#0000000000000000 or any changing 54C/64C response
+(1780073012.846000) can0 13FFE040#
+(1780073012.846000) can0 621#0040000000000000
+(1780073012.846000) can0 24C#02AA00AAAAAAAAAA
+(1780073012.876000) can0 54C#0000000000000000
+(1780073013.629000) can0 10244060#06
+# tx t=109.159s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=109.159s 621#0040000000000000 note=network-management steady keepalive
+(1780073013.850000) can0 13FFE040#
+(1780073013.850000) can0 621#0040000000000000
+(1780073013.911000) can0 13FFE060#
+# tx t=110.161s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=110.161s 621#0040000000000000 note=network-management steady keepalive
+# tx t=110.161s 24C#013EAAAAAAAAAAAA note=AA 00 repeat probe final tester-present without subfunction
+(1780073014.852000) can0 13FFE040#
+(1780073014.852000) can0 621#0040000000000000
+(1780073014.852000) can0 24C#013EAAAAAAAAAAAA
+(1780073014.865000) can0 64C#017EAAAAAAAAAAAA
+(1780073015.105000) can0 13FFE060#
+# tx t=111.155s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=111.155s 621#0040000000000000 note=network-management steady keepalive
+(1780073015.846000) can0 13FFE040#
+(1780073015.847000) can0 621#0040000000000000
+(1780073016.319000) can0 13FFE060#
+# tx t=112.147s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=112.147s 621#0040000000000000 note=network-management steady keepalive
+(1780073016.838000) can0 13FFE040#
+(1780073016.838000) can0 621#0040000000000000
+(1780073017.503000) can0 13FFE060#
+# tx t=113.155s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=113.155s 621#0040000000000000 note=network-management steady keepalive
+(1780073017.846000) can0 13FFE040#
+(1780073017.846000) can0 621#0040000000000000
+(1780073018.630000) can0 10244060#06
+(1780073018.702000) can0 13FFE060#
+# tx t=114.158s 13FFE040# note=fake BCM/body gateway broadcast presence, source 0x40
+# tx t=114.158s 621#0040000000000000 note=network-management steady keepalive
+(1780073018.849000) can0 13FFE040#
+(1780073018.849000) can0 621#0040000000000000

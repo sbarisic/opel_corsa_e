@@ -1,0 +1,202 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.429s 100# note=wake-first SWCAN wake 100# repeated slowly; verify pin 8 run/crank is powered
+# tx t=000.430s 13FFE040# note=wake-first fake BCM/source 0x40 presence seed
+# tx t=000.431s 621#0040000000000000 note=wake-first network-management keepalive seed
+# tx t=000.432s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=000.432s 621#0040000000000000 note=wake-first network-management steady keepalive
+(1780084424.985000) can0 100#
+(1780084424.986000) can0 13FFE040#
+(1780084424.986000) can0 621#0040000000000000
+# tx t=000.940s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.034s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.129s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.237s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.331s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.439s 100# note=wake-first SWCAN wake 100# repeated slowly; verify pin 8 run/crank is powered
+# tx t=001.440s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=001.440s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=001.441s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.441s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=001.533s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.628s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.691s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=001.737s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.831s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.939s 621#0140000000000000 note=wake-first sparse 621#0140 network-init retry
+# tx t=001.940s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=001.940s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=002.032s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.140s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.186s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=002.233s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.327s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.436s 100# note=wake-first SWCAN wake 100# repeated slowly; verify pin 8 run/crank is powered
+# tx t=002.437s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=002.437s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=002.437s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.437s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=002.529s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.638s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.684s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=002.732s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.841s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.934s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=002.934s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=003.027s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.138s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.185s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=003.232s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.342s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.435s 100# note=wake-first SWCAN wake 100# repeated slowly; verify pin 8 run/crank is powered
+# tx t=003.436s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=003.436s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=003.436s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.436s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=003.527s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.638s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.684s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=003.730s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.837s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.931s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=003.931s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=004.040s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.134s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.181s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=004.242s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.335s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.429s 100# note=wake-first SWCAN wake 100# repeated slowly; verify pin 8 run/crank is powered
+# tx t=004.429s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=004.429s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=004.430s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.430s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=004.538s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.633s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.680s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=004.742s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.834s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.929s 621#0140000000000000 note=wake-first sparse 621#0140 network-init retry
+# tx t=004.930s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=004.930s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=005.040s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.133s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.181s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=005.228s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.337s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.432s 100# note=wake-first SWCAN wake 100# repeated slowly; verify pin 8 run/crank is powered
+# tx t=005.433s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=005.433s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=005.434s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.434s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=005.528s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.637s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.683s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=005.729s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.838s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.932s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=005.933s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=006.040s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.135s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.182s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=006.229s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.337s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.432s 100# note=wake-first SWCAN wake 100# repeated slowly; verify pin 8 run/crank is powered
+# tx t=006.433s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=006.433s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=006.433s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.434s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=006.542s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.634s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.682s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=006.729s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.839s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.934s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=006.934s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=007.028s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.136s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.183s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=007.229s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.340s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.436s 100# note=wake-first SWCAN wake 100# repeated slowly; verify pin 8 run/crank is powered
+# tx t=007.436s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=007.436s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=007.436s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.437s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=007.531s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.640s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.687s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=007.733s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.827s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.936s 621#0140000000000000 note=wake-first sparse 621#0140 network-init retry
+# tx t=007.937s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=007.937s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=008.031s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.140s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.186s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=008.232s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.342s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.434s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=008.434s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=008.435s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.435s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=008.528s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.638s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.685s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=008.732s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.839s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.933s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=008.933s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=009.042s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.134s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.182s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=009.228s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.336s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.429s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=009.430s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=009.430s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.430s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=009.540s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.634s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.681s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=009.727s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.836s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.928s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=009.928s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=010.038s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.132s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.180s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=010.227s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.336s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.430s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=010.430s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=010.430s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.430s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=010.536s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.632s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.679s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=010.742s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.834s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.929s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=010.929s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=011.036s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.129s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.191s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=011.238s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.330s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.440s 13FFE040# note=wake-first fake BCM/source 0x40 presence
+# tx t=011.441s 621#0040000000000000 note=wake-first network-management steady keepalive
+# tx t=011.441s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.441s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=011.533s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.626s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.690s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=011.736s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.830s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.941s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=011.941s 10754040#0400000000000000 note=wake-first key-present/body context candidate
+# tx t=012.034s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=012.127s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=012.188s 0AA#740000 note=wake-first Opel ignition/key-state candidate
+# tx t=012.235s 10002040#03 note=wake-first system power mode run candidate 0x03
+# tx t=012.328s 10002040#03 note=wake-first system power mode run candidate 0x03
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

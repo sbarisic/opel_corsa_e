@@ -1,0 +1,8 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.406s 100# note=restart isolation: SWCAN wake 100# one-shot on otherwise silent IPC
+(1780075944.477000) can0 100#
+# tx t=005.411s 621#0140000000000000 note=restart isolation: delayed 621#0140 network-init burst after wake
+(1780075949.483000) can0 621#0140000000000000
+# tx t=005.914s 621#0140000000000000 note=restart isolation: delayed 621#0140 network-init burst after wake
+(1780075949.985000) can0 621#0140000000000000
+# tx t=006.414s 621#0140000000000000 note=restart isolation: delayed 621#0140 network-init burst after wake

@@ -1,0 +1,4 @@
+# cantool wake-watch capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# mode=normal read-only no-tx
+# wake-watch preclear discarded_count=0 duration_ms=300
+# wake-watch ARMED; toggle/apply IPC pin 8 run/crank +12 V now

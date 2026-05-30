@@ -1,0 +1,487 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.426s 100# note=SWCAN wakeup, normal one-shot
+# tx t=000.427s 13FFE040# note=normal fake BCM/source 0x40 presence seed
+# tx t=000.428s 621#0040000000000000 note=normal network-management steady keepalive seed
+(1780080653.741000) can0 100#
+(1780080653.742000) can0 13FFE040#
+(1780080653.742000) can0 621#0040000000000000
+# tx t=001.124s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.139s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.139s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.154s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.155s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.170s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.171s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.186s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.186s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.186s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=001.217s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.233s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.234s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.249s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.249s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.265s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.265s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.280s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.280s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.296s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.296s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=001.327s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.343s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.344s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.359s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.359s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.375s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.375s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.376s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.390s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.390s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=001.406s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.436s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=001.437s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=001.437s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.437s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.452s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.452s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.467s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.468s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.483s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.483s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.498s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.498s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=001.529s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.529s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.545s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.546s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.560s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.575s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.575s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.576s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.590s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.591s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=001.605s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.637s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.637s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.652s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.653s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.668s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.668s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.683s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.684s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.699s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.700s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=001.730s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.730s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.746s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.746s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.761s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.777s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.777s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.777s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.792s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.792s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=001.808s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.839s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.839s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.854s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.855s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.855s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.870s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.885s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.885s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.886s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.886s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=001.932s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.932s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.948s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=001.948s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=001.964s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.964s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=001.964s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=001.979s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=001.980s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=001.995s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.011s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.042s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.042s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.058s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.058s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.059s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.074s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.074s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.089s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.089s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.090s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.136s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.136s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.136s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.151s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.167s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.168s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.168s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.182s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.182s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.197s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.213s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.243s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.244s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.259s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.259s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.260s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.275s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.276s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.303s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.315s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.316s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.325s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.337s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.338s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.353s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.356s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.368s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.369s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.383s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.383s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.398s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.414s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.429s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=002.429s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=002.430s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.444s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.444s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.445s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.460s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.476s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.476s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.492s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.492s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.492s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.539s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.539s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.539s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.554s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.554s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.569s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.569s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.585s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.585s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.585s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.614s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.630s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.645s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.646s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.647s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.660s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.676s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.676s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.691s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.692s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.692s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.738s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.739s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.739s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.754s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.754s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.769s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.769s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.784s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.784s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.785s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.815s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.830s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.846s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.846s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.846s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.861s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.877s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.878s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.892s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.893s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.893s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=002.924s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.939s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.940s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=002.954s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=002.955s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=002.970s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.970s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=002.986s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=002.986s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=002.986s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.017s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=003.032s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.048s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=003.048s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.048s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.063s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.078s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.079s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.094s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=003.094s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.094s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.125s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=003.140s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.141s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.156s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.156s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.171s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=003.172s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.186s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.187s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.187s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.218s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=003.234s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.235s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.249s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=003.250s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.265s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.265s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.280s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.281s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.296s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=003.296s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.326s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=003.343s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.343s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.359s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.359s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.374s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=003.374s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.375s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.390s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.391s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.406s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=003.438s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=003.438s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=003.439s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.439s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.453s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=003.453s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.469s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.469s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.485s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=003.485s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.485s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.485s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.531s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=003.532s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.547s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.547s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.562s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.578s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=003.579s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.579s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.594s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.594s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.611s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=003.641s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.642s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.657s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=003.658s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.658s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.673s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.688s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=003.688s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.689s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.689s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.735s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=003.735s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.736s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.751s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.766s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=003.766s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.766s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.782s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.782s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.797s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.813s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=003.829s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.844s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=003.845s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.845s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.861s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.876s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.877s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.892s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=003.892s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.892s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=003.938s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=003.938s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.939s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=003.954s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=003.954s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=003.969s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=003.970s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=003.984s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=003.985s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=003.985s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=004.015s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=004.031s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=004.046s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=004.046s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=004.047s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=004.062s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=004.078s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=004.078s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=004.093s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=004.094s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=004.094s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=004.124s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=004.139s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=004.140s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=004.154s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=004.154s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=004.171s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=004.171s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=004.186s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=004.187s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=004.187s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=004.218s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=004.236s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=004.238s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=004.250s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=004.250s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=004.266s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=004.269s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=004.281s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=004.282s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=004.296s 0F1#000000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 4/4
+# tx t=004.296s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=004.327s 0F1#1C0000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 1/4
+# tx t=004.342s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=004.343s 160#0000000000 note=transition key-off compact power/body state 0x160
+# tx t=004.358s 1F1#800E000018000072 note=transition key-off ignition/environment state 0x1F1
+# tx t=004.358s 12A#0000605D00000080 note=transition key-off door/belt/body/DIC state 0x12A
+# tx t=004.374s 0F1#280000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 2/4
+# tx t=004.374s 135#00080D0002180000 note=transition key-off packed body/display status 0x135
+# tx t=004.374s 137#0000000000000000 note=transition key-off packed body/display status 0x137
+# tx t=004.390s 451#000000000000 note=transition key-off body/display status 0x451
+# tx t=004.390s 139#0000000000000000 note=transition key-off body/display status 0x139
+# tx t=004.406s 0F1#340000400000 note=transition key-off native BCM/body state cycle 0x0F1 variant 3/4
+# tx t=004.436s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=004.437s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=004.437s 100# note=transition key-on edge SWCAN wake one-shot
+# tx t=004.437s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=004.469s 0F1#000000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=004.469s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.470s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=004.484s 0F1#1C0000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=004.485s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=004.485s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=004.500s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=004.516s 0F1#280000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=004.516s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.516s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=004.516s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=004.532s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=004.547s 0F1#340000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=004.562s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.578s 0F1#000000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=004.579s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=004.579s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=004.579s 4E1#4B34303238383139 note=transition key-on VIN/config fragment 0x4E1
+# tx t=004.594s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=004.594s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=004.610s 0F1#1C0000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=004.610s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.610s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=004.625s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=004.625s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=004.640s 0F1#280000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=004.671s 0F1#340000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=004.672s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.672s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=004.687s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=004.687s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=004.688s 514#3056305845503638 note=transition key-on VIN/config fragment 0x514
+# tx t=004.703s 0F1#000000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=004.703s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=004.718s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.719s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=004.719s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=004.734s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=004.734s 0F1#1C0000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=004.767s 0F1#280000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=004.767s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.767s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=004.782s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=004.798s 0F1#340000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=004.798s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=004.800s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=004.813s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.813s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=004.828s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=004.828s 0F1#000000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=004.828s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=004.858s 0F1#1C0000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=004.859s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.875s 0F1#280000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=004.875s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=004.875s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=004.891s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=004.907s 0F1#340000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=004.907s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=004.907s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=004.923s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.923s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=004.939s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=004.939s 0F1#000000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=004.971s 0F1#1C0000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=004.971s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=004.971s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=004.986s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=004.986s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=005.001s 0F1#280000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=005.002s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=005.017s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=005.017s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=005.018s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=005.033s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=005.034s 0F1#340000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=005.065s 0F1#000000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=005.065s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=005.066s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=005.080s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=005.096s 0F1#1C0000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=005.097s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=005.097s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=005.113s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=005.113s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=005.128s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=005.129s 0F1#280000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=005.129s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=005.144s 0F1#340000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=005.160s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=005.176s 0F1#000000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=005.176s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=005.176s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=005.191s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=005.207s 0F1#1C0000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=005.207s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=005.208s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=005.223s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=005.223s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=005.238s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=005.238s 0F1#280000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=005.268s 0F1#340000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=005.269s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=005.269s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=005.283s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=005.299s 0F1#000000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=005.300s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=005.300s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=005.315s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=005.315s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# tx t=005.315s 139#0000000000000000 note=transition key-on body/display status 0x139
+# tx t=005.330s 10002040#03 note=transition key-on GMLAN system power mode hold 0x03
+# tx t=005.331s 0F1#1C0000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=005.361s 0F1#280000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=005.362s 451#000000000000 note=transition key-on body/display status 0x451
+# tx t=005.377s 160#803C96B503 note=transition key-on compact power/body state 0x160
+# tx t=005.378s 1F1#AE0F173E18000072 note=transition key-on ignition/environment state 0x1F1
+# tx t=005.392s 0F1#340000400000 note=transition key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=005.392s 12A#0000605D00008080 note=transition key-on door/belt/body/DIC state 0x12A
+# tx t=005.408s 135#04080D0002180000 note=transition key-on packed body/display status 0x135
+# tx t=005.409s 137#0000000000000000 note=transition key-on packed body/display status 0x137
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

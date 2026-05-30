@@ -1,0 +1,24 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# startup RX drain begin duration_ms=300
+# startup RX drain end count=0
+# tx t=000.417s 100# note=SWCAN wakeup, startup one-shot
+# tx t=000.419s 621#0140000000000000 note=network-management initiate, three-frame startup burst
+# tx t=000.421s 13FFE040# note=extended broadcast presence / keepalive from source 0x40
+# tx t=000.421s 621#0040000000000000 note=network-management steady keepalive
+(1780077912.165000) can0 100#
+(1780077912.166000) can0 621#0140000000000000
+(1780077912.166000) can0 13FFE040#
+# tx t=000.929s 621#0140000000000000 note=network-management initiate, three-frame startup burst
+# tx t=001.429s 621#0140000000000000 note=network-management initiate, three-frame startup burst
+# tx t=001.429s 13FFE040# note=extended broadcast presence / keepalive from source 0x40
+# tx t=001.429s 621#0040000000000000 note=network-management steady keepalive
+# tx t=002.429s 13FFE040# note=extended broadcast presence / keepalive from source 0x40
+# tx t=002.429s 621#0040000000000000 note=network-management steady keepalive
+# tx t=003.416s 13FFE040# note=extended broadcast presence / keepalive from source 0x40
+# tx t=003.417s 621#0040000000000000 note=network-management steady keepalive
+# tx t=004.421s 13FFE040# note=extended broadcast presence / keepalive from source 0x40
+# tx t=004.422s 621#0040000000000000 note=network-management steady keepalive
+# tx t=005.419s 13FFE040# note=extended broadcast presence / keepalive from source 0x40
+# tx t=005.420s 621#0040000000000000 note=network-management steady keepalive
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

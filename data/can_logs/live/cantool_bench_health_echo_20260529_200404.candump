@@ -1,0 +1,11 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# startup RX drain begin duration_ms=300
+# startup RX drain end count=0
+# tx t=005.817s 13FFE040# note=bench-health harmless fake BCM presence echo probe
+(1780077845.317000) can0 13FFE040#
+# tx t=005.925s 13FFE040# note=bench-health harmless fake BCM presence echo probe
+(1780077845.422000) can0 13FFE040#
+# tx t=006.019s 13FFE040# note=bench-health harmless fake BCM presence echo probe
+(1780077845.516000) can0 13FFE040#
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

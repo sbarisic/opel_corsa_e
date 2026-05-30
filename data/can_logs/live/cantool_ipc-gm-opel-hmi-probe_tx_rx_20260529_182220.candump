@@ -1,0 +1,2487 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# waiting for first RX before starting TX
+(1780071741.351000) can0 13FFE060#
+# first RX observed; starting TX schedule
+# tx t=006.342s 100# note=priority baseline SWCAN wakeup after first IPC RX
+# tx t=006.342s 621#0140000000000000 note=priority baseline network-management initiate, three-frame burst
+# tx t=006.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=006.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=006.344s 10002040#03 note=priority baseline system power mode candidate
+(1780071741.356000) can0 100#
+(1780071741.356000) can0 621#0140000000000000
+(1780071741.356000) can0 621#0040000000000000
+(1780071741.356000) can0 13FFE040#
+(1780071741.358000) can0 10002040#03
+(1780071741.378000) can0 10244060#00
+(1780071741.378000) can0 103BC060#00
+(1780071741.378000) can0 10444060#00
+(1780071741.379000) can0 10448060#00
+(1780071741.380000) can0 1045C060#00
+(1780071741.382000) can0 10774060#00
+(1780071741.385000) can0 10A04060#00
+(1780071741.389000) can0 10ACE060#1E00000000000000
+(1780071741.393000) can0 10AE8060#030E010104050000
+(1780071741.410000) can0 10B0A060#001E04
+(1780071741.410000) can0 13FFE060#
+(1780071741.422000) can0 10AE8060#030E010104050000
+(1780071741.451000) can0 10AE8060#0016010800000000
+# tx t=006.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071741.458000) can0 10002040#03
+(1780071741.501000) can0 10ACE060#1E00000000000000
+(1780071741.504000) can0 10B0A060#002B04
+# tx t=006.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071741.554000) can0 10002040#03
+(1780071741.618000) can0 10ACE060#2B40000000000000
+(1780071741.631000) can0 10AFC060#38FFFFFFFFFFFF2B
+# tx t=006.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071741.666000) can0 10002040#03
+(1780071741.679000) can0 103D6060#00
+(1780071741.697000) can0 103DA060#00
+(1780071741.698000) can0 1045C060#40
+(1780071741.698000) can0 10812060#00
+(1780071741.698000) can0 1084A060#00
+(1780071741.728000) can0 62C#0040000000000000
+(1780071741.729000) can0 10244060#02
+(1780071741.729000) can0 10ACE060#2B00000000000000
+(1780071741.730000) can0 10424060#059964
+# tx t=006.747s 10002040#03 note=priority baseline system power mode candidate
+(1780071741.759000) can0 10002040#03
+(1780071741.829000) can0 10244060#02
+# tx t=006.843s 621#0140000000000000 note=priority baseline network-management initiate, three-frame burst
+# tx t=006.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071741.855000) can0 10ACE060#1E00200000000000
+(1780071741.855000) can0 621#0140000000000000
+(1780071741.855000) can0 10002040#03
+(1780071741.870000) can0 103BC060#00
+(1780071741.872000) can0 10448060#00
+(1780071741.875000) can0 1045C060#40
+(1780071741.877000) can0 10774060#00
+(1780071741.880000) can0 103D6060#00
+(1780071741.882000) can0 103DA060#00
+(1780071741.884000) can0 10812060#00
+(1780071741.901000) can0 1084A060#00
+(1780071741.902000) can0 10A04060#00
+(1780071741.902000) can0 10AE8060#030E010104050000
+(1780071741.932000) can0 10AE8060#0016010800000000
+(1780071741.932000) can0 10424060#059964
+(1780071741.939000) can0 10244060#02
+# tx t=006.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071741.964000) can0 10ACE060#1E00200000000000
+(1780071741.964000) can0 10002040#03
+# tx t=007.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.058000) can0 10002040#03
+(1780071742.061000) can0 10ACE060#2B00000000000000
+(1780071742.090000) can0 10AFC060#38FFFFFFFFFFFF2B
+# tx t=007.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.154000) can0 10002040#03
+# tx t=007.252s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.263000) can0 10002040#03
+# tx t=007.347s 621#0140000000000000 note=priority baseline network-management initiate, three-frame burst
+# tx t=007.348s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=007.348s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=007.348s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.360000) can0 621#0140000000000000
+(1780071742.360000) can0 621#0040000000000000
+(1780071742.360000) can0 13FFE040#
+(1780071742.363000) can0 10002040#03
+(1780071742.374000) can0 10244060#02
+(1780071742.391000) can0 103BC060#00
+(1780071742.391000) can0 10448060#00
+(1780071742.391000) can0 103D6060#00
+(1780071742.392000) can0 103DA060#00
+(1780071742.392000) can0 1045C060#40
+(1780071742.392000) can0 10774060#00
+(1780071742.392000) can0 10812060#00
+(1780071742.393000) can0 1084A060#00
+(1780071742.395000) can0 10A04060#00
+(1780071742.400000) can0 10ACE060#1E00200000000000
+(1780071742.404000) can0 10AE8060#030E010104050000
+(1780071742.431000) can0 10AE8060#0016010800000000
+# tx t=007.444s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.455000) can0 10002040#03
+(1780071742.519000) can0 10ACE060#2B00000000000000
+(1780071742.529000) can0 10424060#059964
+(1780071742.534000) can0 10AFC060#38FFFFFFFFFFFF2B
+(1780071742.559000) can0 10774060#00
+# tx t=007.556s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.567000) can0 10002040#03
+(1780071742.568000) can0 13FFE060#
+# tx t=007.651s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.663000) can0 10002040#03
+# tx t=007.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.755000) can0 10002040#03
+# tx t=007.855s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.867000) can0 10002040#03
+# tx t=007.950s 10002040#03 note=priority baseline system power mode candidate
+(1780071742.962000) can0 10002040#03
+# tx t=008.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.058000) can0 10002040#03
+# tx t=008.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.154000) can0 10002040#03
+# tx t=008.255s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.266000) can0 10002040#03
+# tx t=008.350s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=008.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=008.351s 10002040#03 note=priority baseline system power mode candidate
+# tx t=008.351s 24C#021003AAAAAAAAAA note=priority baseline IPC diagnostic extended-session sanity check; watch for 64C
+(1780071743.363000) can0 621#0040000000000000
+(1780071743.363000) can0 13FFE040#
+(1780071743.363000) can0 10002040#03
+(1780071743.366000) can0 24C#021003AAAAAAAAAA
+(1780071743.392000) can0 64C#0150AAAAAAAAAAAA
+# tx t=008.445s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.457000) can0 10002040#03
+(1780071743.534000) can0 10424060#079964
+# tx t=008.554s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.566000) can0 10002040#03
+# tx t=008.650s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.661000) can0 10002040#03
+# tx t=008.745s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.757000) can0 10002040#03
+(1780071743.768000) can0 13FFE060#
+# tx t=008.841s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.853000) can0 10002040#03
+# tx t=008.953s 10002040#03 note=priority baseline system power mode candidate
+(1780071743.965000) can0 10002040#03
+# tx t=009.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.060000) can0 10002040#03
+# tx t=009.144s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.156000) can0 10002040#03
+# tx t=009.256s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.267000) can0 10002040#03
+# tx t=009.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=009.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=009.351s 10002040#03 note=priority baseline system power mode candidate
+# tx t=009.351s 10022040#0000000000000000 note=GM low-speed GMLAN dimming information arbid 0x011 variant 1/3
+(1780071744.363000) can0 621#0040000000000000
+(1780071744.363000) can0 13FFE040#
+(1780071744.363000) can0 10002040#03
+(1780071744.366000) can0 10022040#0000000000000000
+# tx t=009.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.459000) can0 10002040#03
+# tx t=009.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.554000) can0 10002040#03
+# tx t=009.653s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.664000) can0 10002040#03
+(1780071744.727000) can0 62C#0040000000000000
+# tx t=009.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.760000) can0 10002040#03
+# tx t=009.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.855000) can0 10002040#03
+(1780071744.918000) can0 10244060#06
+# tx t=009.955s 10002040#03 note=priority baseline system power mode candidate
+(1780071744.967000) can0 10002040#03
+(1780071744.967000) can0 13FFE060#
+(1780071744.978000) can0 10424060#079964
+# tx t=010.049s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.060000) can0 10002040#03
+# tx t=010.144s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.156000) can0 10002040#03
+# tx t=010.256s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.267000) can0 10002040#03
+# tx t=010.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=010.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=010.351s 10002040#03 note=priority baseline system power mode candidate
+# tx t=010.352s 10022040#007F000000000000 note=GM low-speed GMLAN dimming information arbid 0x011 variant 2/3
+(1780071745.363000) can0 621#0040000000000000
+(1780071745.363000) can0 13FFE040#
+(1780071745.363000) can0 10002040#03
+(1780071745.366000) can0 10022040#007F000000000000
+# tx t=010.446s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.457000) can0 10002040#03
+# tx t=010.541s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.553000) can0 10002040#03
+# tx t=010.653s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.664000) can0 10002040#03
+# tx t=010.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.760000) can0 10002040#03
+# tx t=010.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.854000) can0 10002040#03
+# tx t=010.954s 10002040#03 note=priority baseline system power mode candidate
+(1780071745.966000) can0 10002040#03
+(1780071745.977000) can0 10424060#079964
+# tx t=011.050s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.061000) can0 10002040#03
+# tx t=011.145s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.157000) can0 10002040#03
+(1780071746.167000) can0 13FFE060#
+# tx t=011.257s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.268000) can0 10002040#03
+# tx t=011.352s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=011.352s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=011.352s 10002040#03 note=priority baseline system power mode candidate
+# tx t=011.353s 10022040#00FF000000000000 note=GM low-speed GMLAN dimming information arbid 0x011 variant 3/3
+(1780071746.364000) can0 621#0040000000000000
+(1780071746.364000) can0 13FFE040#
+(1780071746.364000) can0 10002040#03
+(1780071746.367000) can0 10022040#00FF000000000000
+(1780071746.370000) can0 10244060#06
+# tx t=011.446s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.457000) can0 10002040#03
+# tx t=011.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.553000) can0 10002040#03
+# tx t=011.653s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.665000) can0 10002040#03
+# tx t=011.747s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.758000) can0 10002040#03
+# tx t=011.842s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.854000) can0 10002040#03
+# tx t=011.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071746.964000) can0 10002040#03
+(1780071746.977000) can0 10424060#079964
+# tx t=012.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.058000) can0 10002040#03
+# tx t=012.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.153000) can0 10002040#03
+# tx t=012.253s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.265000) can0 10002040#03
+# tx t=012.349s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=012.349s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=012.349s 10002040#03 note=priority baseline system power mode candidate
+# tx t=012.349s 10022040#0000000000000000 note=GM low-speed GMLAN dimming information arbid 0x011 variant 1/3
+(1780071747.361000) can0 621#0040000000000000
+(1780071747.361000) can0 13FFE040#
+(1780071747.361000) can0 10002040#03
+(1780071747.364000) can0 10022040#0000000000000000
+(1780071747.375000) can0 13FFE060#
+# tx t=012.444s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.456000) can0 10002040#03
+# tx t=012.555s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.566000) can0 10002040#03
+# tx t=012.650s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.662000) can0 10002040#03
+(1780071747.725000) can0 62C#0040000000000000
+# tx t=012.746s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.757000) can0 10002040#03
+# tx t=012.841s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.853000) can0 10002040#03
+# tx t=012.951s 10002040#03 note=priority baseline system power mode candidate
+(1780071747.962000) can0 10002040#03
+(1780071747.976000) can0 10424060#079964
+# tx t=013.045s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.057000) can0 10002040#03
+# tx t=013.156s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.168000) can0 10002040#03
+# tx t=013.251s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.263000) can0 10002040#03
+# tx t=013.347s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=013.348s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=013.348s 10002040#03 note=priority baseline system power mode candidate
+# tx t=013.348s 10022040#007F000000000000 note=GM low-speed GMLAN dimming information arbid 0x011 variant 2/3
+(1780071748.359000) can0 621#0040000000000000
+(1780071748.360000) can0 13FFE040#
+(1780071748.360000) can0 10002040#03
+(1780071748.363000) can0 10022040#007F000000000000
+(1780071748.390000) can0 64C#0160AAAAAAAAAAAA
+# tx t=013.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.454000) can0 10002040#03
+# tx t=013.554s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.565000) can0 10002040#03
+(1780071748.565000) can0 13FFE060#
+# tx t=013.648s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.659000) can0 10002040#03
+# tx t=013.744s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.755000) can0 10002040#03
+# tx t=013.856s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.868000) can0 10002040#03
+# tx t=013.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071748.964000) can0 10002040#03
+(1780071748.976000) can0 10424060#079964
+# tx t=014.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.060000) can0 10002040#03
+# tx t=014.143s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.155000) can0 10002040#03
+# tx t=014.254s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.266000) can0 10002040#03
+# tx t=014.350s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=014.350s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=014.351s 10002040#03 note=priority baseline system power mode candidate
+# tx t=014.351s 10022040#00FF000000000000 note=GM low-speed GMLAN dimming information arbid 0x011 variant 3/3
+(1780071749.362000) can0 621#0040000000000000
+(1780071749.362000) can0 13FFE040#
+(1780071749.362000) can0 10002040#03
+(1780071749.365000) can0 10022040#00FF000000000000
+# tx t=014.446s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.458000) can0 10002040#03
+# tx t=014.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.554000) can0 10002040#03
+# tx t=014.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.666000) can0 10002040#03
+# tx t=014.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.762000) can0 10002040#03
+(1780071749.767000) can0 13FFE060#
+# tx t=014.847s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.858000) can0 10002040#03
+# tx t=014.943s 10002040#03 note=priority baseline system power mode candidate
+(1780071749.955000) can0 10002040#03
+# tx t=015.055s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.067000) can0 10002040#03
+# tx t=015.151s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.163000) can0 10002040#03
+# tx t=015.247s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.259000) can0 10002040#03
+# tx t=015.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=015.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=015.344s 10002040#03 note=priority baseline system power mode candidate
+# tx t=015.344s 0EB#0000 note=Opel 11-bit panel brightness byte-1 ramp reference variant 1/3
+(1780071750.355000) can0 621#0040000000000000
+(1780071750.355000) can0 13FFE040#
+(1780071750.356000) can0 10002040#03
+(1780071750.358000) can0 0EB#0000
+# tx t=015.456s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.467000) can0 10002040#03
+# tx t=015.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.562000) can0 10002040#03
+# tx t=015.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.658000) can0 10002040#03
+(1780071750.722000) can0 62C#0040000000000000
+# tx t=015.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.754000) can0 10002040#03
+# tx t=015.855s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.867000) can0 10002040#03
+# tx t=015.950s 10002040#03 note=priority baseline system power mode candidate
+(1780071750.962000) can0 10002040#03
+(1780071750.966000) can0 13FFE060#
+# tx t=016.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.057000) can0 10002040#03
+# tx t=016.155s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.167000) can0 10002040#03
+# tx t=016.251s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.263000) can0 10002040#03
+# tx t=016.347s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=016.347s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=016.348s 10002040#03 note=priority baseline system power mode candidate
+# tx t=016.348s 0EB#007F note=Opel 11-bit panel brightness byte-1 ramp reference variant 2/3
+(1780071751.359000) can0 621#0040000000000000
+(1780071751.359000) can0 13FFE040#
+(1780071751.359000) can0 10002040#03
+(1780071751.363000) can0 0EB#007F
+(1780071751.365000) can0 10244060#06
+# tx t=016.443s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.455000) can0 10002040#03
+# tx t=016.555s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.566000) can0 10002040#03
+# tx t=016.651s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.662000) can0 10002040#03
+# tx t=016.747s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.758000) can0 10002040#03
+# tx t=016.842s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.853000) can0 10002040#03
+# tx t=016.954s 10002040#03 note=priority baseline system power mode candidate
+(1780071751.966000) can0 10002040#03
+# tx t=017.050s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.062000) can0 10002040#03
+# tx t=017.146s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.158000) can0 10002040#03
+(1780071752.164000) can0 13FFE060#
+# tx t=017.241s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.253000) can0 10002040#03
+# tx t=017.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=017.352s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=017.352s 10002040#03 note=priority baseline system power mode candidate
+# tx t=017.352s 0EB#00FF note=Opel 11-bit panel brightness byte-1 ramp reference variant 3/3
+(1780071752.363000) can0 621#0040000000000000
+(1780071752.364000) can0 13FFE040#
+(1780071752.364000) can0 10002040#03
+(1780071752.367000) can0 0EB#00FF
+# tx t=017.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.459000) can0 10002040#03
+# tx t=017.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.554000) can0 10002040#03
+# tx t=017.654s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.665000) can0 10002040#03
+# tx t=017.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.759000) can0 10002040#03
+# tx t=017.841s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.852000) can0 10002040#03
+# tx t=017.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071752.964000) can0 10002040#03
+# tx t=018.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.060000) can0 10002040#03
+# tx t=018.143s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.155000) can0 10002040#03
+# tx t=018.255s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.267000) can0 10002040#03
+# tx t=018.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=018.352s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=018.352s 10002040#03 note=priority baseline system power mode candidate
+# tx t=018.352s 0EB#0000 note=Opel 11-bit panel brightness byte-1 ramp reference variant 1/3
+(1780071753.363000) can0 621#0040000000000000
+(1780071753.363000) can0 13FFE060#
+(1780071753.364000) can0 13FFE040#
+(1780071753.364000) can0 10002040#03
+(1780071753.367000) can0 0EB#0000
+# tx t=018.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.459000) can0 10002040#03
+# tx t=018.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.554000) can0 10002040#03
+# tx t=018.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.666000) can0 10002040#03
+(1780071753.730000) can0 62C#0040000000000000
+# tx t=018.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.763000) can0 10002040#03
+# tx t=018.847s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.858000) can0 10600060#01609370015B00
+(1780071753.859000) can0 10002040#03
+# tx t=018.943s 10002040#03 note=priority baseline system power mode candidate
+(1780071753.955000) can0 10002040#03
+# tx t=019.055s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.067000) can0 10002040#03
+# tx t=019.151s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.163000) can0 10002040#03
+# tx t=019.247s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.259000) can0 10002040#03
+# tx t=019.342s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=019.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=019.343s 10002040#03 note=priority baseline system power mode candidate
+# tx t=019.343s 0EB#007F note=Opel 11-bit panel brightness byte-1 ramp reference variant 2/3
+(1780071754.354000) can0 621#0040000000000000
+(1780071754.354000) can0 13FFE040#
+(1780071754.355000) can0 10002040#03
+(1780071754.358000) can0 0EB#007F
+# tx t=019.455s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.466000) can0 10002040#03
+# tx t=019.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.562000) can0 10002040#03
+(1780071754.562000) can0 13FFE060#
+# tx t=019.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.658000) can0 10002040#03
+# tx t=019.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.754000) can0 10002040#03
+# tx t=019.854s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.866000) can0 10002040#03
+# tx t=019.948s 10002040#03 note=priority baseline system power mode candidate
+(1780071754.962000) can0 10002040#03
+# tx t=020.044s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.056000) can0 10002040#03
+# tx t=020.156s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.168000) can0 10002040#03
+# tx t=020.252s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.264000) can0 10002040#03
+# tx t=020.346s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=020.347s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=020.347s 10002040#03 note=priority baseline system power mode candidate
+# tx t=020.347s 0EB#00FF note=Opel 11-bit panel brightness byte-1 ramp reference variant 3/3
+(1780071755.358000) can0 621#0040000000000000
+(1780071755.359000) can0 13FFE040#
+(1780071755.359000) can0 10002040#03
+(1780071755.362000) can0 0EB#00FF
+# tx t=020.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.454000) can0 10002040#03
+# tx t=020.553s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.564000) can0 10002040#03
+# tx t=020.649s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.660000) can0 10002040#03
+# tx t=020.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.754000) can0 10002040#03
+(1780071755.762000) can0 13FFE060#
+# tx t=020.855s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.866000) can0 10002040#03
+# tx t=020.950s 10002040#03 note=priority baseline system power mode candidate
+(1780071755.962000) can0 10002040#03
+# tx t=021.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.058000) can0 10002040#03
+# tx t=021.141s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.153000) can0 10002040#03
+# tx t=021.253s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.265000) can0 10002040#03
+# tx t=021.349s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=021.350s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=021.350s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.361000) can0 621#0040000000000000
+(1780071756.361000) can0 13FFE040#
+(1780071756.361000) can0 10002040#03
+(1780071756.362000) can0 10244060#06
+# tx t=021.445s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.457000) can0 10002040#03
+# tx t=021.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.553000) can0 10002040#03
+# tx t=021.654s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.665000) can0 10002040#03
+(1780071756.713000) can0 62C#0040000000000000
+# tx t=021.750s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.761000) can0 10002040#03
+# tx t=021.846s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.857000) can0 10002040#03
+# tx t=021.942s 10002040#03 note=priority baseline system power mode candidate
+(1780071756.954000) can0 10002040#03
+(1780071756.961000) can0 13FFE060#
+# tx t=022.054s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.066000) can0 10002040#03
+# tx t=022.149s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.161000) can0 10002040#03
+# tx t=022.245s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.257000) can0 10002040#03
+# tx t=022.341s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=022.342s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=022.342s 10002040#03 note=priority baseline system power mode candidate
+# tx t=022.342s 10438040#0100000000000000 note=Astra J / GM HMI steering-wheel volume up
+(1780071757.353000) can0 621#0040000000000000
+(1780071757.353000) can0 13FFE040#
+(1780071757.354000) can0 10002040#03
+(1780071757.357000) can0 10438040#0100000000000000
+# tx t=022.454s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.465000) can0 10002040#03
+# tx t=022.502s 10438040#0000000000000000 note=Astra J / GM HMI steering-wheel button release
+(1780071757.513000) can0 10438040#0000000000000000
+# tx t=022.550s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.561000) can0 10002040#03
+# tx t=022.646s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.657000) can0 10002040#03
+# tx t=022.741s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.753000) can0 10002040#03
+# tx t=022.852s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.864000) can0 10002040#03
+# tx t=022.948s 10002040#03 note=priority baseline system power mode candidate
+(1780071757.959000) can0 10002040#03
+# tx t=023.041s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.053000) can0 10002040#03
+(1780071758.161000) can0 13FFE060#
+# tx t=023.153s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.164000) can0 10002040#03
+# tx t=023.248s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.260000) can0 10002040#03
+# tx t=023.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=023.344s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=023.344s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.355000) can0 621#0040000000000000
+(1780071758.355000) can0 13FFE040#
+(1780071758.355000) can0 10002040#03
+# tx t=023.456s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.467000) can0 10002040#03
+# tx t=023.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.562000) can0 10002040#03
+# tx t=023.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.658000) can0 10002040#03
+# tx t=023.742s 10002040#03 note=priority baseline system power mode candidate
+# tx t=023.742s 10438040#0200000000000000 note=Astra J / GM HMI steering-wheel volume down
+(1780071758.754000) can0 10002040#03
+(1780071758.754000) can0 10438040#0200000000000000
+# tx t=023.854s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.865000) can0 10002040#03
+# tx t=023.901s 10438040#0000000000000000 note=Astra J / GM HMI steering-wheel button release
+(1780071758.913000) can0 10438040#0000000000000000
+# tx t=023.949s 10002040#03 note=priority baseline system power mode candidate
+(1780071758.961000) can0 10002040#03
+# tx t=024.045s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.057000) can0 10002040#03
+# tx t=024.155s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.167000) can0 10002040#03
+# tx t=024.251s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.263000) can0 10002040#03
+# tx t=024.346s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=024.347s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=024.347s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.358000) can0 621#0040000000000000
+(1780071759.359000) can0 13FFE040#
+(1780071759.359000) can0 10002040#03
+(1780071759.360000) can0 13FFE060#
+# tx t=024.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.454000) can0 10002040#03
+# tx t=024.555s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.566000) can0 10002040#03
+# tx t=024.651s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.662000) can0 10002040#03
+(1780071759.726000) can0 62C#0040000000000000
+# tx t=024.747s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.759000) can0 10002040#03
+# tx t=024.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.854000) can0 10002040#03
+# tx t=024.955s 10002040#03 note=priority baseline system power mode candidate
+(1780071759.967000) can0 10002040#03
+# tx t=025.051s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.063000) can0 10002040#03
+# tx t=025.146s 10002040#03 note=priority baseline system power mode candidate
+# tx t=025.146s 10438040#0300000000000000 note=Astra J / GM HMI steering-wheel next track
+(1780071760.158000) can0 10002040#03
+(1780071760.158000) can0 10438040#0300000000000000
+# tx t=025.242s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.254000) can0 10002040#03
+# tx t=025.306s 10438040#0000000000000000 note=Astra J / GM HMI steering-wheel button release
+(1780071760.318000) can0 10438040#0000000000000000
+# tx t=025.354s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=025.355s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=025.355s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.366000) can0 621#0040000000000000
+(1780071760.366000) can0 13FFE040#
+(1780071760.366000) can0 10002040#03
+# tx t=025.450s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.462000) can0 10002040#03
+# tx t=025.547s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.558000) can0 10002040#03
+(1780071760.559000) can0 13FFE060#
+# tx t=025.643s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.654000) can0 10002040#03
+# tx t=025.755s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.766000) can0 10002040#03
+# tx t=025.851s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.862000) can0 10002040#03
+# tx t=025.946s 10002040#03 note=priority baseline system power mode candidate
+(1780071760.958000) can0 10002040#03
+# tx t=026.042s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.054000) can0 10002040#03
+# tx t=026.154s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.166000) can0 10002040#03
+# tx t=026.249s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.261000) can0 10002040#03
+# tx t=026.345s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=026.345s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=026.345s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.356000) can0 621#0040000000000000
+(1780071761.357000) can0 13FFE040#
+(1780071761.357000) can0 10002040#03
+(1780071761.362000) can0 10244060#06
+# tx t=026.456s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.468000) can0 10002040#03
+# tx t=026.551s 10002040#03 note=priority baseline system power mode candidate
+# tx t=026.551s 10438040#0400000000000000 note=Astra J / GM HMI steering-wheel previous track
+(1780071761.562000) can0 10002040#03
+(1780071761.562000) can0 10438040#0400000000000000
+# tx t=026.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.658000) can0 10002040#03
+# tx t=026.695s 10438040#0000000000000000 note=Astra J / GM HMI steering-wheel button release
+(1780071761.706000) can0 10438040#0000000000000000
+# tx t=026.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.754000) can0 10002040#03
+(1780071761.759000) can0 13FFE060#
+# tx t=026.855s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.867000) can0 10002040#03
+# tx t=026.951s 10002040#03 note=priority baseline system power mode candidate
+(1780071761.963000) can0 10002040#03
+# tx t=027.047s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.059000) can0 10002040#03
+# tx t=027.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.154000) can0 10002040#03
+# tx t=027.254s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.266000) can0 10002040#03
+# tx t=027.349s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=027.350s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=027.350s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.361000) can0 621#0040000000000000
+(1780071762.361000) can0 13FFE040#
+(1780071762.361000) can0 10002040#03
+# tx t=027.445s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.457000) can0 10002040#03
+# tx t=027.557s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.568000) can0 10002040#03
+# tx t=027.653s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.664000) can0 10002040#03
+(1780071762.710000) can0 62C#0040000000000000
+# tx t=027.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.759000) can0 10002040#03
+# tx t=027.844s 10002040#03 note=priority baseline system power mode candidate
+(1780071762.855000) can0 10002040#03
+(1780071762.958000) can0 13FFE060#
+# tx t=027.955s 10002040#03 note=priority baseline system power mode candidate
+# tx t=027.955s 10438040#0500000000000000 note=Astra J / GM HMI steering-wheel source
+(1780071762.967000) can0 10002040#03
+(1780071762.967000) can0 10438040#0500000000000000
+# tx t=028.051s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.063000) can0 10002040#03
+# tx t=028.099s 10438040#0000000000000000 note=Astra J / GM HMI steering-wheel button release
+(1780071763.111000) can0 10438040#0000000000000000
+# tx t=028.147s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.159000) can0 10002040#03
+# tx t=028.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.255000) can0 10002040#03
+# tx t=028.355s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=028.356s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=028.356s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.367000) can0 621#0040000000000000
+(1780071763.368000) can0 13FFE040#
+(1780071763.368000) can0 10002040#03
+# tx t=028.451s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.463000) can0 10002040#03
+# tx t=028.548s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.559000) can0 10002040#03
+# tx t=028.644s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.655000) can0 10002040#03
+# tx t=028.755s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.766000) can0 10002040#03
+# tx t=028.851s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.862000) can0 10002040#03
+# tx t=028.945s 10002040#03 note=priority baseline system power mode candidate
+(1780071763.957000) can0 10002040#03
+# tx t=029.041s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.053000) can0 10002040#03
+(1780071764.158000) can0 13FFE060#
+# tx t=029.152s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.164000) can0 10002040#03
+# tx t=029.247s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.259000) can0 10002040#03
+# tx t=029.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=029.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=029.343s 10002040#03 note=priority baseline system power mode candidate
+# tx t=029.343s 10438040#0600000000000000 note=Astra J / GM HMI steering-wheel voice
+(1780071764.355000) can0 621#0040000000000000
+(1780071764.355000) can0 13FFE040#
+(1780071764.355000) can0 10002040#03
+(1780071764.358000) can0 10438040#0600000000000000
+# tx t=029.455s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.466000) can0 10002040#03
+# tx t=029.503s 10438040#0000000000000000 note=Astra J / GM HMI steering-wheel button release
+(1780071764.514000) can0 10438040#0000000000000000
+# tx t=029.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.562000) can0 10002040#03
+# tx t=029.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.658000) can0 10002040#03
+# tx t=029.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.754000) can0 10002040#03
+# tx t=029.855s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.867000) can0 10002040#03
+# tx t=029.950s 10002040#03 note=priority baseline system power mode candidate
+(1780071764.962000) can0 10002040#03
+# tx t=030.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.058000) can0 10002040#03
+# tx t=030.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.154000) can0 10002040#03
+# tx t=030.254s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.266000) can0 10002040#03
+# tx t=030.350s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=030.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=030.351s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.362000) can0 13FFE060#
+(1780071765.362000) can0 621#0040000000000000
+(1780071765.363000) can0 13FFE040#
+(1780071765.363000) can0 10002040#03
+# tx t=030.446s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.458000) can0 10002040#03
+# tx t=030.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.554000) can0 10002040#03
+# tx t=030.654s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.665000) can0 10002040#03
+(1780071765.708000) can0 62C#0040000000000000
+# tx t=030.749s 10002040#03 note=priority baseline system power mode candidate
+# tx t=030.749s 10438040#0700000000000000 note=Astra J / GM HMI steering-wheel mute
+(1780071765.761000) can0 10002040#03
+(1780071765.761000) can0 10438040#0700000000000000
+# tx t=030.845s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.856000) can0 10002040#03
+# tx t=030.892s 10438040#0000000000000000 note=Astra J / GM HMI steering-wheel button release
+(1780071765.904000) can0 10438040#0000000000000000
+# tx t=030.956s 10002040#03 note=priority baseline system power mode candidate
+(1780071765.968000) can0 10002040#03
+# tx t=031.051s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.063000) can0 10002040#03
+# tx t=031.147s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.159000) can0 10002040#03
+# tx t=031.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.255000) can0 10002040#03
+(1780071766.357000) can0 10244060#06
+# tx t=031.354s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=031.355s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=031.355s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.366000) can0 621#0040000000000000
+(1780071766.366000) can0 13FFE040#
+(1780071766.367000) can0 10002040#03
+# tx t=031.450s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.462000) can0 10002040#03
+# tx t=031.545s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.557000) can0 13FFE060#
+(1780071766.557000) can0 10002040#03
+# tx t=031.657s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.668000) can0 10002040#03
+# tx t=031.752s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.763000) can0 10002040#03
+# tx t=031.847s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.859000) can0 10002040#03
+# tx t=031.943s 10002040#03 note=priority baseline system power mode candidate
+(1780071766.954000) can0 10002040#03
+# tx t=032.053s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.065000) can0 10002040#03
+# tx t=032.148s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.159000) can0 10002040#03
+# tx t=032.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.255000) can0 10002040#03
+# tx t=032.355s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=032.355s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=032.355s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.367000) can0 621#0040000000000000
+(1780071767.367000) can0 13FFE040#
+(1780071767.367000) can0 10002040#03
+# tx t=032.450s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.462000) can0 10002040#03
+# tx t=032.544s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.555000) can0 10002040#03
+# tx t=032.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.667000) can0 10002040#03
+# tx t=032.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.763000) can0 13FFE060#
+(1780071767.763000) can0 10002040#03
+# tx t=032.846s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.858000) can0 10002040#03
+# tx t=032.942s 10002040#03 note=priority baseline system power mode candidate
+(1780071767.954000) can0 10002040#03
+# tx t=033.053s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.064000) can0 10002040#03
+# tx t=033.147s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.159000) can0 10002040#03
+# tx t=033.241s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.253000) can0 10002040#03
+# tx t=033.353s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=033.353s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=033.353s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.365000) can0 621#0040000000000000
+(1780071768.365000) can0 13FFE040#
+(1780071768.365000) can0 10002040#03
+# tx t=033.449s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.460000) can0 10002040#03
+# tx t=033.544s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.556000) can0 10002040#03
+# tx t=033.656s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.667000) can0 10002040#03
+(1780071768.707000) can0 62C#0040000000000000
+# tx t=033.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.763000) can0 10002040#03
+# tx t=033.847s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.858000) can0 10002040#03
+# tx t=033.942s 10002040#03 note=priority baseline system power mode candidate
+(1780071768.954000) can0 10002040#03
+(1780071768.955000) can0 13FFE060#
+# tx t=034.052s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.063000) can0 10002040#03
+# tx t=034.147s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.159000) can0 10002040#03
+# tx t=034.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.254000) can0 10002040#03
+# tx t=034.354s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=034.354s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=034.355s 10002040#03 note=priority baseline system power mode candidate
+# tx t=034.355s 10754040#0400000000000000 note=Astra J key-present context candidate
+(1780071769.366000) can0 621#0040000000000000
+(1780071769.366000) can0 13FFE040#
+(1780071769.366000) can0 10002040#03
+(1780071769.369000) can0 10754040#0400000000000000
+# tx t=034.451s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.462000) can0 10002040#03
+# tx t=034.545s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.557000) can0 10002040#03
+# tx t=034.656s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.667000) can0 10002040#03
+# tx t=034.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.763000) can0 10002040#03
+# tx t=034.846s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.857000) can0 10002040#03
+# tx t=034.941s 10002040#03 note=priority baseline system power mode candidate
+(1780071769.953000) can0 10002040#03
+# tx t=035.053s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.065000) can0 10002040#03
+# tx t=035.148s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.160000) can0 13FFE060#
+(1780071770.160000) can0 10002040#03
+# tx t=035.244s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.255000) can0 10002040#03
+# tx t=035.355s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=035.355s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=035.356s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.367000) can0 621#0040000000000000
+(1780071770.367000) can0 13FFE040#
+(1780071770.367000) can0 10002040#03
+# tx t=035.451s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.462000) can0 10002040#03
+# tx t=035.546s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.558000) can0 10002040#03
+# tx t=035.642s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.653000) can0 10002040#03
+# tx t=035.753s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.765000) can0 10002040#03
+# tx t=035.849s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.860000) can0 10002040#03
+# tx t=035.944s 10002040#03 note=priority baseline system power mode candidate
+(1780071770.956000) can0 10002040#03
+# tx t=036.056s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.068000) can0 10002040#03
+# tx t=036.152s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.164000) can0 10002040#03
+# tx t=036.247s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.259000) can0 10002040#03
+# tx t=036.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=036.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=036.343s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.355000) can0 10244060#06
+(1780071771.355000) can0 621#0040000000000000
+(1780071771.355000) can0 13FFE040#
+(1780071771.355000) can0 10002040#03
+(1780071771.356000) can0 13FFE060#
+# tx t=036.455s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.467000) can0 10002040#03
+# tx t=036.550s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.562000) can0 10002040#03
+# tx t=036.646s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.658000) can0 10002040#03
+(1780071771.705000) can0 62C#0040000000000000
+# tx t=036.742s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.754000) can0 10002040#03
+# tx t=036.854s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.865000) can0 10002040#03
+# tx t=036.950s 10002040#03 note=priority baseline system power mode candidate
+(1780071771.961000) can0 10002040#03
+# tx t=037.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.058000) can0 10002040#03
+# tx t=037.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.154000) can0 10002040#03
+# tx t=037.254s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.266000) can0 10002040#03
+# tx t=037.350s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=037.350s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=037.350s 10002040#03 note=priority baseline system power mode candidate
+# tx t=037.351s 10754040#0000000000000000 note=Astra J key-present context clear/no-key candidate
+(1780071772.362000) can0 621#0040000000000000
+(1780071772.363000) can0 13FFE040#
+(1780071772.363000) can0 10002040#03
+(1780071772.365000) can0 10754040#0000000000000000
+# tx t=037.445s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.457000) can0 10002040#03
+# tx t=037.541s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.553000) can0 10002040#03
+(1780071772.553000) can0 13FFE060#
+# tx t=037.652s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.663000) can0 10002040#03
+# tx t=037.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.759000) can0 10002040#03
+# tx t=037.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.854000) can0 10002040#03
+# tx t=037.957s 10002040#03 note=priority baseline system power mode candidate
+(1780071772.968000) can0 10002040#03
+# tx t=038.051s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.062000) can0 10002040#03
+# tx t=038.146s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.158000) can0 10002040#03
+# tx t=038.241s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.253000) can0 10002040#03
+# tx t=038.353s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=038.353s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=038.353s 10002040#03 note=priority baseline system power mode candidate
+# tx t=038.353s 10630040#0100000000000000 note=Astra J tentative driver-door/body-state candidate
+(1780071773.365000) can0 621#0040000000000000
+(1780071773.365000) can0 13FFE040#
+(1780071773.365000) can0 10002040#03
+(1780071773.368000) can0 10630040#0100000000000000
+# tx t=038.444s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.456000) can0 10002040#03
+# tx t=038.556s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.568000) can0 10002040#03
+# tx t=038.650s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.662000) can0 10002040#03
+# tx t=038.746s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.757000) can0 13FFE060#
+(1780071773.757000) can0 10002040#03
+# tx t=038.856s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.868000) can0 10002040#03
+# tx t=038.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071773.963000) can0 10002040#03
+# tx t=039.047s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.059000) can0 10002040#03
+# tx t=039.143s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.155000) can0 10002040#03
+# tx t=039.255s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.267000) can0 10002040#03
+# tx t=039.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=039.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=039.352s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.363000) can0 621#0040000000000000
+(1780071774.363000) can0 13FFE040#
+(1780071774.364000) can0 10002040#03
+# tx t=039.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.458000) can0 10002040#03
+# tx t=039.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.554000) can0 10002040#03
+# tx t=039.654s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.666000) can0 10002040#03
+(1780071774.703000) can0 62C#0040000000000000
+# tx t=039.749s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.761000) can0 10002040#03
+# tx t=039.844s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.855000) can0 10002040#03
+(1780071774.952000) can0 13FFE060#
+# tx t=039.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071774.964000) can0 10002040#03
+# tx t=040.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.057000) can0 10002040#03
+# tx t=040.141s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.153000) can0 10002040#03
+# tx t=040.254s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.265000) can0 10002040#03
+# tx t=040.349s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=040.349s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=040.349s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.361000) can0 621#0040000000000000
+(1780071775.361000) can0 13FFE040#
+(1780071775.361000) can0 10002040#03
+# tx t=040.445s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.456000) can0 10002040#03
+# tx t=040.555s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.567000) can0 10002040#03
+# tx t=040.651s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.662000) can0 10002040#03
+# tx t=040.746s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.758000) can0 10002040#03
+# tx t=040.842s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.853000) can0 10002040#03
+# tx t=040.954s 10002040#03 note=priority baseline system power mode candidate
+(1780071775.965000) can0 10002040#03
+# tx t=041.049s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.061000) can0 10002040#03
+# tx t=041.145s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.156000) can0 13FFE060#
+(1780071776.157000) can0 10002040#03
+# tx t=041.256s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.268000) can0 10002040#03
+# tx t=041.352s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=041.352s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=041.352s 10002040#03 note=priority baseline system power mode candidate
+# tx t=041.352s 10630040#0000000000000000 note=Astra J tentative driver-door/body-state clear
+(1780071776.364000) can0 10244060#06
+(1780071776.364000) can0 621#0040000000000000
+(1780071776.364000) can0 13FFE040#
+(1780071776.364000) can0 10002040#03
+(1780071776.367000) can0 10630040#0000000000000000
+# tx t=041.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.459000) can0 10002040#03
+# tx t=041.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.554000) can0 10002040#03
+# tx t=041.654s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.666000) can0 10002040#03
+# tx t=041.750s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.761000) can0 10002040#03
+# tx t=041.845s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.857000) can0 10002040#03
+# tx t=041.941s 10002040#03 note=priority baseline system power mode candidate
+(1780071776.952000) can0 10002040#03
+# tx t=042.051s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.063000) can0 10002040#03
+# tx t=042.147s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.158000) can0 10002040#03
+# tx t=042.256s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.268000) can0 10002040#03
+# tx t=042.352s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=042.352s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=042.352s 10002040#03 note=priority baseline system power mode candidate
+# tx t=042.352s 10414040#0100000000000000 note=Astra J tentative central-lock/body-state candidate
+(1780071777.364000) can0 13FFE060#
+(1780071777.364000) can0 621#0040000000000000
+(1780071777.364000) can0 13FFE040#
+(1780071777.364000) can0 10002040#03
+(1780071777.367000) can0 10414040#0100000000000000
+# tx t=042.448s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.459000) can0 10002040#03
+# tx t=042.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.555000) can0 10002040#03
+# tx t=042.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.667000) can0 10002040#03
+(1780071777.702000) can0 62C#0040000000000000
+# tx t=042.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.762000) can0 10002040#03
+# tx t=042.846s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.858000) can0 10002040#03
+# tx t=042.942s 10002040#03 note=priority baseline system power mode candidate
+(1780071777.953000) can0 10002040#03
+# tx t=043.054s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.066000) can0 10002040#03
+# tx t=043.150s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.161000) can0 10002040#03
+# tx t=043.244s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.256000) can0 10002040#03
+# tx t=043.356s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=043.356s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=043.356s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.368000) can0 621#0040000000000000
+(1780071778.368000) can0 13FFE040#
+(1780071778.368000) can0 10002040#03
+# tx t=043.450s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.462000) can0 10002040#03
+# tx t=043.546s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.558000) can0 13FFE060#
+(1780071778.558000) can0 10002040#03
+# tx t=043.642s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.654000) can0 10002040#03
+# tx t=043.754s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.765000) can0 10002040#03
+# tx t=043.849s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.861000) can0 10002040#03
+# tx t=043.945s 10002040#03 note=priority baseline system power mode candidate
+(1780071778.956000) can0 10002040#03
+# tx t=044.041s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.052000) can0 10002040#03
+# tx t=044.153s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.165000) can0 10002040#03
+# tx t=044.249s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.261000) can0 10002040#03
+# tx t=044.345s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=044.345s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=044.345s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.357000) can0 621#0040000000000000
+(1780071779.357000) can0 13FFE040#
+(1780071779.357000) can0 10002040#03
+# tx t=044.441s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.453000) can0 10002040#03
+# tx t=044.552s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.564000) can0 10002040#03
+# tx t=044.648s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.660000) can0 10002040#03
+# tx t=044.744s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.756000) can0 13FFE060#
+(1780071779.756000) can0 10002040#03
+# tx t=044.856s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.867000) can0 10002040#03
+# tx t=044.951s 10002040#03 note=priority baseline system power mode candidate
+(1780071779.962000) can0 10002040#03
+# tx t=045.047s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.058000) can0 10002040#03
+# tx t=045.143s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.154000) can0 10002040#03
+# tx t=045.254s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.266000) can0 10002040#03
+# tx t=045.350s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=045.350s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=045.350s 10002040#03 note=priority baseline system power mode candidate
+# tx t=045.351s 10414040#0000000000000000 note=Astra J tentative central-lock/body-state clear
+(1780071780.362000) can0 621#0040000000000000
+(1780071780.362000) can0 13FFE040#
+(1780071780.362000) can0 10002040#03
+(1780071780.365000) can0 10414040#0000000000000000
+# tx t=045.446s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.458000) can0 10002040#03
+# tx t=045.555s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.567000) can0 10002040#03
+# tx t=045.651s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.663000) can0 10002040#03
+(1780071780.701000) can0 62C#0040000000000000
+# tx t=045.746s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.758000) can0 10002040#03
+# tx t=045.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.854000) can0 10002040#03
+(1780071780.950000) can0 13FFE060#
+# tx t=045.955s 10002040#03 note=priority baseline system power mode candidate
+(1780071780.966000) can0 10002040#03
+# tx t=046.051s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.062000) can0 10002040#03
+# tx t=046.146s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.157000) can0 10002040#03
+# tx t=046.242s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.254000) can0 10002040#03
+(1780071781.349000) can0 10244060#06
+# tx t=046.354s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=046.354s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=046.354s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.366000) can0 621#0040000000000000
+(1780071781.366000) can0 13FFE040#
+(1780071781.366000) can0 10002040#03
+# tx t=046.449s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.461000) can0 10002040#03
+# tx t=046.545s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.557000) can0 10002040#03
+# tx t=046.641s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.653000) can0 10002040#03
+# tx t=046.753s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.764000) can0 10002040#03
+# tx t=046.848s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.860000) can0 10002040#03
+# tx t=046.944s 10002040#03 note=priority baseline system power mode candidate
+(1780071781.955000) can0 10002040#03
+# tx t=047.056s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.067000) can0 10002040#03
+# tx t=047.152s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.163000) can0 13FFE060#
+(1780071782.163000) can0 10002040#03
+# tx t=047.245s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.257000) can0 10002040#03
+# tx t=047.356s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=047.356s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=047.357s 10002040#03 note=priority baseline system power mode candidate
+# tx t=047.357s 0AA#600000 note=Corsa D Opel key/ignition byte-0 reference variant 1/3
+(1780071782.368000) can0 621#0040000000000000
+(1780071782.368000) can0 13FFE040#
+(1780071782.369000) can0 10002040#03
+(1780071782.371000) can0 0AA#600000
+# tx t=047.452s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.464000) can0 10002040#03
+# tx t=047.545s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.557000) can0 10002040#03
+# tx t=047.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.667000) can0 10002040#03
+# tx t=047.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.763000) can0 10002040#03
+# tx t=047.846s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.857000) can0 10002040#03
+# tx t=047.942s 10002040#03 note=priority baseline system power mode candidate
+(1780071782.953000) can0 10002040#03
+# tx t=048.053s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.065000) can0 10002040#03
+# tx t=048.148s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.160000) can0 10002040#03
+# tx t=048.244s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.256000) can0 10002040#03
+(1780071783.349000) can0 13FFE060#
+# tx t=048.354s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=048.354s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=048.355s 10002040#03 note=priority baseline system power mode candidate
+# tx t=048.355s 0AA#740000 note=Corsa D Opel key/ignition byte-0 reference variant 2/3
+(1780071783.366000) can0 621#0040000000000000
+(1780071783.366000) can0 13FFE040#
+(1780071783.366000) can0 10002040#03
+(1780071783.369000) can0 0AA#740000
+# tx t=048.450s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.462000) can0 10002040#03
+# tx t=048.545s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.557000) can0 10002040#03
+# tx t=048.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.667000) can0 10002040#03
+(1780071783.699000) can0 62C#0040000000000000
+# tx t=048.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.763000) can0 10002040#03
+# tx t=048.847s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.858000) can0 10002040#03
+# tx t=048.943s 10002040#03 note=priority baseline system power mode candidate
+(1780071783.954000) can0 10002040#03
+# tx t=049.055s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.066000) can0 10002040#03
+# tx t=049.150s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.162000) can0 10002040#03
+# tx t=049.246s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.258000) can0 10002040#03
+# tx t=049.341s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=049.341s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=049.341s 10002040#03 note=priority baseline system power mode candidate
+# tx t=049.342s 0AA#760000 note=Corsa D Opel key/ignition byte-0 reference variant 3/3
+(1780071784.353000) can0 621#0040000000000000
+(1780071784.353000) can0 13FFE040#
+(1780071784.354000) can0 10002040#03
+(1780071784.356000) can0 0AA#760000
+# tx t=049.453s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.465000) can0 10002040#03
+# tx t=049.549s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.561000) can0 13FFE060#
+(1780071784.561000) can0 10002040#03
+# tx t=049.645s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.657000) can0 10002040#03
+# tx t=049.741s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.753000) can0 10002040#03
+# tx t=049.854s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.865000) can0 10002040#03
+# tx t=049.950s 10002040#03 note=priority baseline system power mode candidate
+(1780071784.961000) can0 10002040#03
+# tx t=050.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.057000) can0 10002040#03
+# tx t=050.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.153000) can0 10002040#03
+# tx t=050.253s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.265000) can0 10002040#03
+# tx t=050.349s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=050.349s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=050.349s 10002040#03 note=priority baseline system power mode candidate
+# tx t=050.350s 0AA#600000 note=Corsa D Opel key/ignition byte-0 reference variant 1/3
+(1780071785.361000) can0 621#0040000000000000
+(1780071785.361000) can0 13FFE040#
+(1780071785.361000) can0 10002040#03
+(1780071785.364000) can0 0AA#600000
+# tx t=050.445s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.457000) can0 10002040#03
+# tx t=050.556s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.568000) can0 10002040#03
+# tx t=050.652s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.664000) can0 10002040#03
+# tx t=050.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.760000) can0 13FFE060#
+(1780071785.760000) can0 10002040#03
+# tx t=050.844s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.855000) can0 10002040#03
+# tx t=050.956s 10002040#03 note=priority baseline system power mode candidate
+(1780071785.967000) can0 10002040#03
+# tx t=051.051s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.063000) can0 10002040#03
+# tx t=051.147s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.158000) can0 10002040#03
+# tx t=051.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.255000) can0 10002040#03
+(1780071786.350000) can0 10244060#06
+# tx t=051.355s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=051.355s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=051.355s 10002040#03 note=priority baseline system power mode candidate
+# tx t=051.356s 0AA#740000 note=Corsa D Opel key/ignition byte-0 reference variant 2/3
+(1780071786.367000) can0 621#0040000000000000
+(1780071786.367000) can0 13FFE040#
+(1780071786.367000) can0 10002040#03
+(1780071786.370000) can0 0AA#740000
+# tx t=051.451s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.463000) can0 10002040#03
+# tx t=051.547s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.559000) can0 10002040#03
+# tx t=051.643s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.655000) can0 10002040#03
+(1780071786.697000) can0 62C#0040000000000000
+# tx t=051.755s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.766000) can0 10002040#03
+# tx t=051.850s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.862000) can0 10002040#03
+# tx t=051.947s 10002040#03 note=priority baseline system power mode candidate
+(1780071786.958000) can0 13FFE060#
+(1780071786.958000) can0 10002040#03
+# tx t=052.043s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.054000) can0 10002040#03
+# tx t=052.154s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.166000) can0 10002040#03
+# tx t=052.250s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.262000) can0 10002040#03
+# tx t=052.345s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=052.345s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=052.345s 10002040#03 note=priority baseline system power mode candidate
+# tx t=052.346s 0AA#760000 note=Corsa D Opel key/ignition byte-0 reference variant 3/3
+(1780071787.357000) can0 621#0040000000000000
+(1780071787.357000) can0 13FFE040#
+(1780071787.357000) can0 10002040#03
+(1780071787.360000) can0 0AA#760000
+# tx t=052.456s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.468000) can0 10002040#03
+# tx t=052.552s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.564000) can0 10002040#03
+# tx t=052.648s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.660000) can0 10002040#03
+# tx t=052.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.755000) can0 10002040#03
+# tx t=052.856s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.867000) can0 10002040#03
+# tx t=052.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071787.963000) can0 10002040#03
+# tx t=053.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.059000) can0 10002040#03
+# tx t=053.144s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.155000) can0 13FFE060#
+(1780071788.156000) can0 10002040#03
+# tx t=053.255s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.267000) can0 10002040#03
+# tx t=053.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=053.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=053.351s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.363000) can0 621#0040000000000000
+(1780071788.363000) can0 13FFE040#
+(1780071788.363000) can0 10002040#03
+# tx t=053.444s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.456000) can0 10002040#03
+# tx t=053.556s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.568000) can0 10002040#03
+# tx t=053.651s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.663000) can0 10002040#03
+# tx t=053.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.759000) can0 10002040#03
+# tx t=053.844s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.855000) can0 10002040#03
+# tx t=053.956s 10002040#03 note=priority baseline system power mode candidate
+(1780071788.968000) can0 10002040#03
+# tx t=054.052s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.063000) can0 10002040#03
+# tx t=054.148s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.159000) can0 10002040#03
+# tx t=054.244s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.256000) can0 10002040#03
+(1780071789.351000) can0 13FFE060#
+# tx t=054.356s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=054.356s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=054.356s 10002040#03 note=priority baseline system power mode candidate
+# tx t=054.356s 131#000000 note=Corsa D Opel exterior-light switch byte-2 reference variant 1/5
+(1780071789.368000) can0 621#0040000000000000
+(1780071789.368000) can0 13FFE040#
+(1780071789.368000) can0 10002040#03
+(1780071789.371000) can0 131#000000
+# tx t=054.452s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.464000) can0 10002040#03
+# tx t=054.548s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.560000) can0 10002040#03
+# tx t=054.644s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.656000) can0 10002040#03
+(1780071789.696000) can0 62C#0040000000000000
+# tx t=054.757s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.768000) can0 10002040#03
+# tx t=054.852s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.864000) can0 10002040#03
+# tx t=054.948s 10002040#03 note=priority baseline system power mode candidate
+(1780071789.959000) can0 10002040#03
+# tx t=055.044s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.055000) can0 10002040#03
+# tx t=055.156s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.168000) can0 10002040#03
+# tx t=055.252s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.264000) can0 10002040#03
+# tx t=055.348s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=055.348s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=055.348s 10002040#03 note=priority baseline system power mode candidate
+# tx t=055.348s 131#000040 note=Corsa D Opel exterior-light switch byte-2 reference variant 2/5
+(1780071790.360000) can0 621#0040000000000000
+(1780071790.360000) can0 13FFE040#
+(1780071790.360000) can0 10002040#03
+(1780071790.363000) can0 131#000040
+# tx t=055.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.454000) can0 10002040#03
+(1780071790.547000) can0 13FFE060#
+# tx t=055.550s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.562000) can0 10002040#03
+# tx t=055.646s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.658000) can0 10002040#03
+# tx t=055.742s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.754000) can0 10002040#03
+# tx t=055.854s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.865000) can0 10002040#03
+# tx t=055.949s 10002040#03 note=priority baseline system power mode candidate
+(1780071790.960000) can0 10002040#03
+# tx t=056.043s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.054000) can0 10002040#03
+# tx t=056.154s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.166000) can0 10002040#03
+# tx t=056.250s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.262000) can0 10002040#03
+# tx t=056.346s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=056.346s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=056.346s 10002040#03 note=priority baseline system power mode candidate
+# tx t=056.347s 131#000080 note=Corsa D Opel exterior-light switch byte-2 reference variant 3/5
+(1780071791.358000) can0 10244060#06
+(1780071791.358000) can0 621#0040000000000000
+(1780071791.358000) can0 13FFE040#
+(1780071791.358000) can0 10002040#03
+(1780071791.361000) can0 131#000080
+# tx t=056.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.454000) can0 10002040#03
+# tx t=056.554s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.566000) can0 10002040#03
+# tx t=056.650s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.662000) can0 10002040#03
+# tx t=056.745s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.757000) can0 13FFE060#
+(1780071791.757000) can0 10002040#03
+# tx t=056.842s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.853000) can0 10002040#03
+# tx t=056.954s 10002040#03 note=priority baseline system power mode candidate
+(1780071791.966000) can0 10002040#03
+# tx t=057.050s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.061000) can0 10002040#03
+# tx t=057.146s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.157000) can0 10002040#03
+# tx t=057.241s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.253000) can0 10002040#03
+# tx t=057.352s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=057.352s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=057.352s 10002040#03 note=priority baseline system power mode candidate
+# tx t=057.353s 131#000090 note=Corsa D Opel exterior-light switch byte-2 reference variant 4/5
+(1780071792.364000) can0 621#0040000000000000
+(1780071792.364000) can0 13FFE040#
+(1780071792.364000) can0 10002040#03
+(1780071792.367000) can0 131#000090
+# tx t=057.448s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.460000) can0 10002040#03
+# tx t=057.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.555000) can0 10002040#03
+# tx t=057.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.667000) can0 10002040#03
+(1780071792.699000) can0 62C#0040000000000000
+# tx t=057.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.763000) can0 10002040#03
+# tx t=057.848s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.859000) can0 10002040#03
+# tx t=057.944s 10002040#03 note=priority baseline system power mode candidate
+(1780071792.955000) can0 13FFE060#
+(1780071792.955000) can0 10002040#03
+# tx t=058.056s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.068000) can0 10002040#03
+# tx t=058.152s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.163000) can0 10002040#03
+# tx t=058.247s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.259000) can0 10002040#03
+# tx t=058.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=058.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=058.343s 10002040#03 note=priority baseline system power mode candidate
+# tx t=058.343s 131#0000A0 note=Corsa D Opel exterior-light switch byte-2 reference variant 5/5
+(1780071793.355000) can0 621#0040000000000000
+(1780071793.355000) can0 13FFE040#
+(1780071793.355000) can0 10002040#03
+(1780071793.358000) can0 131#0000A0
+# tx t=058.455s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.467000) can0 10002040#03
+# tx t=058.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.563000) can0 10002040#03
+# tx t=058.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.659000) can0 10002040#03
+# tx t=058.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.755000) can0 10002040#03
+# tx t=058.856s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.867000) can0 10002040#03
+# tx t=058.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071793.963000) can0 10002040#03
+# tx t=059.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.059000) can0 10002040#03
+# tx t=059.144s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.156000) can0 13FFE060#
+(1780071794.156000) can0 10002040#03
+# tx t=059.256s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.268000) can0 10002040#03
+# tx t=059.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=059.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=059.351s 10002040#03 note=priority baseline system power mode candidate
+# tx t=059.351s 131#000000 note=Corsa D Opel exterior-light switch byte-2 reference variant 1/5
+(1780071794.363000) can0 621#0040000000000000
+(1780071794.363000) can0 13FFE040#
+(1780071794.363000) can0 10002040#03
+(1780071794.366000) can0 131#000000
+# tx t=059.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.459000) can0 10002040#03
+# tx t=059.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.555000) can0 10002040#03
+# tx t=059.654s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.666000) can0 10002040#03
+# tx t=059.750s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.762000) can0 10002040#03
+# tx t=059.847s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.858000) can0 10002040#03
+# tx t=059.957s 10002040#03 note=priority baseline system power mode candidate
+(1780071794.969000) can0 10002040#03
+# tx t=060.053s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.064000) can0 10002040#03
+# tx t=060.149s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.160000) can0 10002040#03
+# tx t=060.244s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.256000) can0 10002040#03
+(1780071795.349000) can0 13FFE060#
+# tx t=060.353s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=060.353s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=060.354s 10002040#03 note=priority baseline system power mode candidate
+# tx t=060.354s 131#000040 note=Corsa D Opel exterior-light switch byte-2 reference variant 2/5
+(1780071795.365000) can0 621#0040000000000000
+(1780071795.365000) can0 13FFE040#
+(1780071795.365000) can0 10002040#03
+(1780071795.368000) can0 131#000040
+# tx t=060.449s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.461000) can0 10002040#03
+# tx t=060.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.555000) can0 10002040#03
+# tx t=060.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.666000) can0 10002040#03
+(1780071795.698000) can0 62C#0040000000000000
+# tx t=060.750s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.762000) can0 10002040#03
+# tx t=060.845s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.857000) can0 10002040#03
+# tx t=060.957s 10002040#03 note=priority baseline system power mode candidate
+(1780071795.968000) can0 10002040#03
+# tx t=061.053s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.064000) can0 10002040#03
+# tx t=061.149s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.160000) can0 10002040#03
+# tx t=061.245s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.257000) can0 10002040#03
+# tx t=061.341s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=061.341s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=061.341s 10002040#03 note=priority baseline system power mode candidate
+# tx t=061.342s 131#000080 note=Corsa D Opel exterior-light switch byte-2 reference variant 3/5
+(1780071796.353000) can0 10244060#06
+(1780071796.353000) can0 621#0040000000000000
+(1780071796.353000) can0 13FFE040#
+(1780071796.354000) can0 10002040#03
+(1780071796.356000) can0 131#000080
+# tx t=061.453s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.464000) can0 10002040#03
+(1780071796.541000) can0 13FFE060#
+# tx t=061.548s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.560000) can0 10002040#03
+# tx t=061.643s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.655000) can0 10002040#03
+# tx t=061.755s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.767000) can0 10002040#03
+# tx t=061.851s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.862000) can0 10002040#03
+# tx t=061.946s 10002040#03 note=priority baseline system power mode candidate
+(1780071796.958000) can0 10002040#03
+# tx t=062.042s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.053000) can0 10002040#03
+# tx t=062.153s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.165000) can0 10002040#03
+# tx t=062.249s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.260000) can0 10002040#03
+# tx t=062.344s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=062.344s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=062.344s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.356000) can0 621#0040000000000000
+(1780071797.356000) can0 13FFE040#
+(1780071797.356000) can0 10002040#03
+# tx t=062.456s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.467000) can0 10002040#03
+# tx t=062.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.563000) can0 10002040#03
+# tx t=062.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.658000) can0 10002040#03
+# tx t=062.742s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.754000) can0 13FFE060#
+(1780071797.754000) can0 10002040#03
+# tx t=062.854s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.865000) can0 10002040#03
+# tx t=062.949s 10002040#03 note=priority baseline system power mode candidate
+(1780071797.961000) can0 10002040#03
+# tx t=063.045s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.056000) can0 10002040#03
+# tx t=063.156s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.168000) can0 10002040#03
+# tx t=063.251s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.262000) can0 10002040#03
+# tx t=063.346s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=063.346s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=063.347s 10002040#03 note=priority baseline system power mode candidate
+# tx t=063.347s 15E#06019220 note=Opel low-speed side/reverse/lights reference
+(1780071798.358000) can0 621#0040000000000000
+(1780071798.358000) can0 13FFE040#
+(1780071798.359000) can0 10002040#03
+(1780071798.361000) can0 15E#06019220
+# tx t=063.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.453000) can0 10002040#03
+# tx t=063.552s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.563000) can0 10002040#03
+# tx t=063.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.659000) can0 10002040#03
+(1780071798.697000) can0 62C#0040000000000000
+# tx t=063.742s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.754000) can0 10002040#03
+# tx t=063.854s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.866000) can0 10002040#03
+# tx t=063.949s 10002040#03 note=priority baseline system power mode candidate
+(1780071798.961000) can0 13FFE060#
+(1780071798.961000) can0 10002040#03
+# tx t=064.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.057000) can0 10002040#03
+# tx t=064.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.153000) can0 10002040#03
+# tx t=064.253s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.265000) can0 10002040#03
+# tx t=064.349s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=064.349s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=064.349s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.361000) can0 621#0040000000000000
+(1780071799.361000) can0 13FFE040#
+(1780071799.361000) can0 10002040#03
+# tx t=064.443s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.455000) can0 10002040#03
+# tx t=064.556s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.568000) can0 10002040#03
+# tx t=064.650s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.662000) can0 10002040#03
+# tx t=064.745s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.757000) can0 10002040#03
+# tx t=064.841s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.853000) can0 10002040#03
+# tx t=064.953s 10002040#03 note=priority baseline system power mode candidate
+(1780071799.964000) can0 10002040#03
+# tx t=065.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.060000) can0 10002040#03
+# tx t=065.144s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.155000) can0 13FFE060#
+(1780071800.155000) can0 10002040#03
+# tx t=065.255s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.267000) can0 10002040#03
+# tx t=065.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=065.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=065.351s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.363000) can0 621#0040000000000000
+(1780071800.363000) can0 13FFE040#
+(1780071800.363000) can0 10002040#03
+# tx t=065.446s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.458000) can0 10002040#03
+# tx t=065.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.553000) can0 10002040#03
+# tx t=065.653s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.665000) can0 10002040#03
+# tx t=065.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.759000) can0 10002040#03
+# tx t=065.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.855000) can0 10002040#03
+# tx t=065.955s 10002040#03 note=priority baseline system power mode candidate
+(1780071800.966000) can0 10002040#03
+# tx t=066.050s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.061000) can0 10002040#03
+# tx t=066.144s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.156000) can0 10002040#03
+# tx t=066.255s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.267000) can0 10002040#03
+(1780071801.345000) can0 10244060#06
+# tx t=066.350s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=066.350s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=066.351s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.362000) can0 13FFE060#
+(1780071801.363000) can0 621#0040000000000000
+(1780071801.363000) can0 13FFE040#
+(1780071801.363000) can0 10002040#03
+# tx t=066.446s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.457000) can0 10002040#03
+# tx t=066.541s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.553000) can0 10002040#03
+# tx t=066.652s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.663000) can0 10002040#03
+(1780071801.695000) can0 62C#0040000000000000
+# tx t=066.745s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.757000) can0 10002040#03
+# tx t=066.856s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.868000) can0 10002040#03
+# tx t=066.949s 10002040#03 note=priority baseline system power mode candidate
+(1780071801.960000) can0 10002040#03
+# tx t=067.043s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.055000) can0 10002040#03
+# tx t=067.152s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.164000) can0 10002040#03
+# tx t=067.246s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.258000) can0 10002040#03
+# tx t=067.356s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=067.356s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=067.356s 10002040#03 note=priority baseline system power mode candidate
+# tx t=067.356s 1001E058#867805FF05 note=GMLAN chime command candidate, source 0x58
+(1780071802.368000) can0 621#0040000000000000
+(1780071802.368000) can0 13FFE040#
+(1780071802.368000) can0 10002040#03
+(1780071802.371000) can0 1001E058#867805FF05
+# tx t=067.450s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.461000) can0 10002040#03
+# tx t=067.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.554000) can0 13FFE060#
+(1780071802.554000) can0 10002040#03
+# tx t=067.655s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.666000) can0 10002040#03
+# tx t=067.749s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.761000) can0 10002040#03
+# tx t=067.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.855000) can0 10002040#03
+# tx t=067.951s 10002040#03 note=priority baseline system power mode candidate
+(1780071802.962000) can0 10002040#03
+# tx t=068.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.057000) can0 10002040#03
+# tx t=068.155s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.167000) can0 10002040#03
+# tx t=068.249s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.260000) can0 10002040#03
+# tx t=068.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=068.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=068.343s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.355000) can0 621#0040000000000000
+(1780071803.355000) can0 13FFE040#
+(1780071803.355000) can0 10002040#03
+# tx t=068.452s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.463000) can0 10002040#03
+# tx t=068.544s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.556000) can0 10002040#03
+# tx t=068.653s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.664000) can0 10002040#03
+# tx t=068.747s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.759000) can0 13FFE060#
+(1780071803.759000) can0 10002040#03
+# tx t=068.856s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.868000) can0 10002040#03
+# tx t=068.948s 10002040#03 note=priority baseline system power mode candidate
+(1780071803.959000) can0 10002040#03
+# tx t=069.043s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.055000) can0 10002040#03
+# tx t=069.152s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.164000) can0 10002040#03
+# tx t=069.247s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.259000) can0 10002040#03
+# tx t=069.342s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=069.342s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=069.342s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.354000) can0 621#0040000000000000
+(1780071804.354000) can0 13FFE040#
+(1780071804.354000) can0 10002040#03
+# tx t=069.453s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.464000) can0 10002040#03
+# tx t=069.547s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.559000) can0 10002040#03
+# tx t=069.642s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.653000) can0 10002040#03
+(1780071804.694000) can0 62C#0040000000000000
+# tx t=069.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.763000) can0 10002040#03
+# tx t=069.845s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.856000) can0 10002040#03
+(1780071804.950000) can0 13FFE060#
+# tx t=069.954s 10002040#03 note=priority baseline system power mode candidate
+(1780071804.966000) can0 10002040#03
+# tx t=070.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.060000) can0 10002040#03
+# tx t=070.143s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.154000) can0 10002040#03
+# tx t=070.253s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.264000) can0 10002040#03
+# tx t=070.347s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=070.347s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=070.347s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.359000) can0 621#0040000000000000
+(1780071805.359000) can0 13FFE040#
+(1780071805.359000) can0 10002040#03
+# tx t=070.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.453000) can0 10002040#03
+# tx t=070.549s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.561000) can0 10002040#03
+# tx t=070.643s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.655000) can0 10002040#03
+# tx t=070.751s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.763000) can0 10002040#03
+# tx t=070.845s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.857000) can0 10002040#03
+# tx t=070.957s 10002040#03 note=priority baseline system power mode candidate
+(1780071805.969000) can0 10002040#03
+# tx t=071.051s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.063000) can0 10002040#03
+# tx t=071.145s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.157000) can0 13FFE060#
+(1780071806.157000) can0 10002040#03
+# tx t=071.255s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.267000) can0 10002040#03
+(1780071806.342000) can0 10244060#06
+# tx t=071.350s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=071.350s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=071.350s 10002040#03 note=priority baseline system power mode candidate
+# tx t=071.350s 1001E040#867805FF05 note=GMLAN chime command candidate, fake BCM/source 0x40
+(1780071806.362000) can0 621#0040000000000000
+(1780071806.362000) can0 13FFE040#
+(1780071806.362000) can0 10002040#03
+(1780071806.365000) can0 1001E040#867805FF05
+# tx t=071.443s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.455000) can0 10002040#03
+# tx t=071.553s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.565000) can0 10002040#03
+# tx t=071.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.658000) can0 10002040#03
+# tx t=071.757s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.768000) can0 10002040#03
+# tx t=071.850s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.862000) can0 10002040#03
+# tx t=071.944s 10002040#03 note=priority baseline system power mode candidate
+(1780071806.955000) can0 10002040#03
+# tx t=072.054s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.066000) can0 10002040#03
+# tx t=072.148s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.160000) can0 10002040#03
+# tx t=072.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.254000) can0 10002040#03
+(1780071807.349000) can0 13FFE060#
+# tx t=072.354s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=072.354s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=072.354s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.366000) can0 621#0040000000000000
+(1780071807.366000) can0 13FFE040#
+(1780071807.366000) can0 10002040#03
+# tx t=072.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.459000) can0 10002040#03
+# tx t=072.541s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.553000) can0 10002040#03
+# tx t=072.651s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.663000) can0 10002040#03
+(1780071807.694000) can0 62C#0040000000000000
+# tx t=072.746s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.757000) can0 10002040#03
+# tx t=072.854s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.866000) can0 10002040#03
+# tx t=072.950s 10002040#03 note=priority baseline system power mode candidate
+(1780071807.961000) can0 10002040#03
+# tx t=073.044s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.055000) can0 10002040#03
+# tx t=073.155s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.167000) can0 10002040#03
+# tx t=073.249s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.260000) can0 10002040#03
+# tx t=073.342s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=073.342s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=073.342s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.354000) can0 621#0040000000000000
+(1780071808.354000) can0 13FFE040#
+(1780071808.354000) can0 10002040#03
+# tx t=073.452s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.463000) can0 10002040#03
+(1780071808.540000) can0 13FFE060#
+# tx t=073.546s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.557000) can0 10002040#03
+# tx t=073.656s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.668000) can0 10002040#03
+# tx t=073.750s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.762000) can0 10002040#03
+# tx t=073.844s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.856000) can0 10002040#03
+# tx t=073.955s 10002040#03 note=priority baseline system power mode candidate
+(1780071808.967000) can0 10002040#03
+# tx t=074.049s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.061000) can0 10002040#03
+# tx t=074.145s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.156000) can0 10002040#03
+# tx t=074.253s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.265000) can0 10002040#03
+# tx t=074.347s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=074.347s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=074.347s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.359000) can0 621#0040000000000000
+(1780071809.359000) can0 13FFE040#
+(1780071809.360000) can0 10002040#03
+# tx t=074.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.454000) can0 10002040#03
+# tx t=074.552s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.564000) can0 10002040#03
+# tx t=074.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.659000) can0 10002040#03
+# tx t=074.742s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.753000) can0 13FFE060#
+(1780071809.753000) can0 10002040#03
+# tx t=074.852s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.863000) can0 10002040#03
+# tx t=074.944s 10002040#03 note=priority baseline system power mode candidate
+(1780071809.956000) can0 10002040#03
+# tx t=075.055s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.067000) can0 10002040#03
+# tx t=075.150s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.162000) can0 10002040#03
+# tx t=075.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.255000) can0 10002040#03
+# tx t=075.354s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=075.354s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=075.354s 10002040#03 note=priority baseline system power mode candidate
+# tx t=075.355s 1001E060#867805FF05 note=GMLAN chime source 0x60 variant; may look IPC-origin
+(1780071810.366000) can0 621#0040000000000000
+(1780071810.366000) can0 13FFE040#
+(1780071810.366000) can0 10002040#03
+(1780071810.369000) can0 1001E060#867805FF05
+# tx t=075.449s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.460000) can0 10002040#03
+# tx t=075.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.554000) can0 10002040#03
+# tx t=075.652s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.664000) can0 10002040#03
+(1780071810.695000) can0 62C#0040000000000000
+# tx t=075.746s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.758000) can0 10002040#03
+# tx t=075.841s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.853000) can0 10002040#03
+(1780071810.948000) can0 13FFE060#
+# tx t=075.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071810.964000) can0 10002040#03
+# tx t=076.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.058000) can0 10002040#03
+# tx t=076.157s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.168000) can0 10002040#03
+# tx t=076.252s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.264000) can0 10002040#03
+(1780071811.339000) can0 10244060#06
+# tx t=076.347s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=076.347s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=076.347s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.359000) can0 621#0040000000000000
+(1780071811.359000) can0 13FFE040#
+(1780071811.359000) can0 10002040#03
+# tx t=076.457s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.469000) can0 10002040#03
+# tx t=076.550s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.562000) can0 10002040#03
+# tx t=076.645s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.657000) can0 10002040#03
+# tx t=076.755s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.767000) can0 10002040#03
+# tx t=076.850s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.861000) can0 10002040#03
+# tx t=076.945s 10002040#03 note=priority baseline system power mode candidate
+(1780071811.956000) can0 10002040#03
+# tx t=077.054s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.066000) can0 10002040#03
+(1780071812.139000) can0 13FFE060#
+# tx t=077.149s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.160000) can0 10002040#03
+# tx t=077.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.255000) can0 10002040#03
+# tx t=077.354s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=077.354s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=077.354s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.366000) can0 621#0040000000000000
+(1780071812.366000) can0 13FFE040#
+(1780071812.366000) can0 10002040#03
+# tx t=077.448s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.459000) can0 10002040#03
+# tx t=077.543s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.554000) can0 10002040#03
+# tx t=077.653s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.665000) can0 10002040#03
+# tx t=077.749s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.760000) can0 10002040#03
+# tx t=077.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.854000) can0 10002040#03
+# tx t=077.954s 10002040#03 note=priority baseline system power mode candidate
+(1780071812.966000) can0 10002040#03
+# tx t=078.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.059000) can0 10002040#03
+# tx t=078.141s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.153000) can0 10002040#03
+# tx t=078.250s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.262000) can0 10002040#03
+(1780071813.338000) can0 13FFE060#
+# tx t=078.346s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=078.346s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=078.346s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.358000) can0 621#0040000000000000
+(1780071813.358000) can0 13FFE040#
+(1780071813.358000) can0 10002040#03
+# tx t=078.457s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.468000) can0 10002040#03
+# tx t=078.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.562000) can0 10002040#03
+# tx t=078.645s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.657000) can0 10002040#03
+(1780071813.689000) can0 62C#0040000000000000
+# tx t=078.754s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.766000) can0 10002040#03
+# tx t=078.849s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.861000) can0 10002040#03
+# tx t=078.943s 10002040#03 note=priority baseline system power mode candidate
+(1780071813.954000) can0 10002040#03
+# tx t=079.053s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.065000) can0 10002040#03
+# tx t=079.148s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.159000) can0 10002040#03
+# tx t=079.241s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.253000) can0 10002040#03
+# tx t=079.352s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=079.352s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=079.353s 10002040#03 note=priority baseline system power mode candidate
+# tx t=079.353s 10300040#0000000000000000 note=DIC ARB text general attributes probe arbid 0x180
+(1780071814.364000) can0 621#0040000000000000
+(1780071814.364000) can0 13FFE040#
+(1780071814.365000) can0 10002040#03
+(1780071814.367000) can0 10300040#0000000000000000
+# tx t=079.445s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.457000) can0 10002040#03
+(1780071814.551000) can0 13FFE060#
+# tx t=079.555s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.567000) can0 10002040#03
+# tx t=079.649s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.660000) can0 10002040#03
+# tx t=079.742s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.754000) can0 10002040#03
+# tx t=079.853s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.864000) can0 10002040#03
+# tx t=079.947s 10002040#03 note=priority baseline system power mode candidate
+(1780071814.959000) can0 10002040#03
+# tx t=080.041s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.053000) can0 10002040#03
+# tx t=080.152s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.163000) can0 10002040#03
+# tx t=080.246s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.257000) can0 10002040#03
+# tx t=080.356s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=080.356s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=080.356s 10002040#03 note=priority baseline system power mode candidate
+# tx t=080.356s 10302040#0000000000000000 note=DIC ARB text line attributes probe arbid 0x181
+(1780071815.367000) can0 621#0040000000000000
+(1780071815.368000) can0 13FFE040#
+(1780071815.368000) can0 10002040#03
+(1780071815.371000) can0 10302040#0000000000000000
+# tx t=080.450s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.461000) can0 10002040#03
+# tx t=080.544s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.556000) can0 10002040#03
+# tx t=080.654s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.665000) can0 10002040#03
+(1780071815.737000) can0 13FFE060#
+# tx t=080.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.760000) can0 10002040#03
+# tx t=080.857s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.869000) can0 10002040#03
+# tx t=080.951s 10002040#03 note=priority baseline system power mode candidate
+(1780071815.963000) can0 10002040#03
+# tx t=081.046s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.057000) can0 10002040#03
+# tx t=081.156s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.167000) can0 10002040#03
+# tx t=081.250s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.261000) can0 10002040#03
+(1780071816.337000) can0 10244060#06
+# tx t=081.345s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=081.345s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=081.345s 10002040#03 note=priority baseline system power mode candidate
+# tx t=081.346s 10304040#0000000000000000 note=DIC ARB text set icon probe arbid 0x182
+(1780071816.357000) can0 621#0040000000000000
+(1780071816.357000) can0 13FFE040#
+(1780071816.357000) can0 10002040#03
+(1780071816.360000) can0 10304040#0000000000000000
+# tx t=081.454s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.465000) can0 10002040#03
+# tx t=081.548s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.560000) can0 10002040#03
+# tx t=081.643s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.654000) can0 10002040#03
+(1780071816.688000) can0 62C#0040000000000000
+# tx t=081.754s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.766000) can0 10002040#03
+# tx t=081.848s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.859000) can0 10002040#03
+(1780071816.936000) can0 13FFE060#
+# tx t=081.942s 10002040#03 note=priority baseline system power mode candidate
+(1780071816.954000) can0 10002040#03
+# tx t=082.054s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.066000) can0 10002040#03
+# tx t=082.147s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.159000) can0 10002040#03
+# tx t=082.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.254000) can0 10002040#03
+# tx t=082.353s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=082.353s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=082.353s 10002040#03 note=priority baseline system power mode candidate
+# tx t=082.353s 10308040#0000000000000000 note=DIC ARB text menu action/status probe arbid 0x184
+(1780071817.365000) can0 621#0040000000000000
+(1780071817.365000) can0 13FFE040#
+(1780071817.365000) can0 10002040#03
+(1780071817.368000) can0 10308040#0000000000000000
+# tx t=082.446s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.458000) can0 10002040#03
+# tx t=082.557s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.568000) can0 10002040#03
+# tx t=082.650s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.662000) can0 10002040#03
+# tx t=082.746s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.757000) can0 10002040#03
+# tx t=082.856s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.867000) can0 10002040#03
+# tx t=082.951s 10002040#03 note=priority baseline system power mode candidate
+(1780071817.962000) can0 10002040#03
+# tx t=083.044s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.056000) can0 10002040#03
+(1780071818.150000) can0 13FFE060#
+# tx t=083.154s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.166000) can0 10002040#03
+# tx t=083.248s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.259000) can0 10002040#03
+# tx t=083.342s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=083.342s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=083.342s 10002040#03 note=priority baseline system power mode candidate
+# tx t=083.342s 1030A040#0000000000000000 note=DIC ARB text display parameters probe arbid 0x185
+(1780071818.354000) can0 621#0040000000000000
+(1780071818.354000) can0 13FFE040#
+(1780071818.354000) can0 10002040#03
+(1780071818.357000) can0 1030A040#0000000000000000
+# tx t=083.450s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.462000) can0 10002040#03
+# tx t=083.545s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.557000) can0 10002040#03
+# tx t=083.656s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.668000) can0 10002040#03
+# tx t=083.749s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.761000) can0 10002040#03
+# tx t=083.844s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.856000) can0 10002040#03
+# tx t=083.953s 10002040#03 note=priority baseline system power mode candidate
+(1780071818.965000) can0 10002040#03
+# tx t=084.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.059000) can0 10002040#03
+# tx t=084.144s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.155000) can0 10002040#03
+# tx t=084.253s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.265000) can0 10002040#03
+(1780071819.335000) can0 13FFE060#
+# tx t=084.348s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=084.349s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=084.349s 10002040#03 note=priority baseline system power mode candidate
+# tx t=084.349s 1030C040#5445535420202020 note=DIC ARB text display text probe: TEST
+(1780071819.361000) can0 621#0040000000000000
+(1780071819.361000) can0 13FFE040#
+(1780071819.361000) can0 10002040#03
+(1780071819.364000) can0 1030C040#5445535420202020
+# tx t=084.443s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.454000) can0 10002040#03
+# tx t=084.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.562000) can0 10002040#03
+# tx t=084.646s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.657000) can0 10002040#03
+(1780071819.688000) can0 62C#0040000000000000
+# tx t=084.755s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.766000) can0 10002040#03
+# tx t=084.851s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.862000) can0 10002040#03
+# tx t=084.947s 10002040#03 note=priority baseline system power mode candidate
+(1780071819.959000) can0 10002040#03
+# tx t=085.042s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.053000) can0 10002040#03
+# tx t=085.151s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.162000) can0 10002040#03
+# tx t=085.244s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.255000) can0 10002040#03
+# tx t=085.353s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=085.353s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=085.353s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.365000) can0 621#0040000000000000
+(1780071820.365000) can0 13FFE040#
+(1780071820.365000) can0 10002040#03
+# tx t=085.447s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.459000) can0 10002040#03
+(1780071820.534000) can0 13FFE060#
+# tx t=085.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.553000) can0 10002040#03
+# tx t=085.652s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.664000) can0 10002040#03
+# tx t=085.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.759000) can0 10002040#03
+# tx t=085.843s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.854000) can0 10002040#03
+# tx t=085.953s 10002040#03 note=priority baseline system power mode candidate
+(1780071820.964000) can0 10002040#03
+# tx t=086.047s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.059000) can0 10002040#03
+# tx t=086.142s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.153000) can0 10002040#03
+# tx t=086.252s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.263000) can0 10002040#03
+(1780071821.334000) can0 10244060#06
+# tx t=086.347s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=086.347s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=086.347s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.359000) can0 621#0040000000000000
+(1780071821.359000) can0 13FFE040#
+(1780071821.359000) can0 10002040#03
+# tx t=086.442s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.453000) can0 10002040#03
+# tx t=086.550s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.562000) can0 10002040#03
+# tx t=086.643s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.655000) can0 10002040#03
+(1780071821.734000) can0 13FFE060#
+# tx t=086.754s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.765000) can0 10002040#03
+# tx t=086.849s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.860000) can0 10002040#03
+# tx t=086.943s 10002040#03 note=priority baseline system power mode candidate
+(1780071821.954000) can0 10002040#03
+# tx t=087.052s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.064000) can0 10002040#03
+# tx t=087.146s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.158000) can0 10002040#03
+# tx t=087.256s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.267000) can0 10002040#03
+# tx t=087.349s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=087.350s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=087.350s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.361000) can0 621#0040000000000000
+(1780071822.361000) can0 13FFE040#
+(1780071822.362000) can0 10002040#03
+# tx t=087.443s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.454000) can0 10002040#03
+# tx t=087.550s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.562000) can0 10002040#03
+# tx t=087.643s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.655000) can0 10002040#03
+(1780071822.686000) can0 62C#0040000000000000
+# tx t=087.755s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.766000) can0 10002040#03
+# tx t=087.848s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.860000) can0 10002040#03
+(1780071822.933000) can0 13FFE060#
+# tx t=087.943s 10002040#03 note=priority baseline system power mode candidate
+(1780071822.954000) can0 10002040#03
+# tx t=088.055s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.068000) can0 10002040#03
+# tx t=088.150s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.162000) can0 10002040#03
+# tx t=088.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.255000) can0 10002040#03
+# tx t=088.353s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=088.354s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=088.354s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.365000) can0 621#0040000000000000
+(1780071823.366000) can0 13FFE040#
+(1780071823.366000) can0 10002040#03
+# tx t=088.448s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.459000) can0 10002040#03
+# tx t=088.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.553000) can0 10002040#03
+# tx t=088.652s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.664000) can0 10002040#03
+# tx t=088.747s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.758000) can0 10002040#03
+# tx t=088.842s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.853000) can0 10002040#03
+# tx t=088.952s 10002040#03 note=priority baseline system power mode candidate
+(1780071823.963000) can0 10002040#03
+# tx t=089.047s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.058000) can0 10002040#03
+(1780071824.132000) can0 13FFE060#
+# tx t=089.155s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.167000) can0 10002040#03
+# tx t=089.249s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.260000) can0 10002040#03
+# tx t=089.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=089.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=089.343s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.355000) can0 621#0040000000000000
+(1780071824.355000) can0 13FFE040#
+(1780071824.355000) can0 10002040#03
+# tx t=089.451s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.463000) can0 10002040#03
+# tx t=089.547s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.558000) can0 10002040#03
+# tx t=089.656s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.667000) can0 10002040#03
+# tx t=089.749s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.761000) can0 10002040#03
+# tx t=089.844s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.855000) can0 10002040#03
+# tx t=089.954s 10002040#03 note=priority baseline system power mode candidate
+(1780071824.965000) can0 10002040#03
+# tx t=090.048s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.060000) can0 10002040#03
+# tx t=090.143s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.154000) can0 10002040#03
+# tx t=090.254s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.266000) can0 10002040#03
+(1780071825.332000) can0 13FFE060#
+# tx t=090.349s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=090.349s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=090.349s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.361000) can0 621#0040000000000000
+(1780071825.361000) can0 13FFE040#
+(1780071825.361000) can0 10002040#03
+# tx t=090.443s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.454000) can0 10002040#03
+# tx t=090.551s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.563000) can0 10002040#03
+# tx t=090.647s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.658000) can0 10002040#03
+(1780071825.689000) can0 62C#0040000000000000
+# tx t=090.756s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.767000) can0 10002040#03
+# tx t=090.850s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.862000) can0 10002040#03
+# tx t=090.945s 10002040#03 note=priority baseline system power mode candidate
+(1780071825.957000) can0 10002040#03
+# tx t=091.055s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.066000) can0 10002040#03
+# tx t=091.149s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.161000) can0 10002040#03
+# tx t=091.242s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.254000) can0 10002040#03
+(1780071826.332000) can0 10244060#06
+# tx t=091.353s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=091.353s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=091.353s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.364000) can0 621#0040000000000000
+(1780071826.365000) can0 13FFE040#
+(1780071826.365000) can0 10002040#03
+# tx t=091.448s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.459000) can0 10002040#03
+(1780071826.531000) can0 13FFE060#
+# tx t=091.542s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.554000) can0 10002040#03
+# tx t=091.653s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.664000) can0 10002040#03
+# tx t=091.748s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.759000) can0 10002040#03
+# tx t=091.842s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.853000) can0 10002040#03
+# tx t=091.953s 10002040#03 note=priority baseline system power mode candidate
+(1780071826.964000) can0 10002040#03
+# tx t=092.047s 10002040#03 note=priority baseline system power mode candidate
+(1780071827.059000) can0 10002040#03
+# tx t=092.156s 10002040#03 note=priority baseline system power mode candidate
+(1780071827.167000) can0 10002040#03
+# tx t=092.250s 10002040#03 note=priority baseline system power mode candidate
+(1780071827.261000) can0 10002040#03
+# tx t=092.343s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=092.343s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=092.343s 10002040#03 note=priority baseline system power mode candidate
+# tx t=092.344s 10438040#0000000000000000 note=final HMI button release/neutral
+(1780071827.355000) can0 621#0040000000000000
+(1780071827.355000) can0 13FFE040#
+(1780071827.355000) can0 10002040#03
+(1780071827.358000) can0 10438040#0000000000000000
+# tx t=092.453s 10002040#03 note=priority baseline system power mode candidate
+(1780071827.465000) can0 10002040#03
+# tx t=092.548s 10002040#03 note=priority baseline system power mode candidate
+# tx t=092.548s 10754040#0000000000000000 note=final key-present neutral
+(1780071827.560000) can0 10002040#03
+(1780071827.560000) can0 10754040#0000000000000000
+# tx t=092.644s 10002040#03 note=priority baseline system power mode candidate
+(1780071827.655000) can0 10002040#03
+(1780071827.731000) can0 13FFE060#
+# tx t=092.755s 10002040#03 note=priority baseline system power mode candidate
+# tx t=092.755s 10630040#0000000000000000 note=final door/body-state neutral
+(1780071827.766000) can0 10002040#03
+(1780071827.767000) can0 10630040#0000000000000000
+# tx t=092.849s 10002040#03 note=priority baseline system power mode candidate
+(1780071827.861000) can0 10002040#03
+# tx t=092.944s 10002040#03 note=priority baseline system power mode candidate
+# tx t=092.944s 10414040#0000000000000000 note=final lock/body-state neutral
+(1780071827.956000) can0 10002040#03
+(1780071827.956000) can0 10414040#0000000000000000
+# tx t=093.054s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.065000) can0 10002040#03
+# tx t=093.149s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.160000) can0 10002040#03
+# tx t=093.243s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.254000) can0 10002040#03
+# tx t=093.351s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=093.351s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=093.351s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.363000) can0 621#0040000000000000
+(1780071828.363000) can0 13FFE040#
+(1780071828.363000) can0 10002040#03
+# tx t=093.445s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.456000) can0 10002040#03
+# tx t=093.555s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.567000) can0 10002040#03
+# tx t=093.649s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.661000) can0 10002040#03
+(1780071828.692000) can0 62C#0040000000000000
+# tx t=093.743s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.754000) can0 10002040#03
+# tx t=093.853s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.864000) can0 10002040#03
+(1780071828.930000) can0 13FFE060#
+# tx t=093.947s 10002040#03 note=priority baseline system power mode candidate
+(1780071828.959000) can0 10002040#03
+# tx t=094.057s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.068000) can0 10002040#03
+# tx t=094.151s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.163000) can0 10002040#03
+# tx t=094.247s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.259000) can0 10002040#03
+# tx t=094.341s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=094.341s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=094.341s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.353000) can0 621#0040000000000000
+(1780071829.353000) can0 13FFE040#
+(1780071829.353000) can0 10002040#03
+# tx t=094.451s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.462000) can0 10002040#03
+# tx t=094.546s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.557000) can0 10002040#03
+# tx t=094.641s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.652000) can0 10002040#03
+# tx t=094.750s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.762000) can0 10002040#03
+# tx t=094.844s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.856000) can0 10002040#03
+# tx t=094.955s 10002040#03 note=priority baseline system power mode candidate
+(1780071829.967000) can0 10002040#03
+# tx t=095.049s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.061000) can0 10002040#03
+(1780071830.129000) can0 13FFE060#
+# tx t=095.144s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.155000) can0 10002040#03
+# tx t=095.253s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.265000) can0 10002040#03
+# tx t=095.348s 621#0040000000000000 note=priority baseline network-management steady keepalive
+# tx t=095.349s 13FFE040# note=priority baseline fake BCM/source 0x40 presence
+# tx t=095.349s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.360000) can0 621#0040000000000000
+(1780071830.361000) can0 13FFE040#
+(1780071830.361000) can0 10002040#03
+# tx t=095.443s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.455000) can0 10002040#03
+# tx t=095.553s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.564000) can0 10002040#03
+# tx t=095.648s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.660000) can0 10002040#03
+# tx t=095.742s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.754000) can0 10002040#03
+# tx t=095.853s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.864000) can0 10002040#03
+# tx t=095.947s 10002040#03 note=priority baseline system power mode candidate
+(1780071830.959000) can0 10002040#03
+# tx t=096.055s 10002040#03 note=priority baseline system power mode candidate
+(1780071831.067000) can0 10002040#03
+# tx t=096.148s 10002040#03 note=priority baseline system power mode candidate
+(1780071831.160000) can0 10002040#03
+# tx t=096.242s 10002040#03 note=priority baseline system power mode candidate
+(1780071831.254000) can0 10002040#03
+(1780071831.329000) can0 10244060#06
+(1780071831.331000) can0 13FFE060#

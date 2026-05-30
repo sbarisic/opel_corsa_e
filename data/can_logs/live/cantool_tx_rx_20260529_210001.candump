@@ -1,0 +1,14 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.418s 100# note=wake isolation: SWCAN 100# wake pulse only; no NM/init/body context
+(1780081201.773000) can0 100#
+# tx t=001.430s 100# note=wake isolation: SWCAN 100# wake pulse only; no NM/init/body context
+(1780081202.783000) can0 100#
+# tx t=002.427s 100# note=wake isolation: SWCAN 100# wake pulse only; no NM/init/body context
+(1780081203.780000) can0 100#
+# tx t=003.430s 100# note=wake isolation: SWCAN 100# wake pulse only; no NM/init/body context
+# tx t=004.417s 100# note=wake isolation: SWCAN 100# wake pulse only; no NM/init/body context
+# tx t=005.418s 100# note=wake isolation: SWCAN 100# wake pulse only; no NM/init/body context
+# tx t=006.425s 100# note=wake isolation: SWCAN 100# wake pulse only; no NM/init/body context
+# tx t=007.420s 100# note=wake isolation: SWCAN 100# wake pulse only; no NM/init/body context
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

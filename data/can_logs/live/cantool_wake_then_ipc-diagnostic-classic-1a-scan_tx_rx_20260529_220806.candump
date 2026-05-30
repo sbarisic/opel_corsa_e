@@ -1,0 +1,645 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# waiting for first RX before starting TX
+(1780085292.081000) can0 13FFE060#
+# first RX observed; starting TX schedule
+(1780085292.448000) can0 100#
+(1780085292.520000) can0 62C#0140000000000000
+(1780085292.542000) can0 10244060#02
+(1780085292.543000) can0 103BC060#00
+(1780085292.543000) can0 103D6060#00
+(1780085292.543000) can0 10424060#059964
+(1780085292.543000) can0 10444060#00
+(1780085292.543000) can0 10448060#00
+(1780085292.545000) can0 1045C060#40
+(1780085292.547000) can0 10774060#00
+(1780085292.549000) can0 1084A060#00
+(1780085292.552000) can0 10A04060#00
+(1780085292.556000) can0 10ACE060#1E00000000000000
+(1780085292.561000) can0 10AE8060#030E010104050000
+(1780085292.563000) can0 103DA060#00
+(1780085292.565000) can0 10812060#00
+(1780085292.568000) can0 10B0A060#001E04
+(1780085292.570000) can0 13FFE060#
+(1780085292.591000) can0 10AE8060#030E010104050000
+(1780085292.618000) can0 1084A060#00
+(1780085292.621000) can0 10AE8060#0016010800000000
+(1780085292.650000) can0 10244060#02
+(1780085292.651000) can0 103D6060#00
+(1780085292.661000) can0 10ACE060#1E00200000000000
+(1780085292.683000) can0 10B0A060#002B04
+(1780085292.749000) can0 10244060#02
+(1780085292.777000) can0 10ACE060#2B00000000000000
+(1780085292.790000) can0 10AFC060#38FFFFFFFFFFFF2B
+# tx t=006.395s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=006.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085293.091000) can0 13FFE040#
+(1780085293.091000) can0 621#0040000000000000
+(1780085293.288000) can0 10774060#00
+(1780085293.509000) can0 10424060#079964
+(1780085293.743000) can0 13FFE060#
+# tx t=007.392s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=007.393s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=007.393s 24C#021003AAAAAAAAAA note=classic 0x1A scan session/init 0x10 0x03; known useful response is 64C#0150...
+(1780085294.089000) can0 13FFE040#
+(1780085294.089000) can0 621#0040000000000000
+(1780085294.089000) can0 24C#021003AAAAAAAAAA
+(1780085294.119000) can0 64C#0150AAAAAAAAAAAA
+(1780085294.934000) can0 13FFE060#
+# tx t=008.395s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=008.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085295.092000) can0 13FFE040#
+(1780085295.092000) can0 621#0040000000000000
+(1780085295.529000) can0 62C#0040000000000000
+(1780085296.062000) can0 10244060#06
+# tx t=009.398s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=009.398s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=009.399s 24C#021A80AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x80; watch for positive 64C#..5A80
+(1780085296.094000) can0 13FFE040#
+(1780085296.094000) can0 621#0040000000000000
+(1780085296.094000) can0 24C#021A80AAAAAAAAAA
+(1780085296.107000) can0 10424060#079964
+(1780085296.124000) can0 64C#037F1A31AAAAAAAA
+(1780085296.127000) can0 13FFE060#
+# tx t=009.897s 24C#021A81AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x81; watch for positive 64C#..5A81
+(1780085296.593000) can0 24C#021A81AAAAAAAAAA
+(1780085296.623000) can0 64C#037F1A31AAAAAAAA
+# tx t=010.395s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=010.395s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=010.395s 24C#021A82AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x82; watch for positive 64C#..5A82
+(1780085297.091000) can0 13FFE040#
+(1780085297.091000) can0 621#0040000000000000
+(1780085297.091000) can0 24C#021A82AAAAAAAAAA
+(1780085297.121000) can0 10424060#079964
+(1780085297.121000) can0 64C#037F1A31AAAAAAAA
+(1780085297.339000) can0 13FFE060#
+(1780085297.528000) can0 10244060#06
+# tx t=010.895s 24C#021A83AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x83; watch for positive 64C#..5A83
+(1780085297.591000) can0 24C#021A83AAAAAAAAAA
+(1780085297.623000) can0 64C#037F1A31AAAAAAAA
+# tx t=011.393s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=011.394s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=011.395s 24C#021A84AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x84; watch for positive 64C#..5A84
+(1780085298.090000) can0 13FFE040#
+(1780085298.090000) can0 621#0040000000000000
+(1780085298.091000) can0 24C#021A84AAAAAAAAAA
+(1780085298.120000) can0 10424060#079964
+(1780085298.120000) can0 64C#037F1A31AAAAAAAA
+(1780085298.524000) can0 62C#0040000000000000
+(1780085298.525000) can0 13FFE060#
+# tx t=011.891s 24C#021A85AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x85; watch for positive 64C#..5A85
+(1780085298.587000) can0 24C#021A85AAAAAAAAAA
+(1780085298.597000) can0 64C#037F1A31AAAAAAAA
+# tx t=012.391s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=012.392s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=012.392s 24C#021A86AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x86; watch for positive 64C#..5A86
+(1780085299.088000) can0 13FFE040#
+(1780085299.088000) can0 621#0040000000000000
+(1780085299.089000) can0 24C#021A86AAAAAAAAAA
+(1780085299.118000) can0 10424060#079964
+(1780085299.119000) can0 64C#037F1A31AAAAAAAA
+(1780085299.119000) can0 64C#0160AAAAAAAAAAAA
+# tx t=012.891s 24C#021A87AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x87; watch for positive 64C#..5A87
+(1780085299.587000) can0 24C#021A87AAAAAAAAAA
+(1780085299.596000) can0 64C#037F1A31AAAAAAAA
+(1780085299.725000) can0 13FFE060#
+# tx t=013.389s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=013.390s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=013.390s 24C#021A88AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x88; watch for positive 64C#..5A88
+(1780085300.086000) can0 13FFE040#
+(1780085300.086000) can0 621#0040000000000000
+(1780085300.086000) can0 24C#021A88AAAAAAAAAA
+(1780085300.117000) can0 10424060#079964
+(1780085300.117000) can0 64C#037F1A31AAAAAAAA
+# tx t=013.889s 24C#021A89AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x89; watch for positive 64C#..5A89
+(1780085300.585000) can0 24C#021A89AAAAAAAAAA
+(1780085300.596000) can0 64C#037F1A31AAAAAAAA
+(1780085300.927000) can0 13FFE060#
+# tx t=014.389s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=014.389s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=014.390s 24C#021A8AAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x8A; watch for positive 64C#..5A8A
+(1780085301.086000) can0 13FFE040#
+(1780085301.086000) can0 621#0040000000000000
+(1780085301.086000) can0 24C#021A8AAAAAAAAAAA
+(1780085301.116000) can0 64C#037F1A31AAAAAAAA
+(1780085301.519000) can0 62C#0040000000000000
+# tx t=014.902s 24C#021A8BAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x8B; watch for positive 64C#..5A8B
+(1780085301.598000) can0 24C#021A8BAAAAAAAAAA
+(1780085301.605000) can0 64C#037F1A31AAAAAAAA
+# tx t=015.388s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=015.389s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=015.389s 24C#021A8CAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x8C; watch for positive 64C#..5A8C
+(1780085302.085000) can0 13FFE040#
+(1780085302.085000) can0 621#0040000000000000
+(1780085302.085000) can0 24C#021A8CAAAAAAAAAA
+(1780085302.115000) can0 64C#037F1A31AAAAAAAA
+(1780085302.124000) can0 13FFE060#
+(1780085302.524000) can0 10244060#06
+# tx t=015.903s 24C#021A8DAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x8D; watch for positive 64C#..5A8D
+(1780085302.599000) can0 24C#021A8DAAAAAAAAAA
+(1780085302.629000) can0 64C#037F1A31AAAAAAAA
+# tx t=016.401s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=016.402s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=016.402s 24C#021A8EAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x8E; watch for positive 64C#..5A8E
+(1780085303.098000) can0 13FFE040#
+(1780085303.098000) can0 621#0040000000000000
+(1780085303.098000) can0 24C#021A8EAAAAAAAAAA
+(1780085303.127000) can0 64C#037F1A31AAAAAAAA
+(1780085303.323000) can0 13FFE060#
+# tx t=016.901s 24C#021A8FAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x8F; watch for positive 64C#..5A8F
+(1780085303.597000) can0 24C#021A8FAAAAAAAAAA
+(1780085303.604000) can0 64C#037F1A31AAAAAAAA
+# tx t=017.398s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=017.399s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=017.399s 24C#013EAAAAAAAAAAAA note=classic 0x1A scan tester-present without subfunction; known useful response is 64C#017E...
+(1780085304.094000) can0 13FFE040#
+(1780085304.095000) can0 621#0040000000000000
+(1780085304.095000) can0 24C#013EAAAAAAAAAAAA
+(1780085304.125000) can0 64C#017EAAAAAAAAAAAA
+(1780085304.514000) can0 62C#0040000000000000
+(1780085304.532000) can0 13FFE060#
+(1780085304.575000) can0 10600060#01609370015B00
+# tx t=017.900s 24C#021A90AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x90; watch for positive 64C#..5A90
+(1780085304.596000) can0 24C#021A90AAAAAAAAAA
+(1780085304.659000) can0 64C#10135A9057304C30
+# tx t=017.964s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085304.660000) can0 24C#30000AAAAAAAAAAA
+(1780085304.689000) can0 64C#2158455036384734
+(1780085304.704000) can0 64C#22313034353435AA
+# tx t=018.401s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=018.402s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=018.402s 24C#021A91AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x91; watch for positive 64C#..5A91
+(1780085305.098000) can0 13FFE040#
+(1780085305.098000) can0 621#0040000000000000
+(1780085305.098000) can0 24C#021A91AAAAAAAAAA
+(1780085305.127000) can0 64C#037F1A31AAAAAAAA
+# tx t=018.901s 24C#021A92AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x92; watch for positive 64C#..5A92
+(1780085305.597000) can0 24C#021A92AAAAAAAAAA
+(1780085305.629000) can0 64C#037F1A31AAAAAAAA
+(1780085305.722000) can0 13FFE060#
+# tx t=019.388s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=019.388s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=019.389s 24C#021A93AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x93; watch for positive 64C#..5A93
+(1780085306.084000) can0 13FFE040#
+(1780085306.084000) can0 621#0040000000000000
+(1780085306.085000) can0 24C#021A93AAAAAAAAAA
+(1780085306.114000) can0 64C#037F1A31AAAAAAAA
+# tx t=019.889s 24C#021A94AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x94; watch for positive 64C#..5A94
+(1780085306.585000) can0 24C#021A94AAAAAAAAAA
+(1780085306.593000) can0 64C#037F1A31AAAAAAAA
+(1780085306.927000) can0 13FFE060#
+# tx t=020.402s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=020.402s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=020.402s 24C#021A95AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x95; watch for positive 64C#..5A95
+(1780085307.098000) can0 13FFE040#
+(1780085307.098000) can0 621#0040000000000000
+(1780085307.098000) can0 24C#021A95AAAAAAAAAA
+(1780085307.512000) can0 62C#0040000000000000
+(1780085307.532000) can0 10244060#06
+# tx t=020.899s 24C#021A96AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x96; watch for positive 64C#..5A96
+(1780085307.595000) can0 24C#021A96AAAAAAAAAA
+(1780085307.602000) can0 64C#037F1A31AAAAAAAA
+# tx t=021.400s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=021.400s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=021.400s 24C#021A97AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x97; watch for positive 64C#..5A97
+(1780085308.096000) can0 13FFE040#
+(1780085308.096000) can0 621#0040000000000000
+(1780085308.096000) can0 24C#021A97AAAAAAAAAA
+(1780085308.126000) can0 64C#037F1A31AAAAAAAA
+(1780085308.126000) can0 13FFE060#
+# tx t=021.899s 24C#021A98AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x98; watch for positive 64C#..5A98
+(1780085308.595000) can0 24C#021A98AAAAAAAAAA
+(1780085308.657000) can0 64C#100C5A982A313653
+# tx t=021.962s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085308.657000) can0 24C#30000AAAAAAAAAAA
+(1780085308.687000) can0 64C#21595044202020AA
+# tx t=022.395s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=022.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=022.396s 24C#021A99AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x99; watch for positive 64C#..5A99
+(1780085309.091000) can0 13FFE040#
+(1780085309.092000) can0 621#0040000000000000
+(1780085309.092000) can0 24C#021A99AAAAAAAAAA
+(1780085309.131000) can0 64C#065A9920151216AA
+(1780085309.320000) can0 13FFE060#
+# tx t=022.895s 24C#021A9AAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x9A; watch for positive 64C#..5A9A
+(1780085309.590000) can0 24C#021A9AAAAAAAAAAA
+(1780085309.601000) can0 64C#045A9A0A5FAAAAAA
+# tx t=023.395s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=023.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=023.396s 24C#021A9BAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x9B; watch for positive 64C#..5A9B
+(1780085310.092000) can0 13FFE040#
+(1780085310.092000) can0 621#0040000000000000
+(1780085310.092000) can0 24C#021A9BAAAAAAAAAA
+(1780085310.123000) can0 64C#045A9B0008AAAAAA
+(1780085310.525000) can0 62C#0040000000000000
+(1780085310.526000) can0 13FFE060#
+# tx t=023.892s 24C#021A9CAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x9C; watch for positive 64C#..5A9C
+(1780085310.588000) can0 24C#021A9CAAAAAAAAAA
+(1780085310.651000) can0 64C#065A9C0253FD0FAA
+# tx t=024.393s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=024.394s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=024.394s 24C#021A9DAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x9D; watch for positive 64C#..5A9D
+(1780085311.090000) can0 13FFE040#
+(1780085311.090000) can0 621#0040000000000000
+(1780085311.091000) can0 24C#021A9DAAAAAAAAAA
+(1780085311.130000) can0 64C#045A9D4141AAAAAA
+# tx t=024.896s 24C#021A9EAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x9E; watch for positive 64C#..5A9E
+(1780085311.592000) can0 24C#021A9EAAAAAAAAAA
+(1780085311.600000) can0 64C#037F1A31AAAAAAAA
+(1780085311.719000) can0 13FFE060#
+# tx t=025.392s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=025.393s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=025.394s 24C#021A9FAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0x9F; watch for positive 64C#..5A9F
+(1780085312.089000) can0 13FFE040#
+(1780085312.090000) can0 621#0040000000000000
+(1780085312.090000) can0 24C#021A9FAAAAAAAAAA
+(1780085312.130000) can0 64C#10165A9F2A313653
+# tx t=025.435s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085312.131000) can0 24C#30000AAAAAAAAAAA
+(1780085312.150000) can0 64C#21595044202020FF
+(1780085312.180000) can0 64C#22FFFFFFFFFFFFFF
+(1780085312.190000) can0 64C#23FFFFAAAAAAAAAA
+(1780085312.524000) can0 10244060#06
+# tx t=025.891s 24C#013EAAAAAAAAAAAA note=classic 0x1A scan tester-present without subfunction; known useful response is 64C#017E...
+(1780085312.588000) can0 24C#013EAAAAAAAAAAAA
+(1780085312.600000) can0 64C#017EAAAAAAAAAAAA
+(1780085312.929000) can0 13FFE060#
+# tx t=026.389s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=026.390s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=026.390s 24C#021AA0AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA0; watch for positive 64C#..5AA0
+(1780085313.086000) can0 13FFE040#
+(1780085313.086000) can0 621#0040000000000000
+(1780085313.086000) can0 24C#021AA0AAAAAAAAAA
+(1780085313.129000) can0 64C#035AA000AAAAAAAA
+(1780085313.509000) can0 62C#0040000000000000
+# tx t=026.894s 24C#021AA1AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA1; watch for positive 64C#..5AA1
+(1780085313.590000) can0 24C#021AA1AAAAAAAAAA
+(1780085313.652000) can0 64C#100E5AA11F11F0FF
+# tx t=026.957s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085313.653000) can0 24C#30000AAAAAAAAAAA
+(1780085313.682000) can0 64C#21FFFF7F00000000
+(1780085313.714000) can0 64C#2200AAAAAAAAAAAA
+# tx t=027.394s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=027.395s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=027.395s 24C#021AA2AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA2; watch for positive 64C#..5AA2
+(1780085314.091000) can0 13FFE040#
+(1780085314.091000) can0 621#0040000000000000
+(1780085314.091000) can0 24C#021AA2AAAAAAAAAA
+(1780085314.120000) can0 13FFE060#
+(1780085314.129000) can0 64C#10085AA2FFF7CF0D
+# tx t=027.434s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085314.129000) can0 24C#30000AAAAAAAAAAA
+(1780085314.150000) can0 64C#210000AAAAAAAAAA
+# tx t=027.892s 24C#021AA3AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA3; watch for positive 64C#..5AA3
+(1780085314.588000) can0 24C#021AA3AAAAAAAAAA
+(1780085314.649000) can0 64C#100A5AA3A0042300
+# tx t=027.957s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085314.653000) can0 24C#30000AAAAAAAAAAA
+(1780085314.681000) can0 64C#2100400700AAAAAA
+# tx t=028.392s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=028.393s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=028.393s 24C#021AA4AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA4; watch for positive 64C#..5AA4
+(1780085315.089000) can0 13FFE040#
+(1780085315.089000) can0 621#0040000000000000
+(1780085315.089000) can0 24C#021AA4AAAAAAAAAA
+(1780085315.129000) can0 64C#075AA40830000200
+(1780085315.317000) can0 13FFE060#
+# tx t=028.892s 24C#021AA5AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA5; watch for positive 64C#..5AA5
+(1780085315.588000) can0 24C#021AA5AAAAAAAAAA
+(1780085315.649000) can0 64C#10135AA509090000
+# tx t=028.954s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085315.650000) can0 24C#30000AAAAAAAAAAA
+(1780085315.680000) can0 64C#21A3001210680A00
+(1780085315.688000) can0 64C#22F987FE050003AA
+# tx t=029.393s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=029.394s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=029.394s 24C#021AA6AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA6; watch for positive 64C#..5AA6
+(1780085316.089000) can0 13FFE040#
+(1780085316.090000) can0 621#0040000000000000
+(1780085316.090000) can0 24C#021AA6AAAAAAAAAA
+(1780085316.128000) can0 64C#10095AA6E0A8DA40
+# tx t=029.433s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085316.129000) can0 24C#30000AAAAAAAAAAA
+(1780085316.151000) can0 64C#2110E13FAAAAAAAA
+(1780085316.522000) can0 62C#0040000000000000
+(1780085316.523000) can0 13FFE060#
+# tx t=029.890s 24C#021AA7AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA7; watch for positive 64C#..5AA7
+(1780085316.585000) can0 24C#021AA7AAAAAAAAAA
+(1780085316.648000) can0 64C#035AA700AAAAAAAA
+# tx t=030.391s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=030.392s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=030.392s 24C#021AA8AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA8; watch for positive 64C#..5AA8
+(1780085317.088000) can0 13FFE040#
+(1780085317.089000) can0 621#0040000000000000
+(1780085317.089000) can0 24C#021AA8AAAAAAAAAA
+(1780085317.127000) can0 64C#035AA800AAAAAAAA
+(1780085317.521000) can0 10244060#06
+# tx t=030.903s 24C#021AA9AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xA9; watch for positive 64C#..5AA9
+(1780085317.599000) can0 24C#021AA9AAAAAAAAAA
+(1780085317.607000) can0 64C#037F1A31AAAAAAAA
+(1780085317.723000) can0 13FFE060#
+# tx t=031.402s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=031.402s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=031.402s 24C#021AAAAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xAA; watch for positive 64C#..5AAA
+(1780085318.098000) can0 13FFE040#
+(1780085318.098000) can0 621#0040000000000000
+(1780085318.098000) can0 24C#021AAAAAAAAAAAAA
+(1780085318.128000) can0 64C#037F1A31AAAAAAAA
+# tx t=031.900s 24C#021AABAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xAB; watch for positive 64C#..5AAB
+(1780085318.595000) can0 24C#021AABAAAAAAAAAA
+(1780085318.607000) can0 64C#037F1A31AAAAAAAA
+(1780085318.915000) can0 13FFE060#
+# tx t=032.396s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=032.397s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=032.397s 24C#021AACAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xAC; watch for positive 64C#..5AAC
+(1780085319.093000) can0 13FFE040#
+(1780085319.093000) can0 621#0040000000000000
+(1780085319.093000) can0 24C#021AACAAAAAAAAAA
+(1780085319.106000) can0 64C#037F1A31AAAAAAAA
+(1780085319.506000) can0 62C#0040000000000000
+# tx t=032.900s 24C#021AADAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xAD; watch for positive 64C#..5AAD
+(1780085319.595000) can0 24C#021AADAAAAAAAAAA
+(1780085319.606000) can0 64C#037F1A31AAAAAAAA
+# tx t=033.400s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=033.401s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=033.401s 24C#021AAEAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xAE; watch for positive 64C#..5AAE
+(1780085320.096000) can0 13FFE040#
+(1780085320.097000) can0 621#0040000000000000
+(1780085320.097000) can0 24C#021AAEAAAAAAAAAA
+(1780085320.127000) can0 13FFE060#
+(1780085320.127000) can0 64C#037F1A31AAAAAAAA
+# tx t=033.900s 24C#021AAFAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xAF; watch for positive 64C#..5AAF
+(1780085320.596000) can0 24C#021AAFAAAAAAAAAA
+(1780085320.606000) can0 64C#037F1A31AAAAAAAA
+# tx t=034.402s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=034.403s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=034.403s 24C#013EAAAAAAAAAAAA note=classic 0x1A scan tester-present without subfunction; known useful response is 64C#017E...
+(1780085321.098000) can0 13FFE040#
+(1780085321.099000) can0 621#0040000000000000
+(1780085321.099000) can0 24C#013EAAAAAAAAAAAA
+(1780085321.129000) can0 64C#017EAAAAAAAAAAAA
+(1780085321.317000) can0 13FFE060#
+# tx t=034.888s 24C#021AB0AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB0; watch for positive 64C#..5AB0
+(1780085321.583000) can0 24C#021AB0AAAAAAAAAA
+(1780085321.595000) can0 64C#035AB060AAAAAAAA
+# tx t=035.401s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=035.402s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=035.402s 24C#021AB1AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB1; watch for positive 64C#..5AB1
+(1780085322.098000) can0 13FFE040#
+(1780085322.098000) can0 621#0040000000000000
+(1780085322.098000) can0 24C#021AB1AAAAAAAAAA
+(1780085322.127000) can0 64C#037F1A31AAAAAAAA
+(1780085322.505000) can0 62C#0040000000000000
+(1780085322.513000) can0 10244060#06
+(1780085322.516000) can0 13FFE060#
+# tx t=035.901s 24C#021AB2AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB2; watch for positive 64C#..5AB2
+(1780085322.597000) can0 24C#021AB2AAAAAAAAAA
+(1780085322.657000) can0 64C#075AB2FFFFFFFFFF
+# tx t=036.399s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=036.399s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=036.399s 24C#021AB3AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB3; watch for positive 64C#..5AB3
+(1780085323.095000) can0 13FFE040#
+(1780085323.095000) can0 621#0040000000000000
+(1780085323.095000) can0 24C#021AB3AAAAAAAAAA
+(1780085323.124000) can0 64C#037F1A31AAAAAAAA
+# tx t=036.898s 24C#021AB4AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB4; watch for positive 64C#..5AB4
+(1780085323.594000) can0 24C#021AB4AAAAAAAAAA
+(1780085323.656000) can0 64C#10125AB435303633
+# tx t=036.962s 24C#30000AAAAAAAAAAA note=auto ISO-TP flow control for IPC 64C first frame; blocksize=0 stmin=0x0A
+(1780085323.657000) can0 24C#30000AAAAAAAAAAA
+(1780085323.687000) can0 64C#2136394647314633
+(1780085323.694000) can0 64C#223336303547AAAA
+(1780085323.719000) can0 13FFE060#
+# tx t=037.397s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=037.397s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=037.397s 24C#021AB5AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB5; watch for positive 64C#..5AB5
+(1780085324.093000) can0 13FFE040#
+(1780085324.093000) can0 621#0040000000000000
+(1780085324.094000) can0 24C#021AB5AAAAAAAAAA
+(1780085324.124000) can0 64C#037F1A31AAAAAAAA
+# tx t=037.898s 24C#021AB6AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB6; watch for positive 64C#..5AB6
+(1780085324.594000) can0 24C#021AB6AAAAAAAAAA
+(1780085324.604000) can0 64C#037F1A31AAAAAAAA
+(1780085324.912000) can0 13FFE060#
+# tx t=038.395s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=038.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=038.396s 24C#021AB7AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB7; watch for positive 64C#..5AB7
+(1780085325.092000) can0 13FFE040#
+(1780085325.092000) can0 621#0040000000000000
+(1780085325.092000) can0 24C#021AB7AAAAAAAAAA
+(1780085325.122000) can0 64C#037F1A31AAAAAAAA
+(1780085325.503000) can0 62C#0040000000000000
+# tx t=038.891s 24C#021AB8AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB8; watch for positive 64C#..5AB8
+(1780085325.586000) can0 24C#021AB8AAAAAAAAAA
+(1780085325.617000) can0 64C#037F1A31AAAAAAAA
+# tx t=039.389s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=039.390s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=039.390s 24C#021AB9AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xB9; watch for positive 64C#..5AB9
+(1780085326.086000) can0 13FFE040#
+(1780085326.086000) can0 621#0040000000000000
+(1780085326.086000) can0 24C#021AB9AAAAAAAAAA
+(1780085326.116000) can0 64C#037F1A31AAAAAAAA
+(1780085326.117000) can0 13FFE060#
+# tx t=039.891s 24C#021ABAAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xBA; watch for positive 64C#..5ABA
+(1780085326.587000) can0 24C#021ABAAAAAAAAAAA
+# tx t=040.394s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=040.394s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=040.394s 24C#021ABBAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xBB; watch for positive 64C#..5ABB
+(1780085327.090000) can0 13FFE040#
+(1780085327.090000) can0 621#0040000000000000
+(1780085327.090000) can0 24C#021ABBAAAAAAAAAA
+(1780085327.102000) can0 64C#037F1A31AAAAAAAA
+(1780085327.311000) can0 13FFE060#
+(1780085327.526000) can0 10244060#06
+# tx t=040.894s 24C#021ABCAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xBC; watch for positive 64C#..5ABC
+(1780085327.589000) can0 24C#021ABCAAAAAAAAAA
+(1780085327.602000) can0 64C#037F1A31AAAAAAAA
+# tx t=041.396s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=041.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=041.397s 24C#021ABDAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xBD; watch for positive 64C#..5ABD
+(1780085328.092000) can0 13FFE040#
+(1780085328.092000) can0 621#0040000000000000
+(1780085328.092000) can0 24C#021ABDAAAAAAAAAA
+(1780085328.122000) can0 64C#037F1A31AAAAAAAA
+(1780085328.502000) can0 62C#0040000000000000
+(1780085328.510000) can0 13FFE060#
+# tx t=041.896s 24C#021ABEAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xBE; watch for positive 64C#..5ABE
+(1780085328.592000) can0 24C#021ABEAAAAAAAAAA
+(1780085328.601000) can0 64C#037F1A31AAAAAAAA
+# tx t=042.394s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=042.395s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=042.395s 24C#021ABFAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xBF; watch for positive 64C#..5ABF
+(1780085329.090000) can0 13FFE040#
+(1780085329.090000) can0 621#0040000000000000
+(1780085329.091000) can0 24C#021ABFAAAAAAAAAA
+(1780085329.120000) can0 64C#037F1A31AAAAAAAA
+# tx t=042.896s 24C#013EAAAAAAAAAAAA note=classic 0x1A scan tester-present without subfunction; known useful response is 64C#017E...
+(1780085329.592000) can0 24C#013EAAAAAAAAAAAA
+(1780085329.601000) can0 64C#017EAAAAAAAAAAAA
+(1780085329.717000) can0 13FFE060#
+# tx t=043.396s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=043.397s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=043.397s 24C#021AF0AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF0; watch for positive 64C#..5AF0
+(1780085330.093000) can0 13FFE040#
+(1780085330.093000) can0 621#0040000000000000
+(1780085330.093000) can0 24C#021AF0AAAAAAAAAA
+(1780085330.123000) can0 64C#037F1A31AAAAAAAA
+# tx t=043.896s 24C#021AF1AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF1; watch for positive 64C#..5AF1
+(1780085330.592000) can0 24C#021AF1AAAAAAAAAA
+(1780085330.600000) can0 64C#037F1A31AAAAAAAA
+(1780085330.909000) can0 13FFE060#
+# tx t=044.397s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=044.397s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=044.397s 24C#021AF2AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF2; watch for positive 64C#..5AF2
+(1780085331.093000) can0 13FFE040#
+(1780085331.093000) can0 621#0040000000000000
+(1780085331.094000) can0 24C#021AF2AAAAAAAAAA
+(1780085331.123000) can0 64C#037F1A31AAAAAAAA
+(1780085331.500000) can0 62C#0040000000000000
+# tx t=044.896s 24C#021AF3AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF3; watch for positive 64C#..5AF3
+(1780085331.592000) can0 24C#021AF3AAAAAAAAAA
+(1780085331.600000) can0 64C#037F1A31AAAAAAAA
+# tx t=045.395s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=045.395s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=045.395s 24C#021AF4AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF4; watch for positive 64C#..5AF4
+(1780085332.091000) can0 13FFE040#
+(1780085332.091000) can0 621#0040000000000000
+(1780085332.091000) can0 24C#021AF4AAAAAAAAAA
+(1780085332.121000) can0 13FFE060#
+(1780085332.122000) can0 64C#037F1A31AAAAAAAA
+(1780085332.508000) can0 10244060#06
+# tx t=045.897s 24C#021AF5AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF5; watch for positive 64C#..5AF5
+(1780085332.592000) can0 24C#021AF5AAAAAAAAAA
+(1780085332.599000) can0 64C#037F1A31AAAAAAAA
+# tx t=046.396s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=046.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=046.397s 24C#021AF6AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF6; watch for positive 64C#..5AF6
+(1780085333.092000) can0 13FFE040#
+(1780085333.092000) can0 621#0040000000000000
+(1780085333.093000) can0 24C#021AF6AAAAAAAAAA
+(1780085333.122000) can0 64C#037F1A31AAAAAAAA
+(1780085333.308000) can0 13FFE060#
+# tx t=046.894s 24C#021AF7AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF7; watch for positive 64C#..5AF7
+(1780085333.589000) can0 24C#021AF7AAAAAAAAAA
+(1780085333.599000) can0 64C#037F1A31AAAAAAAA
+# tx t=047.396s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=047.397s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=047.397s 24C#021AF8AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF8; watch for positive 64C#..5AF8
+(1780085334.093000) can0 13FFE040#
+(1780085334.093000) can0 621#0040000000000000
+(1780085334.094000) can0 24C#021AF8AAAAAAAAAA
+(1780085334.123000) can0 64C#037F1A31AAAAAAAA
+(1780085334.499000) can0 62C#0040000000000000
+(1780085334.507000) can0 13FFE060#
+# tx t=047.893s 24C#021AF9AAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xF9; watch for positive 64C#..5AF9
+(1780085334.589000) can0 24C#021AF9AAAAAAAAAA
+(1780085334.598000) can0 64C#037F1A31AAAAAAAA
+# tx t=048.396s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=048.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=048.397s 24C#021AFAAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xFA; watch for positive 64C#..5AFA
+(1780085335.092000) can0 13FFE040#
+(1780085335.092000) can0 621#0040000000000000
+(1780085335.093000) can0 24C#021AFAAAAAAAAAAA
+(1780085335.123000) can0 64C#037F1A31AAAAAAAA
+# tx t=048.890s 24C#021AFBAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xFB; watch for positive 64C#..5AFB
+(1780085335.586000) can0 24C#021AFBAAAAAAAAAA
+(1780085335.599000) can0 64C#037F1A31AAAAAAAA
+(1780085335.709000) can0 13FFE060#
+# tx t=049.388s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=049.389s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=049.389s 24C#021AFCAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xFC; watch for positive 64C#..5AFC
+(1780085336.084000) can0 13FFE040#
+(1780085336.084000) can0 621#0040000000000000
+(1780085336.085000) can0 24C#021AFCAAAAAAAAAA
+(1780085336.098000) can0 64C#037F1A31AAAAAAAA
+# tx t=049.892s 24C#021AFDAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xFD; watch for positive 64C#..5AFD
+(1780085336.587000) can0 24C#021AFDAAAAAAAAAA
+(1780085336.597000) can0 64C#037F1A31AAAAAAAA
+(1780085336.906000) can0 13FFE060#
+# tx t=050.389s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=050.389s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=050.389s 24C#021AFEAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xFE; watch for positive 64C#..5AFE
+(1780085337.085000) can0 13FFE040#
+(1780085337.085000) can0 621#0040000000000000
+(1780085337.085000) can0 24C#021AFEAAAAAAAAAA
+(1780085337.097000) can0 64C#037F1A31AAAAAAAA
+(1780085337.499000) can0 62C#0040000000000000
+(1780085337.507000) can0 10244060#06
+# tx t=050.890s 24C#021AFFAAAAAAAAAA note=classic read-data-by-identifier 0x1A 0xFF; watch for positive 64C#..5AFF
+(1780085337.586000) can0 24C#021AFFAAAAAAAAAA
+(1780085337.598000) can0 64C#037F1A31AAAAAAAA
+# tx t=051.394s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=051.396s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085338.094000) can0 13FFE040#
+(1780085338.094000) can0 621#0040000000000000
+(1780085338.121000) can0 13FFE060#
+# tx t=052.393s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=052.393s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085339.089000) can0 13FFE040#
+(1780085339.089000) can0 621#0040000000000000
+(1780085339.308000) can0 13FFE060#
+# tx t=053.393s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=053.393s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085340.089000) can0 13FFE040#
+(1780085340.089000) can0 621#0040000000000000
+(1780085340.496000) can0 62C#0040000000000000
+(1780085340.504000) can0 13FFE060#
+# tx t=054.396s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=054.397s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085341.092000) can0 13FFE040#
+(1780085341.092000) can0 621#0040000000000000
+(1780085341.719000) can0 13FFE060#
+# tx t=055.397s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=055.397s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085342.093000) can0 13FFE040#
+(1780085342.094000) can0 621#0040000000000000
+(1780085342.503000) can0 10244060#06
+(1780085342.903000) can0 13FFE060#
+# tx t=056.392s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=056.394s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085343.090000) can0 13FFE040#
+(1780085343.091000) can0 621#0040000000000000
+(1780085343.495000) can0 62C#0040000000000000
+# tx t=057.390s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=057.391s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085344.087000) can0 13FFE040#
+(1780085344.087000) can0 621#0040000000000000
+(1780085344.116000) can0 13FFE060#
+# tx t=058.404s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=058.404s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085345.100000) can0 13FFE040#
+(1780085345.100000) can0 621#0040000000000000
+(1780085345.317000) can0 13FFE060#
+# tx t=059.400s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=059.401s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085346.096000) can0 13FFE040#
+(1780085346.097000) can0 621#0040000000000000
+(1780085346.506000) can0 62C#0040000000000000
+(1780085346.506000) can0 13FFE060#
+# tx t=060.403s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=060.403s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085347.099000) can0 13FFE040#
+(1780085347.099000) can0 621#0040000000000000
+(1780085347.503000) can0 10244060#06
+(1780085347.701000) can0 13FFE060#
+# tx t=061.400s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=061.401s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085348.096000) can0 13FFE040#
+(1780085348.097000) can0 621#0040000000000000
+(1780085348.905000) can0 13FFE060#
+# tx t=062.400s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=062.401s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085349.096000) can0 13FFE040#
+(1780085349.096000) can0 621#0040000000000000
+(1780085349.502000) can0 62C#0040000000000000
+# tx t=063.400s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=063.401s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085350.096000) can0 13FFE040#
+(1780085350.097000) can0 621#0040000000000000
+(1780085350.100000) can0 13FFE060#
+# tx t=064.396s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=064.397s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780085351.092000) can0 13FFE040#
+(1780085351.093000) can0 621#0040000000000000
+(1780085351.311000) can0 13FFE060#
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

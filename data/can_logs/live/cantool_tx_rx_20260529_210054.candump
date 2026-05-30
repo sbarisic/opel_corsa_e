@@ -1,0 +1,117 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.416s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=000.417s 621#0140000000000000 note=network-management initiate retry, intentionally sparse
+# tx t=000.419s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=000.420s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+(1780081255.072000) can0 100#
+(1780081255.073000) can0 621#0140000000000000
+(1780081255.073000) can0 13FFE040#
+# tx t=000.928s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=001.177s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=001.424s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=001.424s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=001.425s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=001.425s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=001.674s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=001.925s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=002.174s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=002.424s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=002.425s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=002.426s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=002.426s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=002.426s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=002.672s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=002.672s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=002.920s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=003.168s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=003.416s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=003.416s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=003.416s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=003.416s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=003.417s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=003.417s 24C#021003AAAAAAAAAA note=IPC diagnostic session probe; watch for 64C if IPC wakes
+# tx t=003.666s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=003.667s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=003.915s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=004.166s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=004.417s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=004.418s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=004.418s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=004.418s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=004.418s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=004.668s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=004.669s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=004.669s 24C#013EAAAAAAAAAAAA note=IPC tester-present probe; watch for 64C if IPC wakes
+# tx t=004.918s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=005.168s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=005.420s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=005.420s 621#0140000000000000 note=network-management initiate retry, intentionally sparse
+# tx t=005.420s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=005.421s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=005.421s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=005.421s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=005.670s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=005.671s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=005.922s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=005.922s 24C#021003AAAAAAAAAA note=IPC diagnostic session probe; watch for 64C if IPC wakes
+# tx t=006.172s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=006.420s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=006.421s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=006.421s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=006.421s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=006.421s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=006.669s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=006.670s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=006.919s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=007.168s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=007.168s 24C#013EAAAAAAAAAAAA note=IPC tester-present probe; watch for 64C if IPC wakes
+# tx t=007.420s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=007.420s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=007.420s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=007.420s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=007.421s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=007.669s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=007.669s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=007.920s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=008.167s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=008.419s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=008.419s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=008.419s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=008.419s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=008.419s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=008.419s 24C#021003AAAAAAAAAA note=IPC diagnostic session probe; watch for 64C if IPC wakes
+# tx t=008.669s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=008.669s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=008.917s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=009.168s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=009.419s 100# note=SWCAN wakeup repeated slowly while IPC is silent
+# tx t=009.419s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=009.420s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=009.420s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=009.420s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=009.669s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=009.670s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=009.670s 24C#013EAAAAAAAAAAAA note=IPC tester-present probe; watch for 64C if IPC wakes
+# tx t=009.917s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=010.165s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=010.415s 621#0140000000000000 note=network-management initiate retry, intentionally sparse
+# tx t=010.416s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=010.416s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=010.416s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=010.416s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=010.668s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=010.668s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=010.918s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=010.918s 24C#021003AAAAAAAAAA note=IPC diagnostic session probe; watch for 64C if IPC wakes
+# tx t=011.169s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=011.418s 13FFE040# note=fake BCM/source 0x40 presence during wake recovery
+# tx t=011.419s 621#0040000000000000 note=network-management steady keepalive during wake recovery
+# tx t=011.419s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=011.419s 10754040#0400000000000000 note=Astra/GM key-present context candidate during wake recovery
+# tx t=011.668s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=011.669s 0AA#740000 note=Opel ignition/key-state candidate during wake recovery
+# tx t=011.918s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=012.168s 10002040#03 note=system power mode run candidate during wake recovery
+# tx t=012.168s 24C#013EAAAAAAAAAAAA note=IPC tester-present probe; watch for 64C if IPC wakes
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

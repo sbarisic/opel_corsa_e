@@ -1,0 +1,8 @@
+# cantool wake-matrix capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# mode=normal guided physical wake matrix
+# phase_seconds=12 stop_on_wake=True passive_only=False include_nm_init=False manual_advance=True
+# wake-matrix preclear discarded_count=5 duration_ms=300
+# wake-matrix phase=1/4 name=pin3-passive active_100=False active_nm_init=False instruction=connect SWCAN/CAN-H lead to IPC low-speed pin 3; toggle/apply pin 8 +12 V during this phase
+# wake-matrix phase-start-confirmed name=pin3-passive
+(1780083745.344000) can0 13FFE060#
+# wake-matrix stop-on-wake phase=pin3-passive triggered_by=13FFE060#

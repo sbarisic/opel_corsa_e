@@ -1,0 +1,551 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.424s 100# note=SWCAN wakeup, normal one-shot
+# tx t=000.425s 13FFE040# note=normal fake BCM/source 0x40 presence seed
+# tx t=000.425s 621#0040000000000000 note=normal network-management steady keepalive seed
+(1780079809.837000) can0 100#
+(1780079809.838000) can0 13FFE040#
+(1780079809.838000) can0 621#0040000000000000
+# tx t=001.437s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=001.437s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=002.428s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=002.429s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=002.429s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.430s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.444s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.444s 12A#0006606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 1/6
+# tx t=002.460s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.460s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.475s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.476s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.476s 135#04080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 1/5
+# tx t=002.491s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.491s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.492s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=002.506s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.506s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=002.522s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.522s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.522s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=002.538s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.538s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.553s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.554s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.554s 12A#0000606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 2/6
+# tx t=002.555s 1F1#AE0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=002.569s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.569s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.570s 135#04080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 2/5
+# tx t=002.585s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.585s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=002.601s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.601s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.616s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.617s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.617s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=002.631s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.632s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.632s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.632s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=002.633s 4E1#4B34303238383139 note=native Corsa E VIN/config fragment 0x4E1
+# tx t=002.647s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.647s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.648s 12A#0000605900000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 3/6
+# tx t=002.648s 1F1#800E000018000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 2/4
+# tx t=002.663s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.663s 135#00080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 3/5
+# tx t=002.678s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.678s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.693s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.693s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.693s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=002.709s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.709s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.709s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=002.725s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.725s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=002.725s 514#3056305845503638 note=native Corsa E VIN/config fragment 0x514
+# tx t=002.740s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.740s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.756s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.756s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.756s 12A#0000605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 4/6
+# tx t=002.756s 1F1#850F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 3/4
+# tx t=002.771s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.771s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.772s 135#00080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 4/5
+# tx t=002.787s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.787s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.788s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=002.802s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.803s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=002.818s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.818s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.834s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.834s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.834s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=002.849s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.850s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.850s 12A#0006605E00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 5/6
+# tx t=002.850s 1F1#AB0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 4/4
+# tx t=002.865s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.865s 135#00080D0202180000 note=native Corsa E packed body/display status 0x135 observed variants variant 5/5
+# tx t=002.881s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.881s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.897s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.897s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.897s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=002.913s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.913s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.913s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=002.928s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.929s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.929s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=002.943s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=002.944s 12A#0006605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 6/6
+# tx t=002.944s 1F1#AE0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=002.959s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=002.959s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.974s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=002.976s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.977s 135#04080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 1/5
+# tx t=002.990s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=002.990s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=002.990s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=003.006s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.006s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.021s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.022s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.036s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.037s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.037s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=003.052s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.052s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.052s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.052s 12A#0006606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 1/6
+# tx t=003.052s 1F1#800E000018000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 2/4
+# tx t=003.068s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.068s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.068s 135#04080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 2/5
+# tx t=003.084s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.084s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=003.099s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.100s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.114s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.115s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.115s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.131s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.131s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.131s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=003.146s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.147s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.147s 12A#0000606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 2/6
+# tx t=003.147s 1F1#850F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 3/4
+# tx t=003.162s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.163s 135#00080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 3/5
+# tx t=003.178s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.178s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.194s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.194s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.194s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=003.209s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.210s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.210s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.224s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.224s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=003.239s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.240s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.255s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.256s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.256s 12A#0000605900000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 3/6
+# tx t=003.256s 1F1#AB0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 4/4
+# tx t=003.271s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.271s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.271s 135#00080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 4/5
+# tx t=003.286s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.286s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=003.302s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.302s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.302s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.317s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.318s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.333s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.333s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.334s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=003.349s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.349s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.349s 12A#0000605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 4/6
+# tx t=003.349s 1F1#AE0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=003.365s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.365s 135#00080D0202180000 note=native Corsa E packed body/display status 0x135 observed variants variant 5/5
+# tx t=003.380s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.380s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.395s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.395s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.396s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=003.411s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.411s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.411s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.426s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=003.426s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=003.426s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.427s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=003.441s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.442s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.457s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.457s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.458s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.458s 12A#0006605E00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 5/6
+# tx t=003.458s 1F1#800E000018000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 2/4
+# tx t=003.472s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.472s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.473s 135#04080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 1/5
+# tx t=003.488s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.488s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.489s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=003.504s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.504s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.520s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.520s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.535s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.535s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.535s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=003.551s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.551s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.552s 12A#0006605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 6/6
+# tx t=003.552s 1F1#850F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 3/4
+# tx t=003.566s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.567s 135#04080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 2/5
+# tx t=003.582s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.583s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.583s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=003.598s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.599s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.614s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.614s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.614s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.629s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.630s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.630s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=003.630s 4E1#4B34303238383139 note=native Corsa E VIN/config fragment 0x4E1
+# tx t=003.644s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.645s 12A#0006606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 1/6
+# tx t=003.645s 1F1#AB0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 4/4
+# tx t=003.661s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.661s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.677s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.677s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.677s 135#00080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 3/5
+# tx t=003.692s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.693s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.693s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=003.709s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.709s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.710s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.723s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.724s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=003.724s 514#3056305845503638 note=native Corsa E VIN/config fragment 0x514
+# tx t=003.739s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.739s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.754s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.755s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.755s 12A#0000606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 2/6
+# tx t=003.755s 1F1#AE0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=003.771s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.771s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.772s 135#00080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 4/5
+# tx t=003.786s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.786s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=003.802s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.802s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.802s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.802s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.817s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.818s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.833s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.833s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.833s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=003.849s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.849s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.849s 12A#0000605900000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 3/6
+# tx t=003.849s 1F1#800E000018000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 2/4
+# tx t=003.864s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.864s 135#00080D0202180000 note=native Corsa E packed body/display status 0x135 observed variants variant 5/5
+# tx t=003.880s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.880s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.896s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.896s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.896s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=003.911s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.911s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.911s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=003.926s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.926s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=003.941s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=003.941s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.957s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=003.957s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.957s 12A#0000605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 4/6
+# tx t=003.957s 1F1#850F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 3/4
+# tx t=003.973s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=003.973s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.973s 135#04080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 1/5
+# tx t=003.988s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=003.989s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=003.989s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=004.004s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.004s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.020s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.020s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.035s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.036s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.036s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=004.051s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.051s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.052s 12A#0006605E00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 5/6
+# tx t=004.052s 1F1#AB0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 4/4
+# tx t=004.066s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.066s 135#04080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 2/5
+# tx t=004.082s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.083s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.083s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=004.098s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.098s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.114s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.114s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.114s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.130s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.130s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.130s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=004.145s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.145s 12A#0006605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 6/6
+# tx t=004.146s 1F1#AE0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=004.161s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.161s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.176s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.177s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.177s 135#00080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 3/5
+# tx t=004.192s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.193s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.193s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.193s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=004.208s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.208s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.209s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.223s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.223s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=004.239s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.239s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.255s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.255s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.256s 12A#0006606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 1/6
+# tx t=004.256s 1F1#800E000018000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 2/4
+# tx t=004.271s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.271s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.271s 135#00080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 4/5
+# tx t=004.286s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.287s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=004.302s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.303s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.303s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.318s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.318s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.333s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.334s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.334s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=004.349s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.350s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.350s 12A#0000606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 2/6
+# tx t=004.350s 1F1#850F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 3/4
+# tx t=004.365s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.365s 135#00080D0202180000 note=native Corsa E packed body/display status 0x135 observed variants variant 5/5
+# tx t=004.381s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.381s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.396s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.397s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.397s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=004.412s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.413s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.413s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.428s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=004.429s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=004.429s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.429s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.429s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=004.444s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.445s 12A#0000605900000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 3/6
+# tx t=004.445s 1F1#AB0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 4/4
+# tx t=004.461s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.461s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.477s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.477s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.477s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.477s 135#04080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 1/5
+# tx t=004.492s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.492s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.493s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=004.508s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.508s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.508s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.524s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.524s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=004.539s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.540s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.555s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.556s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.556s 12A#0000605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 4/6
+# tx t=004.556s 1F1#AE0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=004.571s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.571s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.571s 135#04080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 2/5
+# tx t=004.586s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.586s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=004.601s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.602s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.602s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.618s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.618s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.632s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.633s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.633s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=004.633s 4E1#4B34303238383139 note=native Corsa E VIN/config fragment 0x4E1
+# tx t=004.649s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.649s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.649s 12A#0006605E00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 5/6
+# tx t=004.649s 1F1#800E000018000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 2/4
+# tx t=004.665s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.665s 135#00080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 3/5
+# tx t=004.681s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.681s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.696s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.697s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.697s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=004.711s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.712s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.712s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.727s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.727s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.727s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=004.727s 514#3056305845503638 note=native Corsa E VIN/config fragment 0x514
+# tx t=004.743s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.743s 12A#0006605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 6/6
+# tx t=004.743s 1F1#850F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 3/4
+# tx t=004.759s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.759s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.774s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.775s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.775s 135#00080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 4/5
+# tx t=004.791s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.791s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.791s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=004.807s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.807s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.807s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.807s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.823s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.823s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=004.838s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.838s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.853s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.853s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.853s 12A#0006606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 1/6
+# tx t=004.853s 1F1#AB0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 4/4
+# tx t=004.868s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.869s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.869s 135#00080D0202180000 note=native Corsa E packed body/display status 0x135 observed variants variant 5/5
+# tx t=004.884s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.884s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=004.900s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.901s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.916s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.917s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.917s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=004.932s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.932s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.933s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=004.948s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=004.949s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.949s 12A#0000606B00000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 2/6
+# tx t=004.949s 1F1#AE0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=004.964s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=004.964s 135#04080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 1/5
+# tx t=004.980s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=004.980s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.996s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=004.996s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=004.996s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=005.012s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=005.012s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.012s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=005.027s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=005.028s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.028s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=005.043s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=005.044s 12A#0000605900000080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 3/6
+# tx t=005.044s 1F1#800E000018000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 2/4
+# tx t=005.059s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=005.059s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.075s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=005.075s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.075s 135#04080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 2/5
+# tx t=005.090s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=005.090s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.090s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=005.106s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=005.106s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=005.121s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=005.121s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.136s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=005.137s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=005.137s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.137s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=005.153s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=005.153s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.153s 12A#0000605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 4/6
+# tx t=005.153s 1F1#850F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 3/4
+# tx t=005.168s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=005.168s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.168s 135#00080A0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 3/5
+# tx t=005.183s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=005.183s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=005.199s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=005.199s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.214s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=005.214s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.215s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=005.229s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=005.230s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.230s 160#0000000000 note=native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=005.245s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=005.246s 12A#0006605E00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 5/6
+# tx t=005.246s 1F1#AB0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 4/4
+# tx t=005.261s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=005.262s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.262s 135#00080D0002180000 note=native Corsa E packed body/display status 0x135 observed variants variant 4/5
+# tx t=005.278s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=005.278s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.294s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=005.294s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.294s 137#0000000000000000 note=native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=005.309s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=005.309s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.309s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=005.325s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=005.325s 160#803C96B503 note=native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=005.340s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=005.341s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.356s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=005.357s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.357s 12A#0006605D00008080 note=native Corsa E door/belt/body/DIC 0x12A observed variants variant 6/6
+# tx t=005.357s 1F1#AE0F173E18000072 note=native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=005.372s 0F1#000000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 1/4
+# tx t=005.373s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.373s 135#00080D0202180000 note=native Corsa E packed body/display status 0x135 observed variants variant 5/5
+# tx t=005.387s 0F1#1C0000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 2/4
+# tx t=005.388s 451#000000000000 note=native Corsa E display/body status 0x451
+# tx t=005.388s 137#0000000030000000 note=native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=005.403s 0F1#280000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 3/4
+# tx t=005.404s 139#0000000000000000 note=native Corsa E body/display status 0x139
+# tx t=005.420s 0F1#340000400000 note=native Corsa E fast BCM/body state cycle 0x0F1 from saved captures variant 4/4
+# tx t=005.420s 451#000000000000 note=native Corsa E display/body status 0x451
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

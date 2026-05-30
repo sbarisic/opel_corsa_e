@@ -34,6 +34,8 @@ Generated outputs:
 The first WSL/radare2 disassembly pass is captured in
 `analysis/BCM_R2_DISASSEMBLY.md`. The direct IPC low-speed capture projection
 and payload-builder trace is captured in `analysis/BCM_IPC_LIVE_REVERSE.md`.
+The standard 11-bit BCM/body frames most relevant to the cluster are broken out
+in `analysis/BCM_INSTRUMENT_CLUSTER_SPECIFICS.md`.
 
 The script asserts the current table anchors before writing outputs:
 
@@ -179,12 +181,30 @@ Current confidence level:
 - `0x160`, `0x1F1`, `0x0F1`, `0x12A`, `0x135`, `0x137`, `0x139`, `0x451`,
   `0x4E1`, and `0x514` are confirmed by Group A table entries and observed
   native/body logs.
+- Their payload RAM buffers and aux builders are now summarized in
+  `analysis/BCM_INSTRUMENT_CLUSTER_SPECIFICS.md`. The strongest prerequisite
+  frames are `0x1F1`, `0x160`, `0x0F1`, and `0x12A`; none currently looks like a
+  simple direct speed/RPM payload.
+- The same note now tracks the RX-side breadcrumbs: CAN service code around
+  `0x02E66C..0x02ECxx`, raw controller staging RAM, and the selector trampoline
+  table around `0x10B5xx` feeding generic object manager `0x12E118`.
+- Group B priority indices are now tied to dispatch/wrapper entries for all
+  five target ECU frames: `0x4D1` index `90` -> `0x131D5C`, `0x4C1` index `92`
+  -> `0x131D42`, `0x3E9` index `95` -> `0x13142E`, `0x3D1` index `97` ->
+  `0x131CDA`, and high-rate `0x0C9` index `145` -> `0x131BBC`. The lower
+  object-manager wrappers around `0x10BE88..0x10BED8` still only cover the
+  in-range descriptor objects cleanly; `0x0C9` remains an outlier because index
+  `145` sits outside the 105-entry object descriptor table at `0x23BAC`.
 - Their direct scheduler/dispatch links remain unresolved statically; the
   standard-ID object keys do not map directly into the `0x021A40` dispatch
   table by `raw_value >> 16`.
 - `0x0C9`, `0x3E9`, `0x4C1`, `0x4D1`, and `0x3D1` are confirmed by Group B RX
-  entries and ECU-side logs, but their consumers still need RX interrupt/buffer
-  tracing.
+  entries and ECU-side logs. Raw-byte decoding shows the dispatch handlers at
+  `0x131BBC`, `0x131D5C`, `0x131D42`, `0x13142E`, and `0x131CDA` are entry
+  points into shared one-byte getter/writer chains using writer `0x12F124`.
+  The best next consumer trace is now to disassemble the getter functions listed
+  in `analysis/BCM_INSTRUMENT_CLUSTER_SPECIFICS.md` and tie them back to RAM,
+  not a raw CAN-ID constant search.
 
 ## Architecture Guess
 
@@ -212,6 +232,21 @@ Prioritize these ECU-side receive/filter paths:
 - `0x4C1`: coolant temperature and thermal warning data.
 - `0x4D1`: oil pressure, oil level, fuel/status warnings.
 - `0x3D1`: limiter/display-status behavior.
+
+For those paths, start from the object wrappers rather than the CAN table:
+
+```text
+0x0C9 / Group B 145 -> 0x131BBC via dispatch key 0x9054
+0x4D1 / Group B 90  -> 0x131D5C via dispatch key 0x900B
+0x4C1 / Group B 92  -> 0x131D42 via dispatch key 0x900D
+0x3E9 / Group B 95  -> 0x13142E via dispatch key 0x9012
+0x3D1 / Group B 97  -> 0x131CDA via dispatch key 0x9014
+
+0x4D1 / Group B 90  -> 0x10BED4 -> 0x12E5C4, plus 0x10C578 -> 0x12E3D2
+0x4C1 / Group B 92  -> 0x10BEBC -> 0x12E5C4
+0x3E9 / Group B 95  -> 0x10BE9C -> 0x12E5C4
+0x3D1 / Group B 97  -> 0x10BE88 -> 0x12E5C4, plus 0x10C3B6/0x10C3BE
+```
 
 Prioritize these BCM/body transmit or IPC-facing candidates:
 

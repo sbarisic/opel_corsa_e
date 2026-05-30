@@ -1,0 +1,293 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# waiting for first RX before starting TX
+(1780084270.122000) can0 13FFE060#
+# first RX observed; starting TX schedule
+(1780084270.496000) can0 100#
+(1780084270.563000) can0 62C#0140000000000000
+(1780084270.573000) can0 10244060#02
+(1780084270.592000) can0 103D6060#00
+(1780084270.592000) can0 10424060#059964
+(1780084270.592000) can0 10444060#00
+(1780084270.593000) can0 10448060#00
+(1780084270.593000) can0 1045C060#40
+(1780084270.593000) can0 10774060#00
+(1780084270.593000) can0 1084A060#00
+(1780084270.595000) can0 10A04060#00
+(1780084270.600000) can0 10ACE060#1E00000000000000
+(1780084270.604000) can0 10AE8060#030E010104050000
+(1780084270.606000) can0 103DA060#00
+(1780084270.622000) can0 10812060#00
+(1780084270.623000) can0 10B0A060#001E04
+(1780084270.623000) can0 13FFE060#
+(1780084270.634000) can0 10AE8060#030E010104050000
+(1780084270.654000) can0 1084A060#00
+(1780084270.664000) can0 10AE8060#0016010800000000
+(1780084270.686000) can0 10244060#02
+(1780084270.686000) can0 103D6060#00
+(1780084270.717000) can0 10ACE060#1E00200000000000
+(1780084270.722000) can0 10B0A060#002B04
+(1780084270.792000) can0 10244060#02
+(1780084270.814000) can0 10ACE060#2B00000000000000
+(1780084270.841000) can0 10AFC060#38FFFFFFFFFFFF2B
+# tx t=116.164s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=116.164s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084271.137000) can0 13FFE040#
+(1780084271.137000) can0 621#0040000000000000
+(1780084271.332000) can0 10774060#00
+(1780084271.552000) can0 10424060#079964
+(1780084271.771000) can0 13FFE060#
+# tx t=117.163s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=117.163s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=117.163s 24C#021003AAAAAAAAAA note=classic GMLAN initiate diagnostic operation 0x10 0x03; known positive response is 64C#0150...
+(1780084272.135000) can0 13FFE040#
+(1780084272.136000) can0 621#0040000000000000
+(1780084272.136000) can0 24C#021003AAAAAAAAAA
+(1780084272.167000) can0 64C#0150AAAAAAAAAAAA
+(1780084272.979000) can0 13FFE060#
+# tx t=118.163s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=118.163s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084273.136000) can0 13FFE040#
+(1780084273.136000) can0 621#0040000000000000
+(1780084273.573000) can0 62C#0040000000000000
+(1780084274.103000) can0 10244060#06
+# tx t=119.162s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=119.162s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=119.163s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+(1780084274.135000) can0 13FFE040#
+(1780084274.135000) can0 621#0040000000000000
+(1780084274.135000) can0 24C#023E00AAAAAAAAAA
+(1780084274.166000) can0 64C#037F3E12AAAAAAAA
+(1780084274.170000) can0 13FFE060#
+# tx t=120.160s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=120.160s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=120.160s 24C#021004AAAAAAAAAA note=classic GMLAN initiate diagnostic operation 0x10 0x04 wake-up-links probe
+(1780084275.133000) can0 13FFE040#
+(1780084275.133000) can0 621#0040000000000000
+(1780084275.134000) can0 24C#021004AAAAAAAAAA
+(1780084275.163000) can0 10424060#079964
+(1780084275.163000) can0 64C#037F1012AAAAAAAA
+(1780084275.379000) can0 13FFE060#
+(1780084275.569000) can0 10244060#06
+# tx t=121.156s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=121.156s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=121.156s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+(1780084276.129000) can0 13FFE040#
+(1780084276.129000) can0 621#0040000000000000
+(1780084276.130000) can0 24C#023E00AAAAAAAAAA
+(1780084276.160000) can0 10424060#079964
+(1780084276.175000) can0 64C#037F3E12AAAAAAAA
+(1780084276.560000) can0 62C#0040000000000000
+(1780084276.581000) can0 13FFE060#
+# tx t=122.159s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=122.160s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084277.132000) can0 13FFE040#
+(1780084277.132000) can0 621#0040000000000000
+(1780084277.162000) can0 10424060#079964
+(1780084277.162000) can0 64C#0160AAAAAAAAAAAA
+(1780084277.768000) can0 13FFE060#
+# tx t=123.160s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=123.161s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=123.161s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+# tx t=123.161s 24C#021A90AAAAAAAAAA note=classic GMLAN read-data-by-identifier 0x1A 0x90 candidate
+(1780084278.134000) can0 13FFE040#
+(1780084278.134000) can0 621#0040000000000000
+(1780084278.134000) can0 24C#023E00AAAAAAAAAA
+(1780084278.134000) can0 24C#021A90AAAAAAAAAA
+(1780084278.162000) can0 10424060#079964
+(1780084278.162000) can0 64C#037F3E12AAAAAAAA
+(1780084278.972000) can0 13FFE060#
+# tx t=124.156s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=124.157s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084279.129000) can0 13FFE040#
+(1780084279.130000) can0 621#0040000000000000
+(1780084279.563000) can0 62C#0040000000000000
+# tx t=125.166s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=125.166s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=125.167s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+(1780084280.139000) can0 13FFE040#
+(1780084280.139000) can0 621#0040000000000000
+(1780084280.139000) can0 24C#023E00AAAAAAAAAA
+(1780084280.169000) can0 64C#037F3E12AAAAAAAA
+(1780084280.169000) can0 13FFE060#
+(1780084280.576000) can0 10244060#06
+# tx t=126.154s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=126.155s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=126.155s 24C#021A91AAAAAAAAAA note=classic GMLAN read-data-by-identifier 0x1A 0x91 candidate
+(1780084281.127000) can0 13FFE040#
+(1780084281.128000) can0 621#0040000000000000
+(1780084281.128000) can0 24C#021A91AAAAAAAAAA
+(1780084281.158000) can0 64C#037F1A31AAAAAAAA
+(1780084281.377000) can0 13FFE060#
+# tx t=127.152s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=127.153s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=127.154s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+(1780084282.126000) can0 13FFE040#
+(1780084282.126000) can0 621#0040000000000000
+(1780084282.127000) can0 24C#023E00AAAAAAAAAA
+(1780084282.157000) can0 64C#037F3E12AAAAAAAA
+(1780084282.561000) can0 62C#0040000000000000
+(1780084282.566000) can0 13FFE060#
+(1780084282.622000) can0 10600060#01609370015B00
+# tx t=128.165s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=128.166s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084283.138000) can0 13FFE040#
+(1780084283.139000) can0 621#0040000000000000
+(1780084283.765000) can0 13FFE060#
+# tx t=129.163s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=129.163s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=129.164s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+# tx t=129.164s 24C#021A92AAAAAAAAAA note=classic GMLAN read-data-by-identifier 0x1A 0x92 candidate
+(1780084284.136000) can0 13FFE040#
+(1780084284.136000) can0 621#0040000000000000
+(1780084284.136000) can0 24C#023E00AAAAAAAAAA
+(1780084284.137000) can0 24C#021A92AAAAAAAAAA
+(1780084284.166000) can0 64C#037F3E12AAAAAAAA
+(1780084284.975000) can0 13FFE060#
+# tx t=130.158s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=130.159s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084285.132000) can0 13FFE040#
+(1780084285.132000) can0 621#0040000000000000
+(1780084285.570000) can0 62C#0040000000000000
+(1780084285.571000) can0 10244060#06
+# tx t=131.159s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=131.159s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=131.160s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+(1780084286.132000) can0 13FFE040#
+(1780084286.132000) can0 621#0040000000000000
+(1780084286.133000) can0 24C#023E00AAAAAAAAAA
+(1780084286.145000) can0 64C#037F3E12AAAAAAAA
+(1780084286.164000) can0 13FFE060#
+# tx t=132.162s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=132.163s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=132.163s 24C#021A97AAAAAAAAAA note=classic GMLAN read-data-by-identifier 0x1A 0x97 candidate
+(1780084287.135000) can0 13FFE040#
+(1780084287.136000) can0 621#0040000000000000
+(1780084287.136000) can0 24C#021A97AAAAAAAAAA
+(1780084287.166000) can0 64C#037F1A31AAAAAAAA
+(1780084287.363000) can0 13FFE060#
+# tx t=133.162s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=133.163s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=133.163s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+(1780084288.136000) can0 13FFE040#
+(1780084288.136000) can0 621#0040000000000000
+(1780084288.136000) can0 24C#023E00AAAAAAAAAA
+(1780084288.166000) can0 64C#037F3E12AAAAAAAA
+(1780084288.554000) can0 62C#0040000000000000
+(1780084288.574000) can0 13FFE060#
+# tx t=134.160s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=134.160s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084289.133000) can0 13FFE040#
+(1780084289.133000) can0 621#0040000000000000
+(1780084289.763000) can0 13FFE060#
+# tx t=135.163s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=135.164s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=135.164s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+# tx t=135.164s 24C#021A9AAAAAAAAAAA note=classic GMLAN read-data-by-identifier 0x1A 0x9A candidate
+(1780084290.137000) can0 13FFE040#
+(1780084290.137000) can0 621#0040000000000000
+(1780084290.137000) can0 24C#023E00AAAAAAAAAA
+(1780084290.138000) can0 24C#021A9AAAAAAAAAAA
+(1780084290.166000) can0 64C#037F3E12AAAAAAAA
+(1780084290.571000) can0 10244060#06
+(1780084290.976000) can0 13FFE060#
+# tx t=136.160s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=136.161s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084291.133000) can0 13FFE040#
+(1780084291.134000) can0 621#0040000000000000
+(1780084291.553000) can0 62C#0040000000000000
+# tx t=137.156s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=137.157s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=137.157s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+(1780084292.130000) can0 13FFE040#
+(1780084292.130000) can0 621#0040000000000000
+(1780084292.130000) can0 24C#023E00AAAAAAAAAA
+(1780084292.142000) can0 64C#037F3E12AAAAAAAA
+(1780084292.161000) can0 13FFE060#
+# tx t=138.155s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=138.155s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=138.155s 24C#02AA00AAAAAAAAAA note=classic GMLAN read-data-by-packet-identifier 0xAA 0x00 candidate
+(1780084293.128000) can0 13FFE040#
+(1780084293.128000) can0 621#0040000000000000
+(1780084293.128000) can0 24C#02AA00AAAAAAAAAA
+(1780084293.157000) can0 54C#0000000000000000
+(1780084293.360000) can0 13FFE060#
+# tx t=139.158s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=139.159s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=139.159s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+(1780084294.131000) can0 13FFE040#
+(1780084294.132000) can0 621#0040000000000000
+(1780084294.132000) can0 24C#023E00AAAAAAAAAA
+(1780084294.161000) can0 64C#037F3E12AAAAAAAA
+(1780084294.564000) can0 62C#0040000000000000
+(1780084294.565000) can0 13FFE060#
+# tx t=140.156s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=140.156s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084295.129000) can0 13FFE040#
+(1780084295.129000) can0 621#0040000000000000
+(1780084295.569000) can0 10244060#06
+(1780084295.759000) can0 13FFE060#
+# tx t=141.159s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=141.160s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=141.160s 24C#023E00AAAAAAAAAA note=classic GMLAN tester-present keepalive; expect 64C#027E00... if supported
+# tx t=141.160s 24C#02AA01AAAAAAAAAA note=classic GMLAN read-data-by-packet-identifier 0xAA 0x01 candidate
+(1780084296.132000) can0 13FFE040#
+(1780084296.133000) can0 621#0040000000000000
+(1780084296.133000) can0 24C#023E00AAAAAAAAAA
+(1780084296.134000) can0 24C#02AA01AAAAAAAAAA
+(1780084296.163000) can0 64C#037F3E12AAAAAAAA
+(1780084296.974000) can0 13FFE060#
+# tx t=142.158s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=142.158s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084297.131000) can0 13FFE040#
+(1780084297.131000) can0 621#0040000000000000
+(1780084297.550000) can0 62C#0040000000000000
+# tx t=143.156s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=143.156s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084298.129000) can0 13FFE040#
+(1780084298.129000) can0 621#0040000000000000
+(1780084298.160000) can0 13FFE060#
+# tx t=144.155s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=144.155s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=144.156s 24C#02AA02AAAAAAAAAA note=classic GMLAN read-data-by-packet-identifier 0xAA 0x02 candidate
+(1780084299.128000) can0 13FFE040#
+(1780084299.129000) can0 621#0040000000000000
+(1780084299.129000) can0 24C#02AA02AAAAAAAAAA
+(1780084299.158000) can0 64C#037FAA12AAAAAAAA
+(1780084299.357000) can0 13FFE060#
+# tx t=145.156s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=145.156s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084300.128000) can0 13FFE040#
+(1780084300.129000) can0 621#0040000000000000
+(1780084300.548000) can0 62C#0040000000000000
+(1780084300.565000) can0 10244060#06
+(1780084300.565000) can0 13FFE060#
+# tx t=146.159s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=146.159s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084301.132000) can0 13FFE040#
+(1780084301.132000) can0 621#0040000000000000
+(1780084301.756000) can0 13FFE060#
+# tx t=147.156s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=147.156s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+# tx t=147.157s 24C#023E00AAAAAAAAAA note=classic GMLAN final tester-present check
+(1780084302.129000) can0 13FFE040#
+(1780084302.129000) can0 621#0040000000000000
+(1780084302.130000) can0 24C#023E00AAAAAAAAAA
+(1780084302.160000) can0 64C#037F3E12AAAAAAAA
+(1780084302.955000) can0 13FFE060#
+# tx t=148.160s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=148.160s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084303.133000) can0 13FFE040#
+(1780084303.133000) can0 621#0040000000000000
+(1780084303.547000) can0 62C#0040000000000000
+# tx t=149.157s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=149.158s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084304.130000) can0 13FFE040#
+(1780084304.130000) can0 621#0040000000000000
+(1780084304.162000) can0 13FFE060#
+# tx t=150.157s 13FFE040# note=quiet diagnostic fake BCM/source 0x40 presence; no hard wake/init burst
+# tx t=150.158s 621#0040000000000000 note=quiet diagnostic steady keepalive; no 621#0140 startup burst
+(1780084305.131000) can0 13FFE040#
+(1780084305.131000) can0 621#0040000000000000
+(1780084305.354000) can0 13FFE060#
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

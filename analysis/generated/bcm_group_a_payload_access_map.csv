@@ -1,0 +1,3 @@
+frame_id,index,payload_ram_ptr,byte_index,ram_address,access_offset,kind,op,op_family,nearest_group_a_frame,nearest_group_a_builder_kind,nearest_group_a_builder,distance_to_builder,near_focus_builder
+0x1F1,118,0x03FFAA48,3,0x03FFAA4B,0x106E2E,absolute,8A57,load-family,0x0F1,aux_func_a,0x109C38,0x2E0A,no
+0x1F1,118,0x03FFAA48,3,0x03FFAA4B,0x106E3A,short-gp,AF7F,write-or-bitop-family,0x0F1,aux_func_a,0x109C38,0x2DFE,no

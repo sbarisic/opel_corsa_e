@@ -1,0 +1,177 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.417s 100# note=SWCAN wakeup, normal one-shot
+# tx t=000.418s 13FFE040# note=normal fake BCM/source 0x40 presence seed
+# tx t=000.419s 621#0040000000000000 note=normal network-management steady keepalive seed
+(1780080527.710000) can0 100#
+(1780080527.711000) can0 13FFE040#
+(1780080527.711000) can0 621#0040000000000000
+# tx t=000.917s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.023s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.117s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.117s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.133s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.133s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.148s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.148s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.149s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.163s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.178s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.179s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.179s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.179s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.210s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.226s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.226s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.227s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.227s 4E1#4B34303238383139 note=key-on native VIN/config fragment 0x4E1
+# tx t=001.242s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.243s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.257s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.258s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.273s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.273s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.274s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.288s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.304s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.320s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.321s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.321s 514#3056305845503638 note=key-on native VIN/config fragment 0x514
+# tx t=001.336s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.336s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.337s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.351s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.367s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.368s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.368s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.384s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.384s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.399s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.415s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=001.416s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=001.416s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.416s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.431s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.432s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.446s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.447s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.447s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.463s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.479s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.479s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.479s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.480s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.510s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.526s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.526s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.526s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.542s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.542s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.557s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.558s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.573s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.573s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.574s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.589s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.604s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.620s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.620s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.635s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.636s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.636s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.652s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.668s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.668s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.668s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.684s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.688s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.698s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.730s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.730s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.730s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.730s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.746s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.746s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.747s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.762s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.777s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.778s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.778s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.778s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.808s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.824s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.825s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.839s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.840s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.840s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.855s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.856s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.871s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=001.872s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.872s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.887s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.902s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=001.918s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=001.934s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=001.934s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.934s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=001.950s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=001.950s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=001.965s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=001.966s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=001.966s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=001.981s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=001.982s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=001.997s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.028s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=002.028s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.028s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=002.028s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=002.043s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=002.058s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.058s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=002.059s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=002.074s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=002.074s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=002.089s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.090s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=002.105s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.121s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=002.121s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=002.136s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.137s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=002.137s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=002.152s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=002.167s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.168s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=002.168s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=002.183s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=002.183s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=002.197s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.228s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=002.229s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.229s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=002.229s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=002.229s 4E1#4B34303238383139 note=key-on native VIN/config fragment 0x4E1
+# tx t=002.244s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=002.260s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.260s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=002.260s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=002.275s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=002.275s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=002.275s 139#0000000000000000 note=key-on native body/display status 0x139
+# tx t=002.290s 0F1#340000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 4/4
+# tx t=002.321s 10002040#03 note=key-on context GMLAN system power mode hold 0x03
+# tx t=002.322s 0F1#000000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 1/4
+# tx t=002.322s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=002.322s 514#3056305845503638 note=key-on native VIN/config fragment 0x514
+# tx t=002.337s 160#803C96B503 note=key-on native compact power/body state 0x160 from keyoff/keyon delta
+# tx t=002.337s 1F1#AE0F173E18000072 note=key-on native ignition/environment state 0x1F1 from keyoff/keyon delta
+# tx t=002.352s 0F1#1C0000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 2/4
+# tx t=002.353s 12A#0000605D00008080 note=key-on native door/belt/body/DIC state 0x12A dominant
+# tx t=002.368s 135#04080D0002180000 note=key-on native packed body/display status 0x135 dominant
+# tx t=002.369s 137#0000000000000000 note=key-on native packed body/display status 0x137 dominant
+# tx t=002.384s 0F1#280000400000 note=key-on native fast BCM/body state cycle 0x0F1 variant 3/4
+# tx t=002.385s 451#000000000000 note=key-on native body/display status 0x451
+# tx t=002.385s 139#0000000000000000 note=key-on native body/display status 0x139
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

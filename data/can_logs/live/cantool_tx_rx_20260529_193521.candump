@@ -1,0 +1,106 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# stale RX flush skipped
+# tx t=000.111s 100# note=SWCAN wakeup, normal one-shot
+# tx t=000.112s 13FFE040# note=normal fake BCM/source 0x40 presence seed
+# tx t=000.112s 621#0040000000000000 note=normal network-management steady keepalive seed
+(1780076121.434000) can0 100#
+(1780076121.435000) can0 13FFE040#
+(1780076121.435000) can0 621#0040000000000000
+# tx t=001.111s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=001.111s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=002.112s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=002.113s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=002.113s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.190s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.237s 10030040#0075A708 note=battery voltage example, priority 4, arbid 0x018, sender 0x40
+# tx t=002.268s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.346s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.362s 0C030040#0075A708 note=battery voltage example, priority 3, arbid 0x018, sender 0x40
+# tx t=002.409s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.487s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.564s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.611s 10002040#02 note=system power mode short DLC value 0x02
+# tx t=002.642s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.723s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.783s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.861s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=002.939s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.018s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.081s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.113s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=003.113s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=003.114s 10002040#03 note=system power mode short DLC value 0x03
+# tx t=003.160s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.238s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.239s 10030040#0075A708 note=battery voltage example, priority 4, arbid 0x018, sender 0x40
+# tx t=003.317s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.363s 0C030040#0075A708 note=battery voltage example, priority 3, arbid 0x018, sender 0x40
+# tx t=003.394s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.458s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.538s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.616s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.616s 10002040#04 note=system power mode short DLC value 0x04
+# tx t=003.694s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.772s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.834s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.913s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=003.991s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.067s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.113s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=004.114s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=004.114s 10002040#0200000000000000 note=system power mode full DLC value 0x02
+# tx t=004.144s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.222s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.237s 10030040#0075A708 note=battery voltage example, priority 4, arbid 0x018, sender 0x40
+# tx t=004.283s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.361s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.362s 0C030040#0075A708 note=battery voltage example, priority 3, arbid 0x018, sender 0x40
+# tx t=004.440s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.518s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.596s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.611s 10002040#0300000000000000 note=system power mode full DLC value 0x03
+# tx t=004.658s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.737s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.814s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.893s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=004.970s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.033s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.111s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=005.111s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=005.112s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.112s 10002040#0400000000000000 note=system power mode full DLC value 0x04
+# tx t=005.190s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.238s 10030040#0075A708 note=battery voltage example, priority 4, arbid 0x018, sender 0x40
+# tx t=005.269s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.331s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.363s 0C030040#0075A708 note=battery voltage example, priority 3, arbid 0x018, sender 0x40
+# tx t=005.411s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.488s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.566s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.613s 10002040#02 note=system power mode short DLC value 0x02
+# tx t=005.643s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.707s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.786s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.862s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=005.942s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.020s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.083s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.115s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=006.115s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=006.115s 10002040#03 note=system power mode short DLC value 0x03
+# tx t=006.162s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.240s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.240s 10030040#0075A708 note=battery voltage example, priority 4, arbid 0x018, sender 0x40
+# tx t=006.318s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.365s 0C030040#0075A708 note=battery voltage example, priority 3, arbid 0x018, sender 0x40
+# tx t=006.396s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.459s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.537s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.615s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.616s 10002040#04 note=system power mode short DLC value 0x04
+# tx t=006.694s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.757s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.835s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.912s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=006.990s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40
+# tx t=007.069s 10050040#00012C03A9000000 note=GMLAN Bible speed/RPM movement payload, arbid 0x028, sender 0x40

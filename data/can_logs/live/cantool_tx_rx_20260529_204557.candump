@@ -1,0 +1,116 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.423s 100# note=SWCAN wakeup, normal one-shot
+# tx t=000.425s 13FFE040# note=normal fake BCM/source 0x40 presence seed
+# tx t=000.425s 621#0040000000000000 note=normal network-management steady keepalive seed
+(1780080357.514000) can0 100#
+(1780080357.515000) can0 13FFE040#
+(1780080357.515000) can0 621#0040000000000000
+# tx t=000.934s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=001.184s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=001.184s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=001.185s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=001.216s 12A#0006606B00000080 note=lite native Corsa E door/belt/body/DIC 0x12A observed variants variant 1/4
+# tx t=001.231s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=001.263s 135#04080A0002180000 note=lite native Corsa E packed body/display status 0x135 observed variants variant 1/4
+# tx t=001.293s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=001.294s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=001.294s 137#0000000000000000 note=lite native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=001.340s 139#0000000000000000 note=lite native Corsa E body/display status 0x139
+# tx t=001.356s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=001.371s 160#803C96B503 note=lite native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=001.387s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=001.418s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=001.418s 1F1#AE0F173E18000072 note=lite native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# tx t=001.434s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=001.434s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=001.434s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=001.479s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=001.480s 4E1#4B34303238383139 note=lite native Corsa E VIN/config fragment 0x4E1
+# tx t=001.495s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=001.542s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=001.573s 514#3056305845503638 note=lite native Corsa E VIN/config fragment 0x514
+# tx t=001.589s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=001.605s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=001.652s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=001.682s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=001.683s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=001.714s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=001.714s 12A#0000606B00000080 note=lite native Corsa E door/belt/body/DIC 0x12A observed variants variant 2/4
+# tx t=001.761s 135#04080D0002180000 note=lite native Corsa E packed body/display status 0x135 observed variants variant 2/4
+# tx t=001.776s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=001.791s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=001.792s 137#0000000030000000 note=lite native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=001.838s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=001.838s 139#0000000000000000 note=lite native Corsa E body/display status 0x139
+# tx t=001.885s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=001.885s 160#0000000000 note=lite native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=001.901s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=001.917s 1F1#800E000018000072 note=lite native Corsa E power/ignition/environment 0x1F1 observed variants variant 2/4
+# tx t=001.931s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=001.963s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=001.994s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.024s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=002.072s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=002.087s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.134s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=002.182s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=002.182s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.197s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=002.213s 12A#0000605900000080 note=lite native Corsa E door/belt/body/DIC 0x12A observed variants variant 3/4
+# tx t=002.260s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=002.261s 135#00080A0002180000 note=lite native Corsa E packed body/display status 0x135 observed variants variant 3/4
+# tx t=002.291s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.292s 137#0000000000000000 note=lite native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=002.322s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=002.338s 139#0000000000000000 note=lite native Corsa E body/display status 0x139
+# tx t=002.370s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=002.370s 160#803C96B503 note=lite native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=002.386s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.417s 1F1#850F173E18000072 note=lite native Corsa E power/ignition/environment 0x1F1 observed variants variant 3/4
+# tx t=002.432s 13FFE040# note=normal fake BCM/source 0x40 presence; no 621#0140 startup burst
+# tx t=002.433s 621#0040000000000000 note=normal network-management steady keepalive; no 621#0140 startup burst
+# tx t=002.433s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=002.433s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=002.480s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.496s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=002.558s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=002.590s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.621s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=002.683s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=002.684s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=002.684s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.714s 12A#0000605D00008080 note=lite native Corsa E door/belt/body/DIC 0x12A observed variants variant 4/4
+# tx t=002.730s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=002.761s 135#00080D0002180000 note=lite native Corsa E packed body/display status 0x135 observed variants variant 4/4
+# tx t=002.791s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=002.792s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.792s 137#0000000030000000 note=lite native Corsa E packed body/display status 0x137 observed variants variant 2/2
+# tx t=002.838s 139#0000000000000000 note=lite native Corsa E body/display status 0x139
+# tx t=002.853s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=002.884s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=002.885s 160#0000000000 note=lite native Corsa E compact power/body state 0x160 observed variants variant 2/2
+# tx t=002.915s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=002.915s 1F1#AB0F173E18000072 note=lite native Corsa E power/ignition/environment 0x1F1 observed variants variant 4/4
+# tx t=002.931s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=002.978s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=002.994s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=003.042s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=003.089s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=003.105s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=003.152s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=003.182s 10002040#03 note=lite native context system power mode hold 0x03
+# tx t=003.182s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=003.212s 0F1#280000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 3/4
+# tx t=003.213s 12A#0006606B00000080 note=lite native Corsa E door/belt/body/DIC 0x12A observed variants variant 1/4
+# tx t=003.258s 135#04080A0002180000 note=lite native Corsa E packed body/display status 0x135 observed variants variant 1/4
+# tx t=003.274s 0F1#340000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 4/4
+# tx t=003.290s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=003.290s 137#0000000000000000 note=lite native Corsa E packed body/display status 0x137 observed variants variant 1/2
+# tx t=003.337s 0F1#000000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 1/4
+# tx t=003.337s 139#0000000000000000 note=lite native Corsa E body/display status 0x139
+# tx t=003.384s 451#000000000000 note=lite native Corsa E display/body status 0x451
+# tx t=003.385s 160#803C96B503 note=lite native Corsa E compact power/body state 0x160 observed variants variant 1/2
+# tx t=003.400s 0F1#1C0000400000 note=lite native Corsa E BCM/body state cycle 0x0F1, slower than captured bus variant 2/4
+# tx t=003.416s 1F1#AE0F173E18000072 note=lite native Corsa E power/ignition/environment 0x1F1 observed variants variant 1/4
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

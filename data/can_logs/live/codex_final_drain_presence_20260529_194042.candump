@@ -1,0 +1,9 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=000.417s 13FFE040# note=manual 13FFE040
+(1780076444.228000) can0 13FFE040#
+# tx t=000.523s 13FFE040# note=manual 13FFE040
+(1780076444.332000) can0 13FFE040#
+# tx t=000.618s 13FFE040# note=manual 13FFE040
+(1780076444.426000) can0 13FFE040#
+# final RX drain begin duration_ms=300
+# final RX drain end count=0
