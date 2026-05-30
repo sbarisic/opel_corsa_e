@@ -4,6 +4,7 @@ internal static class Profiles
 {
     private static readonly byte[] ConservativeFuzzValues = [0x00, 0x01, 0x02, 0x03, 0x04, 0x08, 0x10, 0x20, 0x40, 0x7F, 0x80, 0xC0, 0xFF];
 
+    public const string ReadOnly = "read-only";
     public const string DefaultBench = "default-bench";
     public const string IpcSimulator = "ipc-simulator";
     public const string IpcSimulatorP4Speed = "ipc-simulator-p4-speed";
@@ -33,6 +34,7 @@ internal static class Profiles
 
     public static readonly ProfileDefinition[] Available =
     [
+        new(ReadOnly, "Passive listen-only logger: waits and records RX frames only", 0.0, ListenOnly: true),
         new(IpcSimulator, "Recommended staged IPC simulator: waits for first RX, then fake BCM/body gateway", 30.0, WaitForFirstRx: true),
         new(IpcSimulatorP4Speed, "Staged IPC simulator using priority-4 10050040 speed/RPM", 30.0, WaitForFirstRx: true),
         new(IpcSimulatorAltSources, "Staged IPC simulator cycling alternate speed/RPM source nodes", 45.0, WaitForFirstRx: true),
@@ -79,6 +81,7 @@ internal static class Profiles
             IpcStandardEngineWarningProbe => IpcStandardEngineWarningProbeSchedule(),
             IpcStandardByteFuzz => IpcStandardByteFuzzSchedule(),
             IpcGmlan29ByteFuzz => IpcGmlan29ByteFuzzSchedule(),
+            ReadOnly => [],
             DefaultBench => DefaultBenchSchedule(),
             FirmwareWake => FirmwareWakeSchedule(),
             Gmlan29Probe => Gmlan29ProbeSchedule(),
@@ -108,6 +111,11 @@ internal static class Profiles
     public static bool UsesAutoIsoTpFlowControl(string profile)
     {
         return Available.Any(item => item.Name.Equals(profile, StringComparison.OrdinalIgnoreCase) && item.AutoIsoTpFlowControl);
+    }
+
+    public static bool UsesListenOnly(string profile)
+    {
+        return Available.Any(item => item.Name.Equals(profile, StringComparison.OrdinalIgnoreCase) && item.ListenOnly);
     }
 
     private static List<ScheduledTxFrame> DefaultBenchSchedule()
@@ -589,4 +597,5 @@ internal sealed record ProfileDefinition(
     string Description,
     double DefaultSeconds = 15.0,
     bool WaitForFirstRx = false,
-    bool AutoIsoTpFlowControl = false);
+    bool AutoIsoTpFlowControl = false,
+    bool ListenOnly = false);

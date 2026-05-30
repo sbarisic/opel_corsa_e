@@ -13,8 +13,8 @@ internal static class CommandHandlers
         while (true)
         {
             Console.WriteLine();
-            Console.WriteLine("cantool - IPC low-speed GMLAN profile sender");
-            Console.WriteLine("Select a profile to transmit:");
+            Console.WriteLine("cantool - IPC low-speed GMLAN profiles");
+            Console.WriteLine("Select a profile:");
             for (var i = 0; i < Profiles.Available.Length; i++)
             {
                 var profile = Profiles.Available[i];
@@ -46,17 +46,24 @@ internal static class CommandHandlers
             }
 
             var duration = seconds <= 0 ? (TimeSpan?)null : TimeSpan.FromSeconds(seconds);
-            var logPrefix = $"cantool_{selected.Name}_tx_rx";
+            var logPrefix = selected.ListenOnly
+                ? $"cantool_{selected.Name}_rx"
+                : $"cantool_{selected.Name}_tx_rx";
             var result = SendSchedule(
                 Profiles.GetSchedule(selected.Name),
                 duration,
                 countLimit: null,
                 rxLogPath: DefaultLiveOutput(logPrefix),
-                banner: duration is null
-                    ? $"transmitting {selected.Name} until Ctrl+C"
-                    : $"transmitting {selected.Name} for {seconds:0.###}s",
+                banner: selected.ListenOnly
+                    ? duration is null
+                        ? $"listening with {selected.Name} profile until Ctrl+C"
+                        : $"listening with {selected.Name} profile for {seconds:0.###}s"
+                    : duration is null
+                        ? $"transmitting {selected.Name} until Ctrl+C"
+                        : $"transmitting {selected.Name} for {seconds:0.###}s",
                 waitForFirstRx: selected.WaitForFirstRx,
-                autoIsoTpFlowControl: selected.AutoIsoTpFlowControl);
+                autoIsoTpFlowControl: selected.AutoIsoTpFlowControl,
+                listenOnly: selected.ListenOnly);
             if (result != 0)
             {
                 return result;
@@ -114,13 +121,18 @@ internal static class CommandHandlers
 
         Console.WriteLine(
             continuous
-                ? $"capturing until Ctrl+C to {outPath}"
-                : $"capturing {seconds:F1}s to {outPath}");
+                ? $"capturing until Ctrl+C to {outPath}{(listenOnly ? "; listen-only mode" : "")}"
+                : $"capturing {seconds:F1}s to {outPath}{(listenOnly ? "; listen-only mode" : "")}");
 
         var count = 0;
         using (var writer = new StreamWriter(outPath, append: false))
         {
             writer.WriteLine("# cantool gs_usb direct capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4");
+            if (listenOnly)
+            {
+                writer.WriteLine("# adapter opened in listen-only mode");
+            }
+
             var stopAt = continuous ? DateTimeOffset.MaxValue : DateTimeOffset.UtcNow.AddSeconds(seconds);
             while (!done.IsSet && DateTimeOffset.UtcNow < stopAt)
             {
@@ -164,13 +176,21 @@ internal static class CommandHandlers
     {
         var profile = CliOptions.GetString(args, "--profile") ?? Profiles.FirmwareWake;
         var seconds = CliOptions.GetDouble(args, "--seconds", Profiles.GetDefaultSeconds(profile));
+        var listenOnly = Profiles.UsesListenOnly(profile);
+        var duration = seconds <= 0 ? (TimeSpan?)null : TimeSpan.FromSeconds(seconds);
         return SendSchedule(
             Profiles.GetSchedule(profile),
-            TimeSpan.FromSeconds(seconds),
+            duration,
             countLimit: null,
             CliOptions.GetString(args, "--rx-log"),
             waitForFirstRx: Profiles.WaitsForFirstRx(profile),
-            autoIsoTpFlowControl: Profiles.UsesAutoIsoTpFlowControl(profile));
+            autoIsoTpFlowControl: Profiles.UsesAutoIsoTpFlowControl(profile),
+            listenOnly: listenOnly,
+            banner: listenOnly
+                ? duration is null
+                    ? $"listening with {profile} profile until Ctrl+C"
+                    : $"listening with {profile} profile for {seconds:0.###}s"
+                : null);
     }
 
     public static int Summarize(string[] args)
@@ -207,12 +227,13 @@ internal static class CommandHandlers
         string? rxLogPath,
         string? banner = null,
         bool waitForFirstRx = false,
-        bool autoIsoTpFlowControl = false)
+        bool autoIsoTpFlowControl = false,
+        bool listenOnly = false)
     {
         var outPath = rxLogPath ?? DefaultLiveOutput("cantool_tx_rx");
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
 
-        using var device = GsUsbDevice.Open(listenOnly: false);
+        using var device = GsUsbDevice.Open(listenOnly: listenOnly);
         var flushed = device.FlushStale(TimeSpan.FromMilliseconds(300));
         if (flushed > 0)
         {
@@ -227,13 +248,20 @@ internal static class CommandHandlers
         }
         else
         {
-            Console.WriteLine($"transmitting for {duration?.TotalSeconds:0.###}s; RX log {outPath}");
+            Console.WriteLine(duration is null
+                ? $"transmitting until Ctrl+C; RX log {outPath}"
+                : $"transmitting for {duration.Value.TotalSeconds:0.###}s; RX log {outPath}");
         }
 
         var sent = 0;
         var received = 0;
         using var writer = new StreamWriter(outPath, append: false);
         writer.WriteLine("# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4");
+        if (listenOnly)
+        {
+            writer.WriteLine("# listen-only profile: adapter opened listen-only and no TX schedule is active");
+            writer.Flush();
+        }
 
         if (waitForFirstRx)
         {
@@ -272,6 +300,12 @@ internal static class CommandHandlers
             now = DateTimeOffset.UtcNow;
             foreach (var item in schedule)
             {
+                if (listenOnly)
+                {
+                    item.NextDue = DateTimeOffset.MaxValue;
+                    continue;
+                }
+
                 if (now < item.NextDue || (countLimit is not null && sent >= countLimit.Value))
                 {
                     continue;

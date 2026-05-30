@@ -46,12 +46,13 @@ internal static class Program
               list
               capture [--seconds N] [--out PATH] [--listen-only]
               send --id ID [--data HEX] [--period-ms N] [--count N] [--seconds N]
-              send-profile --profile ipc-simulator|ipc-simulator-p4-speed|ipc-simulator-alt-sources|ipc-simulator-sweep|ipc-diagnostic-probe|ipc-diagnostic-session-probe|ipc-diagnostic-did-scan|ipc-diagnostic-f1-range-scan|ipc-diagnostic-local-range-scan|ipc-diagnostic-local-range-slow-scan|ipc-diagnostic-read21-local-scan|ipc-standard-engine-warning-probe|ipc-standard-byte-fuzz|ipc-gmlan29-byte-fuzz|default-bench|firmware-wake|gmlan29-all-targeted|gmlan29-speed-rpm|gmlan29-speed-rpm-alt-sources|gmlan29-power-mode|gmlan29-environment|gmlan29-chime|gmlan29-known-payloads|gmlan29-speed-sweep|gmlan29-probe|opel-reference-probe [--seconds N]
+              send-profile --profile read-only|ipc-simulator|ipc-simulator-p4-speed|ipc-simulator-alt-sources|ipc-simulator-sweep|ipc-diagnostic-probe|ipc-diagnostic-session-probe|ipc-diagnostic-did-scan|ipc-diagnostic-f1-range-scan|ipc-diagnostic-local-range-scan|ipc-diagnostic-local-range-slow-scan|ipc-diagnostic-read21-local-scan|ipc-standard-engine-warning-probe|ipc-standard-byte-fuzz|ipc-gmlan29-byte-fuzz|default-bench|firmware-wake|gmlan29-all-targeted|gmlan29-speed-rpm|gmlan29-speed-rpm-alt-sources|gmlan29-power-mode|gmlan29-environment|gmlan29-chime|gmlan29-known-payloads|gmlan29-speed-sweep|gmlan29-probe|opel-reference-probe [--seconds N]
               summarize --log PATH
 
             CAN timing is the known-good IPC low-speed profile:
               bitrate 33.333 kbit/s, brp=255, prop=1, phase1=13, phase2=5, sjw=4
-            Interactive menu default duration: profile-specific; ipc-simulator defaults to 30 seconds and waits for first RX before TX
+            Interactive menu default profile is read-only; ipc-simulator defaults to 30 seconds and waits for first RX before TX
+            read-only opens the adapter in gs_usb listen-only mode, logs RX frames, and never transmits
             """);
     }
 

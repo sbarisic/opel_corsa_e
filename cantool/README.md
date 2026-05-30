@@ -8,6 +8,7 @@ C# candleLight/gs_usb helper for the Corsa E IPC low-speed CAN work.
 dotnet run --project cantool\cantool\cantool.csproj
 dotnet run --project cantool\cantool\cantool.csproj -- list
 dotnet run --project cantool\cantool\cantool.csproj -- capture --seconds 10 --out data\can_logs\live\capture.candump
+dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile read-only
 dotnet run --project cantool\cantool\cantool.csproj -- send --id 13FFE040 --seconds 10 --period-ms 500
 dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile ipc-simulator --seconds 30
 dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile ipc-simulator-p4-speed --seconds 30
@@ -38,8 +39,10 @@ dotnet run --project cantool\cantool\cantool.csproj -- summarize --log data\can_
 ```
 
 Running with no arguments opens an interactive menu for Visual Studio/debugger
-runs. Pick a profile, press Enter to use its default duration, or type `0` to
-run until Ctrl+C. Each transmit run prints TX and RX activity and writes
+runs. The default profile is `read-only`, which opens the adapter in
+listen-only mode and only logs received frames until Ctrl+C. Pick another
+profile, press Enter to use its default duration, or type `0` to run until
+Ctrl+C. Each transmit run prints TX and RX activity and writes
 received frames to a timestamped `.candump` file under `data\can_logs\live`.
 Console TX/RX timestamps are relative seconds from app start; saved logs remain
 candump-compatible with absolute timestamps.
@@ -139,7 +142,13 @@ The GMLAN Bible-derived profiles add targeted payload probes:
 `gmlan29-probe` is a zero-payload discovery set. They are available for
 comparison but are no longer part of default testing.
 
-Use `capture` when you want a passive receive-only run.
+Use `send-profile --profile read-only` when you want a passive receive-only
+profile. It opens the gs_usb adapter in listen-only mode, waits until Ctrl+C by
+default, writes every RX frame to the normal candump log, and never transmits
+CAN frames or automatic ISO-TP flow-control replies.
+
+Use `capture --listen-only` when you want the older direct capture command
+instead of a named profile.
 
 `summarize` annotates 29-bit extended IDs with the decoded GMLAN priority,
 arbitration ID name, and sender range, for example sender `0x060` as
