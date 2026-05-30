@@ -1,0 +1,65 @@
+# send_profile.can
+# Columns: period_ms, CAN_MESSAGE, enabled, note
+# Edit enabled to true/on/1 for the one message you want to test, then save.
+# Run with:
+#   dotnet run --project cantool\cantool\cantool.csproj -- send-profile --profile ipc-live-reload --seconds 0
+period_ms,message,enabled,note
+1000,100#,false,SWCAN wake pulse
+1200,13FFE040#,false,BCM source 0x40 presence
+1000,621#0052000000000000,false,key-on network-management keepalive
+100,102C0040#803C96B503,false,ignition power-mode key-on context
+1000,10242040#01,false,key first-turn only odometer state
+1000,10242040#02,false,key second-turn full bright state
+1000,10754040#040400,false,key present key-on context
+100,10210040#0000800000008000,true,native body base 0x108
+100,10220040#1000000040080000,true,native body base 0x110
+250,1022E040#1000000010000000,false,native body counter/state 0x117 value 1
+250,1022E040#3000000030000000,false,native body counter/state 0x117 value 3
+250,10230040#0000000000000000,false,native body counter/state 0x118 value 0
+250,10230040#2000000020000000,false,native body counter/state 0x118 value 2
+100,10240040#83FE880100D10FFD,false,lights-off neutral candidate
+100,10240040#83FE880100D70FFD,false,key-on lights/context captured value
+100,10240040#0000000000000000,false,unknown
+100,10264040#0000000000000000,false,native body base 0x132
+100,102CA040#0000000000000F00,false,native body base 0x165
+250,102CC040#0400C00000000000,false,TC telltale ON confirmed
+250,102CC040#0000C00000000000,false,TC telltale clear candidate
+500,103B4040#04,false,parking brake ON confirmed
+500,103B4040#00,false,parking brake OFF confirmed
+500,103B4040#0400000000000000,false,parking brake ON bit
+500,1020C040#0040040401,false,parking brake support released candidate
+500,1020C040#0010000000,false,rear fog light on
+500,1020C040#0020000000,false,long beam light on
+500,1020C040#0030000000,false,long beam light on and rear fog light on
+500,1020C040#0040000000,false,low beams on
+500,1020C040#0050000000,false,low beams on and rear fog light on
+500,1020C040#0060000000,false,low beams on and long beam on
+500,1020C040#0070000000,false,low beams on and long beam on and rear fog light on
+500,1020C040#0002000000,false,fog light on
+500,1020C040#0072000000,false,fog light on and low beams on and long beam on and rear fog light on
+500,1020C040#0100000000,false,
+500,1020C040#0200000000,false,
+
+500,1020C040#0000000000000000,false,
+500,1020C040#1800000000000000,false,left and right blinker on
+
+500,107D2040#0000000000000000,false,
+500,107D2040#1111111111111111,false,
+500,107D2040#2222222222222222,false,
+500,107D2040#4444444444444444,false,
+500,107D2040#8888888888888888,false,
+
+500,1020C040#0800000000,false,left blinker const on
+500,1020C040#1000000000,false,right blinker const on
+500,1020C040#0000000000000000,false,
+500,10248040#0000000000000000,false,turn off battery light
+500,10248040#0400000000000000,false,turn on battery light
+500,103CA040#0000000000000000,false,
+500,10240040#FFFFFFFFFFFFFFFF,false,Turns off TC light potentially
+500,10248040#00005DA6A300,false,dim/odometer DIC status candidate
+100,10192040#0004C40000500000,false,wrapped RPM engine-state candidate
+100,107D2040#0010800000108000,false,wrapped speed odometer candidate
+250,10982040#0000730000000000,false,wrapped coolant/temp candidate
+250,103CA040#44003910000000C9,false,wrapped warning/service candidate C9
+250,103CA040#44003930000000E9,false,wrapped warning/service candidate E9
+250,103CA040#4400395000000109,false,wrapped warning/service candidate 0109

@@ -58,7 +58,7 @@ internal static class Program
               wake-then-profile --profile NAME [--seconds N] [--wait-rx-timeout-ms N] [--no-preclear]
               capture [--seconds N] [--out PATH] [--listen-only] [--no-flush] [--log-flush]
               send --id ID [--data HEX] [--period-ms N] [--count N] [--seconds N]
-              send-profile --profile {{Profiles.ProfileNamesForUsage}} [--seconds N] [--wait-rx-timeout-ms N] [--no-flush] [--log-flush]
+              send-profile --profile {{Profiles.ProfileNamesForUsage}} [--seconds N] [--file send_profile.can] [--wait-rx-timeout-ms N] [--no-flush] [--log-flush]
               summarize (--log PATH | --latest [--pattern GLOB]) [--ignore-tx-echo]
               analyze-diag (--log PATH | --latest [--pattern GLOB]) [--positive-only]
               analyze-restart (--log PATH | --latest [--pattern GLOB]) [--window-ms N] [--min-unique N]

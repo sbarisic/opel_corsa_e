@@ -1,0 +1,492 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=054.064s 100# note=native Corsa E SWCAN wake pulse
+# tx t=054.064s 13FFE040# note=native fake BCM/source 0x40 presence seed
+# tx t=054.065s 621#0140000000000000 note=native network-management startup/init seed
+# tx t=054.065s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.065s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=054.065s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=054.065s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=054.066s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=054.066s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=054.066s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=054.066s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=054.066s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=054.066s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+(1780162383.714000) can0 100#
+(1780162383.714000) can0 13FFE040#
+(1780162383.715000) can0 621#0140000000000000
+# tx t=054.173s 621#0052000000000000 note=native key-on network-management seed
+# tx t=054.173s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.267s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.315s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=054.315s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=054.315s 13FFE080# note=lights probe radio/source 0x80 companion presence
+# tx t=054.378s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.426s 13FFE058# note=lights probe SDM/source 0x58 companion presence
+# tx t=054.473s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.566s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.567s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=054.567s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=054.677s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.772s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.818s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=054.818s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=054.865s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=054.975s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.070s 621#0052000000000000 note=native key-on network-management context
+# tx t=055.070s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.070s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=055.071s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=055.071s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=055.071s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=055.071s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=055.071s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=055.071s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=055.071s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=055.071s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=055.166s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.277s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=055.277s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.325s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=055.325s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=055.373s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.468s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.579s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.579s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=055.580s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=055.674s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.768s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.816s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=055.816s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=055.816s 13FFE080# note=lights probe radio/source 0x80 companion presence
+# tx t=055.878s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=055.974s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.067s 621#0052000000000000 note=native key-on network-management context
+# tx t=056.067s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.067s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=056.068s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=056.068s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=056.068s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=056.068s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=056.068s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=056.068s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=056.068s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=056.068s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=056.130s 13FFE058# note=lights probe SDM/source 0x58 companion presence
+# tx t=056.178s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.273s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.321s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=056.321s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=056.369s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.464s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=056.465s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.576s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.576s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=056.576s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=056.671s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.765s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.828s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=056.829s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=056.876s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=056.971s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.066s 621#0052000000000000 note=native key-on network-management context
+# tx t=057.066s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.066s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=057.067s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=057.067s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=057.067s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=057.067s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=057.067s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=057.067s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=057.068s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=057.068s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=057.068s 10414040#00017B05 note=native lock/body key-on context one-shot captured variant
+# tx t=057.068s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=057.068s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=057.068s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.177s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.177s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=057.177s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.273s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.273s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=057.273s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.320s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=057.321s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=057.321s 13FFE080# note=lights probe radio/source 0x80 companion presence
+# tx t=057.321s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=057.365s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.366s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=057.366s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.476s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.476s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=057.477s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.571s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.572s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=057.572s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=057.572s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=057.572s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=057.572s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.666s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=057.666s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.666s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=057.666s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.777s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.777s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=057.777s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.825s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=057.825s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=057.826s 13FFE058# note=lights probe SDM/source 0x58 companion presence
+# tx t=057.826s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=057.872s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.872s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=057.873s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=057.966s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=057.967s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=057.967s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.077s 621#0052000000000000 note=native key-on network-management context
+# tx t=058.077s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.077s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=058.077s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=058.077s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=058.078s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=058.078s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=058.078s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=058.078s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=058.078s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=058.078s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=058.078s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=058.078s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=058.078s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.169s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.169s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=058.169s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.280s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.280s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=058.280s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.327s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=058.327s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=058.327s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=058.373s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.373s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=058.373s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.467s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.467s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=058.467s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.577s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.577s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=058.577s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=058.578s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=058.578s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=058.578s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.671s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.671s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=058.672s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.765s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.765s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=058.765s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.827s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=058.828s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=058.828s 13FFE080# note=lights probe radio/source 0x80 companion presence
+# tx t=058.828s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=058.875s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=058.876s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.876s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=058.876s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=058.969s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=058.969s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=058.970s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.065s 621#0052000000000000 note=native key-on network-management context
+# tx t=059.066s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.066s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=059.066s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=059.066s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=059.066s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=059.066s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=059.066s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=059.066s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=059.066s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=059.067s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=059.067s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=059.067s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=059.067s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.177s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.177s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=059.177s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.272s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.272s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=059.272s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.319s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=059.319s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=059.320s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=059.366s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.366s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=059.367s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.477s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.477s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=059.477s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.524s 13FFE058# note=lights probe SDM/source 0x58 companion presence
+# tx t=059.572s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.573s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=059.573s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=059.573s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=059.573s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=059.573s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.667s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.667s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=059.668s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.779s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.779s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=059.779s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.826s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=059.826s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=059.826s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=059.874s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.874s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=059.874s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=059.969s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=059.970s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=059.970s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.080s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=060.080s 621#0052000000000000 note=native key-on network-management context
+# tx t=060.080s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.080s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=060.080s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=060.081s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=060.081s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=060.081s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=060.081s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=060.081s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=060.081s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=060.081s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=060.082s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=060.082s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=060.082s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.174s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.174s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=060.174s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.269s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.269s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=060.270s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.316s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=060.316s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=060.317s 13FFE080# note=lights probe radio/source 0x80 companion presence
+# tx t=060.317s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=060.364s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.364s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=060.365s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.476s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.476s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=060.476s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.570s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.570s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=060.570s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=060.571s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=060.571s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=060.571s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.664s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.665s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=060.665s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.776s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.776s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=060.776s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.824s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=060.824s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=060.824s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=060.871s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.871s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=060.871s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=060.966s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=060.966s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=060.966s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.078s 621#0052000000000000 note=native key-on network-management context
+# tx t=061.078s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.078s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=061.078s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=061.079s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=061.079s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=061.079s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=061.079s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=061.079s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=061.079s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=061.079s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=061.080s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=061.080s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=061.080s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.172s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.172s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=061.173s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.219s 13FFE058# note=lights probe SDM/source 0x58 companion presence
+# tx t=061.267s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=061.268s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.268s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=061.268s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.329s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=061.329s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=061.329s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=061.377s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.377s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=061.377s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.473s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.473s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=061.476s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.567s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.567s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=061.568s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=061.568s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=061.568s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=061.568s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.679s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.679s 10240040#83FE880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 3/4
+# tx t=061.679s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.774s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.774s 10240040#83FF880100D70FFD note=lights probe day/off 10240040 family from connected capture variant 4/4
+# tx t=061.775s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.822s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=061.822s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=061.822s 13FFE080# note=lights probe radio/source 0x80 companion presence
+# tx t=061.822s 102CC040#0000C00000000000 note=lights probe day/off 102CC040 context from connected capture
+# tx t=061.868s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.868s 10240040#83FE880100D70000 note=lights probe day/off 10240040 family from connected capture variant 1/4
+# tx t=061.869s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=061.980s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=061.980s 10240040#83FF880100D70000 note=lights probe day/off 10240040 family from connected capture variant 2/4
+# tx t=061.981s 102CA040#0000000000000F00 note=lights probe neutral dimmer/illumination level
+# tx t=062.074s 621#0052000000000000 note=native key-on network-management context
+# tx t=062.074s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.074s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=062.074s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=062.074s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=062.074s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=062.075s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=062.075s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=062.075s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=062.075s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=062.075s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=062.169s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.280s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.328s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=062.328s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=062.376s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.471s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=062.472s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.567s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.567s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=062.567s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=062.678s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.772s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.819s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=062.819s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=062.867s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=062.915s 13FFE058# note=lights probe SDM/source 0x58 companion presence
+# tx t=062.977s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.073s 621#0052000000000000 note=native key-on network-management context
+# tx t=063.073s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.073s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=063.074s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=063.074s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=063.074s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=063.074s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=063.074s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=063.074s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=063.074s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=063.074s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=063.168s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.278s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.325s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=063.325s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=063.326s 13FFE080# note=lights probe radio/source 0x80 companion presence
+# tx t=063.373s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.467s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.578s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.578s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=063.578s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=063.672s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=063.673s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.766s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.829s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=063.829s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=063.877s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=063.971s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.065s 621#0052000000000000 note=native key-on network-management context
+# tx t=064.066s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.066s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=064.066s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=064.066s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=064.066s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=064.067s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=064.067s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=064.067s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=064.067s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=064.067s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=064.067s 10240040#83FE8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 1/4
+# tx t=064.067s 102CC040#0400C00000000000 note=lights probe active 102CC040 lighting context from connected capture
+# tx t=064.176s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.176s 10240040#83FF8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 2/4
+# tx t=064.271s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.272s 10240040#83FE8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 3/4
+# tx t=064.317s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=064.317s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=064.317s 102CC040#0400C00000000000 note=lights probe active 102CC040 lighting context from connected capture
+# tx t=064.365s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.365s 10240040#83FF8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 4/4
+# tx t=064.475s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.475s 10240040#83FE8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 1/4
+# tx t=064.570s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.570s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=064.570s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=064.571s 10240040#83FF8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 2/4
+# tx t=064.571s 102CC040#0400C00000000000 note=lights probe active 102CC040 lighting context from connected capture
+# tx t=064.618s 13FFE058# note=lights probe SDM/source 0x58 companion presence
+# tx t=064.666s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.666s 10240040#83FE8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 3/4
+# tx t=064.777s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.777s 10240040#83FF8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 4/4
+# tx t=064.825s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=064.825s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=064.825s 13FFE080# note=lights probe radio/source 0x80 companion presence
+# tx t=064.825s 102CC040#0400C00000000000 note=lights probe active 102CC040 lighting context from connected capture
+# tx t=064.872s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=064.872s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.872s 10240040#83FE8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 1/4
+# tx t=064.966s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=064.966s 10240040#83FF8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 2/4
+# tx t=065.078s 621#0052000000000000 note=native key-on network-management context
+# tx t=065.078s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.078s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=065.078s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=065.078s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=065.078s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=065.079s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=065.079s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant 83FE880100D70FFD
+# tx t=065.079s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=065.079s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=065.079s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=065.079s 10240040#83FE8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 3/4
+# tx t=065.079s 102CC040#0400C00000000000 note=lights probe active 102CC040 lighting context from connected capture
+# tx t=065.173s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.173s 10240040#83FF8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 4/4
+# tx t=065.267s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.267s 10240040#83FE8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 1/4
+# tx t=065.315s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=065.315s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=065.315s 102CC040#0400C00000000000 note=lights probe active 102CC040 lighting context from connected capture
+# tx t=065.379s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.379s 10240040#83FF8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 2/4
+# tx t=065.474s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.474s 10240040#83FE8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 3/4
+# tx t=065.568s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.569s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=065.569s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=065.569s 10240040#83FF8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 4/4
+# tx t=065.569s 102CC040#0400C00000000000 note=lights probe active 102CC040 lighting context from connected capture
+# tx t=065.680s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.681s 10240040#83FE8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 1/4
+# tx t=065.776s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.776s 10240040#83FF8A1100D70000 note=lights probe night/lights-on 10240040 family from connected capture variant 2/4
+# tx t=065.822s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=065.822s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=065.822s 102CC040#0400C00000000000 note=lights probe active 102CC040 lighting context from connected capture
+# tx t=065.870s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=065.870s 10240040#83FE8A1100D70FFD note=lights probe night/lights-on 10240040 family from connected capture variant 3/4
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

@@ -1,0 +1,180 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=041.263s 100# note=native Corsa E SWCAN wake pulse
+# tx t=041.263s 13FFE040# note=native fake BCM/source 0x40 presence seed
+# tx t=041.264s 621#0140000000000000 note=native network-management startup/init seed
+# tx t=041.264s 102C0040#0000000000 note=native short 102C0040 neutral state before key-on edge
+# tx t=041.264s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=041.264s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=041.264s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=041.265s 10220040#1000000040120000 note=native BCM/body 10220040 short pre-key-on variant
+# tx t=041.265s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=041.265s 10240040#8004880100000007 note=native BCM/body 10240040 short pre-key-on variant
+(1780162370.913000) can0 100#
+(1780162370.913000) can0 13FFE040#
+(1780162370.913000) can0 621#0140000000000000
+# tx t=041.374s 621#0002000000000000 note=native short neutral/pre-key network-management seed
+# tx t=041.374s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=041.468s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=041.515s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=041.563s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=041.675s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=041.770s 10754040#040000 note=native short key-present context before key-on edge
+# tx t=041.770s 10242040#01 note=native short 10242040 pre-key-on state before edge
+# tx t=041.770s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=041.770s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=041.866s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=041.976s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.024s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=042.071s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.165s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.276s 621#0002000000000000 note=native short neutral/pre-key network-management context before key-on edge
+# tx t=042.276s 102C0040#0000000000 note=native short 102C0040 neutral state before key-on edge
+# tx t=042.276s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.276s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=042.277s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=042.277s 10220040#1000000040120000 note=native BCM/body 10220040 short pre-key-on variant
+# tx t=042.277s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=042.277s 10240040#8004880100000007 note=native BCM/body 10240040 short pre-key-on variant
+# tx t=042.370s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.465s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=042.466s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.528s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=042.576s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.670s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.766s 10754040#040000 note=native short key-present context before key-on edge
+# tx t=042.766s 10242040#01 note=native short 10242040 pre-key-on state before edge
+# tx t=042.766s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.767s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=042.876s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=042.970s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.019s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=043.066s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.174s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.269s 621#0002000000000000 note=native short neutral/pre-key network-management context before key-on edge
+# tx t=043.269s 102C0040#0000000000 note=native short 102C0040 neutral state before key-on edge
+# tx t=043.270s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.270s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=043.270s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=043.270s 10220040#1000000040120000 note=native BCM/body 10220040 short pre-key-on variant
+# tx t=043.270s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=043.270s 10240040#8004880100000007 note=native BCM/body 10240040 short pre-key-on variant
+# tx t=043.378s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.472s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.520s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=043.567s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.678s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=043.678s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.772s 10754040#040000 note=native short key-present context before key-on edge
+# tx t=043.772s 10242040#01 note=native short 10242040 pre-key-on state before edge
+# tx t=043.772s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.772s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=043.867s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=043.977s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.025s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=044.074s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.169s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.265s 621#0052000000000000 note=native key-on network-management edge
+# tx t=044.265s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.265s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=044.266s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=044.266s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=044.266s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=044.266s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=044.266s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant
+# tx t=044.266s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=044.267s 10754040#040400 note=native key/body context key-on hold variant
+# tx t=044.267s 10242040#02 note=native 10242040 second-turn/key-on hold state
+# tx t=044.375s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.468s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.516s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=044.516s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=044.579s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.674s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.768s 621#0052000000000000 note=native key-on network-management context
+# tx t=044.768s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.769s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=044.769s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=044.878s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=044.879s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=044.971s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.018s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=045.019s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=045.066s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.179s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.272s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.272s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=045.272s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=045.272s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=045.272s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=045.272s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=045.273s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant
+# tx t=045.273s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=045.273s 10754040#040400 note=native key/body context key-on hold variant
+# tx t=045.273s 10242040#02 note=native 10242040 second-turn/key-on hold state
+# tx t=045.273s 10414040#00017B05 note=native lock/body key-on context one-shot captured variant
+# tx t=045.367s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.477s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.525s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=045.525s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=045.573s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.668s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.764s 621#0052000000000000 note=native key-on network-management context
+# tx t=045.764s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.764s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=045.764s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=045.875s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=045.969s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.017s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=046.018s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=046.065s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=046.065s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.174s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.269s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.269s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=046.269s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=046.269s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=046.269s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=046.269s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=046.270s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant
+# tx t=046.270s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=046.270s 10754040#040400 note=native key/body context key-on hold variant
+# tx t=046.270s 10242040#02 note=native 10242040 second-turn/key-on hold state
+# tx t=046.364s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.475s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.523s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=046.523s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=046.570s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.665s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.776s 621#0052000000000000 note=native key-on network-management context
+# tx t=046.777s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.777s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=046.777s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=046.871s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=046.965s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.013s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=047.014s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=047.077s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.172s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.268s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=047.268s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.268s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=047.268s 102CA040#0000000000000F00 note=native BCM/body base 102CA040 context
+# tx t=047.269s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=047.269s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=047.269s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=047.269s 10240040#83FE880100D70FFD note=native BCM/body 10240040 key-on/second-turn variant
+# tx t=047.269s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=047.269s 10754040#040400 note=native key/body context key-on hold variant
+# tx t=047.269s 10242040#02 note=native 10242040 second-turn/key-on hold state
+# tx t=047.378s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.473s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.520s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=047.521s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=047.566s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.674s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.769s 621#0052000000000000 note=native key-on network-management context
+# tx t=047.770s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=047.770s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=047.770s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

@@ -1,0 +1,149 @@
+# cantool TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4
+# tx t=005.390s 100# note=native Corsa E SWCAN wake pulse
+# tx t=005.391s 13FFE040# note=native fake BCM/source 0x40 presence seed
+# tx t=005.391s 621#0140000000000000 note=native network-management startup/init seed
+# tx t=005.393s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=005.393s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=005.393s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=005.393s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=005.393s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=005.393s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=005.393s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=005.394s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=005.394s 10240040#83FE880100D70FFD note=TC isolation neutral 10240040 seed before held windows
+# tx t=005.394s 102CA040#0000000000000F00 note=TC isolation neutral 102CA040 seed before held windows
+# tx t=005.394s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+(1780163330.710000) can0 100#
+(1780163330.711000) can0 13FFE040#
+(1780163330.711000) can0 621#0140000000000000
+# tx t=005.499s 621#0052000000000000 note=native key-on network-management seed
+# tx t=005.499s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=005.592s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=005.641s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=005.641s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=005.641s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=005.688s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=005.799s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=005.892s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=005.892s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=005.892s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=005.892s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=006.003s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.096s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.143s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=006.143s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=006.143s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=006.191s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.301s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.396s 621#0052000000000000 note=native key-on network-management context
+# tx t=006.396s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.396s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=006.397s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=006.397s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=006.397s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=006.397s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=006.397s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=006.397s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=006.397s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=006.491s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.601s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=006.602s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.650s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=006.650s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=006.650s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=006.698s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.794s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.889s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=006.889s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=006.889s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=006.889s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=006.998s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.094s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.142s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=007.142s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=007.142s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=007.190s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.300s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.392s 621#0052000000000000 note=native key-on network-management context
+# tx t=007.392s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.393s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=007.393s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=007.393s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=007.393s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=007.393s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=007.394s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=007.394s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=007.394s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=007.488s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.598s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.646s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=007.647s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=007.647s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=007.695s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.790s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=007.790s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.901s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=007.901s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=007.901s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=007.901s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=007.996s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.091s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.139s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=008.139s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=008.139s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=008.203s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.298s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.393s 621#0052000000000000 note=native key-on network-management context
+# tx t=008.393s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.393s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=008.394s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=008.394s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=008.394s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=008.394s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=008.394s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=008.394s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=008.394s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=008.502s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.598s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.645s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=008.646s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=008.646s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=008.694s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.790s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.901s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=008.901s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=008.901s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=008.901s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=008.994s 13FFE040# note=native fake BCM/source 0x40 presence, captured-like cadence
+# tx t=008.994s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.090s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.153s 10230040#3000000030000000 note=native BCM/body 10230040 captured counter/state cycle variant 4/4
+# tx t=009.153s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=009.154s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=009.201s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.295s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.389s 621#0052000000000000 note=native key-on network-management context
+# tx t=009.390s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.390s 10264040#0000000000000000 note=native BCM/body base zero-status frame
+# tx t=009.390s 10220040#1000000040080000 note=native BCM/body 10220040 key-on variant
+# tx t=009.390s 10230040#0000000000000000 note=native BCM/body 10230040 captured counter/state cycle variant 1/4
+# tx t=009.390s 1022E040#2000000020000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 2/3
+# tx t=009.390s 102C0040#803C96B503 note=native BCM/body 102C0040 key-on captured context
+# tx t=009.390s 10754040#040400 note=native key/body context immediate key-on hold variant
+# tx t=009.391s 10242040#02 note=native 10242040 immediate second-turn/key-on hold state
+# tx t=009.391s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=009.498s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.593s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.641s 10230040#1000000010000000 note=native BCM/body 10230040 captured counter/state cycle variant 2/4
+# tx t=009.641s 1022E040#3000000030000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 3/3
+# tx t=009.641s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=009.703s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.798s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.892s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=009.892s 10230040#2000000020000000 note=native BCM/body 10230040 captured counter/state cycle variant 3/4
+# tx t=009.892s 1022E040#1000000010000000 note=native BCM/body 1022E040 key-on counter/state cycle variant 1/3
+# tx t=009.892s 102CC040#0000C00000000000 note=TC clear/off candidate window 0-10s: baseline before confirmed ON payload
+# tx t=009.988s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# tx t=010.099s 10210040#0000800000008000 note=native BCM/body base status from IPC_disconnected capture
+# final RX drain begin duration_ms=300
+# final RX drain end count=0

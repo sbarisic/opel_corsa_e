@@ -40,6 +40,7 @@ internal static class CommandHandlers
     private const string IpcIsoTpFlowControlPayload = "30000AAAAAAAAAAA";
 
     private static readonly TimeSpan MaxSchedulerSleep = TimeSpan.FromMilliseconds(2);
+    private static readonly TimeSpan LiveReloadPollPeriod = TimeSpan.FromMilliseconds(250);
 
     public static int InteractiveMenu()
     {
@@ -173,16 +174,24 @@ internal static class CommandHandlers
             }
 
             var logPrefix = $"cantool_{selected.Name}_tx_rx";
-            var result = SendSchedule(
-                Profiles.GetSchedule(selected.Name),
-                duration,
-                countLimit: null,
-                rxLogPath: DefaultLiveOutput(logPrefix),
-                banner: duration is null
-                    ? $"transmitting {selected.Name} until Ctrl+C"
-                    : $"transmitting {selected.Name} for {seconds:0.###}s",
-                waitForFirstRx: selected.WaitForFirstRx,
-                autoIsoTpFlowControl: selected.AutoIsoTpFlowControl);
+            var result = selected.Name.Equals(Profiles.IpcLiveReload, StringComparison.OrdinalIgnoreCase)
+                ? SendLiveReloadProfile(
+                    [],
+                    duration,
+                    rxLogPath: DefaultLiveOutput(logPrefix),
+                    banner: duration is null
+                        ? $"live-reload transmitting from send_profile.can until Ctrl+C"
+                        : $"live-reload transmitting from send_profile.can for {seconds:0.###}s")
+                : SendSchedule(
+                    Profiles.GetSchedule(selected.Name),
+                    duration,
+                    countLimit: null,
+                    rxLogPath: DefaultLiveOutput(logPrefix),
+                    banner: duration is null
+                        ? $"transmitting {selected.Name} until Ctrl+C"
+                        : $"transmitting {selected.Name} for {seconds:0.###}s",
+                    waitForFirstRx: selected.WaitForFirstRx,
+                    autoIsoTpFlowControl: selected.AutoIsoTpFlowControl);
             if (result != 0)
             {
                 return result;
@@ -653,6 +662,11 @@ internal static class CommandHandlers
                     : $"read-only sniffing {profile} for {seconds:0.###}s");
         }
 
+        if (profile.Equals(Profiles.IpcLiveReload, StringComparison.OrdinalIgnoreCase))
+        {
+            return SendLiveReloadProfile(args, duration);
+        }
+
         return SendSchedule(
             Profiles.GetSchedule(profile),
             duration,
@@ -663,6 +677,365 @@ internal static class CommandHandlers
             flushStale: !CliOptions.HasFlag(args, "--no-flush"),
             logFlush: !CliOptions.HasFlag(args, "--no-flush") && CliOptions.HasFlag(args, "--log-flush"),
             autoIsoTpFlowControl: Profiles.UsesAutoIsoTpFlowControl(profile));
+    }
+
+    private static int SendLiveReloadProfile(
+        string[] args,
+        TimeSpan? duration,
+        string? rxLogPath = null,
+        string? banner = null)
+    {
+        var profilePath = Path.GetFullPath(CliOptions.GetString(args, "--file") ?? Path.Combine(FindRepoRoot(), "send_profile.can"));
+        EnsureLiveReloadProfileFile(profilePath);
+
+        var outPath = rxLogPath ?? CliOptions.GetString(args, "--rx-log") ?? DefaultLiveOutput("cantool_ipc-live-reload_tx_rx");
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+
+        using var device = GsUsbDevice.Open(listenOnly: false);
+        using var done = new ConsoleCancelScope();
+
+        Console.WriteLine(banner ?? (duration is null
+            ? $"live-reload transmitting from {profilePath} until Ctrl+C; RX log {outPath}"
+            : $"live-reload transmitting from {profilePath} for {duration.Value.TotalSeconds:0.###}s; RX log {outPath}"));
+        Console.WriteLine("edit the file and save it; disabled/invalid rows are not transmitted");
+
+        var sent = 0;
+        var received = 0;
+        var schedule = new List<ScheduledTxFrame>();
+        var lastLoadedWriteUtc = DateTime.MinValue;
+
+        using var writer = new StreamWriter(outPath, append: false);
+        writer.WriteLine("# cantool live-reload TX/RX capture bitrate=33333.333 fclk=170000000 brp=255 prop=1 phase1=13 phase2=5 sjw=4");
+        writer.WriteLine($"# live-reload file={profilePath}");
+
+        if (CliOptions.HasFlag(args, "--no-flush"))
+        {
+            writer.WriteLine("# stale RX flush skipped");
+            Console.WriteLine("stale RX flush skipped");
+        }
+        else if (CliOptions.HasFlag(args, "--log-flush"))
+        {
+            DrainStartupRxToLog(device, writer, ref received, TimeSpan.FromMilliseconds(300));
+        }
+        else
+        {
+            var flushed = device.FlushStale(TimeSpan.FromMilliseconds(300));
+            if (flushed > 0)
+            {
+                Console.WriteLine($"flushed {flushed} stale RX frame(s)");
+            }
+        }
+
+        TryReloadLiveProfile(profilePath, ref lastLoadedWriteUtc, ref schedule, writer, force: true);
+
+        var started = DateTimeOffset.UtcNow;
+        var end = duration is null ? DateTimeOffset.MaxValue : started + duration.Value;
+        var nextReloadCheck = DateTimeOffset.MinValue;
+
+        while (!done.IsSet && DateTimeOffset.UtcNow < end)
+        {
+            var now = DateTimeOffset.UtcNow;
+            if (now >= nextReloadCheck)
+            {
+                TryReloadLiveProfile(profilePath, ref lastLoadedWriteUtc, ref schedule, writer, force: false);
+                nextReloadCheck = now + LiveReloadPollPeriod;
+            }
+
+            now = DateTimeOffset.UtcNow;
+            foreach (var item in schedule)
+            {
+                if (now < item.NextDue)
+                {
+                    continue;
+                }
+
+                device.SendFrame(item);
+                sent++;
+                item.SentCount++;
+                item.NextDue = item.NextDue + item.Period;
+                writer.WriteLine(ConsoleFrames.FormatTxLogComment(item));
+                writer.Flush();
+                Console.WriteLine(ConsoleFrames.FormatTx(sent, item));
+            }
+
+            DrainAvailableRx(device, writer, ref received, ref sent, autoIsoTpFlowControl: false);
+            if (schedule.Count == 0)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(50));
+            }
+            else
+            {
+                SleepUntilNextDue(schedule, end);
+            }
+        }
+
+        DrainFinalRxToLog(device, writer, ref received, ref sent, autoIsoTpFlowControl: false, TimeSpan.FromMilliseconds(300));
+        Console.WriteLine($"done: sent={sent} rx_frames={received} rx_log={outPath}");
+        return 0;
+    }
+
+    private static void TryReloadLiveProfile(
+        string path,
+        ref DateTime lastLoadedWriteUtc,
+        ref List<ScheduledTxFrame> schedule,
+        StreamWriter writer,
+        bool force)
+    {
+        var writeUtc = File.GetLastWriteTimeUtc(path);
+        if (!force && writeUtc == lastLoadedWriteUtc)
+        {
+            return;
+        }
+
+        try
+        {
+            var loaded = LoadLiveReloadSchedule(path, out var rows, out var active);
+            var now = DateTimeOffset.UtcNow;
+            for (var i = 0; i < loaded.Count; i++)
+            {
+                loaded[i].NextDue = now + TimeSpan.FromMilliseconds(i * 2);
+            }
+
+            schedule = loaded;
+            lastLoadedWriteUtc = writeUtc;
+            var line = $"# live-reload loaded rows={rows} active={active} file={path}";
+            writer.WriteLine(line);
+            writer.Flush();
+            Console.WriteLine(line);
+        }
+        catch (Exception ex)
+        {
+            schedule = [];
+            lastLoadedWriteUtc = writeUtc;
+            var line = $"# live-reload parse-error file={path} error={SanitizeLogValue(ex.Message)}";
+            writer.WriteLine(line);
+            writer.WriteLine("# live-reload active schedule cleared until the file parses cleanly");
+            writer.Flush();
+            Console.WriteLine(line);
+            Console.WriteLine("active live schedule cleared; fix the file and save again");
+        }
+    }
+
+    private static List<ScheduledTxFrame> LoadLiveReloadSchedule(string path, out int rows, out int active)
+    {
+        rows = 0;
+        active = 0;
+        var schedule = new List<ScheduledTxFrame>();
+
+        using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
+        using var reader = new StreamReader(stream);
+
+        var lineNumber = 0;
+        while (reader.ReadLine() is { } rawLine)
+        {
+            lineNumber++;
+            var line = rawLine.Trim();
+            if (line.Length == 0 || line.StartsWith("#", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            var cells = SplitLiveProfileCells(line);
+            if (cells.Length == 0)
+            {
+                continue;
+            }
+
+            if (!double.TryParse(cells[0], NumberStyles.Float, CultureInfo.InvariantCulture, out var periodMs))
+            {
+                if (lineNumber == 1 || cells[0].Contains("period", StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                throw new ArgumentException($"line {lineNumber}: period_ms is not a number");
+            }
+
+            rows++;
+            if (cells.Length < 3)
+            {
+                throw new ArgumentException($"line {lineNumber}: expected period_ms,message,enabled,note");
+            }
+
+            if (periodMs <= 0)
+            {
+                throw new ArgumentException($"line {lineNumber}: period_ms must be > 0");
+            }
+
+            var enabled = ParseLiveEnabled(cells[2], lineNumber);
+            if (!enabled)
+            {
+                continue;
+            }
+
+            var note = cells.Length >= 4 && !string.IsNullOrWhiteSpace(cells[3])
+                ? cells[3].Trim()
+                : cells[1].Trim();
+            var frame = ParseLiveCanMessage(
+                cells[1],
+                TimeSpan.FromMilliseconds(periodMs),
+                $"live {note}",
+                lineNumber);
+            schedule.Add(frame);
+            active++;
+        }
+
+        return schedule;
+    }
+
+    private static ScheduledTxFrame ParseLiveCanMessage(string text, TimeSpan period, string note, int lineNumber)
+    {
+        var parts = text.Trim().Split('#', 2);
+        if (parts.Length != 2)
+        {
+            throw new ArgumentException($"line {lineNumber}: CAN message must be ID#DATA");
+        }
+
+        var idText = parts[0].Trim();
+        var idDigits = idText.StartsWith("0x", StringComparison.OrdinalIgnoreCase) ? idText[2..] : idText;
+        var canId = CliOptions.ParseUInt(idText);
+        var data = CliOptions.ParseHexData(parts[1]);
+        if (data.Length > 8)
+        {
+            throw new ArgumentException($"line {lineNumber}: CAN payload is {data.Length} bytes; max classic CAN DLC is 8");
+        }
+
+        var isExtended = idDigits.Length > 3 || canId > 0x7FF;
+        return new ScheduledTxFrame(canId, data, period, isExtended, note);
+    }
+
+    private static bool ParseLiveEnabled(string text, int lineNumber)
+    {
+        return text.Trim().ToLowerInvariant() switch
+        {
+            "1" or "true" or "yes" or "y" or "on" or "enabled" => true,
+            "0" or "false" or "no" or "n" or "off" or "disabled" => false,
+            _ => throw new ArgumentException($"line {lineNumber}: enabled must be true/false, 1/0, yes/no, or on/off")
+        };
+    }
+
+    private static string[] SplitLiveProfileCells(string line)
+    {
+        if (line.Contains(','))
+        {
+            return SplitDelimitedCells(line, ',');
+        }
+
+        if (line.Contains(';'))
+        {
+            return SplitDelimitedCells(line, ';');
+        }
+
+        if (line.Contains('\t'))
+        {
+            return SplitDelimitedCells(line, '\t');
+        }
+
+        var match = Regex.Match(line.Trim(), @"^(\S+)\s+(\S+)\s+(\S+)(?:\s+(.*))?$", RegexOptions.None, TimeSpan.FromMilliseconds(100));
+        return match.Success
+            ?
+            [
+                UnquoteCell(match.Groups[1].Value),
+                UnquoteCell(match.Groups[2].Value),
+                UnquoteCell(match.Groups[3].Value),
+                UnquoteCell(match.Groups[4].Value)
+            ]
+            : [UnquoteCell(line)];
+    }
+
+    private static string[] SplitDelimitedCells(string line, char delimiter)
+    {
+        var cells = new List<string>();
+        var current = new StringBuilder();
+        var inQuotes = false;
+
+        foreach (var ch in line)
+        {
+            if (ch == '"')
+            {
+                inQuotes = !inQuotes;
+                continue;
+            }
+
+            if (ch == delimiter && !inQuotes && cells.Count < 3)
+            {
+                cells.Add(UnquoteCell(current.ToString()));
+                current.Clear();
+                continue;
+            }
+
+            current.Append(ch);
+        }
+
+        cells.Add(UnquoteCell(current.ToString()));
+        return cells.ToArray();
+    }
+
+    private static string UnquoteCell(string value)
+    {
+        var text = value.Trim();
+        return text.Length >= 2 && text[0] == '"' && text[^1] == '"'
+            ? text[1..^1].Trim()
+            : text;
+    }
+
+    private static string SanitizeLogValue(string value)
+    {
+        return value.Replace("\r", " ", StringComparison.Ordinal).Replace("\n", " ", StringComparison.Ordinal);
+    }
+
+    private static void EnsureLiveReloadProfileFile(string path)
+    {
+        if (File.Exists(path))
+        {
+            return;
+        }
+
+        Directory.CreateDirectory(Path.GetDirectoryName(path) ?? ".");
+        File.WriteAllLines(path, DefaultLiveReloadProfileLines(), Encoding.UTF8);
+        Console.WriteLine($"created sample live profile: {path}");
+    }
+
+    private static string[] DefaultLiveReloadProfileLines()
+    {
+        return
+        [
+            "# send_profile.can",
+            "# Columns: period_ms, CAN_MESSAGE, enabled, note",
+            "# Edit enabled to true/on/1 for the one message you want to test, then save.",
+            "# The live-reload profile keeps RX logging while it reloads this file.",
+            "period_ms,message,enabled,note",
+            "1000,100#,false,SWCAN wake pulse",
+            "1200,13FFE040#,false,BCM source 0x40 presence",
+            "1000,621#0052000000000000,false,key-on network-management keepalive",
+            "100,102C0040#803C96B503,false,ignition power-mode key-on context",
+            "1000,10242040#01,false,key first-turn sub-state",
+            "1000,10242040#02,false,key second-turn sub-state",
+            "1000,10754040#040400,false,key present key-on context",
+            "100,10210040#0000800000008000,false,native body base 0x108",
+            "100,10220040#1000000040080000,false,native body base 0x110",
+            "250,1022E040#1000000010000000,false,native body counter/state 0x117 value 1",
+            "250,1022E040#3000000030000000,false,native body counter/state 0x117 value 3",
+            "250,10230040#0000000000000000,false,native body counter/state 0x118 value 0",
+            "250,10230040#2000000020000000,false,native body counter/state 0x118 value 2",
+            "100,10240040#83FE880100D10FFD,false,lights-off neutral candidate",
+            "100,10240040#83FE880100D70FFD,false,key-on lights/context captured value",
+            "100,10264040#0000000000000000,false,native body base 0x132",
+            "100,102CA040#0000000000000F00,false,native body base 0x165",
+            "250,102CC040#0400C00000000000,false,TC telltale ON confirmed",
+            "250,102CC040#0000C00000000000,false,TC telltale clear candidate",
+            "500,103B4040#04,false,parking brake ON confirmed",
+            "500,103B4040#00,false,parking brake OFF confirmed",
+            "500,1020C040#0040040401,false,parking brake support released candidate",
+            "500,1020C040#00C0040401,false,parking brake support asserted candidate",
+            "500,10248040#00005DA6A300,false,dim/odometer DIC status candidate",
+            "100,10192040#0004C40000500000,false,wrapped RPM engine-state candidate",
+            "100,107D2040#0010800000108000,false,wrapped speed odometer candidate",
+            "250,10982040#0000730000000000,false,wrapped coolant/temp candidate",
+            "250,103CA040#44003910000000C9,false,wrapped warning/service candidate C9",
+            "250,103CA040#44003930000000E9,false,wrapped warning/service candidate E9",
+            "250,103CA040#4400395000000109,false,wrapped warning/service candidate 0109",
+        ];
     }
 
     private static int CaptureReadOnly(TimeSpan? duration, string outPath, bool listenOnly, bool flushStale, bool logFlush, string? banner)
@@ -753,12 +1126,21 @@ internal static class CommandHandlers
             var firstPayload = ordered.First().DataHex;
             var idText = ordered.First().CandumpId;
             var format = group.Key.IsExtended ? "extended" : "standard";
-            var gmlan = group.Key.IsExtended ? Gmlan29Id.Decode(group.Key.CanId).ToAnnotatedSummaryString() : "";
-            Console.WriteLine($"{idText,12} {format,-8} {gmlan,-76} count={ordered.Count,5} period_ms={periodText,10} dlcs={dlcs} payload={firstPayload}");
+            var gmlan = group.Key.IsExtended ? FormatGmlanSummary(group.Key.CanId) : "";
+            Console.WriteLine($"{idText,12} {format,-8} {gmlan,-96} count={ordered.Count,5} period_ms={periodText,10} dlcs={dlcs} payload={firstPayload}");
         }
 
         PrintIpcEffectSummary(logPath, records);
         return 0;
+    }
+
+    private static string FormatGmlanSummary(uint canId)
+    {
+        var decoded = Gmlan29Id.Decode(canId);
+        var summary = decoded.ToAnnotatedSummaryString();
+        return decoded.Sender == 0x040 && decoded.ArbitrationId <= 0x7FF
+            ? $"{summary} wrapped_std=0x{decoded.ArbitrationId:X3}"
+            : summary;
     }
 
     private static void PrintIpcEffectSummary(string logPath, List<CanFrame> records)
@@ -1171,8 +1553,8 @@ internal static class CommandHandlers
             .Take(12))
         {
             var first = group.OrderBy(frame => frame.Timestamp).First();
-            var gmlan = first.IsExtended ? Gmlan29Id.Decode(first.CanId).ToAnnotatedSummaryString() : "";
-            Console.WriteLine($"  {first.CandumpId,12} {gmlan,-76} count={group.Count(),5} first_payload={first.DataHex}");
+            var gmlan = first.IsExtended ? FormatGmlanSummary(first.CanId) : "";
+            Console.WriteLine($"  {first.CandumpId,12} {gmlan,-96} count={group.Count(),5} first_payload={first.DataHex}");
         }
     }
 
@@ -1204,6 +1586,14 @@ internal static class CommandHandlers
         if (definition.ReadOnlyCapture)
         {
             Console.WriteLine("read-only capture profile: no TX schedule");
+            return 0;
+        }
+
+        if (definition.Name.Equals(Profiles.IpcLiveReload, StringComparison.OrdinalIgnoreCase))
+        {
+            Console.WriteLine("live-reload profile: TX schedule comes from send_profile.can at runtime");
+            Console.WriteLine("file columns: period_ms,message,enabled,note");
+            Console.WriteLine("use --file PATH to override the default send_profile.can");
             return 0;
         }
 
